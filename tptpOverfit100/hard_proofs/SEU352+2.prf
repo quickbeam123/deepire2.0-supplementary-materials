@@ -1,0 +1,347 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop6/script-model.pt -npcc on -si on -rtra on --random_seed 11 Problems/SEU/SEU352+2.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for SEU352+2
+% SZS output start Proof for SEU352+2
+19. ! [X0] : (latt_str(X0) => ((~empty_carrier(X0) & lattice(X0)) => (meet_associative(X0) & join_absorbing(X0) & join_associative(X0) & join_commutative(X0) & meet_commutative(X0) & meet_absorbing(X0) & ~empty_carrier(X0)))) [input(axiom)]
+40. ! [X0,X2,X1] : ((meet_commutative(X0) & meet_semilatt_str(X0) & element(X2,the_carrier(X0)) & ~empty_carrier(X0) & element(X1,the_carrier(X0))) => meet_commut(X0,X1,X2) = meet_commut(X0,X2,X1)) [input(axiom)]
+51. ! [X0] : ((~empty_carrier(X0) & meet_semilatt_str(X0)) => (? [X1] : (! [X2] : (element(X2,the_carrier(X0)) => (meet(X0,X2,X1) = X1 & meet(X0,X1,X2) = X1)) & element(X1,the_carrier(X0))) <=> lower_bounded_semilattstr(X0))) [input(axiom)]
+57. ! [X0] : ((~empty_carrier(X0) & meet_semilatt_str(X0)) => (lower_bounded_semilattstr(X0) => ! [X1] : (element(X1,the_carrier(X0)) => (bottom_of_semilattstr(X0) = X1 <=> ! [X2] : (element(X2,the_carrier(X0)) => (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)))))) [input(axiom)]
+59. ! [X0] : ((~empty_carrier(X0) & latt_str(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (latt_element_smaller(X0,X1,X2) <=> ! [X3] : (element(X3,the_carrier(X0)) => (in(X3,X2) => below(X0,X3,X1)))))) [input(axiom)]
+81. ! [X0] : (empty_set = X0 <=> ! [X1] : ~in(X1,X0)) [input(axiom)]
+83. ! [X0] : ((~empty_carrier(X0) & latt_str(X0)) => ((complete_latt_str(X0) & latt_str(X0) & ~empty_carrier(X0) & lattice(X0)) => ! [X2,X1] : (element(X2,the_carrier(X0)) => ((latt_element_smaller(X0,X2,X1) & ! [X3] : (element(X3,the_carrier(X0)) => (latt_element_smaller(X0,X3,X1) => below(X0,X2,X3)))) <=> join_of_latt_set(X0,X1) = X2)))) [input(axiom)]
+100. ! [X0] : ((~empty_carrier(X0) & join_semilatt_str(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (element(X2,the_carrier(X0)) => (below(X0,X1,X2) <=> join(X0,X1,X2) = X2)))) [input(axiom)]
+137. ! [X0] : ((~empty_carrier(X0) & latt_str(X0)) => (meet_absorbing(X0) <=> ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (element(X2,the_carrier(X0)) => join(X0,meet(X0,X1,X2),X2) = X2)))) [input(axiom)]
+151. ! [X1,X0] : ((~empty_carrier(X0) & latt_str(X0)) => element(join_of_latt_set(X0,X1),the_carrier(X0))) [input(axiom)]
+189. ! [X0,X2,X1] : ((~empty_carrier(X0) & element(X1,the_carrier(X0)) & meet_semilatt_str(X0) & meet_commutative(X0) & element(X2,the_carrier(X0))) => element(meet_commut(X0,X1,X2),the_carrier(X0))) [input(axiom)]
+196. ! [X0] : ((~empty_carrier(X0) & meet_semilatt_str(X0)) => element(bottom_of_semilattstr(X0),the_carrier(X0))) [input(axiom)]
+217. ! [X0] : (latt_str(X0) => (meet_semilatt_str(X0) & join_semilatt_str(X0))) [input(axiom)]
+384. ! [X1,X0,X2] : ((element(X2,the_carrier(X0)) & ~empty_carrier(X0) & meet_semilatt_str(X0) & meet_commutative(X0) & element(X1,the_carrier(X0))) => meet_commut(X0,X1,X2) = meet(X0,X1,X2)) [input(axiom)]
+512. ! [X0] : ((~empty_carrier(X0) & meet_absorbing(X0) & meet_commutative(X0) & latt_str(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (element(X2,the_carrier(X0)) => below(X0,meet_commut(X0,X1,X2),X1)))) [input(assumption)]
+523. ! [X0] : ((~empty_carrier(X0) & join_semilatt_str(X0) & join_commutative(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (element(X2,the_carrier(X0)) => ((below(X0,X2,X1) & below(X0,X1,X2)) => X1 = X2)))) [input(assumption)]
+593. ! [X0] : ((latt_str(X0) & ~empty_carrier(X0) & lattice(X0) & complete_latt_str(X0)) => (lattice(X0) & latt_str(X0) & ~empty_carrier(X0) & bottom_of_semilattstr(X0) = join_of_latt_set(X0,empty_set) & lower_bounded_semilattstr(X0))) [input(conjecture)]
+594. ~! [X0] : ((latt_str(X0) & ~empty_carrier(X0) & lattice(X0) & complete_latt_str(X0)) => (lattice(X0) & latt_str(X0) & ~empty_carrier(X0) & bottom_of_semilattstr(X0) = join_of_latt_set(X0,empty_set) & lower_bounded_semilattstr(X0))) [negated conjecture 593]
+651. ! [X0] : ((~empty_carrier(X0) & latt_str(X0)) => ((complete_latt_str(X0) & latt_str(X0) & ~empty_carrier(X0) & lattice(X0)) => ! [X2,X1] : (element(X1,the_carrier(X0)) => ((latt_element_smaller(X0,X1,X2) & ! [X3] : (element(X3,the_carrier(X0)) => (latt_element_smaller(X0,X3,X2) => below(X0,X1,X3)))) <=> join_of_latt_set(X0,X2) = X1)))) [rectify 83]
+717. ! [X1,X2,X0] : ((~empty_carrier(X1) & element(X2,the_carrier(X1)) & element(X0,the_carrier(X1)) & meet_semilatt_str(X1) & meet_commutative(X1)) => meet(X1,X0,X2) = meet_commut(X1,X0,X2)) [rectify 384]
+879. ! [X0,X1,X2] : ((element(X2,the_carrier(X0)) & meet_semilatt_str(X0) & ~empty_carrier(X0) & element(X1,the_carrier(X0)) & meet_commutative(X0)) => meet_commut(X0,X1,X2) = meet_commut(X0,X2,X1)) [rectify 40]
+998. ! [X0] : ((! [X2,X1] : (((latt_element_smaller(X0,X1,X2) & ! [X3] : ((below(X0,X1,X3) | ~latt_element_smaller(X0,X3,X2)) | ~element(X3,the_carrier(X0)))) <=> join_of_latt_set(X0,X2) = X1) | ~element(X1,the_carrier(X0))) | (~complete_latt_str(X0) | ~latt_str(X0) | empty_carrier(X0) | ~lattice(X0))) | (empty_carrier(X0) | ~latt_str(X0))) [ennf transformation 651]
+999. ! [X0] : (~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~lattice(X0) | ! [X2,X1] : ((join_of_latt_set(X0,X2) = X1 <=> (latt_element_smaller(X0,X1,X2) & ! [X3] : (below(X0,X1,X3) | ~latt_element_smaller(X0,X3,X2) | ~element(X3,the_carrier(X0))))) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~latt_str(X0)) [flattening 998]
+1050. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : (below(X0,meet_commut(X0,X1,X2),X1) | ~element(X2,the_carrier(X0)))) | (empty_carrier(X0) | ~meet_absorbing(X0) | ~meet_commutative(X0) | ~latt_str(X0))) [ennf transformation 512]
+1051. ! [X0] : (empty_carrier(X0) | ~meet_commutative(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : (below(X0,meet_commut(X0,X1,X2),X1) | ~element(X2,the_carrier(X0)))) | ~latt_str(X0) | ~meet_absorbing(X0)) [flattening 1050]
+1077. ! [X1,X2,X0] : (meet(X1,X0,X2) = meet_commut(X1,X0,X2) | (empty_carrier(X1) | ~element(X2,the_carrier(X1)) | ~element(X0,the_carrier(X1)) | ~meet_semilatt_str(X1) | ~meet_commutative(X1))) [ennf transformation 717]
+1078. ! [X1,X0,X2] : (empty_carrier(X1) | ~element(X2,the_carrier(X1)) | ~element(X0,the_carrier(X1)) | ~meet_commutative(X1) | meet(X1,X0,X2) = meet_commut(X1,X0,X2) | ~meet_semilatt_str(X1)) [flattening 1077]
+1120. ! [X0,X1,X2] : (meet_commut(X0,X1,X2) = meet_commut(X0,X2,X1) | (~element(X2,the_carrier(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~meet_commutative(X0))) [ennf transformation 879]
+1121. ! [X2,X0,X1] : (~meet_semilatt_str(X0) | ~element(X2,the_carrier(X0)) | ~element(X1,the_carrier(X0)) | ~meet_commutative(X0) | meet_commut(X0,X1,X2) = meet_commut(X0,X2,X1) | empty_carrier(X0)) [flattening 1120]
+1145. ! [X0] : (((meet_associative(X0) & join_absorbing(X0) & join_associative(X0) & join_commutative(X0) & meet_commutative(X0) & meet_absorbing(X0) & ~empty_carrier(X0)) | (empty_carrier(X0) | ~lattice(X0))) | ~latt_str(X0)) [ennf transformation 19]
+1146. ! [X0] : (~latt_str(X0) | (meet_associative(X0) & join_absorbing(X0) & join_associative(X0) & join_commutative(X0) & meet_commutative(X0) & meet_absorbing(X0) & ~empty_carrier(X0)) | ~lattice(X0) | empty_carrier(X0)) [flattening 1145]
+1371. ? [X0] : ((~latt_str(X0) | ~lower_bounded_semilattstr(X0) | bottom_of_semilattstr(X0) != join_of_latt_set(X0,empty_set) | empty_carrier(X0) | ~lattice(X0)) & (latt_str(X0) & ~empty_carrier(X0) & lattice(X0) & complete_latt_str(X0))) [ennf transformation 594]
+1372. ? [X0] : (lattice(X0) & (~latt_str(X0) | ~lower_bounded_semilattstr(X0) | bottom_of_semilattstr(X0) != join_of_latt_set(X0,empty_set) | empty_carrier(X0) | ~lattice(X0)) & complete_latt_str(X0) & ~empty_carrier(X0) & latt_str(X0)) [flattening 1371]
+1378. ! [X0] : ((! [X1] : ((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) <=> bottom_of_semilattstr(X0) = X1) | ~element(X1,the_carrier(X0))) | ~lower_bounded_semilattstr(X0)) | (empty_carrier(X0) | ~meet_semilatt_str(X0))) [ennf transformation 57]
+1379. ! [X0] : (! [X1] : ((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) <=> bottom_of_semilattstr(X0) = X1) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0)) [flattening 1378]
+1390. ! [X0] : ((meet_absorbing(X0) <=> ! [X1] : (! [X2] : (join(X0,meet(X0,X1,X2),X2) = X2 | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0)))) | (empty_carrier(X0) | ~latt_str(X0))) [ennf transformation 137]
+1391. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | (meet_absorbing(X0) <=> ! [X1] : (! [X2] : (join(X0,meet(X0,X1,X2),X2) = X2 | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0))))) [flattening 1390]
+1423. ! [X0] : (~latt_str(X0) | (meet_semilatt_str(X0) & join_semilatt_str(X0))) [ennf transformation 217]
+1459. ! [X0,X2,X1] : (element(meet_commut(X0,X1,X2),the_carrier(X0)) | (empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~meet_semilatt_str(X0) | ~meet_commutative(X0) | ~element(X2,the_carrier(X0)))) [ennf transformation 189]
+1460. ! [X2,X0,X1] : (~meet_semilatt_str(X0) | element(meet_commut(X0,X1,X2),the_carrier(X0)) | ~meet_commutative(X0) | ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~element(X2,the_carrier(X0))) [flattening 1459]
+1501. ! [X0] : (element(bottom_of_semilattstr(X0),the_carrier(X0)) | (empty_carrier(X0) | ~meet_semilatt_str(X0))) [ennf transformation 196]
+1502. ! [X0] : (element(bottom_of_semilattstr(X0),the_carrier(X0)) | empty_carrier(X0) | ~meet_semilatt_str(X0)) [flattening 1501]
+1577. ! [X0] : (! [X1] : (! [X2] : (latt_element_smaller(X0,X1,X2) <=> ! [X3] : ((below(X0,X3,X1) | ~in(X3,X2)) | ~element(X3,the_carrier(X0)))) | ~element(X1,the_carrier(X0))) | (empty_carrier(X0) | ~latt_str(X0))) [ennf transformation 59]
+1578. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : (latt_element_smaller(X0,X1,X2) <=> ! [X3] : (below(X0,X3,X1) | ~element(X3,the_carrier(X0)) | ~in(X3,X2))))) [flattening 1577]
+1587. ! [X1,X0] : (element(join_of_latt_set(X0,X1),the_carrier(X0)) | (empty_carrier(X0) | ~latt_str(X0))) [ennf transformation 151]
+1588. ! [X0,X1] : (~latt_str(X0) | empty_carrier(X0) | element(join_of_latt_set(X0,X1),the_carrier(X0))) [flattening 1587]
+1607. ! [X0] : (! [X1] : (! [X2] : ((below(X0,X1,X2) <=> join(X0,X1,X2) = X2) | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0))) | (empty_carrier(X0) | ~join_semilatt_str(X0))) [ennf transformation 100]
+1608. ! [X0] : (empty_carrier(X0) | ! [X1] : (! [X2] : ((below(X0,X1,X2) <=> join(X0,X1,X2) = X2) | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0))) | ~join_semilatt_str(X0)) [flattening 1607]
+1628. ! [X0] : ((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X2,X1) = X1 & meet(X0,X1,X2) = X1))) <=> lower_bounded_semilattstr(X0)) | (empty_carrier(X0) | ~meet_semilatt_str(X0))) [ennf transformation 51]
+1629. ! [X0] : ((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X2,X1) = X1 & meet(X0,X1,X2) = X1))) <=> lower_bounded_semilattstr(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0)) [flattening 1628]
+1636. ! [X0] : (! [X1] : (! [X2] : ((X1 = X2 | (~below(X0,X2,X1) | ~below(X0,X1,X2))) | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0))) | (empty_carrier(X0) | ~join_semilatt_str(X0) | ~join_commutative(X0))) [ennf transformation 523]
+1637. ! [X0] : (~join_commutative(X0) | ! [X1] : (! [X2] : (X1 = X2 | ~element(X2,the_carrier(X0)) | ~below(X0,X1,X2) | ~below(X0,X2,X1)) | ~element(X1,the_carrier(X0))) | ~join_semilatt_str(X0) | empty_carrier(X0)) [flattening 1636]
+1942. ! [X0] : (((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X2,X1) = X1 & meet(X0,X1,X2) = X1))) | ~lower_bounded_semilattstr(X0)) & (lower_bounded_semilattstr(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ? [X2] : (element(X2,the_carrier(X0)) & (meet(X0,X2,X1) != X1 | meet(X0,X1,X2) != X1))))) | ~meet_semilatt_str(X0) | empty_carrier(X0)) [nnf transformation 1629]
+1943. ! [X0] : (((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X2,X1) = X1 & meet(X0,X1,X2) = X1))) | ~lower_bounded_semilattstr(X0)) & (lower_bounded_semilattstr(X0) | ! [X3] : (~element(X3,the_carrier(X0)) | ? [X4] : (element(X4,the_carrier(X0)) & (meet(X0,X4,X3) != X3 | meet(X0,X3,X4) != X3))))) | ~meet_semilatt_str(X0) | empty_carrier(X0)) [rectify 1942]
+1944. ! [X0] : (? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X2,X1) = X1 & meet(X0,X1,X2) = X1))) => (element(sK127(X0),the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (sK127(X0) = meet(X0,X2,sK127(X0)) & meet(X0,sK127(X0),X2) = sK127(X0))))) [choice axiom]
+1945. ! [X0,X3] : (? [X4] : (element(X4,the_carrier(X0)) & (meet(X0,X4,X3) != X3 | meet(X0,X3,X4) != X3)) => (element(sK128(X0,X3),the_carrier(X0)) & (meet(X0,sK128(X0,X3),X3) != X3 | meet(X0,X3,sK128(X0,X3)) != X3))) [choice axiom]
+1946. ! [X0] : ((((element(sK127(X0),the_carrier(X0)) & ! [X2] : (~element(X2,the_carrier(X0)) | (sK127(X0) = meet(X0,X2,sK127(X0)) & meet(X0,sK127(X0),X2) = sK127(X0)))) | ~lower_bounded_semilattstr(X0)) & (lower_bounded_semilattstr(X0) | ! [X3] : (~element(X3,the_carrier(X0)) | (element(sK128(X0,X3),the_carrier(X0)) & (meet(X0,sK128(X0,X3),X3) != X3 | meet(X0,X3,sK128(X0,X3)) != X3))))) | ~meet_semilatt_str(X0) | empty_carrier(X0)) [skolemisation 1943,1945,1944]
+1972. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ((meet_absorbing(X0) | ? [X1] : (? [X2] : (join(X0,meet(X0,X1,X2),X2) != X2 & element(X2,the_carrier(X0))) & element(X1,the_carrier(X0)))) & (! [X1] : (! [X2] : (join(X0,meet(X0,X1,X2),X2) = X2 | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0))) | ~meet_absorbing(X0)))) [nnf transformation 1391]
+1973. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ((meet_absorbing(X0) | ? [X1] : (? [X2] : (join(X0,meet(X0,X1,X2),X2) != X2 & element(X2,the_carrier(X0))) & element(X1,the_carrier(X0)))) & (! [X3] : (! [X4] : (join(X0,meet(X0,X3,X4),X4) = X4 | ~element(X4,the_carrier(X0))) | ~element(X3,the_carrier(X0))) | ~meet_absorbing(X0)))) [rectify 1972]
+1974. ! [X0] : (? [X1] : (? [X2] : (join(X0,meet(X0,X1,X2),X2) != X2 & element(X2,the_carrier(X0))) & element(X1,the_carrier(X0))) => (? [X2] : (join(X0,meet(X0,sK139(X0),X2),X2) != X2 & element(X2,the_carrier(X0))) & element(sK139(X0),the_carrier(X0)))) [choice axiom]
+1975. ! [X0] : (? [X2] : (join(X0,meet(X0,sK139(X0),X2),X2) != X2 & element(X2,the_carrier(X0))) => (join(X0,meet(X0,sK139(X0),sK140(X0)),sK140(X0)) != sK140(X0) & element(sK140(X0),the_carrier(X0)))) [choice axiom]
+1976. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ((meet_absorbing(X0) | ((join(X0,meet(X0,sK139(X0),sK140(X0)),sK140(X0)) != sK140(X0) & element(sK140(X0),the_carrier(X0))) & element(sK139(X0),the_carrier(X0)))) & (! [X3] : (! [X4] : (join(X0,meet(X0,X3,X4),X4) = X4 | ~element(X4,the_carrier(X0))) | ~element(X3,the_carrier(X0))) | ~meet_absorbing(X0)))) [skolemisation 1973,1975,1974]
+2105. ! [X0,X1,X2] : (~meet_semilatt_str(X1) | element(meet_commut(X1,X2,X0),the_carrier(X1)) | ~meet_commutative(X1) | ~element(X2,the_carrier(X1)) | empty_carrier(X1) | ~element(X0,the_carrier(X1))) [rectify 1460]
+2180. ! [X0,X1,X2] : (empty_carrier(X0) | ~element(X2,the_carrier(X0)) | ~element(X1,the_carrier(X0)) | ~meet_commutative(X0) | meet_commut(X0,X1,X2) = meet(X0,X1,X2) | ~meet_semilatt_str(X0)) [rectify 1078]
+2191. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : ((latt_element_smaller(X0,X1,X2) | ? [X3] : (~below(X0,X3,X1) & element(X3,the_carrier(X0)) & in(X3,X2))) & (! [X3] : (below(X0,X3,X1) | ~element(X3,the_carrier(X0)) | ~in(X3,X2)) | ~latt_element_smaller(X0,X1,X2))))) [nnf transformation 1578]
+2192. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : ((latt_element_smaller(X0,X1,X2) | ? [X3] : (~below(X0,X3,X1) & element(X3,the_carrier(X0)) & in(X3,X2))) & (! [X4] : (below(X0,X4,X1) | ~element(X4,the_carrier(X0)) | ~in(X4,X2)) | ~latt_element_smaller(X0,X1,X2))))) [rectify 2191]
+2193. ! [X0,X1,X2] : (? [X3] : (~below(X0,X3,X1) & element(X3,the_carrier(X0)) & in(X3,X2)) => (~below(X0,sK232(X0,X1,X2),X1) & element(sK232(X0,X1,X2),the_carrier(X0)) & in(sK232(X0,X1,X2),X2))) [choice axiom]
+2194. ! [X0] : (empty_carrier(X0) | ~latt_str(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : ((latt_element_smaller(X0,X1,X2) | (~below(X0,sK232(X0,X1,X2),X1) & element(sK232(X0,X1,X2),the_carrier(X0)) & in(sK232(X0,X1,X2),X2))) & (! [X4] : (below(X0,X4,X1) | ~element(X4,the_carrier(X0)) | ~in(X4,X2)) | ~latt_element_smaller(X0,X1,X2))))) [skolemisation 2192,2193]
+2202. ! [X0,X1,X2] : (~meet_semilatt_str(X1) | ~element(X0,the_carrier(X1)) | ~element(X2,the_carrier(X1)) | ~meet_commutative(X1) | meet_commut(X1,X2,X0) = meet_commut(X1,X0,X2) | empty_carrier(X1)) [rectify 1121]
+2412. ! [X0] : ((empty_set = X0 | ? [X1] : in(X1,X0)) & (! [X1] : ~in(X1,X0) | empty_set != X0)) [nnf transformation 81]
+2413. ! [X0] : ((empty_set = X0 | ? [X1] : in(X1,X0)) & (! [X2] : ~in(X2,X0) | empty_set != X0)) [rectify 2412]
+2414. ! [X0] : (? [X1] : in(X1,X0) => in(sK313(X0),X0)) [choice axiom]
+2415. ! [X0] : ((empty_set = X0 | in(sK313(X0),X0)) & (! [X2] : ~in(X2,X0) | empty_set != X0)) [skolemisation 2413,2414]
+2467. ! [X0] : (~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~lattice(X0) | ! [X2,X1] : (((join_of_latt_set(X0,X2) = X1 | (~latt_element_smaller(X0,X1,X2) | ? [X3] : (~below(X0,X1,X3) & latt_element_smaller(X0,X3,X2) & element(X3,the_carrier(X0))))) & ((latt_element_smaller(X0,X1,X2) & ! [X3] : (below(X0,X1,X3) | ~latt_element_smaller(X0,X3,X2) | ~element(X3,the_carrier(X0)))) | join_of_latt_set(X0,X2) != X1)) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~latt_str(X0)) [nnf transformation 999]
+2468. ! [X0] : (~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~lattice(X0) | ! [X2,X1] : (((join_of_latt_set(X0,X2) = X1 | ~latt_element_smaller(X0,X1,X2) | ? [X3] : (~below(X0,X1,X3) & latt_element_smaller(X0,X3,X2) & element(X3,the_carrier(X0)))) & ((latt_element_smaller(X0,X1,X2) & ! [X3] : (below(X0,X1,X3) | ~latt_element_smaller(X0,X3,X2) | ~element(X3,the_carrier(X0)))) | join_of_latt_set(X0,X2) != X1)) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~latt_str(X0)) [flattening 2467]
+2469. ! [X0] : (~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~lattice(X0) | ! [X1,X2] : (((join_of_latt_set(X0,X1) = X2 | ~latt_element_smaller(X0,X2,X1) | ? [X3] : (~below(X0,X2,X3) & latt_element_smaller(X0,X3,X1) & element(X3,the_carrier(X0)))) & ((latt_element_smaller(X0,X2,X1) & ! [X4] : (below(X0,X2,X4) | ~latt_element_smaller(X0,X4,X1) | ~element(X4,the_carrier(X0)))) | join_of_latt_set(X0,X1) != X2)) | ~element(X2,the_carrier(X0))) | empty_carrier(X0) | ~latt_str(X0)) [rectify 2468]
+2470. ! [X0,X1,X2] : (? [X3] : (~below(X0,X2,X3) & latt_element_smaller(X0,X3,X1) & element(X3,the_carrier(X0))) => (~below(X0,X2,sK332(X0,X1,X2)) & latt_element_smaller(X0,sK332(X0,X1,X2),X1) & element(sK332(X0,X1,X2),the_carrier(X0)))) [choice axiom]
+2471. ! [X0] : (~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~lattice(X0) | ! [X1,X2] : (((join_of_latt_set(X0,X1) = X2 | ~latt_element_smaller(X0,X2,X1) | (~below(X0,X2,sK332(X0,X1,X2)) & latt_element_smaller(X0,sK332(X0,X1,X2),X1) & element(sK332(X0,X1,X2),the_carrier(X0)))) & ((latt_element_smaller(X0,X2,X1) & ! [X4] : (below(X0,X2,X4) | ~latt_element_smaller(X0,X4,X1) | ~element(X4,the_carrier(X0)))) | join_of_latt_set(X0,X1) != X2)) | ~element(X2,the_carrier(X0))) | empty_carrier(X0) | ~latt_str(X0)) [skolemisation 2469,2470]
+2563. ! [X0] : (! [X1] : (((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) | bottom_of_semilattstr(X0) != X1) & (bottom_of_semilattstr(X0) = X1 | ? [X2] : (element(X2,the_carrier(X0)) & (meet(X0,X1,X2) != X1 | meet(X0,X2,X1) != X1)))) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0)) [nnf transformation 1379]
+2564. ! [X0] : (! [X1] : (((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) | bottom_of_semilattstr(X0) != X1) & (bottom_of_semilattstr(X0) = X1 | ? [X3] : (element(X3,the_carrier(X0)) & (meet(X0,X1,X3) != X1 | meet(X0,X3,X1) != X1)))) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0)) [rectify 2563]
+2565. ! [X0,X1] : (? [X3] : (element(X3,the_carrier(X0)) & (meet(X0,X1,X3) != X1 | meet(X0,X3,X1) != X1)) => (element(sK367(X0,X1),the_carrier(X0)) & (meet(X0,X1,sK367(X0,X1)) != X1 | meet(X0,sK367(X0,X1),X1) != X1))) [choice axiom]
+2566. ! [X0] : (! [X1] : (((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) | bottom_of_semilattstr(X0) != X1) & (bottom_of_semilattstr(X0) = X1 | (element(sK367(X0,X1),the_carrier(X0)) & (meet(X0,X1,sK367(X0,X1)) != X1 | meet(X0,sK367(X0,X1),X1) != X1)))) | ~element(X1,the_carrier(X0))) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0)) [skolemisation 2564,2565]
+2666. ? [X0] : (lattice(X0) & (~latt_str(X0) | ~lower_bounded_semilattstr(X0) | bottom_of_semilattstr(X0) != join_of_latt_set(X0,empty_set) | empty_carrier(X0) | ~lattice(X0)) & complete_latt_str(X0) & ~empty_carrier(X0) & latt_str(X0)) => (lattice(sK397) & (~latt_str(sK397) | ~lower_bounded_semilattstr(sK397) | bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) | empty_carrier(sK397) | ~lattice(sK397)) & complete_latt_str(sK397) & ~empty_carrier(sK397) & latt_str(sK397)) [choice axiom]
+2667. lattice(sK397) & (~latt_str(sK397) | ~lower_bounded_semilattstr(sK397) | bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) | empty_carrier(sK397) | ~lattice(sK397)) & complete_latt_str(sK397) & ~empty_carrier(sK397) & latt_str(sK397) [skolemisation 1372,2666]
+2677. ! [X0] : (empty_carrier(X0) | ! [X1] : (! [X2] : (((below(X0,X1,X2) | join(X0,X1,X2) != X2) & (join(X0,X1,X2) = X2 | ~below(X0,X1,X2))) | ~element(X2,the_carrier(X0))) | ~element(X1,the_carrier(X0))) | ~join_semilatt_str(X0)) [nnf transformation 1608]
+3166. ~latt_str(X0) | join_semilatt_str(X0) [cnf transformation 1423]
+3167. ~latt_str(X0) | meet_semilatt_str(X0) [cnf transformation 1423]
+3210. element(bottom_of_semilattstr(X0),the_carrier(X0)) | empty_carrier(X0) | ~meet_semilatt_str(X0) [cnf transformation 1502]
+3250. meet(X0,sK128(X0,X3),X3) != X3 | lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0) | ~element(X3,the_carrier(X0)) | meet(X0,X3,sK128(X0,X3)) != X3 | empty_carrier(X0) [cnf transformation 1946]
+3251. element(sK128(X0,X3),the_carrier(X0)) | lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0) | ~element(X3,the_carrier(X0)) | empty_carrier(X0) [cnf transformation 1946]
+3284. ~element(X4,the_carrier(X0)) | ~element(X3,the_carrier(X0)) | ~meet_absorbing(X0) | join(X0,meet(X0,X3,X4),X4) = X4 | ~latt_str(X0) | empty_carrier(X0) [cnf transformation 1976]
+3339. below(X0,meet_commut(X0,X1,X2),X1) | ~latt_str(X0) | ~meet_commutative(X0) | ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~element(X2,the_carrier(X0)) | ~meet_absorbing(X0) [cnf transformation 1051]
+3475. element(meet_commut(X1,X2,X0),the_carrier(X1)) | ~meet_commutative(X1) | ~element(X0,the_carrier(X1)) | ~element(X2,the_carrier(X1)) | empty_carrier(X1) | ~meet_semilatt_str(X1) [cnf transformation 2105]
+3594. ~element(X2,the_carrier(X0)) | ~meet_commutative(X0) | ~meet_semilatt_str(X0) | meet_commut(X0,X1,X2) = meet(X0,X1,X2) | ~element(X1,the_carrier(X0)) | empty_carrier(X0) [cnf transformation 2180]
+3618. in(sK232(X0,X1,X2),X2) | latt_element_smaller(X0,X1,X2) | ~element(X1,the_carrier(X0)) | ~latt_str(X0) | empty_carrier(X0) [cnf transformation 2194]
+3634. ~element(X2,the_carrier(X1)) | ~element(X0,the_carrier(X1)) | ~meet_semilatt_str(X1) | meet_commut(X1,X2,X0) = meet_commut(X1,X0,X2) | empty_carrier(X1) | ~meet_commutative(X1) [cnf transformation 2202]
+3939. ~in(X2,X0) | empty_set != X0 [cnf transformation 2415]
+3943. ~lattice(X0) | meet_absorbing(X0) | ~latt_str(X0) | empty_carrier(X0) [cnf transformation 1146]
+3944. ~lattice(X0) | meet_commutative(X0) | ~latt_str(X0) | empty_carrier(X0) [cnf transformation 1146]
+3945. ~lattice(X0) | join_commutative(X0) | empty_carrier(X0) | ~latt_str(X0) [cnf transformation 1146]
+3959. element(join_of_latt_set(X0,X1),the_carrier(X0)) | ~latt_str(X0) | empty_carrier(X0) [cnf transformation 1588]
+4019. ~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~lattice(X0) | below(X0,X2,X4) | ~latt_element_smaller(X0,X4,X1) | ~element(X4,the_carrier(X0)) | join_of_latt_set(X0,X1) != X2 | ~element(X2,the_carrier(X0)) | empty_carrier(X0) | ~latt_str(X0) [cnf transformation 2471]
+4162. ~below(X0,X2,X1) | ~element(X2,the_carrier(X0)) | ~join_semilatt_str(X0) | ~below(X0,X1,X2) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~join_commutative(X0) | X1 = X2 [cnf transformation 1637]
+4184. ~element(X2,the_carrier(X0)) | meet(X0,X2,X1) = X1 | bottom_of_semilattstr(X0) != X1 | ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0) [cnf transformation 2566]
+4339. latt_str(sK397) [cnf transformation 2667]
+4340. ~empty_carrier(sK397) [cnf transformation 2667]
+4341. complete_latt_str(sK397) [cnf transformation 2667]
+4342. ~lower_bounded_semilattstr(sK397) | bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) | ~lattice(sK397) | empty_carrier(sK397) | ~latt_str(sK397) [cnf transformation 2667]
+4343. lattice(sK397) [cnf transformation 2667]
+4364. join(X0,X1,X2) != X2 | below(X0,X1,X2) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~element(X2,the_carrier(X0)) | ~join_semilatt_str(X0) [cnf transformation 2677]
+5286. ~in(X2,empty_set) [equality resolution 3939]
+5308. ~complete_latt_str(X0) | ~latt_str(X0) | empty_carrier(X0) | below(X0,join_of_latt_set(X0,X1),X4) | ~element(X4,the_carrier(X0)) | ~latt_element_smaller(X0,X4,X1) | ~lattice(X0) | empty_carrier(X0) | ~element(join_of_latt_set(X0,X1),the_carrier(X0)) | ~latt_str(X0) [equality resolution 4019]
+5329. ~element(bottom_of_semilattstr(X0),the_carrier(X0)) | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) | ~element(X2,the_carrier(X0)) | empty_carrier(X0) | bottom_of_semilattstr(X0) = meet(X0,X2,bottom_of_semilattstr(X0)) [equality resolution 4184]
+5437. ~complete_latt_str(X0) | ~element(X4,the_carrier(X0)) | ~latt_element_smaller(X0,X4,X1) | empty_carrier(X0) | ~element(join_of_latt_set(X0,X1),the_carrier(X0)) | ~latt_str(X0) | below(X0,join_of_latt_set(X0,X1),X4) | ~lattice(X0) [duplicate literal removal 5308]
+5679. below(X0,join_of_latt_set(X0,X1),X4) | empty_carrier(X0) | ~latt_str(X0) | ~latt_element_smaller(X0,X4,X1) | ~element(X4,the_carrier(X0)) | ~lattice(X0) | ~complete_latt_str(X0) [subsumption resolution 5437,3959]
+5728. ~latt_str(sK397) | empty_carrier(sK397) | bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) | ~lower_bounded_semilattstr(sK397) [subsumption resolution 4342,4343]
+5846. empty_carrier(sK397) | ~lower_bounded_semilattstr(sK397) | bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) [subsumption resolution 5728,4339]
+5858. ~lower_bounded_semilattstr(sK397) | bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) [subsumption resolution 5846,4340]
+5865. 58 <=> lower_bounded_semilattstr(sK397) [avatar definition]
+5866. lower_bounded_semilattstr(sK397) <- (58) [avatar component clause 5865]
+5867. ~lower_bounded_semilattstr(sK397) <- (~58) [avatar component clause 5865]
+5869. 59 <=> bottom_of_semilattstr(sK397) = join_of_latt_set(sK397,empty_set) [avatar definition]
+5871. bottom_of_semilattstr(sK397) != join_of_latt_set(sK397,empty_set) <- (~59) [avatar component clause 5869]
+5872. ~58 | ~59 [avatar split clause 5858,5869,5865]
+5873. meet_semilatt_str(sK397) [resolution 3167,4339]
+5876. ~meet_semilatt_str(X0) | ~element(X1,the_carrier(X0)) | bottom_of_semilattstr(X0) = meet(X0,X1,bottom_of_semilattstr(X0)) | ~lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0) | empty_carrier(X0) | empty_carrier(X0) [resolution 5329,3210]
+5877. ~element(X1,the_carrier(X0)) | bottom_of_semilattstr(X0) = meet(X0,X1,bottom_of_semilattstr(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) [duplicate literal removal 5876]
+5890. bottom_of_semilattstr(X0) = meet(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) | ~lower_bounded_semilattstr(X0) | ~latt_str(X0) | empty_carrier(X0) | empty_carrier(X0) | ~meet_semilatt_str(X0) [resolution 5877,3959]
+5893. ~lower_bounded_semilattstr(X0) | ~latt_str(X0) | bottom_of_semilattstr(X0) = meet(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0) [duplicate literal removal 5890]
+5894. ~lower_bounded_semilattstr(X0) | bottom_of_semilattstr(X0) = meet(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) | ~latt_str(X0) | empty_carrier(X0) [subsumption resolution 5893,3167]
+5915. join_semilatt_str(sK397) [resolution 3166,4339]
+5961. ~latt_str(sK397) | empty_carrier(sK397) | meet_commutative(sK397) [resolution 3944,4343]
+5962. empty_carrier(sK397) | meet_commutative(sK397) [subsumption resolution 5961,4339]
+5963. meet_commutative(sK397) [subsumption resolution 5962,4340]
+6067. meet_absorbing(sK397) | empty_carrier(sK397) | ~latt_str(sK397) [resolution 3943,4343]
+6068. ~latt_str(sK397) | meet_absorbing(sK397) [subsumption resolution 6067,4340]
+6069. meet_absorbing(sK397) [subsumption resolution 6068,4339]
+6616. ~meet_absorbing(X1) | ~element(X0,the_carrier(X1)) | empty_carrier(X1) | ~latt_str(X1) | ~latt_str(X1) | join(X1,meet(X1,X0,join_of_latt_set(X1,X2)),join_of_latt_set(X1,X2)) = join_of_latt_set(X1,X2) | empty_carrier(X1) [resolution 3284,3959]
+6626. ~element(X0,the_carrier(X1)) | ~meet_absorbing(X1) | ~latt_str(X1) | empty_carrier(X1) | join(X1,meet(X1,X0,join_of_latt_set(X1,X2)),join_of_latt_set(X1,X2)) = join_of_latt_set(X1,X2) [duplicate literal removal 6616]
+6741. 62 <=> element(bottom_of_semilattstr(sK397),the_carrier(sK397)) [avatar definition]
+6742. element(bottom_of_semilattstr(sK397),the_carrier(sK397)) <- (62) [avatar component clause 6741]
+6743. ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) <- (~62) [avatar component clause 6741]
+6750. ~meet_semilatt_str(sK397) | empty_carrier(sK397) <- (~62) [resolution 6743,3210]
+6751. empty_carrier(sK397) <- (~62) [subsumption resolution 6750,5873]
+6752. $false <- (~62) [subsumption resolution 6751,4340]
+6753. 62 [avatar contradiction clause 6752]
+8223. ~meet_semilatt_str(X0) | ~element(X1,the_carrier(X0)) | ~meet_commutative(X0) | meet_commut(X0,X1,bottom_of_semilattstr(X0)) = meet(X0,X1,bottom_of_semilattstr(X0)) | empty_carrier(X0) | empty_carrier(X0) | ~meet_semilatt_str(X0) [resolution 3594,3210]
+8229. meet_commut(X0,X1,sK128(X0,X2)) = meet(X0,X1,sK128(X0,X2)) | ~meet_semilatt_str(X0) | ~meet_commutative(X0) | empty_carrier(X0) | empty_carrier(X0) | lower_bounded_semilattstr(X0) | ~element(X2,the_carrier(X0)) | ~meet_semilatt_str(X0) | ~element(X1,the_carrier(X0)) [resolution 3594,3251]
+8247. ~element(X1,the_carrier(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0) | ~meet_commutative(X0) | meet_commut(X0,X1,bottom_of_semilattstr(X0)) = meet(X0,X1,bottom_of_semilattstr(X0)) [duplicate literal removal 8223]
+8248. ~element(X2,the_carrier(X0)) | empty_carrier(X0) | ~meet_commutative(X0) | ~meet_semilatt_str(X0) | ~element(X1,the_carrier(X0)) | lower_bounded_semilattstr(X0) | meet_commut(X0,X1,sK128(X0,X2)) = meet(X0,X1,sK128(X0,X2)) [duplicate literal removal 8229]
+8769. lower_bounded_semilattstr(X0) | join_of_latt_set(X0,X2) = join(X0,meet(X0,sK128(X0,X1),join_of_latt_set(X0,X2)),join_of_latt_set(X0,X2)) | ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~meet_absorbing(X0) | empty_carrier(X0) | ~meet_semilatt_str(X0) | ~latt_str(X0) [resolution 6626,3251]
+8792. ~latt_str(X0) | join_of_latt_set(X0,X2) = join(X0,meet(X0,sK128(X0,X1),join_of_latt_set(X0,X2)),join_of_latt_set(X0,X2)) | ~element(X1,the_carrier(X0)) | ~meet_absorbing(X0) | ~meet_semilatt_str(X0) | lower_bounded_semilattstr(X0) | empty_carrier(X0) [duplicate literal removal 8769]
+8804. ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~latt_str(X0) | lower_bounded_semilattstr(X0) | join_of_latt_set(X0,X2) = join(X0,meet(X0,sK128(X0,X1),join_of_latt_set(X0,X2)),join_of_latt_set(X0,X2)) | ~meet_absorbing(X0) [subsumption resolution 8792,3167]
+8812. ~below(X0,X2,join_of_latt_set(X0,X1)) | ~element(X2,the_carrier(X0)) | join_of_latt_set(X0,X1) = X2 | empty_carrier(X0) | ~element(X2,the_carrier(X0)) | ~lattice(X0) | ~join_semilatt_str(X0) | ~complete_latt_str(X0) | ~latt_str(X0) | empty_carrier(X0) | ~element(join_of_latt_set(X0,X1),the_carrier(X0)) | ~latt_element_smaller(X0,X2,X1) | ~join_commutative(X0) [resolution 4162,5679]
+8821. ~latt_str(X0) | ~complete_latt_str(X0) | ~join_commutative(X0) | ~lattice(X0) | ~element(join_of_latt_set(X0,X1),the_carrier(X0)) | ~below(X0,X2,join_of_latt_set(X0,X1)) | empty_carrier(X0) | ~join_semilatt_str(X0) | ~latt_element_smaller(X0,X2,X1) | ~element(X2,the_carrier(X0)) | join_of_latt_set(X0,X1) = X2 [duplicate literal removal 8812]
+8826. ~lattice(X0) | ~element(join_of_latt_set(X0,X1),the_carrier(X0)) | ~latt_str(X0) | empty_carrier(X0) | ~complete_latt_str(X0) | ~latt_element_smaller(X0,X2,X1) | ~join_semilatt_str(X0) | join_of_latt_set(X0,X1) = X2 | ~below(X0,X2,join_of_latt_set(X0,X1)) | ~element(X2,the_carrier(X0)) [subsumption resolution 8821,3945]
+8833. ~join_semilatt_str(X0) | empty_carrier(X0) | ~element(X2,the_carrier(X0)) | ~latt_element_smaller(X0,X2,X1) | ~complete_latt_str(X0) | ~below(X0,X2,join_of_latt_set(X0,X1)) | ~lattice(X0) | ~latt_str(X0) | join_of_latt_set(X0,X1) = X2 [subsumption resolution 8826,3959]
+8839. ~below(X0,X2,join_of_latt_set(X0,X1)) | ~latt_str(X0) | empty_carrier(X0) | ~latt_element_smaller(X0,X2,X1) | ~complete_latt_str(X0) | ~element(X2,the_carrier(X0)) | join_of_latt_set(X0,X1) = X2 | ~lattice(X0) [subsumption resolution 8833,3166]
+10873. ~element(X1,the_carrier(X0)) | ~latt_str(X0) | latt_element_smaller(X0,X1,empty_set) | empty_carrier(X0) [resolution 3618,5286]
+12339. ~meet_semilatt_str(X0) | empty_carrier(X0) | ~meet_commutative(X0) | ~latt_str(X0) | meet(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) = meet_commut(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) | empty_carrier(X0) [resolution 8247,3959]
+12360. ~latt_str(X0) | meet(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) = meet_commut(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0) | ~meet_commutative(X0) [duplicate literal removal 12339]
+12375. ~meet_commutative(X0) | empty_carrier(X0) | meet(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) = meet_commut(X0,join_of_latt_set(X0,X1),bottom_of_semilattstr(X0)) | ~latt_str(X0) [subsumption resolution 12360,3167]
+12395. meet_commut(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) = meet(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) | ~latt_str(sK397) | empty_carrier(sK397) [resolution 12375,5963]
+12396. meet_commut(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) = meet(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) | empty_carrier(sK397) [subsumption resolution 12395,4339]
+12397. meet_commut(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) = meet(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) [subsumption resolution 12396,4340]
+17234. bottom_of_semilattstr(sK397) = meet(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) | ~latt_str(sK397) | empty_carrier(sK397) <- (58) [resolution 5866,5894]
+17250. empty_carrier(sK397) | bottom_of_semilattstr(sK397) = meet(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) <- (58) [subsumption resolution 17234,4339]
+17258. bottom_of_semilattstr(sK397) = meet(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) <- (58) [subsumption resolution 17250,4340]
+17265. meet_commut(sK397,join_of_latt_set(sK397,X0),bottom_of_semilattstr(sK397)) = bottom_of_semilattstr(sK397) <- (58) [backward demodulation 12397,17258]
+17658. below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) | ~meet_absorbing(sK397) | ~meet_commutative(sK397) | empty_carrier(sK397) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) | ~latt_str(sK397) | ~element(join_of_latt_set(sK397,X0),the_carrier(sK397)) <- (58) [superposition 3339,17265]
+17660. below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) | ~meet_absorbing(sK397) | ~latt_str(sK397) | ~meet_commutative(sK397) | empty_carrier(sK397) <- (58) [subsumption resolution 17658,3959]
+17661. empty_carrier(sK397) | below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) | ~meet_commutative(sK397) | ~latt_str(sK397) | ~meet_absorbing(sK397) <- (58, 62) [subsumption resolution 17660,6742]
+17662. ~meet_commutative(sK397) | below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) | ~latt_str(sK397) | ~meet_absorbing(sK397) <- (58, 62) [subsumption resolution 17661,4340]
+17663. ~latt_str(sK397) | below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) | ~meet_absorbing(sK397) <- (58, 62) [subsumption resolution 17662,5963]
+17664. below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) | ~meet_absorbing(sK397) <- (58, 62) [subsumption resolution 17663,4339]
+17665. below(sK397,bottom_of_semilattstr(sK397),join_of_latt_set(sK397,X0)) <- (58, 62) [subsumption resolution 17664,6069]
+17707. ~lattice(sK397) | ~latt_element_smaller(sK397,bottom_of_semilattstr(sK397),X0) | ~latt_str(sK397) | join_of_latt_set(sK397,X0) = bottom_of_semilattstr(sK397) | empty_carrier(sK397) | ~complete_latt_str(sK397) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) <- (58, 62) [resolution 17665,8839]
+17714. ~latt_element_smaller(sK397,bottom_of_semilattstr(sK397),X0) | empty_carrier(sK397) | ~complete_latt_str(sK397) | ~latt_str(sK397) | join_of_latt_set(sK397,X0) = bottom_of_semilattstr(sK397) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) <- (58, 62) [subsumption resolution 17707,4343]
+17716. ~complete_latt_str(sK397) | join_of_latt_set(sK397,X0) = bottom_of_semilattstr(sK397) | ~latt_str(sK397) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) | ~latt_element_smaller(sK397,bottom_of_semilattstr(sK397),X0) <- (58, 62) [subsumption resolution 17714,4340]
+17718. ~latt_str(sK397) | join_of_latt_set(sK397,X0) = bottom_of_semilattstr(sK397) | ~latt_element_smaller(sK397,bottom_of_semilattstr(sK397),X0) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) <- (58, 62) [subsumption resolution 17716,4341]
+17720. join_of_latt_set(sK397,X0) = bottom_of_semilattstr(sK397) | ~element(bottom_of_semilattstr(sK397),the_carrier(sK397)) | ~latt_element_smaller(sK397,bottom_of_semilattstr(sK397),X0) <- (58, 62) [subsumption resolution 17718,4339]
+17722. ~latt_element_smaller(sK397,bottom_of_semilattstr(sK397),X0) | join_of_latt_set(sK397,X0) = bottom_of_semilattstr(sK397) <- (58, 62) [subsumption resolution 17720,6742]
+37930. empty_carrier(sK397) | ~latt_str(sK397) | latt_element_smaller(sK397,bottom_of_semilattstr(sK397),empty_set) <- (62) [resolution 10873,6742]
+37966. ~latt_str(sK397) | latt_element_smaller(sK397,bottom_of_semilattstr(sK397),empty_set) <- (62) [subsumption resolution 37930,4340]
+37974. latt_element_smaller(sK397,bottom_of_semilattstr(sK397),empty_set) <- (62) [subsumption resolution 37966,4339]
+37981. bottom_of_semilattstr(sK397) = join_of_latt_set(sK397,empty_set) <- (58, 62) [resolution 37974,17722]
+38001. $false <- (58, ~59, 62) [subsumption resolution 37981,5871]
+38002. ~58 | 59 | ~62 [avatar contradiction clause 38001]
+38997. 466 <=> element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) [avatar definition]
+38998. element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (466) [avatar component clause 38997]
+38999. ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (~466) [avatar component clause 38997]
+39518. empty_carrier(sK397) | ~latt_str(sK397) <- (~466) [resolution 38999,3959]
+39521. ~latt_str(sK397) <- (~466) [subsumption resolution 39518,4340]
+39522. $false <- (~466) [subsumption resolution 39521,4339]
+39523. 466 [avatar contradiction clause 39522]
+39559. ~meet_commutative(sK397) | meet(sK397,X0,join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) | ~meet_semilatt_str(sK397) | ~element(X0,the_carrier(sK397)) | empty_carrier(sK397) <- (466) [resolution 38998,3594]
+39560. ~meet_commutative(sK397) | meet_commut(sK397,join_of_latt_set(sK397,empty_set),X0) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) | empty_carrier(sK397) | ~element(X0,the_carrier(sK397)) | ~meet_semilatt_str(sK397) <- (466) [resolution 38998,3634]
+39615. meet_commut(sK397,join_of_latt_set(sK397,empty_set),X0) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) | ~meet_semilatt_str(sK397) | ~element(X0,the_carrier(sK397)) | empty_carrier(sK397) <- (466) [subsumption resolution 39560,5963]
+39618. meet(sK397,X0,join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) | empty_carrier(sK397) | ~element(X0,the_carrier(sK397)) | ~meet_semilatt_str(sK397) <- (466) [subsumption resolution 39559,5963]
+39620. ~element(X0,the_carrier(sK397)) | meet_commut(sK397,join_of_latt_set(sK397,empty_set),X0) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) | empty_carrier(sK397) <- (466) [subsumption resolution 39615,5873]
+39622. ~meet_semilatt_str(sK397) | meet(sK397,X0,join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) | ~element(X0,the_carrier(sK397)) <- (466) [subsumption resolution 39618,4340]
+39623. ~element(X0,the_carrier(sK397)) | meet_commut(sK397,join_of_latt_set(sK397,empty_set),X0) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) <- (466) [subsumption resolution 39620,4340]
+39625. ~element(X0,the_carrier(sK397)) | meet(sK397,X0,join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,X0,join_of_latt_set(sK397,empty_set)) <- (466) [subsumption resolution 39622,5873]
+45148. ~element(X0,the_carrier(sK397)) | ~meet_semilatt_str(sK397) | empty_carrier(sK397) | meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,X0)) | lower_bounded_semilattstr(sK397) <- (466) [resolution 39623,3251]
+45161. ~element(X0,the_carrier(sK397)) | lower_bounded_semilattstr(sK397) | meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,X0)) | empty_carrier(sK397) <- (466) [subsumption resolution 45148,5873]
+45168. empty_carrier(sK397) | meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,X0)) | ~element(X0,the_carrier(sK397)) <- (~58, 466) [subsumption resolution 45161,5867]
+45172. ~element(X0,the_carrier(sK397)) | meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,X0)) <- (~58, 466) [subsumption resolution 45168,4340]
+47214. lower_bounded_semilattstr(sK397) | empty_carrier(sK397) | meet(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) | ~element(X0,the_carrier(sK397)) | ~meet_semilatt_str(sK397) <- (466) [resolution 39625,3251]
+49257. empty_carrier(sK397) | ~latt_str(sK397) | meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,X0))) = meet_commut(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [resolution 45172,3959]
+49278. meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,X0))) = meet_commut(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) | ~latt_str(sK397) <- (~58, 466) [subsumption resolution 49257,4340]
+49292. meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,X0))) = meet_commut(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [subsumption resolution 49278,4339]
+51419. 620 <=> join_of_latt_set(sK397,empty_set) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) [avatar definition]
+51420. join_of_latt_set(sK397,empty_set) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (620) [avatar component clause 51419]
+51421. join_of_latt_set(sK397,empty_set) != meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (~620) [avatar component clause 51419]
+51423. 621 <=> meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) = join_of_latt_set(sK397,empty_set) [avatar definition]
+51425. meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) <- (~621) [avatar component clause 51423]
+61977. lower_bounded_semilattstr(sK397) | ~latt_str(sK397) | ~meet_absorbing(sK397) | join_of_latt_set(sK397,X0) = join(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | empty_carrier(sK397) <- (466) [resolution 8804,38998]
+62012. ~latt_str(sK397) | empty_carrier(sK397) | join_of_latt_set(sK397,X0) = join(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | ~meet_absorbing(sK397) <- (~58, 466) [subsumption resolution 61977,5867]
+62045. join_of_latt_set(sK397,X0) = join(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | ~meet_absorbing(sK397) | empty_carrier(sK397) <- (~58, 466) [subsumption resolution 62012,4339]
+62068. empty_carrier(sK397) | join_of_latt_set(sK397,X0) = join(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) <- (~58, 466) [subsumption resolution 62045,6069]
+62091. join_of_latt_set(sK397,X0) = join(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) <- (~58, 466) [subsumption resolution 62068,4340]
+65965. ~meet_semilatt_str(sK397) | ~meet_commutative(sK397) | ~element(X0,the_carrier(sK397)) | lower_bounded_semilattstr(sK397) | meet_commut(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) | empty_carrier(sK397) <- (466) [resolution 8248,38998]
+104553. meet_commut(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) | empty_carrier(sK397) | ~meet_commutative(sK397) | lower_bounded_semilattstr(sK397) | ~element(X0,the_carrier(sK397)) <- (466) [subsumption resolution 65965,5873]
+104561. ~meet_semilatt_str(sK397) | empty_carrier(sK397) | ~element(X0,the_carrier(sK397)) | meet(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [subsumption resolution 47214,5867]
+104586. ~meet_commutative(sK397) | ~element(X0,the_carrier(sK397)) | lower_bounded_semilattstr(sK397) | meet_commut(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (466) [subsumption resolution 104553,4340]
+104588. ~element(X0,the_carrier(sK397)) | empty_carrier(sK397) | meet(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [subsumption resolution 104561,5873]
+104593. ~element(X0,the_carrier(sK397)) | lower_bounded_semilattstr(sK397) | meet_commut(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (466) [subsumption resolution 104586,5963]
+104594. ~element(X0,the_carrier(sK397)) | meet(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) = meet_commut(sK397,sK128(sK397,X0),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [subsumption resolution 104588,4340]
+104595. ~element(X0,the_carrier(sK397)) | meet_commut(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet(sK397,X0,sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (~58, 466) [subsumption resolution 104593,5867]
+105004. ~element(join_of_latt_set(sK397,X0),the_carrier(sK397)) | below(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | ~join_semilatt_str(sK397) | ~element(meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),the_carrier(sK397)) | join_of_latt_set(sK397,X0) != join_of_latt_set(sK397,X0) | empty_carrier(sK397) <- (~58, 466) [superposition 4364,62091]
+105007. empty_carrier(sK397) | below(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | ~element(join_of_latt_set(sK397,X0),the_carrier(sK397)) | ~join_semilatt_str(sK397) | ~element(meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),the_carrier(sK397)) <- (~58, 466) [trivial inequality removal 105004]
+105008. below(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | ~join_semilatt_str(sK397) | ~element(join_of_latt_set(sK397,X0),the_carrier(sK397)) | ~element(meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),the_carrier(sK397)) <- (~58, 466) [subsumption resolution 105007,4340]
+105016. below(sK397,meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,X0)) | ~element(join_of_latt_set(sK397,X0),the_carrier(sK397)) | ~element(meet(sK397,sK128(sK397,join_of_latt_set(sK397,empty_set)),join_of_latt_set(sK397,X0)),the_carrier(sK397)) <- (~58, 466) [subsumption resolution 105008,5915]
+107463. empty_carrier(sK397) | ~latt_str(sK397) | meet_commut(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) = meet(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [resolution 104594,3959]
+107514. meet_commut(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) = meet(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) | ~latt_str(sK397) <- (~58, 466) [subsumption resolution 107463,4340]
+107530. meet_commut(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) = meet(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [subsumption resolution 107514,4339]
+107540. meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,X0))) = meet(sK397,sK128(sK397,join_of_latt_set(sK397,X0)),join_of_latt_set(sK397,empty_set)) <- (~58, 466) [forward demodulation 107530,49292]
+107557. ~meet_semilatt_str(sK397) | lower_bounded_semilattstr(sK397) | empty_carrier(sK397) | join_of_latt_set(sK397,empty_set) != meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) | meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) <- (~58, 466) [superposition 3250,107540]
+111919. ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) | below(sK397,meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),join_of_latt_set(sK397,empty_set)) | ~element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) <- (~58, 466) [superposition 105016,107540]
+111936. below(sK397,meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),join_of_latt_set(sK397,empty_set)) | ~element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) <- (~58, 466) [subsumption resolution 111919,38998]
+111950. 1026 <=> element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) [avatar definition]
+111951. element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) <- (1026) [avatar component clause 111950]
+111952. ~element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) <- (~1026) [avatar component clause 111950]
+111954. 1027 <=> below(sK397,meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),join_of_latt_set(sK397,empty_set)) [avatar definition]
+111956. below(sK397,meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),join_of_latt_set(sK397,empty_set)) <- (1027) [avatar component clause 111954]
+111957. ~1026 | 1027 | 58 | ~466 [avatar split clause 111936,38997,5865,111954,111950]
+111966. ~meet_commutative(sK397) | empty_carrier(sK397) | ~element(sK128(sK397,join_of_latt_set(sK397,empty_set)),the_carrier(sK397)) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) | ~meet_semilatt_str(sK397) <- (~1026) [resolution 111952,3475]
+111969. ~element(sK128(sK397,join_of_latt_set(sK397,empty_set)),the_carrier(sK397)) | empty_carrier(sK397) | ~meet_semilatt_str(sK397) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (~1026) [subsumption resolution 111966,5963]
+111970. ~meet_semilatt_str(sK397) | ~element(sK128(sK397,join_of_latt_set(sK397,empty_set)),the_carrier(sK397)) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (~1026) [subsumption resolution 111969,4340]
+111971. ~element(sK128(sK397,join_of_latt_set(sK397,empty_set)),the_carrier(sK397)) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (~1026) [subsumption resolution 111970,5873]
+111972. ~element(sK128(sK397,join_of_latt_set(sK397,empty_set)),the_carrier(sK397)) <- (466, ~1026) [subsumption resolution 111971,38998]
+111973. lower_bounded_semilattstr(sK397) | empty_carrier(sK397) | ~meet_semilatt_str(sK397) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (466, ~1026) [resolution 111972,3251]
+111976. empty_carrier(sK397) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) | ~meet_semilatt_str(sK397) <- (~58, 466, ~1026) [subsumption resolution 111973,5867]
+111977. ~meet_semilatt_str(sK397) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (~58, 466, ~1026) [subsumption resolution 111976,4340]
+111978. ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) <- (~58, 466, ~1026) [subsumption resolution 111977,5873]
+111979. $false <- (~58, 466, ~1026) [subsumption resolution 111978,38998]
+111980. 58 | ~466 | 1026 [avatar contradiction clause 111979]
+112273. ~latt_element_smaller(sK397,meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),empty_set) | ~lattice(sK397) | empty_carrier(sK397) | ~latt_str(sK397) | join_of_latt_set(sK397,empty_set) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) | ~complete_latt_str(sK397) | ~element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) <- (1027) [resolution 111956,8839]
+112277. ~element(meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))),the_carrier(sK397)) | empty_carrier(sK397) | ~lattice(sK397) | ~complete_latt_str(sK397) | join_of_latt_set(sK397,empty_set) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) | ~latt_str(sK397) <- (1027) [subsumption resolution 112273,10873]
+112280. ~complete_latt_str(sK397) | join_of_latt_set(sK397,empty_set) = meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) | ~latt_str(sK397) | ~lattice(sK397) | empty_carrier(sK397) <- (1026, 1027) [subsumption resolution 112277,111951]
+112283. ~lattice(sK397) | empty_carrier(sK397) | ~complete_latt_str(sK397) | ~latt_str(sK397) <- (~620, 1026, 1027) [subsumption resolution 112280,51421]
+112286. ~latt_str(sK397) | ~complete_latt_str(sK397) | empty_carrier(sK397) <- (~620, 1026, 1027) [subsumption resolution 112283,4343]
+112289. empty_carrier(sK397) | ~complete_latt_str(sK397) <- (~620, 1026, 1027) [subsumption resolution 112286,4339]
+112292. ~complete_latt_str(sK397) <- (~620, 1026, 1027) [subsumption resolution 112289,4340]
+112295. $false <- (~620, 1026, 1027) [subsumption resolution 112292,4341]
+112296. 620 | ~1026 | ~1027 [avatar contradiction clause 112295]
+112409. meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) | empty_carrier(sK397) | ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) | lower_bounded_semilattstr(sK397) | join_of_latt_set(sK397,empty_set) != meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (~58, 466) [subsumption resolution 107557,5873]
+112422. ~element(join_of_latt_set(sK397,empty_set),the_carrier(sK397)) | lower_bounded_semilattstr(sK397) | join_of_latt_set(sK397,empty_set) != meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) | meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) <- (~58, 466) [subsumption resolution 112409,4340]
+112423. join_of_latt_set(sK397,empty_set) != meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) | meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) | lower_bounded_semilattstr(sK397) <- (~58, 466) [subsumption resolution 112422,38998]
+112424. meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) | lower_bounded_semilattstr(sK397) <- (~58, 466, 620) [subsumption resolution 112423,51420]
+112425. meet(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) != join_of_latt_set(sK397,empty_set) <- (~58, 466, 620) [subsumption resolution 112424,5867]
+112426. ~621 | 58 | ~466 | ~620 [avatar split clause 112425,51419,38997,5865,51423]
+113321. empty_carrier(sK397) | ~latt_str(sK397) | meet(sK397,join_of_latt_set(sK397,X0),sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet_commut(sK397,join_of_latt_set(sK397,X0),sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (~58, 466) [resolution 104595,3959]
+113350. meet(sK397,join_of_latt_set(sK397,X0),sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet_commut(sK397,join_of_latt_set(sK397,X0),sK128(sK397,join_of_latt_set(sK397,empty_set))) | ~latt_str(sK397) <- (~58, 466) [subsumption resolution 113321,4340]
+113365. meet(sK397,join_of_latt_set(sK397,X0),sK128(sK397,join_of_latt_set(sK397,empty_set))) = meet_commut(sK397,join_of_latt_set(sK397,X0),sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (~58, 466) [subsumption resolution 113350,4339]
+113378. join_of_latt_set(sK397,empty_set) != meet_commut(sK397,join_of_latt_set(sK397,empty_set),sK128(sK397,join_of_latt_set(sK397,empty_set))) <- (~58, 466, ~621) [backward demodulation 51425,113365]
+113384. $false <- (~58, 466, 620, ~621) [subsumption resolution 113378,51420]
+113385. 58 | ~466 | ~620 | 621 [avatar contradiction clause 113384]
+113388. $false [avatar sat refutation 5872,6753,38002,39523,111957,111980,112296,112426,113385]
+% SZS output end Proof for SEU352+2
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 648
+% >>> Preprocessing
+% Introduced names: 55
+% Introduced skolems: 448
+% Pure predicates: 6
+% Unused predicate definitions: 1
+% Function definitions: 4
+% 
+% >>> Saturation
+% Initial clauses: 1808
+% Generated clauses: 114098
+% Activations started: 3484
+% Active clauses: 3484
+% Passive clauses: 31215
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 5259
+% Trivial inequalities: 449
+% Fw subsumption resolutions: 24248
+% Fw demodulations: 14426
+% Bw demodulations: 8533
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 1263
+% Equational tautologies: 334
+% Forward subsumptions: 37516
+% Fw demodulations to eq. taut.: 61
+% Bw demodulations to eq. taut.: 416
+% 
+% >>> Generating Inferences
+% Binary resolution: 34885
+% Factoring: 1
+% Forward superposition: 6568
+% Backward superposition: 10453
+% Self superposition: 33
+% Equality resolution: 10
+% 
+% >>> AVATAR
+% Split clauses: 839
+% Split components: 1806
+% Sat splitting refutations: 247
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1234
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 173
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 1718
+% Bulk evals: 13495
+% 
+% Time elapsed: 4.349 s
+% Peak memory usage: 301 MB
+% Instructions burned: 24110 (million)
+% ------------------------------
+% ------------------------------

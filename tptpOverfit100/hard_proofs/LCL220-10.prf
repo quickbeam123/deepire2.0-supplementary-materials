@@ -1,0 +1,111 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop11/script-model.pt -npcc on -si on -rtra on --random_seed 12 Problems/LCL/LCL220-10.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for LCL220-10
+% SZS output start Proof for LCL220-10
+1. ifeq(X0,X0,X1,X2) = X1 [input(axiom)]
+2. axiom(implies(or(X0,X0),X0)) = true [input(axiom)]
+3. true = axiom(implies(X0,or(X1,X0))) [input(axiom)]
+4. true = axiom(implies(or(X0,X1),or(X1,X0))) [input(axiom)]
+5. true = axiom(implies(or(X0,or(X1,X2)),or(X1,or(X0,X2)))) [input(axiom)]
+6. true = axiom(implies(implies(X0,X1),implies(or(X2,X0),or(X2,X1)))) [input(axiom)]
+7. implies(X3,X4) = or(not(X3),X4) [input(axiom)]
+8. true = ifeq(axiom(X3),true,theorem(X3),true) [input(axiom)]
+9. true = ifeq(theorem(implies(X4,X3)),true,ifeq(theorem(X4),true,theorem(X3),true),true) [input(axiom)]
+10. true != theorem(implies(implies(implies(p,q),q),implies(implies(q,p),p))) [input(negated conjecture)]
+11. true = axiom(or(not(or(X0,X1)),or(X1,X0))) [definition unfolding 4,7]
+12. true = axiom(or(not(or(X0,or(X1,X2))),or(X1,or(X0,X2)))) [definition unfolding 5,7]
+13. true = axiom(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))) [definition unfolding 6,7,7,7]
+14. true = axiom(or(not(X0),or(X1,X0))) [definition unfolding 3,7]
+15. true = axiom(or(not(or(X0,X0)),X0)) [definition unfolding 2,7]
+16. true = ifeq(theorem(or(not(X4),X3)),true,ifeq(theorem(X4),true,theorem(X3),true),true) [definition unfolding 9,7]
+17. true != theorem(or(not(or(not(or(not(p),q)),q)),or(not(or(not(q),p)),p))) [definition unfolding 10,7,7,7,7,7]
+18. true = ifeq(true,true,theorem(or(not(or(X0,or(X1,X2))),or(X1,or(X0,X2)))),true) [superposition 8,12]
+19. true = ifeq(true,true,theorem(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))),true) [superposition 8,13]
+20. true = ifeq(true,true,theorem(or(not(or(X0,X1)),or(X1,X0))),true) [superposition 8,11]
+21. true = ifeq(true,true,theorem(or(not(X0),or(X1,X0))),true) [superposition 8,14]
+22. true = ifeq(true,true,theorem(or(not(or(X0,X0)),X0)),true) [superposition 8,15]
+23. true = theorem(or(not(or(X0,X1)),or(X1,X0))) [forward demodulation 20,1]
+24. true = theorem(or(not(or(X0,X0)),X0)) [forward demodulation 22,1]
+25. true = theorem(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))) [forward demodulation 19,1]
+26. true = theorem(or(not(X0),or(X1,X0))) [forward demodulation 21,1]
+27. true = theorem(or(not(or(X0,or(X1,X2))),or(X1,or(X0,X2)))) [forward demodulation 18,1]
+38. true = ifeq(theorem(or(not(or(not(X0),or(X1,X0))),X2)),true,ifeq(true,true,theorem(X2),true),true) [superposition 16,26]
+39. true = ifeq(theorem(or(not(or(not(X0),or(X1,X0))),X2)),true,theorem(X2),true) [forward demodulation 38,1]
+42. true = ifeq(true,true,ifeq(theorem(or(X0,or(X1,X2))),true,theorem(or(X1,or(X0,X2))),true),true) [superposition 16,27]
+47. true = ifeq(theorem(or(X0,or(X1,X2))),true,theorem(or(X1,or(X0,X2))),true) [forward demodulation 42,1]
+49. true = ifeq(true,true,ifeq(theorem(or(not(X0),X1)),true,theorem(or(not(or(X2,X0)),or(X2,X1))),true),true) [superposition 16,25]
+52. true = ifeq(theorem(or(not(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))),X3)),true,ifeq(true,true,theorem(X3),true),true) [superposition 16,25]
+54. true = ifeq(theorem(or(not(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))),X3)),true,theorem(X3),true) [forward demodulation 52,1]
+55. true = ifeq(theorem(or(not(X0),X1)),true,theorem(or(not(or(X2,X0)),or(X2,X1))),true) [forward demodulation 49,1]
+63. true = ifeq(true,true,theorem(or(not(or(X2,or(X0,X1))),or(X2,or(X1,X0)))),true) [superposition 55,23]
+67. true = ifeq(true,true,theorem(or(not(or(X1,or(X0,X0))),or(X1,X0))),true) [superposition 55,24]
+76. true = theorem(or(not(or(X2,or(X0,X1))),or(X2,or(X1,X0)))) [forward demodulation 63,1]
+77. true = theorem(or(not(or(X1,or(X0,X0))),or(X1,X0))) [forward demodulation 67,1]
+82. true = ifeq(true,true,theorem(or(not(or(X2,X0)),or(not(or(not(X0),X1)),or(X2,X1)))),true) [superposition 47,25]
+91. true = theorem(or(not(or(X2,X0)),or(not(or(not(X0),X1)),or(X2,X1)))) [forward demodulation 82,1]
+141. true = ifeq(true,true,ifeq(theorem(or(X0,X1)),true,theorem(or(not(or(not(X1),X2)),or(X0,X2))),true),true) [superposition 16,91]
+153. true = ifeq(theorem(or(X0,X1)),true,theorem(or(not(or(not(X1),X2)),or(X0,X2))),true) [forward demodulation 141,1]
+315. true = ifeq(true,true,theorem(or(not(or(X2,or(X0,or(X1,X1)))),or(X2,or(X0,X1)))),true) [superposition 55,77]
+330. true = theorem(or(not(or(X2,or(X0,or(X1,X1)))),or(X2,or(X0,X1)))) [forward demodulation 315,1]
+378. true = ifeq(true,true,theorem(or(not(X0),or(X0,X1))),true) [superposition 39,76]
+405. true = theorem(or(not(X0),or(X0,X1))) [forward demodulation 378,1]
+422. true = ifeq(true,true,theorem(or(X0,or(not(X0),X1))),true) [superposition 47,405]
+435. true = theorem(or(X0,or(not(X0),X1))) [forward demodulation 422,1]
+879. true = ifeq(true,true,theorem(or(not(or(not(or(not(X0),X1)),X2)),or(X0,X2))),true) [superposition 153,435]
+907. true = theorem(or(not(or(not(or(not(X0),X1)),X2)),or(X0,X2))) [forward demodulation 879,1]
+5179. true = ifeq(true,true,theorem(or(not(or(not(X0),X1)),or(not(or(X1,X0)),X1))),true) [superposition 54,330]
+5243. true = theorem(or(not(or(not(X0),X1)),or(not(or(X1,X0)),X1))) [forward demodulation 5179,1]
+5277. true = ifeq(true,true,theorem(or(not(or(X1,X0)),or(not(or(not(X0),X1)),X1))),true) [superposition 47,5243]
+5318. true = theorem(or(not(or(X1,X0)),or(not(or(not(X0),X1)),X1))) [forward demodulation 5277,1]
+5470. true = ifeq(true,true,theorem(or(not(or(X2,or(X0,X1))),or(X2,or(not(or(not(X1),X0)),X0)))),true) [superposition 55,5318]
+5536. true = theorem(or(not(or(X2,or(X0,X1))),or(X2,or(not(or(not(X1),X0)),X0)))) [forward demodulation 5470,1]
+97772. true = ifeq(true,true,ifeq(theorem(or(X0,or(X1,X2))),true,theorem(or(X0,or(not(or(not(X2),X1)),X1))),true),true) [superposition 16,5536]
+98025. true = ifeq(theorem(or(X0,or(X1,X2))),true,theorem(or(X0,or(not(or(not(X2),X1)),X1))),true) [forward demodulation 97772,1]
+142199. true = ifeq(true,true,theorem(or(not(or(not(or(not(X0),X1)),X2)),or(not(or(not(X2),X0)),X0))),true) [superposition 98025,907]
+142427. true = theorem(or(not(or(not(or(not(X0),X1)),X2)),or(not(or(not(X2),X0)),X0))) [forward demodulation 142199,1]
+142544. true != true [backward demodulation 17,142427]
+142545. $false [trivial inequality removal 142544]
+% SZS output end Proof for LCL220-10
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 10
+% >>> Preprocessing
+% Function definitions: 1
+% 
+% >>> Saturation
+% Initial clauses: 9
+% Generated clauses: 142537
+% Activations started: 582
+% Active clauses: 582
+% Passive clauses: 26131
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Trivial inequalities: 1
+% Fw demodulations: 46345
+% Bw demodulations: 30
+% 
+% >>> Deletion Inferences
+% Forward subsumptions: 69943
+% Bw demodulations to eq. taut.: 53
+% 
+% >>> Generating Inferences
+% Forward superposition: 47774
+% Backward superposition: 48378
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 560
+% Bulk evals: 16562
+% 
+% Time elapsed: 5.216 s
+% Peak memory usage: 382 MB
+% Instructions burned: 31307 (million)
+% ------------------------------
+% ------------------------------

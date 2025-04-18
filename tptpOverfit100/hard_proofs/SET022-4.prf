@@ -1,0 +1,238 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop9/script-model.pt -npcc on -npcct 0.037 -si on -rtra on --random_seed 7 Problems/SET/SET022-4.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for SET022-4
+% SZS output start Proof for SET022-4
+3. member(f1(X0,X1),X1) | member(f1(X0,X1),X0) | X0 = X1 [input(axiom)]
+4. ~member(f1(X0,X1),X1) | ~member(f1(X0,X1),X0) | X0 = X1 [input(axiom)]
+5. ~member(X2,non_ordered_pair(X0,X1)) | X0 = X2 | X1 = X2 [input(axiom)]
+6. ~little_set(X2) | member(X2,non_ordered_pair(X0,X1)) | X0 != X2 [input(axiom)]
+7. ~little_set(X2) | member(X2,non_ordered_pair(X0,X1)) | X1 != X2 [input(axiom)]
+8. little_set(non_ordered_pair(X0,X1)) [input(axiom)]
+9. singleton_set(X0) = non_ordered_pair(X0,X0) [input(axiom)]
+10. ordered_pair(X0,X1) = non_ordered_pair(singleton_set(X0),non_ordered_pair(X0,X1)) [input(axiom)]
+11. little_set(f2(X0)) | ~ordered_pair_predicate(X0) [input(axiom)]
+12. little_set(f3(X0)) | ~ordered_pair_predicate(X0) [input(axiom)]
+13. ~ordered_pair_predicate(X0) | ordered_pair(f2(X0),f3(X0)) = X0 [input(axiom)]
+15. ~member(X3,first(X0)) | little_set(f4(X3,X0)) [input(axiom)]
+17. ~member(X3,first(X0)) | ordered_pair(f4(X3,X0),f5(X3,X0)) = X0 [input(axiom)]
+18. member(X3,f4(X3,X0)) | ~member(X3,first(X0)) [input(axiom)]
+19. ordered_pair(X2,X4) != X0 | ~little_set(X2) | member(X3,first(X0)) | ~little_set(X4) | ~member(X3,X2) [input(axiom)]
+58. ~member(X3,empty_set) [input(axiom)]
+98. member(f24(X0),X0) | empty_set = X0 [input(axiom)]
+101. member(f26(X0),X0) | empty_set = X0 | ~little_set(X0) [input(axiom)]
+142. ordered_pair_predicate(a) [input(assumption)]
+143. ~little_set(first(a)) [input(negated conjecture)]
+145. ordered_pair(X0,X1) = non_ordered_pair(non_ordered_pair(X0,X0),non_ordered_pair(X0,X1)) [definition unfolding 10,9]
+150. ~member(X3,first(X0)) | non_ordered_pair(non_ordered_pair(f4(X3,X0),f4(X3,X0)),non_ordered_pair(f4(X3,X0),f5(X3,X0))) = X0 [definition unfolding 17,145]
+152. ~ordered_pair_predicate(X0) | non_ordered_pair(non_ordered_pair(f2(X0),f2(X0)),non_ordered_pair(f2(X0),f3(X0))) = X0 [definition unfolding 13,145]
+154. non_ordered_pair(non_ordered_pair(X2,X2),non_ordered_pair(X2,X4)) != X0 | ~little_set(X2) | member(X3,first(X0)) | ~little_set(X4) | ~member(X3,X2) [definition unfolding 19,145]
+179. member(X2,non_ordered_pair(X2,X1)) | ~little_set(X2) [equality resolution 6]
+180. member(X2,non_ordered_pair(X0,X2)) | ~little_set(X2) [equality resolution 7]
+181. member(X3,first(non_ordered_pair(non_ordered_pair(X2,X2),non_ordered_pair(X2,X4)))) | ~member(X3,X2) | ~little_set(X4) | ~little_set(X2) [equality resolution 154]
+187. a = non_ordered_pair(non_ordered_pair(f2(a),f2(a)),non_ordered_pair(f2(a),f3(a))) [resolution 152,142]
+200. ~little_set(non_ordered_pair(f2(a),f3(a))) | member(non_ordered_pair(f2(a),f3(a)),a) [superposition 180,187]
+201. member(non_ordered_pair(f2(a),f3(a)),a) [subsumption resolution 200,8]
+205. ~member(X0,a) | non_ordered_pair(f2(a),f3(a)) = X0 | non_ordered_pair(f2(a),f2(a)) = X0 [superposition 5,187]
+211. ~member(X0,f2(a)) | ~little_set(f3(a)) | member(X0,first(a)) | ~little_set(f2(a)) [superposition 181,187]
+214. 1 <=> little_set(f3(a)) [avatar definition]
+215. little_set(f3(a)) <- (1) [avatar component clause 214]
+216. ~little_set(f3(a)) <- (~1) [avatar component clause 214]
+218. 2 <=> little_set(f2(a)) [avatar definition]
+219. little_set(f2(a)) <- (2) [avatar component clause 218]
+220. ~little_set(f2(a)) <- (~2) [avatar component clause 218]
+222. 3 <=> ! [X0] : (~member(X0,f2(a)) | member(X0,first(a))) [avatar definition]
+223. ~member(X0,f2(a)) | member(X0,first(a)) <- (3) [avatar component clause 222]
+224. ~1 | ~2 | 3 [avatar split clause 211,222,218,214]
+226. ~ordered_pair_predicate(a) <- (~1) [resolution 216,12]
+227. $false <- (~1) [subsumption resolution 226,142]
+228. 1 [avatar contradiction clause 227]
+229. ~ordered_pair_predicate(a) <- (~2) [resolution 220,11]
+230. $false <- (~2) [subsumption resolution 229,142]
+231. 2 [avatar contradiction clause 230]
+236. f24(non_ordered_pair(X0,X1)) = X0 | f24(non_ordered_pair(X0,X1)) = X1 | non_ordered_pair(X0,X1) = empty_set [resolution 98,5]
+241. empty_set = a | f24(a) = non_ordered_pair(f2(a),f2(a)) | f24(a) = non_ordered_pair(f2(a),f3(a)) [resolution 98,205]
+261. 8 <=> f24(a) = non_ordered_pair(f2(a),f2(a)) [avatar definition]
+263. f24(a) = non_ordered_pair(f2(a),f2(a)) <- (8) [avatar component clause 261]
+265. 9 <=> empty_set = a [avatar definition]
+266. empty_set != a <- (~9) [avatar component clause 265]
+267. empty_set = a <- (9) [avatar component clause 265]
+269. 10 <=> f24(a) = non_ordered_pair(f2(a),f3(a)) [avatar definition]
+271. f24(a) = non_ordered_pair(f2(a),f3(a)) <- (10) [avatar component clause 269]
+272. 8 | 9 | 10 [avatar split clause 241,269,265,261]
+547. member(non_ordered_pair(f2(empty_set),f3(empty_set)),empty_set) <- (9) [backward demodulation 201,267]
+564. $false <- (9) [subsumption resolution 547,58]
+565. ~9 [avatar contradiction clause 564]
+574. a = non_ordered_pair(non_ordered_pair(f2(a),f2(a)),non_ordered_pair(f2(a),f3(a))) [resolution 142,152]
+695. f2(a) = X0 | ~member(X0,f24(a)) | f2(a) = X0 <- (8) [superposition 5,263]
+707. ~member(X0,f24(a)) | f2(a) = X0 <- (8) [duplicate literal removal 695]
+717. 23 <=> member(f2(a),f24(a)) [avatar definition]
+719. member(f2(a),f24(a)) <- (23) [avatar component clause 717]
+782. f26(non_ordered_pair(X0,X1)) = X1 | f26(non_ordered_pair(X0,X1)) = X0 | ~little_set(non_ordered_pair(X0,X1)) | non_ordered_pair(X0,X1) = empty_set [resolution 101,5]
+795. f26(non_ordered_pair(X0,X1)) = X1 | f26(non_ordered_pair(X0,X1)) = X0 | non_ordered_pair(X0,X1) = empty_set [subsumption resolution 782,8]
+814. 29 <=> f24(a) = f26(a) [avatar definition]
+815. f24(a) != f26(a) <- (~29) [avatar component clause 814]
+816. f24(a) = f26(a) <- (29) [avatar component clause 814]
+1971. member(f1(f2(a),X0),first(a)) | member(f1(f2(a),X0),X0) | f2(a) = X0 <- (3) [resolution 223,3]
+2445. 95 <=> first(a) = f2(a) [avatar definition]
+2446. first(a) != f2(a) <- (~95) [avatar component clause 2445]
+2447. first(a) = f2(a) <- (95) [avatar component clause 2445]
+2453. ~little_set(f2(a)) <- (95) [backward demodulation 143,2447]
+2512. $false <- (2, 95) [subsumption resolution 2453,219]
+2513. ~2 | ~95 [avatar contradiction clause 2512]
+3807. first(a) = f2(a) | member(f1(f2(a),first(a)),first(a)) <- (3) [factoring 1971]
+3838. member(f1(f2(a),first(a)),first(a)) <- (3, ~95) [subsumption resolution 3807,2446]
+3857. first(a) = f2(a) | ~member(f1(f2(a),first(a)),f2(a)) <- (3, ~95) [resolution 3838,4]
+3858. little_set(f4(f1(f2(a),first(a)),a)) <- (3, ~95) [resolution 3838,15]
+3860. a = non_ordered_pair(non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)),non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a))) <- (3, ~95) [resolution 3838,150]
+3864. ~member(f1(f2(a),first(a)),f2(a)) <- (3, ~95) [subsumption resolution 3857,2446]
+5347. 170 <=> f2(a) = f3(a) [avatar definition]
+5348. f2(a) != f3(a) <- (~170) [avatar component clause 5347]
+5349. f2(a) = f3(a) <- (170) [avatar component clause 5347]
+7038. member(non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)),a) | ~little_set(non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a))) <- (3, ~95) [superposition 179,3860]
+7044. f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) | f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) | empty_set = a <- (3, ~95) [superposition 236,3860]
+7048. non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) = f26(a) | empty_set = a | f26(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) <- (3, ~95) [superposition 795,3860]
+7059. non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) = f26(a) | f26(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) <- (3, ~9, ~95) [subsumption resolution 7048,266]
+7061. member(non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)),a) <- (3, ~95) [subsumption resolution 7038,8]
+7064. f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) | f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) <- (3, ~9, ~95) [subsumption resolution 7044,266]
+7076. 287 <=> f26(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) [avatar definition]
+7078. f26(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) <- (287) [avatar component clause 7076]
+7080. 288 <=> non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) = f26(a) [avatar definition]
+7081. non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) != f26(a) <- (~288) [avatar component clause 7080]
+7082. non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) = f26(a) <- (288) [avatar component clause 7080]
+7085. 289 <=> f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) [avatar definition]
+7087. f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) <- (289) [avatar component clause 7085]
+7089. 290 <=> f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) [avatar definition]
+7091. f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f5(f1(f2(a),first(a)),a)) <- (290) [avatar component clause 7089]
+7100. 288 | 287 | ~3 | 9 | 95 [avatar split clause 7059,2445,265,222,7076,7080]
+7104. 289 | 290 | ~3 | 9 | 95 [avatar split clause 7064,2445,265,222,7089,7085]
+7132. f24(a) = f26(a) <- (287, 290) [backward demodulation 7078,7091]
+7133. $false <- (~29, 287, 290) [subsumption resolution 7132,815]
+7134. 29 | ~287 | ~290 [avatar contradiction clause 7133]
+22779. 666 <=> f2(a) = f4(f1(f2(a),first(a)),a) [avatar definition]
+22780. f2(a) != f4(f1(f2(a),first(a)),a) <- (~666) [avatar component clause 22779]
+22781. f2(a) = f4(f1(f2(a),first(a)),a) <- (666) [avatar component clause 22779]
+22923. member(f1(f2(a),first(a)),f2(a)) | ~member(f1(f2(a),first(a)),first(a)) <- (666) [superposition 18,22781]
+22924. ~member(f1(f2(a),first(a)),first(a)) <- (3, ~95, 666) [subsumption resolution 22923,3864]
+22926. $false <- (3, ~95, 666) [subsumption resolution 22924,3838]
+22927. ~3 | 95 | ~666 [avatar contradiction clause 22926]
+23395. ~little_set(f4(f1(f2(a),first(a)),a)) | member(f4(f1(f2(a),first(a)),a),f24(a)) <- (289) [superposition 179,7087]
+23452. 681 <=> member(f4(f1(f2(a),first(a)),a),f24(a)) [avatar definition]
+23454. member(f4(f1(f2(a),first(a)),a),f24(a)) <- (681) [avatar component clause 23452]
+23472. member(f4(f1(f2(a),first(a)),a),f24(a)) <- (3, ~95, 289) [subsumption resolution 23395,3858]
+23529. 681 | ~3 | 95 | ~289 [avatar split clause 23472,7085,2445,222,23452]
+23583. ~little_set(f4(f1(f2(a),first(a)),a)) | member(f4(f1(f2(a),first(a)),a),f24(a)) <- (290) [superposition 179,7091]
+23626. member(f4(f1(f2(a),first(a)),a),f24(a)) <- (3, ~95, 290) [subsumption resolution 23583,3858]
+23659. 681 | ~3 | 95 | ~290 [avatar split clause 23626,7089,2445,222,23452]
+23988. f2(a) = f4(f1(f2(a),first(a)),a) <- (8, 681) [resolution 23454,707]
+23994. $false <- (8, ~666, 681) [subsumption resolution 23988,22780]
+23995. ~8 | 666 | ~681 [avatar contradiction clause 23994]
+24354. ~member(X0,a) | non_ordered_pair(f2(a),f2(a)) = X0 | f24(a) = X0 <- (10) [forward demodulation 205,271]
+24371. a = non_ordered_pair(non_ordered_pair(f2(a),f2(a)),f24(a)) <- (10) [forward demodulation 574,271]
+24449. 715 <=> member(f3(a),f26(a)) [avatar definition]
+24450. ~member(f3(a),f26(a)) <- (~715) [avatar component clause 24449]
+24451. member(f3(a),f26(a)) <- (715) [avatar component clause 24449]
+24662. ~member(X0,f24(a)) | f2(a) = X0 | f3(a) = X0 <- (10) [superposition 5,271]
+24771. empty_set = a | f24(a) = f26(a) | f26(a) = non_ordered_pair(f2(a),f2(a)) <- (10) [superposition 795,24371]
+24795. f24(a) = f26(a) | f26(a) = non_ordered_pair(f2(a),f2(a)) <- (~9, 10) [subsumption resolution 24771,266]
+24813. f26(a) = non_ordered_pair(f2(a),f2(a)) <- (~9, 10, ~29) [subsumption resolution 24795,815]
+24987. f24(a) = non_ordered_pair(f2(a),f2(a)) <- (10, 170) [backward demodulation 271,5349]
+25085. 8 | ~10 | ~170 [avatar split clause 24987,5347,269,261]
+25244. f3(a) = f4(f1(f2(a),first(a)),a) | f2(a) = f4(f1(f2(a),first(a)),a) <- (10, 681) [resolution 24662,23454]
+25257. f3(a) = f4(f1(f2(a),first(a)),a) <- (10, ~666, 681) [subsumption resolution 25244,22780]
+25259. non_ordered_pair(f3(a),f3(a)) = f26(a) <- (10, 288, ~666, 681) [backward demodulation 7082,25257]
+25653. ~member(X0,f26(a)) | f2(a) = X0 | f2(a) = X0 <- (~9, 10, ~29) [superposition 5,24813]
+25697. ~member(X0,f26(a)) | f2(a) = X0 <- (~9, 10, ~29) [duplicate literal removal 25653]
+28698. ~little_set(f2(a)) | member(f2(a),f24(a)) <- (10) [superposition 179,271]
+29451. f2(a) = f3(a) <- (~9, 10, ~29, 715) [resolution 24451,25697]
+29455. $false <- (~9, 10, ~29, ~170, 715) [subsumption resolution 29451,5348]
+29456. 9 | ~10 | 29 | 170 | ~715 [avatar contradiction clause 29455]
+30721. ~little_set(f3(a)) | member(f3(a),f26(a)) <- (10, 288, ~666, 681) [superposition 179,25259]
+30797. member(f3(a),f26(a)) <- (1, 10, 288, ~666, 681) [subsumption resolution 30721,215]
+30853. $false <- (1, 10, 288, ~666, 681, ~715) [subsumption resolution 30797,24450]
+30854. ~1 | ~10 | ~288 | 666 | ~681 | 715 [avatar contradiction clause 30853]
+30906. non_ordered_pair(f3(a),f3(a)) != f26(a) <- (10, ~288, ~666, 681) [forward demodulation 7081,25257]
+31215. member(non_ordered_pair(f3(a),f3(a)),a) <- (3, 10, ~95, ~666, 681) [forward demodulation 7061,25257]
+31631. non_ordered_pair(f3(a),f3(a)) != f24(a) <- (10, 29, ~288, ~666, 681) [forward demodulation 30906,816]
+32800. non_ordered_pair(f3(a),f3(a)) = f24(a) | non_ordered_pair(f3(a),f3(a)) = non_ordered_pair(f2(a),f2(a)) <- (3, 10, ~95, ~666, 681) [resolution 31215,24354]
+32804. non_ordered_pair(f3(a),f3(a)) = non_ordered_pair(f2(a),f2(a)) <- (3, 10, 29, ~95, ~288, ~666, 681) [subsumption resolution 32800,31631]
+32861. f3(a) = X0 | f3(a) = X0 | ~member(X0,non_ordered_pair(f2(a),f2(a))) <- (3, 10, 29, ~95, ~288, ~666, 681) [superposition 5,32804]
+32909. ~member(X0,non_ordered_pair(f2(a),f2(a))) | f3(a) = X0 <- (3, 10, 29, ~95, ~288, ~666, 681) [duplicate literal removal 32861]
+33595. f2(a) = f3(a) | ~little_set(f2(a)) <- (3, 10, 29, ~95, ~288, ~666, 681) [resolution 32909,179]
+33667. ~little_set(f2(a)) <- (3, 10, 29, ~95, ~170, ~288, ~666, 681) [subsumption resolution 33595,5348]
+33672. $false <- (2, 3, 10, 29, ~95, ~170, ~288, ~666, 681) [subsumption resolution 33667,219]
+33673. ~2 | ~3 | ~10 | ~29 | 95 | 170 | 288 | 666 | ~681 [avatar contradiction clause 33672]
+33682. 775 <=> non_ordered_pair(f3(a),f3(a)) = f24(a) [avatar definition]
+33684. non_ordered_pair(f3(a),f3(a)) = f24(a) <- (775) [avatar component clause 33682]
+33688. f24(a) = non_ordered_pair(f4(f1(f2(a),first(a)),a),f4(f1(f2(a),first(a)),a)) <- (29, 288) [forward demodulation 7082,816]
+33696. non_ordered_pair(f3(a),f3(a)) = f24(a) <- (10, 29, 288, ~666, 681) [forward demodulation 33688,25257]
+33700. 775 | ~10 | ~29 | ~288 | 666 | ~681 [avatar split clause 33696,23452,22779,7080,814,269,33682]
+33729. non_ordered_pair(f3(a),f3(a)) = f24(a) <- (10, 289, ~666, 681) [forward demodulation 7087,25257]
+37889. ~member(X0,f24(a)) | f3(a) = X0 | f3(a) = X0 <- (775) [superposition 5,33684]
+37935. ~member(X0,f24(a)) | f3(a) = X0 <- (775) [duplicate literal removal 37889]
+38023. f2(a) = f3(a) <- (23, 775) [resolution 37935,719]
+38040. $false <- (23, ~170, 775) [subsumption resolution 38023,5348]
+38041. ~23 | 170 | ~775 [avatar contradiction clause 38040]
+38048. member(f2(a),f24(a)) <- (2, 10) [subsumption resolution 28698,219]
+38182. 23 | ~2 | ~10 [avatar split clause 38048,269,218,717]
+38288. 775 | ~10 | ~289 | 666 | ~681 [avatar split clause 33729,23452,22779,7085,269,33682]
+38442. $false [avatar sat refutation 224,228,231,272,565,2513,7100,7104,7134,22927,23529,23659,23995,25085,29456,30854,33673,33700,38041,38182,38288]
+% SZS output end Proof for SET022-4
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 143
+% >>> Preprocessing
+% Function definitions: 6
+% 
+% >>> Saturation
+% Initial clauses: 137
+% Generated clauses: 43660
+% Activations started: 1601
+% Active clauses: 1601
+% Passive clauses: 17615
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 1077
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 3384
+% Fw demodulations: 8021
+% Bw demodulations: 7785
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 41
+% Equational tautologies: 192
+% Forward subsumptions: 11882
+% Fw demodulations to eq. taut.: 14
+% Bw demodulations to eq. taut.: 36
+% 
+% >>> Generating Inferences
+% Binary resolution: 6922
+% Factoring: 12
+% Forward superposition: 691
+% Backward superposition: 6053
+% Equality factoring: 14
+% Equality resolution: 14
+% 
+% >>> AVATAR
+% Split clauses: 771
+% Split components: 1733
+% Sat splitting refutations: 286
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1448
+% SAT solver unit clauses: 13
+% SAT solver binary clauses: 120
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 634
+% Bulk evals: 3065
+% 
+% Time elapsed: 1.352 s
+% Peak memory usage: 178 MB
+% Instructions burned: 7634 (million)
+% ------------------------------
+% ------------------------------

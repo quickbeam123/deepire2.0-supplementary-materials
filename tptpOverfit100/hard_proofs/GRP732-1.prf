@@ -1,0 +1,183 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop7/script-model.pt -npcc on -si on -rtra on --random_seed 12 Problems/GRP/GRP732-1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for GRP732-1
+% SZS output start Proof for GRP732-1
+1. mult(unit,X0) = X0 [input(axiom)]
+2. mult(X0,unit) = X0 [input(axiom)]
+3. mult(X0,ld(X0,X1)) = X1 [input(axiom)]
+4. ld(X0,mult(X0,X1)) = X1 [input(axiom)]
+5. rd(mult(X0,X1),X1) = X0 [input(axiom)]
+6. mult(rd(X0,X1),X1) = X0 [input(axiom)]
+7. mult(rd(mult(X0,X1),X0),mult(X0,X2)) = mult(X0,mult(X1,X2)) [input(axiom)]
+8. mult(mult(X0,X1),ld(X1,mult(X2,X1))) = mult(mult(X0,X2),X1) [input(axiom)]
+9. mult(a,mult(b,ld(mult(c,d),mult(d,c)))) != mult(mult(a,b),ld(mult(c,d),mult(d,c))) [input(negated conjecture)]
+10. mult(mult(mult(X0,X1),X2),ld(ld(X2,mult(X1,X2)),mult(X3,ld(X2,mult(X1,X2))))) = mult(mult(mult(X0,X2),X3),ld(X2,mult(X1,X2))) [superposition 8,8]
+13. mult(mult(X1,X2),ld(X1,X0)) = mult(X0,ld(ld(X1,X0),mult(X2,ld(X1,X0)))) [superposition 8,3]
+14. ld(mult(X0,X2),mult(mult(X0,X1),X2)) = ld(X2,mult(X1,X2)) [superposition 4,8]
+16. mult(rd(X0,X1),mult(X1,X2)) = mult(X1,mult(ld(X1,X0),X2)) [superposition 7,3]
+19. mult(X1,mult(X2,ld(X1,X0))) = mult(rd(mult(X1,X2),X1),X0) [superposition 7,3]
+21. mult(X0,X2) = ld(rd(mult(X0,X1),X0),mult(X0,mult(X1,X2))) [superposition 4,7]
+35. mult(rd(X1,X2),X0) = mult(X2,mult(ld(X2,X1),ld(X2,X0))) [superposition 16,3]
+43. ld(rd(X0,X1),X0) = X1 [superposition 4,6]
+44. mult(mult(X1,X2),ld(X2,X0)) = mult(mult(X1,rd(X0,X2)),X2) [superposition 8,6]
+45. mult(mult(rd(X0,X1),X2),X1) = mult(X0,ld(X1,mult(X2,X1))) [superposition 8,6]
+63. mult(X0,mult(X1,X2)) = mult(X1,mult(ld(X1,mult(X0,X1)),X2)) [superposition 16,5]
+74. ld(X2,mult(mult(X0,X1),ld(X0,X2))) = ld(ld(X0,X2),mult(X1,ld(X0,X2))) [superposition 4,13]
+77. mult(mult(mult(X0,X2),X3),ld(X2,mult(X1,X2))) = mult(mult(mult(X0,X1),X2),ld(mult(X1,X2),mult(mult(X2,X3),ld(X2,mult(X1,X2))))) [backward demodulation 10,74]
+113. unit = rd(X0,X0) [superposition 5,1]
+133. unit = ld(X0,X0) [superposition 4,2]
+191. mult(mult(X0,X1),ld(X0,mult(X2,X0))) = mult(mult(X0,mult(X1,ld(X0,X2))),X0) [superposition 45,19]
+193. mult(X1,ld(X0,mult(mult(X0,X2),X0))) = mult(mult(X0,mult(ld(X0,X1),X2)),X0) [superposition 45,16]
+262. mult(ld(X1,X0),mult(ld(ld(X1,X0),X0),X2)) = mult(X1,mult(ld(X1,X0),X2)) [superposition 63,3]
+270. ld(X1,mult(X0,mult(X1,X2))) = mult(ld(X1,mult(X0,X1)),X2) [superposition 4,63]
+293. mult(mult(X1,mult(X0,X2)),X1) = mult(mult(X1,X0),ld(X1,mult(mult(X1,X2),X1))) [superposition 193,4]
+342. ld(X1,mult(rd(X0,X1),X2)) = mult(ld(X1,X0),ld(X1,X2)) [superposition 4,35]
+458. mult(ld(X1,X2),X0) = mult(X1,mult(ld(X1,X2),ld(ld(ld(X1,X2),X2),X0))) [superposition 262,3]
+503. mult(ld(X1,mult(X2,X1)),ld(X1,X0)) = ld(X1,mult(X2,X0)) [superposition 270,3]
+592. mult(mult(mult(X1,rd(X0,X2)),X2),ld(X0,mult(mult(X2,X3),ld(X2,X0)))) = mult(mult(mult(X1,X2),X3),ld(X2,X0)) [superposition 77,6]
+658. mult(mult(mult(X1,X2),ld(X2,X0)),ld(X0,mult(mult(X2,X3),ld(X2,X0)))) = mult(mult(mult(X1,X2),X3),ld(X2,X0)) [forward demodulation 592,44]
+727. mult(mult(X1,rd(X0,ld(X1,X2))),ld(X1,mult(X2,X1))) = mult(mult(X1,X0),X1) [superposition 191,6]
+1119. mult(mult(X0,ld(X1,X2)),ld(X2,mult(mult(X1,X3),ld(X1,X2)))) = mult(mult(X0,X3),ld(X1,X2)) [superposition 658,6]
+1290. ld(mult(X1,X2),mult(X0,X2)) = ld(X2,mult(ld(X1,X0),X2)) [superposition 14,3]
+1420. ld(X0,mult(ld(X1,unit),X0)) = ld(mult(X1,X0),X0) [superposition 1290,1]
+1423. ld(mult(X1,X2),X0) = ld(X2,mult(ld(X1,rd(X0,X2)),X2)) [superposition 1290,6]
+1871. mult(ld(X0,X1),ld(ld(ld(X0,X1),X1),X2)) = ld(X0,mult(ld(X0,X1),X2)) [superposition 4,458]
+1984. mult(mult(X1,ld(X2,X3)),ld(X3,mult(X0,ld(X2,X3)))) = mult(mult(X1,ld(X2,X0)),ld(X2,X3)) [superposition 1119,3]
+2124. mult(mult(ld(X0,mult(X1,X0)),ld(X0,X3)),ld(X0,X2)) = mult(ld(X0,mult(X1,X2)),ld(X2,mult(X3,ld(X0,X2)))) [superposition 1984,503]
+2125. mult(ld(X0,X1),ld(X1,mult(X2,ld(X0,X1)))) = mult(mult(unit,ld(X0,X2)),ld(X0,X1)) [superposition 1984,1]
+2149. mult(mult(X2,ld(X0,unit)),ld(X0,X1)) = mult(mult(X2,ld(X0,X1)),ld(X1,ld(X0,X1))) [superposition 1984,1]
+2177. mult(ld(X0,mult(X1,X3)),ld(X0,X2)) = mult(ld(X0,mult(X1,X2)),ld(X2,mult(X3,ld(X0,X2)))) [forward demodulation 2124,503]
+2211. mult(ld(X0,X1),ld(X1,mult(X2,ld(X0,X1)))) = mult(ld(X0,X2),ld(X0,X1)) [forward demodulation 2125,1]
+2328. ld(rd(mult(X1,X2),X1),mult(X1,X0)) = mult(X1,ld(X2,X0)) [superposition 21,3]
+2484. mult(X1,ld(X2,ld(X1,X0))) = ld(rd(mult(X1,X2),X1),X0) [superposition 2328,3]
+3068. mult(ld(rd(X1,X0),X2),X0) = mult(X0,ld(X1,mult(X2,X0))) [superposition 2211,43]
+3200. mult(mult(X0,ld(X1,ld(X0,X2))),X0) = mult(X0,ld(mult(X0,X1),mult(X2,X0))) [superposition 3068,2484]
+4191. ld(X1,rd(X0,X1)) = mult(ld(X1,X0),ld(X1,unit)) [superposition 342,2]
+4682. mult(mult(ld(X0,mult(X1,X0)),ld(X0,unit)),ld(X0,X2)) = mult(ld(X0,mult(X1,X2)),ld(X2,ld(X0,X2))) [superposition 2149,503]
+4694. mult(mult(X1,X0),ld(mult(X2,X0),X0)) = mult(mult(X1,ld(X2,unit)),X0) [superposition 2149,4]
+4754. mult(ld(X0,mult(X1,X2)),ld(X2,ld(X0,X2))) = mult(ld(X0,rd(mult(X1,X0),X0)),ld(X0,X2)) [forward demodulation 4682,4191]
+4776. mult(ld(X0,mult(X1,X2)),ld(X2,ld(X0,X2))) = mult(ld(X0,X1),ld(X0,X2)) [forward demodulation 4754,5]
+4783. mult(X0,ld(mult(X1,X0),X0)) = mult(mult(unit,ld(X1,unit)),X0) [superposition 4694,1]
+4896. mult(X0,ld(mult(X1,X0),X0)) = mult(ld(X1,unit),X0) [forward demodulation 4783,1]
+5184. mult(mult(X0,mult(X3,ld(X1,ld(X0,X2)))),X0) = mult(mult(X0,X3),ld(X0,mult(X0,ld(mult(X0,X1),mult(X2,X0))))) [superposition 293,3200]
+5238. mult(mult(X0,X3),ld(mult(X0,X1),mult(X2,X0))) = mult(mult(X0,mult(X3,ld(X1,ld(X0,X2)))),X0) [forward demodulation 5184,4]
+5583. mult(X1,mult(ld(mult(X0,X1),X2),X3)) = mult(ld(X0,rd(X2,X1)),mult(X1,X3)) [superposition 63,1423]
+5586. mult(X1,ld(mult(X0,X1),X2)) = mult(ld(X0,rd(X2,X1)),X1) [superposition 3,1423]
+5588. mult(X1,mult(ld(mult(X0,X1),X2),ld(X1,X3))) = mult(rd(mult(ld(X0,rd(X2,X1)),X1),X1),X3) [superposition 35,1423]
+5616. mult(ld(X0,rd(X2,X1)),X3) = mult(X1,mult(ld(mult(X0,X1),X2),ld(X1,X3))) [forward demodulation 5588,5]
+5700. ld(ld(X1,rd(X2,X0)),mult(X0,ld(mult(X1,X0),X2))) = X0 [superposition 4,5586]
+5898. mult(mult(X0,rd(X1,ld(X0,unit))),ld(X0,X0)) = mult(mult(X0,X1),X0) [superposition 727,1]
+5977. mult(mult(X0,X1),X0) = mult(mult(X0,rd(X1,ld(X0,unit))),unit) [forward demodulation 5898,133]
+6027. mult(X0,rd(X1,ld(X0,unit))) = mult(mult(X0,X1),X0) [forward demodulation 5977,2]
+6124. ld(X0,mult(mult(X0,X1),X0)) = rd(X1,ld(X0,unit)) [superposition 4,6027]
+6169. mult(X1,rd(X2,ld(X0,unit))) = mult(mult(X0,mult(ld(X0,X1),X2)),X0) [backward demodulation 193,6124]
+8106. ld(X1,mult(X0,X1)) = ld(mult(rd(unit,X0),X1),X1) [superposition 1420,43]
+8139. mult(X1,mult(ld(mult(X0,X1),X1),X2)) = mult(ld(X0,unit),mult(X1,X2)) [superposition 63,1420]
+11473. mult(ld(X2,rd(X3,X1)),mult(ld(X0,unit),X1)) = mult(X1,mult(ld(mult(X2,X1),X3),ld(mult(X0,X1),X1))) [superposition 5583,4896]
+17152. mult(ld(X1,rd(X0,X2)),ld(X1,X2)) = mult(ld(X1,X0),ld(X2,ld(X1,X2))) [superposition 4776,6]
+19395. mult(X1,mult(ld(mult(X0,X1),X2),ld(mult(X0,X1),X1))) = mult(ld(X0,rd(mult(X2,X1),X1)),ld(mult(X0,X1),X1)) [superposition 5616,4776]
+19470. mult(X1,mult(ld(mult(X0,X1),X2),ld(mult(X0,X1),X1))) = mult(ld(X0,X2),ld(mult(X0,X1),X1)) [forward demodulation 19395,5]
+19533. mult(ld(X0,rd(X2,X1)),mult(ld(X0,unit),X1)) = mult(ld(X0,X2),ld(mult(X0,X1),X1)) [forward demodulation 19470,11473]
+20116. mult(X0,ld(ld(X0,mult(X0,ld(mult(X1,X0),X2))),X3)) = ld(ld(X1,rd(X2,X0)),mult(X0,X3)) [superposition 1871,5700]
+20201. mult(X0,ld(ld(mult(X1,X0),X2),X3)) = ld(ld(X1,rd(X2,X0)),mult(X0,X3)) [forward demodulation 20116,4]
+20834. mult(mult(X0,ld(X0,rd(X1,X2))),ld(X0,mult(X2,X0))) = mult(mult(X0,mult(ld(X0,X1),ld(X2,ld(X0,X2)))),X0) [superposition 191,17152]
+20893. mult(mult(X0,ld(X0,X1)),ld(mult(X0,X2),mult(X2,X0))) = mult(mult(X0,ld(X0,rd(X1,X2))),ld(X0,mult(X2,X0))) [forward demodulation 20834,5238]
+20936. mult(rd(X1,X2),ld(X0,mult(X2,X0))) = mult(mult(X0,ld(X0,X1)),ld(mult(X0,X2),mult(X2,X0))) [forward demodulation 20893,3]
+20969. mult(X1,ld(mult(X0,X2),mult(X2,X0))) = mult(rd(X1,X2),ld(X0,mult(X2,X0))) [forward demodulation 20936,3]
+21020. mult(X0,ld(mult(X1,X0),mult(X0,X1))) = mult(unit,ld(X1,mult(X0,X1))) [superposition 20969,113]
+21204. ld(X1,mult(X0,X1)) = mult(X0,ld(mult(X1,X0),mult(X0,X1))) [forward demodulation 21020,1]
+22618. ld(X1,ld(X0,mult(X1,X0))) = ld(mult(X0,X1),mult(X1,X0)) [superposition 4,21204]
+22747. mult(X1,ld(X2,ld(X0,mult(X2,X0)))) = mult(rd(X1,X2),ld(X0,mult(X2,X0))) [backward demodulation 20969,22618]
+22954. mult(mult(a,b),ld(d,ld(c,mult(d,c)))) != mult(a,mult(b,ld(d,ld(c,mult(d,c))))) [backward demodulation 9,22618]
+42644. ld(ld(X1,unit),mult(X0,X2)) = mult(X0,ld(ld(mult(X1,X0),X0),X2)) [superposition 20201,113]
+62860. ld(X0,mult(X0,ld(mult(X0,X1),mult(X2,X0)))) = rd(ld(X1,ld(X0,X2)),ld(X0,unit)) [superposition 6124,3200]
+63097. ld(mult(X0,X1),mult(X2,X0)) = rd(ld(X1,ld(X0,X2)),ld(X0,unit)) [forward demodulation 62860,4]
+80180. mult(ld(X0,rd(mult(X2,X1),X1)),mult(X3,ld(mult(X0,X1),X1))) = mult(X1,mult(ld(mult(X0,X1),mult(X2,X3)),ld(mult(X0,X1),X1))) [superposition 5616,2177]
+80517. mult(ld(X0,rd(mult(X2,X1),X1)),mult(X3,ld(mult(X0,X1),X1))) = mult(ld(X0,rd(mult(X2,X3),X1)),mult(ld(X0,unit),X1)) [forward demodulation 80180,11473]
+80794. mult(ld(X0,rd(mult(X2,X1),X1)),mult(X3,ld(mult(X0,X1),X1))) = mult(ld(X0,mult(X2,X3)),ld(mult(X0,X1),X1)) [forward demodulation 80517,19533]
+81025. mult(ld(X0,mult(X2,X3)),ld(mult(X0,X1),X1)) = mult(ld(X0,X2),mult(X3,ld(mult(X0,X1),X1))) [forward demodulation 80794,5]
+81431. mult(ld(X1,rd(X0,X2)),mult(X2,ld(mult(X1,X3),X3))) = mult(ld(X1,X0),ld(mult(X1,X3),X3)) [superposition 81025,6]
+81657. mult(ld(X1,X2),mult(X3,ld(X0,ld(X1,X0)))) = mult(ld(X1,mult(X2,X3)),ld(X0,ld(X1,X0))) [superposition 81025,3]
+81757. mult(X0,mult(ld(X0,X1),mult(X0,ld(mult(X0,X2),X2)))) = mult(X1,mult(X0,ld(mult(X0,X2),X2))) [superposition 63,81025]
+82065. mult(ld(X1,X0),ld(mult(X1,X3),X3)) = mult(X2,mult(ld(mult(X1,X2),X0),ld(mult(X1,X3),X3))) [forward demodulation 81431,5583]
+82764. ld(X3,mult(ld(X0,X1),ld(mult(X0,X2),X2))) = mult(ld(mult(X0,X3),X1),ld(mult(X0,X2),X2)) [superposition 4,82065]
+83951. mult(ld(mult(X1,X0),X1),ld(mult(X1,X2),X2)) = ld(X0,mult(unit,ld(mult(X1,X2),X2))) [superposition 82764,133]
+83961. mult(ld(mult(X2,X1),mult(X2,X0)),ld(mult(X2,X3),X3)) = ld(X1,mult(X0,ld(mult(X2,X3),X3))) [superposition 82764,4]
+84621. ld(X0,ld(mult(X1,X2),X2)) = mult(ld(mult(X1,X0),X1),ld(mult(X1,X2),X2)) [forward demodulation 83951,1]
+84977. mult(ld(X0,X1),ld(mult(X1,X2),X2)) = ld(ld(X1,X0),ld(mult(X1,X2),X2)) [superposition 84621,3]
+85798. ld(ld(X2,X1),ld(X0,ld(X2,X0))) = mult(ld(X1,X2),ld(X0,ld(X2,X0))) [superposition 84977,3]
+86650. mult(X0,mult(ld(X0,mult(X1,X0)),ld(X2,ld(mult(X1,X0),X2)))) = ld(ld(X1,unit),mult(X0,ld(X2,ld(mult(X1,X0),X2)))) [superposition 42644,85798]
+86718. mult(X1,mult(X0,ld(X2,ld(mult(X1,X0),X2)))) = ld(ld(X1,unit),mult(X0,ld(X2,ld(mult(X1,X0),X2)))) [forward demodulation 86650,63]
+87796. mult(ld(mult(X1,X2),mult(X1,X3)),ld(X0,ld(X1,X0))) = ld(X2,mult(X3,ld(X0,ld(X1,X0)))) [superposition 83961,3]
+90653. mult(mult(X0,X1),ld(mult(X0,X1),mult(X1,ld(X2,ld(X0,X2))))) = mult(ld(X0,unit),mult(mult(X0,X1),ld(X2,ld(X0,X2)))) [superposition 8139,87796]
+90837. mult(ld(X0,unit),mult(mult(X0,X1),ld(X2,ld(X0,X2)))) = mult(X1,ld(X2,ld(X0,X2))) [forward demodulation 90653,3]
+92715. mult(mult(X1,X0),mult(X1,ld(mult(X1,X2),X2))) = mult(X1,mult(X0,mult(X1,ld(mult(X1,X2),X2)))) [superposition 81757,4]
+93710. mult(X1,mult(X2,mult(X1,ld(X0,ld(X1,X0))))) = mult(mult(X1,X2),mult(X1,ld(X0,ld(X1,X0)))) [superposition 92715,3]
+94571. mult(X1,mult(X2,ld(ld(X0,unit),mult(X1,ld(X1,ld(mult(X0,X1),X1)))))) = mult(mult(X1,X2),ld(ld(X0,unit),mult(X1,ld(X1,ld(mult(X0,X1),X1))))) [superposition 93710,42644]
+94879. mult(X1,mult(X2,mult(X0,mult(X1,ld(X1,ld(mult(X0,X1),X1)))))) = mult(mult(X1,X2),mult(X0,mult(X1,ld(X1,ld(mult(X0,X1),X1))))) [forward demodulation 94571,86718]
+94973. mult(X1,mult(X2,mult(X0,ld(mult(X0,X1),X1)))) = mult(mult(X1,X2),mult(X0,ld(mult(X0,X1),X1))) [forward demodulation 94879,3]
+95123. mult(X1,mult(ld(X1,X0),mult(X2,ld(mult(X2,X1),X1)))) = mult(X0,mult(X2,ld(mult(X2,X1),X1))) [superposition 94973,3]
+95364. mult(mult(X0,X2),mult(rd(unit,X1),ld(X0,mult(X1,X0)))) = mult(X0,mult(X2,mult(rd(unit,X1),ld(X0,mult(X1,X0))))) [superposition 94973,8106]
+95726. mult(mult(X0,X2),mult(unit,ld(X1,ld(X0,mult(X1,X0))))) = mult(X0,mult(X2,mult(unit,ld(X1,ld(X0,mult(X1,X0)))))) [forward demodulation 95364,22747]
+95787. mult(mult(X0,X2),ld(X1,ld(X0,mult(X1,X0)))) = mult(X0,mult(X2,ld(X1,ld(X0,mult(X1,X0))))) [forward demodulation 95726,1]
+96059. mult(X0,mult(ld(X0,X2),mult(rd(unit,X1),ld(X0,mult(X1,X0))))) = mult(X2,mult(rd(unit,X1),ld(X0,mult(X1,X0)))) [superposition 95123,8106]
+96271. mult(X2,mult(unit,ld(X1,ld(X0,mult(X1,X0))))) = mult(X0,mult(ld(X0,X2),mult(unit,ld(X1,ld(X0,mult(X1,X0)))))) [forward demodulation 96059,22747]
+96435. mult(X0,mult(ld(X0,X2),ld(X1,ld(X0,mult(X1,X0))))) = mult(X2,ld(X1,ld(X0,mult(X1,X0)))) [forward demodulation 96271,1]
+105444. mult(ld(X1,X0),ld(X2,ld(X1,X2))) = mult(ld(X1,unit),mult(X0,ld(X2,ld(X1,X2)))) [superposition 90837,3]
+106762. mult(unit,rd(mult(X1,ld(X2,ld(X0,X2))),ld(X0,unit))) = mult(mult(X0,mult(ld(X0,X1),ld(X2,ld(X0,X2)))),X0) [superposition 6169,105444]
+106962. mult(unit,rd(mult(X1,ld(X2,ld(X0,X2))),ld(X0,unit))) = mult(mult(X0,ld(X0,X1)),ld(mult(X0,X2),mult(X2,X0))) [forward demodulation 106762,5238]
+107232. mult(mult(X0,ld(X0,X1)),ld(X2,ld(X0,mult(X2,X0)))) = mult(unit,rd(mult(X1,ld(X2,ld(X0,X2))),ld(X0,unit))) [forward demodulation 106962,22618]
+107443. mult(mult(X0,ld(X0,X1)),ld(X2,ld(X0,mult(X2,X0)))) = rd(mult(X1,ld(X2,ld(X0,X2))),ld(X0,unit)) [forward demodulation 107232,1]
+107577. rd(mult(X1,ld(X2,ld(X0,X2))),ld(X0,unit)) = mult(X0,mult(ld(X0,X1),ld(X2,ld(X0,mult(X2,X0))))) [forward demodulation 107443,95787]
+107652. rd(mult(X1,ld(X2,ld(X0,X2))),ld(X0,unit)) = mult(X1,ld(X2,ld(X0,mult(X2,X0)))) [forward demodulation 107577,96435]
+109751. mult(mult(X1,X2),rd(ld(X3,ld(X0,X3)),ld(X0,unit))) = mult(mult(X0,mult(ld(X0,X1),mult(X2,ld(X3,ld(X0,X3))))),X0) [superposition 6169,81657]
+110115. mult(mult(X1,X2),rd(ld(X3,ld(X0,X3)),ld(X0,unit))) = mult(X1,rd(mult(X2,ld(X3,ld(X0,X3))),ld(X0,unit))) [forward demodulation 109751,6169]
+110268. mult(mult(X1,X2),rd(ld(X3,ld(X0,X3)),ld(X0,unit))) = mult(X1,mult(X2,ld(X3,ld(X0,mult(X3,X0))))) [forward demodulation 110115,107652]
+110415. mult(mult(X1,X2),ld(mult(X0,X3),mult(X3,X0))) = mult(X1,mult(X2,ld(X3,ld(X0,mult(X3,X0))))) [forward demodulation 110268,63097]
+110510. mult(mult(X1,X2),ld(X3,ld(X0,mult(X3,X0)))) = mult(X1,mult(X2,ld(X3,ld(X0,mult(X3,X0))))) [forward demodulation 110415,22618]
+110824. mult(a,mult(b,ld(d,ld(c,mult(d,c))))) != mult(a,mult(b,ld(d,ld(c,mult(d,c))))) [backward demodulation 22954,110510]
+110825. $false [trivial inequality removal 110824]
+% SZS output end Proof for GRP732-1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 9
+% 
+% >>> Saturation
+% Initial clauses: 9
+% Generated clauses: 110660
+% Activations started: 270
+% Active clauses: 270
+% Passive clauses: 43819
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Trivial inequalities: 1
+% Fw demodulations: 49672
+% Bw demodulations: 8731
+% 
+% >>> Deletion Inferences
+% Forward subsumptions: 10614
+% Fw demodulations to eq. taut.: 6405
+% Bw demodulations to eq. taut.: 630
+% 
+% >>> Generating Inferences
+% Forward superposition: 29731
+% Backward superposition: 22434
+% Self superposition: 247
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 560
+% Bulk evals: 27155
+% 
+% Time elapsed: 12.135 s
+% Peak memory usage: 515 MB
+% Instructions burned: 65657 (million)
+% ------------------------------
+% ------------------------------

@@ -1,0 +1,231 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop18/script-model.pt -npcc on -npcct 0.333 -si on -rtra on --random_seed 6 Problems/LAT/LAT320+3.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for LAT320+3
+% SZS output start Proof for LAT320+3
+38. ! [X1,X0] : ((r1_tarski(X0,X1) & r1_tarski(X1,X0)) <=> X0 = X1) [input(axiom)]
+677. ! [X1,X0] : (m1_subset_1(X0,k1_zfmisc_1(X1)) <=> r1_tarski(X0,X1)) [input(axiom)]
+6660. ! [X0] : (l3_lattices(X0) => ((v17_lattices(X0) & ~v3_struct_0(X0)) => (~v3_struct_0(X0) & v14_lattices(X0) & v11_lattices(X0) & v16_lattices(X0) & v15_lattices(X0) & v13_lattices(X0)))) [input(axiom)]
+10566. ! [X0] : k1_pcomps_1(X0) = u1_pre_topc(k2_pcomps_1(X0)) [input(axiom)]
+10607. ! [X0] : k1_zfmisc_1(X0) = k1_pcomps_1(X0) [input(axiom)]
+11555. ! [X0] : (v10_lattices(k1_lattice3(X0)) & v8_lattices(k1_lattice3(X0)) & v4_lattices(k1_lattice3(X0)) & v5_lattices(k1_lattice3(X0)) & v9_lattices(k1_lattice3(X0)) & ~v3_struct_0(k1_lattice3(X0)) & v6_lattices(k1_lattice3(X0)) & v3_lattices(k1_lattice3(X0)) & v7_lattices(k1_lattice3(X0))) [input(axiom)]
+11566. ! [X1,X0] : ((l3_lattices(X1) & v3_lattices(X1)) => (k1_lattice3(X0) = X1 <=> (! [X2] : (m1_subset_1(X2,k1_zfmisc_1(X0)) => ! [X3] : (m1_subset_1(X3,k1_zfmisc_1(X0)) => (k5_subset_1(X0,X2,X3) = k1_binop_1(u1_lattices(X1),X2,X3) & k4_subset_1(X0,X2,X3) = k1_binop_1(u2_lattices(X1),X2,X3)))) & k1_zfmisc_1(X0) = u1_struct_0(X1)))) [input(axiom)]
+11628. ! [X0] : (v3_lattices(k1_lattice3(X0)) & l3_lattices(k1_lattice3(X0))) [input(axiom)]
+12317. ! [X0] : ((v10_lattices(X0) & l3_lattices(X0) & ~v3_struct_0(X0)) => ! [X1] : (m2_lattice4(X1,X0) => m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))))) [input(axiom)]
+13533. ! [X0] : ((v10_lattices(X0) & l3_lattices(X0) & ~v3_struct_0(X0)) => ! [X1] : (m2_filter_2(X1,X0) => (~v1_xboole_0(X1) & m2_lattice4(X1,X0)))) [input(axiom)]
+13570. ! [X1,X0,X2] : ((v10_lattices(X0) & m2_filter_2(X1,X0) & ~v3_struct_0(X0) & l3_lattices(X0) & v11_lattices(X0) & m2_filter_2(X2,X0)) => m2_filter_2(k21_filter_2(X0,X1,X2),X0)) [input(axiom)]
+13571. ! [X2,X1,X0] : ((l3_lattices(X0) & ~v3_struct_0(X0) & v10_lattices(X0) & m2_filter_2(X1,X0) & m2_filter_2(X2,X0) & v11_lattices(X0)) => k20_filter_2(X0,X1,X2) = k21_filter_2(X0,X1,X2)) [input(axiom)]
+13624. ! [X0] : ((l3_lattices(X0) & ~v3_struct_0(X0) & v10_lattices(X0)) => ! [X1] : ((~v1_xboole_0(X1) & m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0)))) => ! [X2] : (m2_filter_2(X2,X0) => ((! [X3] : (m2_filter_2(X3,X0) => (r1_tarski(X1,X3) => r1_tarski(X2,X3))) & r1_tarski(X1,X2)) <=> k19_filter_2(X0,X1) = X2)))) [input(axiom)]
+13643. ! [X0] : ((v10_lattices(X0) & ~v3_struct_0(X0) & l3_lattices(X0)) => ! [X1] : (m2_filter_2(X1,X0) => ! [X2] : (m2_filter_2(X2,X0) => k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)) = a_3_1_filter_2(X0,X1,X2)))) [input(axiom)]
+13645. ! [X0] : ((~v3_struct_0(X0) & l3_lattices(X0) & v10_lattices(X0)) => ! [X1] : (m2_filter_2(X1,X0) => ! [X2] : (m2_filter_2(X2,X0) => r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k19_filter_2(X0,k20_filter_2(X0,X1,X2)))))) [input(axiom)]
+13651. ! [X0] : ((~v3_struct_0(X0) & v17_lattices(X0) & v10_lattices(X0) & l3_lattices(X0)) => ! [X1] : (m2_filter_2(X1,X0) => ! [X2] : (m2_filter_2(X2,X0) => r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k21_filter_2(X0,X1,X2))))) [input(conjecture)]
+13652. ~! [X0] : ((~v3_struct_0(X0) & v17_lattices(X0) & v10_lattices(X0) & l3_lattices(X0)) => ! [X1] : (m2_filter_2(X1,X0) => ! [X2] : (m2_filter_2(X2,X0) => r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k21_filter_2(X0,X1,X2))))) [negated conjecture 13651]
+15359. ! [X1,X0,X2] : ((l3_lattices(X2) & v11_lattices(X2) & ~v3_struct_0(X2) & m2_filter_2(X1,X2) & v10_lattices(X2) & m2_filter_2(X0,X2)) => k21_filter_2(X2,X1,X0) = k20_filter_2(X2,X1,X0)) [rectify 13571]
+15516. ! [X2,X0,X1] : ((m2_filter_2(X2,X1) & v10_lattices(X1) & ~v3_struct_0(X1) & m2_filter_2(X0,X1) & l3_lattices(X1) & v11_lattices(X1)) => m2_filter_2(k21_filter_2(X1,X0,X2),X1)) [rectify 13570]
+16552. ! [X1,X0] : ((l3_lattices(X0) & v3_lattices(X0)) => ((! [X2] : (m1_subset_1(X2,k1_zfmisc_1(X1)) => ! [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) => (k5_subset_1(X1,X2,X3) = k1_binop_1(u1_lattices(X0),X2,X3) & k1_binop_1(u2_lattices(X0),X2,X3) = k4_subset_1(X1,X2,X3)))) & k1_zfmisc_1(X1) = u1_struct_0(X0)) <=> k1_lattice3(X1) = X0)) [rectify 11566]
+18446. ! [X1,X0] : ((k1_lattice3(X1) = X0 <=> (k1_zfmisc_1(X1) = u1_struct_0(X0) & ! [X2] : (~m1_subset_1(X2,k1_zfmisc_1(X1)) | ! [X3] : (~m1_subset_1(X3,k1_zfmisc_1(X1)) | (k5_subset_1(X1,X2,X3) = k1_binop_1(u1_lattices(X0),X2,X3) & k1_binop_1(u2_lattices(X0),X2,X3) = k4_subset_1(X1,X2,X3)))))) | (~l3_lattices(X0) | ~v3_lattices(X0))) [ennf transformation 16552]
+18447. ! [X0,X1] : (~v3_lattices(X0) | (k1_lattice3(X1) = X0 <=> (k1_zfmisc_1(X1) = u1_struct_0(X0) & ! [X2] : (~m1_subset_1(X2,k1_zfmisc_1(X1)) | ! [X3] : (~m1_subset_1(X3,k1_zfmisc_1(X1)) | (k5_subset_1(X1,X2,X3) = k1_binop_1(u1_lattices(X0),X2,X3) & k1_binop_1(u2_lattices(X0),X2,X3) = k4_subset_1(X1,X2,X3)))))) | ~l3_lattices(X0)) [flattening 18446]
+19055. ! [X0] : (! [X1] : (! [X2] : (~m2_filter_2(X2,X0) | k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)) = a_3_1_filter_2(X0,X1,X2)) | ~m2_filter_2(X1,X0)) | (~v10_lattices(X0) | v3_struct_0(X0) | ~l3_lattices(X0))) [ennf transformation 13643]
+19056. ! [X0] : (! [X1] : (! [X2] : (~m2_filter_2(X2,X0) | k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)) = a_3_1_filter_2(X0,X1,X2)) | ~m2_filter_2(X1,X0)) | ~l3_lattices(X0) | ~v10_lattices(X0) | v3_struct_0(X0)) [flattening 19055]
+19196. ! [X0] : (! [X1] : (! [X2] : (((! [X3] : ((r1_tarski(X2,X3) | ~r1_tarski(X1,X3)) | ~m2_filter_2(X3,X0)) & r1_tarski(X1,X2)) <=> k19_filter_2(X0,X1) = X2) | ~m2_filter_2(X2,X0)) | (v1_xboole_0(X1) | ~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))))) | (~l3_lattices(X0) | v3_struct_0(X0) | ~v10_lattices(X0))) [ennf transformation 13624]
+19197. ! [X0] : (! [X1] : (~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ! [X2] : (~m2_filter_2(X2,X0) | ((! [X3] : (~m2_filter_2(X3,X0) | ~r1_tarski(X1,X3) | r1_tarski(X2,X3)) & r1_tarski(X1,X2)) <=> k19_filter_2(X0,X1) = X2))) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0)) [flattening 19196]
+21321. ! [X2,X0,X1] : (m2_filter_2(k21_filter_2(X1,X0,X2),X1) | (~m2_filter_2(X2,X1) | ~v10_lattices(X1) | v3_struct_0(X1) | ~m2_filter_2(X0,X1) | ~l3_lattices(X1) | ~v11_lattices(X1))) [ennf transformation 15516]
+21322. ! [X2,X0,X1] : (~l3_lattices(X1) | ~v11_lattices(X1) | v3_struct_0(X1) | ~m2_filter_2(X2,X1) | ~m2_filter_2(X0,X1) | ~v10_lattices(X1) | m2_filter_2(k21_filter_2(X1,X0,X2),X1)) [flattening 21321]
+23798. ! [X0] : (((~v3_struct_0(X0) & v14_lattices(X0) & v11_lattices(X0) & v16_lattices(X0) & v15_lattices(X0) & v13_lattices(X0)) | (~v17_lattices(X0) | v3_struct_0(X0))) | ~l3_lattices(X0)) [ennf transformation 6660]
+23799. ! [X0] : ((~v3_struct_0(X0) & v14_lattices(X0) & v11_lattices(X0) & v16_lattices(X0) & v15_lattices(X0) & v13_lattices(X0)) | ~v17_lattices(X0) | ~l3_lattices(X0) | v3_struct_0(X0)) [flattening 23798]
+24629. ! [X0] : (! [X1] : (~m2_filter_2(X1,X0) | ! [X2] : (~m2_filter_2(X2,X0) | r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k19_filter_2(X0,k20_filter_2(X0,X1,X2))))) | (v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0))) [ennf transformation 13645]
+24630. ! [X0] : (~v10_lattices(X0) | ! [X1] : (~m2_filter_2(X1,X0) | ! [X2] : (~m2_filter_2(X2,X0) | r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k19_filter_2(X0,k20_filter_2(X0,X1,X2))))) | ~l3_lattices(X0) | v3_struct_0(X0)) [flattening 24629]
+25227. ? [X0] : (? [X1] : (m2_filter_2(X1,X0) & ? [X2] : (m2_filter_2(X2,X0) & ~r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k21_filter_2(X0,X1,X2)))) & (~v3_struct_0(X0) & v17_lattices(X0) & v10_lattices(X0) & l3_lattices(X0))) [ennf transformation 13652]
+25228. ? [X0] : (v17_lattices(X0) & ~v3_struct_0(X0) & v10_lattices(X0) & l3_lattices(X0) & ? [X1] : (m2_filter_2(X1,X0) & ? [X2] : (m2_filter_2(X2,X0) & ~r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k21_filter_2(X0,X1,X2))))) [flattening 25227]
+26240. ! [X1,X0,X2] : (k21_filter_2(X2,X1,X0) = k20_filter_2(X2,X1,X0) | (~l3_lattices(X2) | ~v11_lattices(X2) | v3_struct_0(X2) | ~m2_filter_2(X1,X2) | ~v10_lattices(X2) | ~m2_filter_2(X0,X2))) [ennf transformation 15359]
+26241. ! [X0,X2,X1] : (~m2_filter_2(X0,X2) | ~v10_lattices(X2) | ~m2_filter_2(X1,X2) | k21_filter_2(X2,X1,X0) = k20_filter_2(X2,X1,X0) | v3_struct_0(X2) | ~l3_lattices(X2) | ~v11_lattices(X2)) [flattening 26240]
+28225. ! [X0] : (! [X1] : (m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | ~m2_lattice4(X1,X0)) | (~v10_lattices(X0) | ~l3_lattices(X0) | v3_struct_0(X0))) [ennf transformation 12317]
+28226. ! [X0] : (~l3_lattices(X0) | ! [X1] : (m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | ~m2_lattice4(X1,X0)) | v3_struct_0(X0) | ~v10_lattices(X0)) [flattening 28225]
+28712. ! [X0] : (! [X1] : ((~v1_xboole_0(X1) & m2_lattice4(X1,X0)) | ~m2_filter_2(X1,X0)) | (~v10_lattices(X0) | ~l3_lattices(X0) | v3_struct_0(X0))) [ennf transformation 13533]
+28713. ! [X0] : (! [X1] : ((~v1_xboole_0(X1) & m2_lattice4(X1,X0)) | ~m2_filter_2(X1,X0)) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0)) [flattening 28712]
+36892. ! [X0,X1,X2] : (~m2_filter_2(X0,X1) | ~v10_lattices(X1) | ~m2_filter_2(X2,X1) | k20_filter_2(X1,X2,X0) = k21_filter_2(X1,X2,X0) | v3_struct_0(X1) | ~l3_lattices(X1) | ~v11_lattices(X1)) [rectify 26241]
+36994. ! [X1,X0] : (((r1_tarski(X0,X1) & r1_tarski(X1,X0)) | X0 != X1) & (X0 = X1 | (~r1_tarski(X0,X1) | ~r1_tarski(X1,X0)))) [nnf transformation 38]
+36995. ! [X1,X0] : (((r1_tarski(X0,X1) & r1_tarski(X1,X0)) | X0 != X1) & (X0 = X1 | ~r1_tarski(X0,X1) | ~r1_tarski(X1,X0))) [flattening 36994]
+36996. ! [X0,X1] : (((r1_tarski(X1,X0) & r1_tarski(X0,X1)) | X0 != X1) & (X0 = X1 | ~r1_tarski(X1,X0) | ~r1_tarski(X0,X1))) [rectify 36995]
+37441. ! [X0,X1] : (~v3_lattices(X0) | ((k1_lattice3(X1) = X0 | (k1_zfmisc_1(X1) != u1_struct_0(X0) | ? [X2] : (m1_subset_1(X2,k1_zfmisc_1(X1)) & ? [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) & (k5_subset_1(X1,X2,X3) != k1_binop_1(u1_lattices(X0),X2,X3) | k1_binop_1(u2_lattices(X0),X2,X3) != k4_subset_1(X1,X2,X3)))))) & ((k1_zfmisc_1(X1) = u1_struct_0(X0) & ! [X2] : (~m1_subset_1(X2,k1_zfmisc_1(X1)) | ! [X3] : (~m1_subset_1(X3,k1_zfmisc_1(X1)) | (k5_subset_1(X1,X2,X3) = k1_binop_1(u1_lattices(X0),X2,X3) & k1_binop_1(u2_lattices(X0),X2,X3) = k4_subset_1(X1,X2,X3))))) | k1_lattice3(X1) != X0)) | ~l3_lattices(X0)) [nnf transformation 18447]
+37442. ! [X0,X1] : (~v3_lattices(X0) | ((k1_lattice3(X1) = X0 | k1_zfmisc_1(X1) != u1_struct_0(X0) | ? [X2] : (m1_subset_1(X2,k1_zfmisc_1(X1)) & ? [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) & (k5_subset_1(X1,X2,X3) != k1_binop_1(u1_lattices(X0),X2,X3) | k1_binop_1(u2_lattices(X0),X2,X3) != k4_subset_1(X1,X2,X3))))) & ((k1_zfmisc_1(X1) = u1_struct_0(X0) & ! [X2] : (~m1_subset_1(X2,k1_zfmisc_1(X1)) | ! [X3] : (~m1_subset_1(X3,k1_zfmisc_1(X1)) | (k5_subset_1(X1,X2,X3) = k1_binop_1(u1_lattices(X0),X2,X3) & k1_binop_1(u2_lattices(X0),X2,X3) = k4_subset_1(X1,X2,X3))))) | k1_lattice3(X1) != X0)) | ~l3_lattices(X0)) [flattening 37441]
+37443. ! [X0,X1] : (~v3_lattices(X0) | ((k1_lattice3(X1) = X0 | k1_zfmisc_1(X1) != u1_struct_0(X0) | ? [X2] : (m1_subset_1(X2,k1_zfmisc_1(X1)) & ? [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) & (k5_subset_1(X1,X2,X3) != k1_binop_1(u1_lattices(X0),X2,X3) | k1_binop_1(u2_lattices(X0),X2,X3) != k4_subset_1(X1,X2,X3))))) & ((k1_zfmisc_1(X1) = u1_struct_0(X0) & ! [X4] : (~m1_subset_1(X4,k1_zfmisc_1(X1)) | ! [X5] : (~m1_subset_1(X5,k1_zfmisc_1(X1)) | (k1_binop_1(u1_lattices(X0),X4,X5) = k5_subset_1(X1,X4,X5) & k4_subset_1(X1,X4,X5) = k1_binop_1(u2_lattices(X0),X4,X5))))) | k1_lattice3(X1) != X0)) | ~l3_lattices(X0)) [rectify 37442]
+37444. ! [X0,X1] : (? [X2] : (m1_subset_1(X2,k1_zfmisc_1(X1)) & ? [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) & (k5_subset_1(X1,X2,X3) != k1_binop_1(u1_lattices(X0),X2,X3) | k1_binop_1(u2_lattices(X0),X2,X3) != k4_subset_1(X1,X2,X3)))) => (m1_subset_1(sK985(X0,X1),k1_zfmisc_1(X1)) & ? [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) & (k1_binop_1(u1_lattices(X0),sK985(X0,X1),X3) != k5_subset_1(X1,sK985(X0,X1),X3) | k1_binop_1(u2_lattices(X0),sK985(X0,X1),X3) != k4_subset_1(X1,sK985(X0,X1),X3))))) [choice axiom]
+37445. ! [X0,X1] : (? [X3] : (m1_subset_1(X3,k1_zfmisc_1(X1)) & (k1_binop_1(u1_lattices(X0),sK985(X0,X1),X3) != k5_subset_1(X1,sK985(X0,X1),X3) | k1_binop_1(u2_lattices(X0),sK985(X0,X1),X3) != k4_subset_1(X1,sK985(X0,X1),X3))) => (m1_subset_1(sK986(X0,X1),k1_zfmisc_1(X1)) & (k5_subset_1(X1,sK985(X0,X1),sK986(X0,X1)) != k1_binop_1(u1_lattices(X0),sK985(X0,X1),sK986(X0,X1)) | k1_binop_1(u2_lattices(X0),sK985(X0,X1),sK986(X0,X1)) != k4_subset_1(X1,sK985(X0,X1),sK986(X0,X1))))) [choice axiom]
+37446. ! [X0,X1] : (~v3_lattices(X0) | ((k1_lattice3(X1) = X0 | k1_zfmisc_1(X1) != u1_struct_0(X0) | (m1_subset_1(sK985(X0,X1),k1_zfmisc_1(X1)) & (m1_subset_1(sK986(X0,X1),k1_zfmisc_1(X1)) & (k5_subset_1(X1,sK985(X0,X1),sK986(X0,X1)) != k1_binop_1(u1_lattices(X0),sK985(X0,X1),sK986(X0,X1)) | k1_binop_1(u2_lattices(X0),sK985(X0,X1),sK986(X0,X1)) != k4_subset_1(X1,sK985(X0,X1),sK986(X0,X1)))))) & ((k1_zfmisc_1(X1) = u1_struct_0(X0) & ! [X4] : (~m1_subset_1(X4,k1_zfmisc_1(X1)) | ! [X5] : (~m1_subset_1(X5,k1_zfmisc_1(X1)) | (k1_binop_1(u1_lattices(X0),X4,X5) = k5_subset_1(X1,X4,X5) & k4_subset_1(X1,X4,X5) = k1_binop_1(u2_lattices(X0),X4,X5))))) | k1_lattice3(X1) != X0)) | ~l3_lattices(X0)) [skolemisation 37443,37445,37444]
+37752. ! [X0] : (! [X1] : (~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ! [X2] : (~m2_filter_2(X2,X0) | (((! [X3] : (~m2_filter_2(X3,X0) | ~r1_tarski(X1,X3) | r1_tarski(X2,X3)) & r1_tarski(X1,X2)) | k19_filter_2(X0,X1) != X2) & (k19_filter_2(X0,X1) = X2 | (? [X3] : (m2_filter_2(X3,X0) & r1_tarski(X1,X3) & ~r1_tarski(X2,X3)) | ~r1_tarski(X1,X2)))))) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0)) [nnf transformation 19197]
+37753. ! [X0] : (! [X1] : (~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ! [X2] : (~m2_filter_2(X2,X0) | (((! [X3] : (~m2_filter_2(X3,X0) | ~r1_tarski(X1,X3) | r1_tarski(X2,X3)) & r1_tarski(X1,X2)) | k19_filter_2(X0,X1) != X2) & (k19_filter_2(X0,X1) = X2 | ? [X3] : (m2_filter_2(X3,X0) & r1_tarski(X1,X3) & ~r1_tarski(X2,X3)) | ~r1_tarski(X1,X2))))) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0)) [flattening 37752]
+37754. ! [X0] : (! [X1] : (~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ! [X2] : (~m2_filter_2(X2,X0) | (((! [X3] : (~m2_filter_2(X3,X0) | ~r1_tarski(X1,X3) | r1_tarski(X2,X3)) & r1_tarski(X1,X2)) | k19_filter_2(X0,X1) != X2) & (k19_filter_2(X0,X1) = X2 | ? [X4] : (m2_filter_2(X4,X0) & r1_tarski(X1,X4) & ~r1_tarski(X2,X4)) | ~r1_tarski(X1,X2))))) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0)) [rectify 37753]
+37755. ! [X0,X1,X2] : (? [X4] : (m2_filter_2(X4,X0) & r1_tarski(X1,X4) & ~r1_tarski(X2,X4)) => (m2_filter_2(sK1071(X0,X1,X2),X0) & r1_tarski(X1,sK1071(X0,X1,X2)) & ~r1_tarski(X2,sK1071(X0,X1,X2)))) [choice axiom]
+37756. ! [X0] : (! [X1] : (~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ! [X2] : (~m2_filter_2(X2,X0) | (((! [X3] : (~m2_filter_2(X3,X0) | ~r1_tarski(X1,X3) | r1_tarski(X2,X3)) & r1_tarski(X1,X2)) | k19_filter_2(X0,X1) != X2) & (k19_filter_2(X0,X1) = X2 | (m2_filter_2(sK1071(X0,X1,X2),X0) & r1_tarski(X1,sK1071(X0,X1,X2)) & ~r1_tarski(X2,sK1071(X0,X1,X2))) | ~r1_tarski(X1,X2))))) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0)) [skolemisation 37754,37755]
+39514. ? [X0] : (v17_lattices(X0) & ~v3_struct_0(X0) & v10_lattices(X0) & l3_lattices(X0) & ? [X1] : (m2_filter_2(X1,X0) & ? [X2] : (m2_filter_2(X2,X0) & ~r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k21_filter_2(X0,X1,X2))))) => (v17_lattices(sK1610) & ~v3_struct_0(sK1610) & v10_lattices(sK1610) & l3_lattices(sK1610) & ? [X1] : (m2_filter_2(X1,sK1610) & ? [X2] : (m2_filter_2(X2,sK1610) & ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),X1,X2)),k21_filter_2(sK1610,X1,X2))))) [choice axiom]
+39515. ? [X1] : (m2_filter_2(X1,sK1610) & ? [X2] : (m2_filter_2(X2,sK1610) & ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),X1,X2)),k21_filter_2(sK1610,X1,X2)))) => (m2_filter_2(sK1611,sK1610) & ? [X2] : (m2_filter_2(X2,sK1610) & ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),sK1611,X2)),k21_filter_2(sK1610,sK1611,X2)))) [choice axiom]
+39516. ? [X2] : (m2_filter_2(X2,sK1610) & ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),sK1611,X2)),k21_filter_2(sK1610,sK1611,X2))) => (m2_filter_2(sK1612,sK1610) & ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),sK1611,sK1612)),k21_filter_2(sK1610,sK1611,sK1612))) [choice axiom]
+39517. v17_lattices(sK1610) & ~v3_struct_0(sK1610) & v10_lattices(sK1610) & l3_lattices(sK1610) & (m2_filter_2(sK1611,sK1610) & (m2_filter_2(sK1612,sK1610) & ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),sK1611,sK1612)),k21_filter_2(sK1610,sK1611,sK1612)))) [skolemisation 25228,39516,39515,39514]
+41650. ! [X1,X0] : ((m1_subset_1(X0,k1_zfmisc_1(X1)) | ~r1_tarski(X0,X1)) & (r1_tarski(X0,X1) | ~m1_subset_1(X0,k1_zfmisc_1(X1)))) [nnf transformation 677]
+41651. ! [X0,X1] : ((m1_subset_1(X1,k1_zfmisc_1(X0)) | ~r1_tarski(X1,X0)) & (r1_tarski(X1,X0) | ~m1_subset_1(X1,k1_zfmisc_1(X0)))) [rectify 41650]
+42349. ! [X0,X1,X2] : (~l3_lattices(X2) | ~v11_lattices(X2) | v3_struct_0(X2) | ~m2_filter_2(X0,X2) | ~m2_filter_2(X1,X2) | ~v10_lattices(X2) | m2_filter_2(k21_filter_2(X2,X1,X0),X2)) [rectify 21322]
+50572. l3_lattices(k1_lattice3(X0)) [cnf transformation 11628]
+51562. ~m2_filter_2(X2,X0) | ~v10_lattices(X0) | v3_struct_0(X0) | ~m2_filter_2(X1,X0) | k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)) = a_3_1_filter_2(X0,X1,X2) | ~l3_lattices(X0) [cnf transformation 19056]
+51757. ~m2_filter_2(X2,X1) | v3_struct_0(X1) | ~v10_lattices(X1) | ~l3_lattices(X1) | ~m2_filter_2(X0,X1) | k20_filter_2(X1,X2,X0) = k21_filter_2(X1,X2,X0) | ~v11_lattices(X1) [cnf transformation 36892]
+51961. r1_tarski(X0,X1) | X0 != X1 [cnf transformation 36996]
+52790. k1_pcomps_1(X0) = u1_pre_topc(k2_pcomps_1(X0)) [cnf transformation 10566]
+52884. ~v3_lattices(X0) | k1_zfmisc_1(X1) = u1_struct_0(X0) | k1_lattice3(X1) != X0 | ~l3_lattices(X0) [cnf transformation 37446]
+53509. ~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ~m2_filter_2(X2,X0) | k19_filter_2(X0,X1) = X2 | ~r1_tarski(X2,sK1071(X0,X1,X2)) | ~r1_tarski(X1,X2) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0) [cnf transformation 37756]
+53510. ~m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | v1_xboole_0(X1) | ~m2_filter_2(X2,X0) | k19_filter_2(X0,X1) = X2 | r1_tarski(X1,sK1071(X0,X1,X2)) | ~r1_tarski(X1,X2) | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0) [cnf transformation 37756]
+57146. ~r1_filter_2(u1_struct_0(sK1610),k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),sK1611,sK1612)),k21_filter_2(sK1610,sK1611,sK1612)) [cnf transformation 39517]
+57147. m2_filter_2(sK1612,sK1610) [cnf transformation 39517]
+57148. m2_filter_2(sK1611,sK1610) [cnf transformation 39517]
+57149. l3_lattices(sK1610) [cnf transformation 39517]
+57150. v10_lattices(sK1610) [cnf transformation 39517]
+57151. ~v3_struct_0(sK1610) [cnf transformation 39517]
+57152. v17_lattices(sK1610) [cnf transformation 39517]
+60151. v3_lattices(k1_lattice3(X0)) [cnf transformation 11555]
+60180. ~m2_filter_2(X1,X0) | ~v10_lattices(X0) | m2_lattice4(X1,X0) | v3_struct_0(X0) | ~l3_lattices(X0) [cnf transformation 28713]
+60181. ~m2_filter_2(X1,X0) | ~v10_lattices(X0) | v3_struct_0(X0) | ~v1_xboole_0(X1) | ~l3_lattices(X0) [cnf transformation 28713]
+60934. r1_filter_2(u1_struct_0(X0),k19_filter_2(X0,k4_subset_1(u1_struct_0(X0),X1,X2)),k19_filter_2(X0,k20_filter_2(X0,X1,X2))) | ~v10_lattices(X0) | ~l3_lattices(X0) | ~m2_filter_2(X2,X0) | ~m2_filter_2(X1,X0) | v3_struct_0(X0) [cnf transformation 24630]
+61397. r1_tarski(X1,X0) | ~m1_subset_1(X1,k1_zfmisc_1(X0)) [cnf transformation 41651]
+61398. m1_subset_1(X1,k1_zfmisc_1(X0)) | ~r1_tarski(X1,X0) [cnf transformation 41651]
+62835. m2_filter_2(k21_filter_2(X2,X1,X0),X2) | ~v10_lattices(X2) | ~l3_lattices(X2) | ~m2_filter_2(X0,X2) | v3_struct_0(X2) | ~v11_lattices(X2) | ~m2_filter_2(X1,X2) [cnf transformation 42349]
+69139. k1_zfmisc_1(X0) = k1_pcomps_1(X0) [cnf transformation 10607]
+73872. ~v17_lattices(X0) | v3_struct_0(X0) | v11_lattices(X0) | ~l3_lattices(X0) [cnf transformation 23799]
+74057. ~l3_lattices(X0) | m1_subset_1(X1,k1_zfmisc_1(u1_struct_0(X0))) | ~m2_lattice4(X1,X0) | v3_struct_0(X0) | ~v10_lattices(X0) [cnf transformation 28226]
+78974. k1_zfmisc_1(X0) = u1_pre_topc(k2_pcomps_1(X0)) [definition unfolding 69139,52790]
+79897. ~v3_lattices(X0) | u1_struct_0(X0) = u1_pre_topc(k2_pcomps_1(X1)) | k1_lattice3(X1) != X0 | ~l3_lattices(X0) [definition unfolding 52884,78974]
+80132. ~m1_subset_1(X1,u1_pre_topc(k2_pcomps_1(u1_struct_0(X0)))) | v3_struct_0(X0) | v1_xboole_0(X1) | ~r1_tarski(X1,X2) | k19_filter_2(X0,X1) = X2 | ~m2_filter_2(X2,X0) | ~l3_lattices(X0) | ~v10_lattices(X0) | r1_tarski(X1,sK1071(X0,X1,X2)) [definition unfolding 53510,78974]
+80133. ~m1_subset_1(X1,u1_pre_topc(k2_pcomps_1(u1_struct_0(X0)))) | v1_xboole_0(X1) | ~r1_tarski(X1,X2) | v3_struct_0(X0) | k19_filter_2(X0,X1) = X2 | ~v10_lattices(X0) | ~l3_lattices(X0) | ~m2_filter_2(X2,X0) | ~r1_tarski(X2,sK1071(X0,X1,X2)) [definition unfolding 53509,78974]
+83033. m1_subset_1(X1,u1_pre_topc(k2_pcomps_1(X0))) | ~r1_tarski(X1,X0) [definition unfolding 61398,78974]
+83034. r1_tarski(X1,X0) | ~m1_subset_1(X1,u1_pre_topc(k2_pcomps_1(X0))) [definition unfolding 61397,78974]
+87424. v3_struct_0(X0) | ~l3_lattices(X0) | ~m2_lattice4(X1,X0) | m1_subset_1(X1,u1_pre_topc(k2_pcomps_1(u1_struct_0(X0)))) | ~v10_lattices(X0) [definition unfolding 74057,78974]
+89284. r1_tarski(X1,X1) [equality resolution 51961]
+89355. ~v3_lattices(k1_lattice3(X1)) | u1_pre_topc(k2_pcomps_1(X1)) = u1_struct_0(k1_lattice3(X1)) | ~l3_lattices(k1_lattice3(X1)) [equality resolution 79897]
+128895. k20_filter_2(sK1610,sK1611,X0) = k21_filter_2(sK1610,sK1611,X0) | ~v10_lattices(sK1610) | v3_struct_0(sK1610) | ~m2_filter_2(X0,sK1610) | ~l3_lattices(sK1610) | ~v11_lattices(sK1610) [resolution 57148,51757]
+128905. v3_struct_0(sK1610) | a_3_1_filter_2(sK1610,X0,sK1612) = k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),X0,sK1612)) | ~m2_filter_2(X0,sK1610) | ~l3_lattices(sK1610) | ~v10_lattices(sK1610) [resolution 51562,57147]
+128922. u1_pre_topc(k2_pcomps_1(X0)) = u1_struct_0(k1_lattice3(X0)) | ~l3_lattices(k1_lattice3(X0)) [resolution 89355,60151]
+128923. u1_pre_topc(k2_pcomps_1(X0)) = u1_struct_0(k1_lattice3(X0)) [subsumption resolution 128922,50572]
+129100. m1_subset_1(X1,u1_struct_0(k1_lattice3(X0))) | ~r1_tarski(X1,X0) [backward demodulation 83033,128923]
+129101. ~m1_subset_1(X1,u1_struct_0(k1_lattice3(X0))) | r1_tarski(X1,X0) [backward demodulation 83034,128923]
+130000. ~m1_subset_1(X1,u1_struct_0(k1_lattice3(u1_struct_0(X0)))) | v1_xboole_0(X1) | r1_tarski(X1,sK1071(X0,X1,X2)) | v3_struct_0(X0) | k19_filter_2(X0,X1) = X2 | ~v10_lattices(X0) | ~l3_lattices(X0) | ~m2_filter_2(X2,X0) | ~r1_tarski(X1,X2) [backward demodulation 80132,128923]
+130001. ~m1_subset_1(X1,u1_struct_0(k1_lattice3(u1_struct_0(X0)))) | v1_xboole_0(X1) | ~r1_tarski(X2,sK1071(X0,X1,X2)) | ~v10_lattices(X0) | ~l3_lattices(X0) | v3_struct_0(X0) | ~r1_tarski(X1,X2) | k19_filter_2(X0,X1) = X2 | ~m2_filter_2(X2,X0) [backward demodulation 80133,128923]
+131394. m1_subset_1(X1,u1_struct_0(k1_lattice3(u1_struct_0(X0)))) | ~v10_lattices(X0) | ~m2_lattice4(X1,X0) | ~l3_lattices(X0) | v3_struct_0(X0) [backward demodulation 87424,128923]
+133748. v3_struct_0(sK1610) | ~l3_lattices(sK1610) | ~m2_filter_2(X0,sK1610) | k20_filter_2(sK1610,sK1611,X0) = k21_filter_2(sK1610,sK1611,X0) | ~v11_lattices(sK1610) [subsumption resolution 128895,57150]
+133768. ~v10_lattices(sK1610) | ~l3_lattices(sK1610) | ~m2_filter_2(X0,sK1610) | a_3_1_filter_2(sK1610,X0,sK1612) = k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),X0,sK1612)) [subsumption resolution 128905,57151]
+133922. ~l3_lattices(sK1610) | ~m2_filter_2(X0,sK1610) | k20_filter_2(sK1610,sK1611,X0) = k21_filter_2(sK1610,sK1611,X0) | ~v11_lattices(sK1610) [subsumption resolution 133748,57151]
+133927. ~l3_lattices(sK1610) | ~m2_filter_2(X0,sK1610) | a_3_1_filter_2(sK1610,X0,sK1612) = k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),X0,sK1612)) [subsumption resolution 133768,57150]
+133969. ~v11_lattices(sK1610) | ~m2_filter_2(X0,sK1610) | k20_filter_2(sK1610,sK1611,X0) = k21_filter_2(sK1610,sK1611,X0) [subsumption resolution 133922,57149]
+133974. ~m2_filter_2(X0,sK1610) | a_3_1_filter_2(sK1610,X0,sK1612) = k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),X0,sK1612)) [subsumption resolution 133927,57149]
+134006. 1211 <=> v11_lattices(sK1610) [avatar definition]
+134007. v11_lattices(sK1610) <- (1211) [avatar component clause 134006]
+134008. ~v11_lattices(sK1610) <- (~1211) [avatar component clause 134006]
+134014. 1213 <=> ! [X0] : (~m2_filter_2(X0,sK1610) | k20_filter_2(sK1610,sK1611,X0) = k21_filter_2(sK1610,sK1611,X0)) [avatar definition]
+134015. ~m2_filter_2(X0,sK1610) | k20_filter_2(sK1610,sK1611,X0) = k21_filter_2(sK1610,sK1611,X0) <- (1213) [avatar component clause 134014]
+134016. ~1211 | 1213 [avatar split clause 133969,134014,134006]
+134034. 1218 <=> m2_filter_2(k21_filter_2(sK1610,sK1611,sK1612),sK1610) [avatar definition]
+134035. m2_filter_2(k21_filter_2(sK1610,sK1611,sK1612),sK1610) <- (1218) [avatar component clause 134034]
+134036. ~m2_filter_2(k21_filter_2(sK1610,sK1611,sK1612),sK1610) <- (~1218) [avatar component clause 134034]
+134048. k19_filter_2(sK1610,k4_subset_1(u1_struct_0(sK1610),sK1611,sK1612)) = a_3_1_filter_2(sK1610,sK1611,sK1612) [resolution 133974,57148]
+134053. ~r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k21_filter_2(sK1610,sK1611,sK1612)) [backward demodulation 57146,134048]
+134138. r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612))) | ~m2_filter_2(sK1611,sK1610) | v3_struct_0(sK1610) | ~m2_filter_2(sK1612,sK1610) | ~l3_lattices(sK1610) | ~v10_lattices(sK1610) [superposition 60934,134048]
+134141. ~v10_lattices(sK1610) | r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612))) | v3_struct_0(sK1610) | ~m2_filter_2(sK1612,sK1610) | ~l3_lattices(sK1610) [subsumption resolution 134138,57148]
+134143. ~l3_lattices(sK1610) | ~m2_filter_2(sK1612,sK1610) | r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612))) | v3_struct_0(sK1610) [subsumption resolution 134141,57150]
+134145. r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612))) | v3_struct_0(sK1610) | ~m2_filter_2(sK1612,sK1610) [subsumption resolution 134143,57149]
+134155. ~m2_filter_2(sK1612,sK1610) | r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612))) [subsumption resolution 134145,57151]
+134156. r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612))) [subsumption resolution 134155,57147]
+134238. r1_tarski(X0,sK1071(X1,X0,X2)) | k19_filter_2(X1,X0) = X2 | v3_struct_0(X1) | ~m2_filter_2(X2,X1) | ~l3_lattices(X1) | ~r1_tarski(X0,X2) | v1_xboole_0(X0) | ~r1_tarski(X0,u1_struct_0(X1)) | ~v10_lattices(X1) [resolution 130000,129100]
+134496. ~r1_tarski(X1,sK1071(X2,X0,X1)) | v3_struct_0(X2) | ~m2_filter_2(X1,X2) | ~v10_lattices(X2) | ~r1_tarski(X0,u1_struct_0(X2)) | k19_filter_2(X2,X0) = X1 | v1_xboole_0(X0) | ~r1_tarski(X0,X1) | ~l3_lattices(X2) [resolution 130001,129100]
+136974. ~v10_lattices(X0) | ~r1_tarski(X1,X1) | ~m2_filter_2(X1,X0) | k19_filter_2(X0,X1) = X1 | ~l3_lattices(X0) | v1_xboole_0(X1) | v1_xboole_0(X1) | ~r1_tarski(X1,u1_struct_0(X0)) | v3_struct_0(X0) | v3_struct_0(X0) | ~v10_lattices(X0) | ~m2_filter_2(X1,X0) | k19_filter_2(X0,X1) = X1 | ~l3_lattices(X0) | ~r1_tarski(X1,u1_struct_0(X0)) | ~r1_tarski(X1,X1) [resolution 134496,134238]
+136979. ~l3_lattices(X0) | k19_filter_2(X0,X1) = X1 | v3_struct_0(X0) | ~r1_tarski(X1,u1_struct_0(X0)) | ~r1_tarski(X1,X1) | ~m2_filter_2(X1,X0) | v1_xboole_0(X1) | ~v10_lattices(X0) [duplicate literal removal 136974]
+136980. v3_struct_0(X0) | ~v10_lattices(X0) | ~l3_lattices(X0) | v1_xboole_0(X1) | ~r1_tarski(X1,u1_struct_0(X0)) | ~m2_filter_2(X1,X0) | k19_filter_2(X0,X1) = X1 [subsumption resolution 136979,89284]
+136981. ~r1_tarski(X1,u1_struct_0(X0)) | ~l3_lattices(X0) | ~m2_filter_2(X1,X0) | ~v10_lattices(X0) | v3_struct_0(X0) | k19_filter_2(X0,X1) = X1 [subsumption resolution 136980,60181]
+139964. r1_tarski(X1,u1_struct_0(X0)) | ~l3_lattices(X0) | v3_struct_0(X0) | ~v10_lattices(X0) | ~m2_lattice4(X1,X0) [resolution 131394,129101]
+143061. ~l3_lattices(X0) | ~l3_lattices(X0) | ~m2_filter_2(X1,X0) | v3_struct_0(X0) | ~v10_lattices(X0) | ~v10_lattices(X0) | k19_filter_2(X0,X1) = X1 | v3_struct_0(X0) | ~m2_lattice4(X1,X0) [resolution 139964,136981]
+143104. ~v10_lattices(X0) | v3_struct_0(X0) | ~l3_lattices(X0) | ~m2_filter_2(X1,X0) | k19_filter_2(X0,X1) = X1 | ~m2_lattice4(X1,X0) [duplicate literal removal 143061]
+143114. ~m2_filter_2(X1,X0) | k19_filter_2(X0,X1) = X1 | v3_struct_0(X0) | ~l3_lattices(X0) | ~v10_lattices(X0) [subsumption resolution 143104,60180]
+145075. ~v10_lattices(sK1610) | ~m2_filter_2(sK1612,sK1610) | v3_struct_0(sK1610) | ~m2_filter_2(sK1611,sK1610) | ~l3_lattices(sK1610) | ~v11_lattices(sK1610) <- (~1218) [resolution 134036,62835]
+152621. ~l3_lattices(sK1610) | v11_lattices(sK1610) | v3_struct_0(sK1610) [resolution 73872,57152]
+152624. v3_struct_0(sK1610) | v11_lattices(sK1610) [subsumption resolution 152621,57149]
+152626. v3_struct_0(sK1610) <- (~1211) [subsumption resolution 152624,134008]
+152628. $false <- (~1211) [subsumption resolution 152626,57151]
+152629. 1211 [avatar contradiction clause 152628]
+152653. ~m2_filter_2(sK1611,sK1610) | ~l3_lattices(sK1610) | ~m2_filter_2(sK1612,sK1610) | v3_struct_0(sK1610) | ~v11_lattices(sK1610) <- (~1218) [subsumption resolution 145075,57150]
+152740. v3_struct_0(sK1610) | ~v11_lattices(sK1610) | ~m2_filter_2(sK1612,sK1610) | ~l3_lattices(sK1610) <- (~1218) [subsumption resolution 152653,57148]
+152826. ~l3_lattices(sK1610) | ~m2_filter_2(sK1612,sK1610) | ~v11_lattices(sK1610) <- (~1218) [subsumption resolution 152740,57151]
+152912. ~v11_lattices(sK1610) | ~m2_filter_2(sK1612,sK1610) <- (~1218) [subsumption resolution 152826,57149]
+152983. ~m2_filter_2(sK1612,sK1610) <- (1211, ~1218) [subsumption resolution 152912,134007]
+153012. $false <- (1211, ~1218) [subsumption resolution 152983,57147]
+153013. ~1211 | 1218 [avatar contradiction clause 153012]
+153072. ~v10_lattices(sK1610) | k19_filter_2(sK1610,k21_filter_2(sK1610,sK1611,sK1612)) = k21_filter_2(sK1610,sK1611,sK1612) | ~l3_lattices(sK1610) | v3_struct_0(sK1610) <- (1218) [resolution 134035,143114]
+153119. ~l3_lattices(sK1610) | k19_filter_2(sK1610,k21_filter_2(sK1610,sK1611,sK1612)) = k21_filter_2(sK1610,sK1611,sK1612) | v3_struct_0(sK1610) <- (1218) [subsumption resolution 153072,57150]
+153161. k19_filter_2(sK1610,k21_filter_2(sK1610,sK1611,sK1612)) = k21_filter_2(sK1610,sK1611,sK1612) | v3_struct_0(sK1610) <- (1218) [subsumption resolution 153119,57149]
+153203. k19_filter_2(sK1610,k21_filter_2(sK1610,sK1611,sK1612)) = k21_filter_2(sK1610,sK1611,sK1612) <- (1218) [subsumption resolution 153161,57151]
+153227. 1598 <=> k19_filter_2(sK1610,k21_filter_2(sK1610,sK1611,sK1612)) = k21_filter_2(sK1610,sK1611,sK1612) [avatar definition]
+153229. k19_filter_2(sK1610,k21_filter_2(sK1610,sK1611,sK1612)) = k21_filter_2(sK1610,sK1611,sK1612) <- (1598) [avatar component clause 153227]
+153235. 1598 | ~1218 [avatar split clause 153203,134034,153227]
+154501. k20_filter_2(sK1610,sK1611,sK1612) = k21_filter_2(sK1610,sK1611,sK1612) <- (1213) [resolution 134015,57147]
+154511. ~r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k20_filter_2(sK1610,sK1611,sK1612)) <- (1213) [backward demodulation 134053,154501]
+154557. k20_filter_2(sK1610,sK1611,sK1612) = k19_filter_2(sK1610,k20_filter_2(sK1610,sK1611,sK1612)) <- (1213, 1598) [backward demodulation 153229,154501]
+154572. r1_filter_2(u1_struct_0(sK1610),a_3_1_filter_2(sK1610,sK1611,sK1612),k20_filter_2(sK1610,sK1611,sK1612)) <- (1213, 1598) [backward demodulation 134156,154557]
+154585. $false <- (1213, 1598) [subsumption resolution 154572,154511]
+154586. ~1213 | ~1598 [avatar contradiction clause 154585]
+154596. $false [avatar sat refutation 134016,152629,153013,153235,154586]
+% SZS output end Proof for LAT320+3
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 13651
+% >>> Preprocessing
+% Introduced names: 629
+% Introduced skolems: 4249
+% Pure predicates: 26
+% Unused predicate definitions: 2
+% Function definitions: 68
+% 
+% >>> Saturation
+% Initial clauses: 28486
+% Generated clauses: 87280
+% Activations started: 1105
+% Active clauses: 1105
+% Passive clauses: 36881
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 4122
+% Trivial inequalities: 5
+% Fw subsumption resolutions: 8674
+% Fw demodulations: 28628
+% Bw demodulations: 8719
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 486
+% Equational tautologies: 182
+% Forward subsumptions: 9451
+% Fw demodulations to eq. taut.: 11
+% Bw demodulations to eq. taut.: 9
+% 
+% >>> Generating Inferences
+% Binary resolution: 5810
+% Forward superposition: 441
+% Backward superposition: 1664
+% Equality resolution: 2
+% 
+% >>> AVATAR
+% Split clauses: 1318
+% Split components: 3574
+% Sat splitting refutations: 120
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1542
+% SAT solver unit clauses: 56
+% SAT solver binary clauses: 786
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 472
+% Gnn eval: 29351
+% Bulk evals: 13335
+% 
+% Time elapsed: 24.542 s
+% Peak memory usage: 915 MB
+% Instructions burned: 56433 (million)
+% ------------------------------
+% ------------------------------

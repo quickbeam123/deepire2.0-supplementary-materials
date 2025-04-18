@@ -1,0 +1,343 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop2/script-model.pt -npcc on -si on -rtra on --random_seed 10 Problems/SEU/SEU345+2.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for SEU345+2
+% SZS output start Proof for SEU345+2
+36. ! [X1,X0] : set_union2(X0,X1) = set_union2(X1,X0) [input(axiom)]
+38. ! [X1,X0] : set_intersection2(X0,X1) = set_intersection2(X1,X0) [input(axiom)]
+50. ! [X0] : ((~empty_carrier(X0) & meet_semilatt_str(X0)) => (lower_bounded_semilattstr(X0) <=> ? [X1] : (! [X2] : (element(X2,the_carrier(X0)) => (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) & element(X1,the_carrier(X0))))) [input(axiom)]
+55. ! [X0] : ((meet_semilatt_str(X0) & ~empty_carrier(X0)) => (lower_bounded_semilattstr(X0) => ! [X1] : (element(X1,the_carrier(X0)) => (! [X2] : (element(X2,the_carrier(X0)) => (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) <=> bottom_of_semilattstr(X0) = X1)))) [input(axiom)]
+63. ! [X1,X0] : ((strict_latt_str(X1) & latt_str(X1)) => (boole_lattice(X0) = X1 <=> (powerset(X0) = the_carrier(X1) & ! [X2] : (element(X2,powerset(X0)) => ! [X3] : (element(X3,powerset(X0)) => (apply_binary(the_L_meet(X1),X2,X3) = subset_intersection2(X0,X2,X3) & apply_binary(the_L_join(X1),X2,X3) = subset_union2(X0,X2,X3))))))) [input(axiom)]
+104. ! [X0] : cast_to_subset(X0) = X0 [input(axiom)]
+114. ! [X0,X1] : (element(X1,powerset(X0)) => set_difference(X0,X1) = subset_complement(X0,X1)) [input(axiom)]
+143. ! [X0] : (latt_str(boole_lattice(X0)) & strict_latt_str(boole_lattice(X0))) [input(axiom)]
+144. ! [X2,X1,X0] : ((element(X1,the_carrier(X0)) & join_semilatt_str(X0) & ~empty_carrier(X0) & element(X2,the_carrier(X0))) => element(join(X0,X1,X2),the_carrier(X0))) [input(axiom)]
+162. ! [X0] : element(cast_to_subset(X0),powerset(X0)) [input(axiom)]
+169. ! [X1,X0] : (element(X1,powerset(X0)) => element(subset_complement(X0,X1),powerset(X0))) [input(axiom)]
+178. ! [X0] : ((meet_semilatt_str(X0) & ~empty_carrier(X0)) => element(bottom_of_semilattstr(X0),the_carrier(X0))) [input(axiom)]
+198. ! [X0] : (latt_str(X0) => (join_semilatt_str(X0) & meet_semilatt_str(X0))) [input(axiom)]
+229. ! [X0] : (~empty_carrier(boole_lattice(X0)) & strict_latt_str(boole_lattice(X0))) [input(axiom)]
+242. ! [X0] : (relation(identity_relation(X0)) & function(identity_relation(X0))) [input(axiom)]
+274. empty(empty_set) & relation(empty_set) [input(axiom)]
+294. ! [X0,X1] : (element(X1,powerset(X0)) => subset_complement(X0,subset_complement(X0,X1)) = X1) [input(axiom)]
+330. ! [X0] : ? [X1] : (empty(X1) & natural(X1) & function(X1) & relation(X1) & epsilon_connected(X1) & finite(X1) & epsilon_transitive(X1) & one_to_one(X1) & element(X1,powerset(X0)) & ordinal(X1)) [input(axiom)]
+410. ! [X0] : ? [X1] : (relation(X1) & function(X1) & ! [X2] : (in(X2,X0) => singleton(X2) = apply(X1,X2)) & relation_dom(X1) = X0) [input(assumption)]
+464. ! [X1,X0] : (element(X1,the_carrier(boole_lattice(X0))) => ! [X2] : (element(X2,the_carrier(boole_lattice(X0))) => (set_union2(X1,X2) = join(boole_lattice(X0),X1,X2) & set_intersection2(X1,X2) = meet(boole_lattice(X0),X1,X2)))) [input(assumption)]
+498. ! [X0] : empty_set = set_intersection2(X0,empty_set) [input(axiom)]
+516. ! [X1,X0] : subset(set_difference(X0,X1),X0) [input(assumption)]
+518. ! [X1,X0] : (empty_set = set_difference(X0,X1) <=> subset(X0,X1)) [input(assumption)]
+522. ! [X1,X0] : set_union2(X0,X1) = set_union2(X0,set_difference(X1,X0)) [input(assumption)]
+524. ! [X0] : set_difference(X0,empty_set) = X0 [input(axiom)]
+525. ! [X0] : (lower_bounded_semilattstr(boole_lattice(X0)) & empty_set = bottom_of_semilattstr(boole_lattice(X0))) [input(conjecture)]
+526. ~! [X0] : (lower_bounded_semilattstr(boole_lattice(X0)) & empty_set = bottom_of_semilattstr(boole_lattice(X0))) [negated conjecture 525]
+528. ! [X1,X0] : (subset(X0,X1) <=> element(X0,powerset(X1))) [input(axiom)]
+531. ! [X0] : (subset(X0,empty_set) => empty_set = X0) [input(assumption)]
+532. ! [X0,X1] : set_difference(X0,X1) = set_difference(set_union2(X0,X1),X1) [input(assumption)]
+551. ! [X1,X0] : set_intersection2(X0,X1) = set_difference(X0,set_difference(X0,X1)) [input(assumption)]
+553. ! [X0] : empty_set = set_difference(empty_set,X0) [input(axiom)]
+573. empty_set = relation_rng(empty_set) & empty_set = relation_dom(empty_set) [input(assumption)]
+577. ! [X0] : (relation(X0) => ((empty_set = relation_rng(X0) | relation_dom(X0) = empty_set) => empty_set = X0)) [input(assumption)]
+582. ! [X0] : (empty(X0) => empty_set = X0) [input(axiom)]
+587. ! [X0] : (relation_dom(identity_relation(X0)) = X0 & relation_rng(identity_relation(X0)) = X0) [input(assumption)]
+594. ! [X1,X0] : subset(X0,set_union2(X0,X1)) [input(assumption)]
+597. ! [X1,X0] : (relation(X1) => subset(relation_dom_restriction(X1,X0),X1)) [input(assumption)]
+603. ! [X1,X0] : (relation(X1) => set_intersection2(relation_dom(X1),X0) = relation_dom(relation_dom_restriction(X1,X0))) [input(assumption)]
+620. ! [X1,X0] : set_union2(X1,X0) = set_union2(X1,set_difference(X0,X1)) [rectify 522]
+626. ! [X0,X1] : ((strict_latt_str(X0) & latt_str(X0)) => (boole_lattice(X1) = X0 <=> (the_carrier(X0) = powerset(X1) & ! [X2] : (element(X2,powerset(X1)) => ! [X3] : (element(X3,powerset(X1)) => (apply_binary(the_L_join(X0),X2,X3) = subset_union2(X1,X2,X3) & apply_binary(the_L_meet(X0),X2,X3) = subset_intersection2(X1,X2,X3))))))) [rectify 63]
+658. ! [X1,X0] : subset(set_difference(X1,X0),X1) [rectify 516]
+760. ! [X0,X1] : (element(X1,powerset(X0)) <=> subset(X1,X0)) [rectify 528]
+776. ! [X1,X0] : set_intersection2(X0,X1) = set_intersection2(X1,X0) [rectify 38]
+813. ! [X1,X0] : (relation(X0) => relation_dom(relation_dom_restriction(X0,X1)) = set_intersection2(relation_dom(X0),X1)) [rectify 603]
+827. ! [X0,X1] : (empty_set = set_difference(X1,X0) <=> subset(X1,X0)) [rectify 518]
+843. ! [X0,X1] : (element(X0,powerset(X1)) => element(subset_complement(X1,X0),powerset(X1))) [rectify 169]
+922. ! [X0] : ? [X1] : (function(X1) & relation_dom(X1) = X0 & ! [X2] : (singleton(X2) = apply(X1,X2) | ~in(X2,X0)) & relation(X1)) [ennf transformation 410]
+932. ! [X0] : (~subset(X0,empty_set) | empty_set = X0) [ennf transformation 531]
+1029. ! [X1,X0] : (! [X2] : (~element(X2,the_carrier(boole_lattice(X0))) | (set_union2(X1,X2) = join(boole_lattice(X0),X1,X2) & set_intersection2(X1,X2) = meet(boole_lattice(X0),X1,X2))) | ~element(X1,the_carrier(boole_lattice(X0)))) [ennf transformation 464]
+1031. ? [X0] : (empty_set != bottom_of_semilattstr(boole_lattice(X0)) | ~lower_bounded_semilattstr(boole_lattice(X0))) [ennf transformation 526]
+1041. ! [X0] : (element(bottom_of_semilattstr(X0),the_carrier(X0)) | (~meet_semilatt_str(X0) | empty_carrier(X0))) [ennf transformation 178]
+1042. ! [X0] : (~meet_semilatt_str(X0) | element(bottom_of_semilattstr(X0),the_carrier(X0)) | empty_carrier(X0)) [flattening 1041]
+1044. ! [X0] : ((! [X1] : (~element(X1,the_carrier(X0)) | (! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) <=> bottom_of_semilattstr(X0) = X1)) | ~lower_bounded_semilattstr(X0)) | (~meet_semilatt_str(X0) | empty_carrier(X0))) [ennf transformation 55]
+1045. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | (! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) <=> bottom_of_semilattstr(X0) = X1)) | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) | empty_carrier(X0)) [flattening 1044]
+1047. ! [X1,X0] : (~element(X0,powerset(X1)) | element(subset_complement(X1,X0),powerset(X1))) [ennf transformation 843]
+1108. ! [X1,X0] : (~relation(X0) | relation_dom(relation_dom_restriction(X0,X1)) = set_intersection2(relation_dom(X0),X1)) [ennf transformation 813]
+1115. ! [X0,X1] : (set_difference(X0,X1) = subset_complement(X0,X1) | ~element(X1,powerset(X0))) [ennf transformation 114]
+1119. ! [X2,X1,X0] : (element(join(X0,X1,X2),the_carrier(X0)) | (~element(X1,the_carrier(X0)) | ~join_semilatt_str(X0) | empty_carrier(X0) | ~element(X2,the_carrier(X0)))) [ennf transformation 144]
+1120. ! [X0,X2,X1] : (~element(X2,the_carrier(X0)) | empty_carrier(X0) | element(join(X0,X1,X2),the_carrier(X0)) | ~join_semilatt_str(X0) | ~element(X1,the_carrier(X0))) [flattening 1119]
+1145. ! [X1,X0] : (~relation(X1) | subset(relation_dom_restriction(X1,X0),X1)) [ennf transformation 597]
+1251. ! [X1,X0] : (subset_complement(X0,subset_complement(X0,X1)) = X1 | ~element(X1,powerset(X0))) [ennf transformation 294]
+1345. ! [X0] : ((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : ((meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1) | ~element(X2,the_carrier(X0)))) <=> lower_bounded_semilattstr(X0)) | (empty_carrier(X0) | ~meet_semilatt_str(X0))) [ennf transformation 50]
+1346. ! [X0] : (~meet_semilatt_str(X0) | (? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : ((meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1) | ~element(X2,the_carrier(X0)))) <=> lower_bounded_semilattstr(X0)) | empty_carrier(X0)) [flattening 1345]
+1463. ! [X0,X1] : ((boole_lattice(X1) = X0 <=> (the_carrier(X0) = powerset(X1) & ! [X2] : (~element(X2,powerset(X1)) | ! [X3] : ((apply_binary(the_L_join(X0),X2,X3) = subset_union2(X1,X2,X3) & apply_binary(the_L_meet(X0),X2,X3) = subset_intersection2(X1,X2,X3)) | ~element(X3,powerset(X1)))))) | (~strict_latt_str(X0) | ~latt_str(X0))) [ennf transformation 626]
+1464. ! [X1,X0] : ((boole_lattice(X1) = X0 <=> (the_carrier(X0) = powerset(X1) & ! [X2] : (~element(X2,powerset(X1)) | ! [X3] : ((apply_binary(the_L_join(X0),X2,X3) = subset_union2(X1,X2,X3) & apply_binary(the_L_meet(X0),X2,X3) = subset_intersection2(X1,X2,X3)) | ~element(X3,powerset(X1)))))) | ~strict_latt_str(X0) | ~latt_str(X0)) [flattening 1463]
+1476. ! [X0] : ((empty_set = X0 | (relation_dom(X0) != empty_set & empty_set != relation_rng(X0))) | ~relation(X0)) [ennf transformation 577]
+1477. ! [X0] : ((relation_dom(X0) != empty_set & empty_set != relation_rng(X0)) | empty_set = X0 | ~relation(X0)) [flattening 1476]
+1484. ! [X0] : ((join_semilatt_str(X0) & meet_semilatt_str(X0)) | ~latt_str(X0)) [ennf transformation 198]
+1496. ! [X0] : (empty_set = X0 | ~empty(X0)) [ennf transformation 582]
+1664. ! [X0,X1] : ((empty_set = set_difference(X1,X0) | ~subset(X1,X0)) & (subset(X1,X0) | empty_set != set_difference(X1,X0))) [nnf transformation 827]
+1714. ! [X0,X1] : set_intersection2(X1,X0) = set_difference(X1,set_difference(X1,X0)) [rectify 551]
+1749. ! [X0] : (? [X1] : (empty(X1) & natural(X1) & function(X1) & relation(X1) & epsilon_connected(X1) & finite(X1) & epsilon_transitive(X1) & one_to_one(X1) & element(X1,powerset(X0)) & ordinal(X1)) => (empty(sK98(X0)) & natural(sK98(X0)) & function(sK98(X0)) & relation(sK98(X0)) & epsilon_connected(sK98(X0)) & finite(sK98(X0)) & epsilon_transitive(sK98(X0)) & one_to_one(sK98(X0)) & element(sK98(X0),powerset(X0)) & ordinal(sK98(X0)))) [choice axiom]
+1750. ! [X0] : (empty(sK98(X0)) & natural(sK98(X0)) & function(sK98(X0)) & relation(sK98(X0)) & epsilon_connected(sK98(X0)) & finite(sK98(X0)) & epsilon_transitive(sK98(X0)) & one_to_one(sK98(X0)) & element(sK98(X0),powerset(X0)) & ordinal(sK98(X0))) [skolemisation 330,1749]
+1773. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) | bottom_of_semilattstr(X0) != X1) & (bottom_of_semilattstr(X0) = X1 | ? [X2] : (element(X2,the_carrier(X0)) & (meet(X0,X1,X2) != X1 | meet(X0,X2,X1) != X1))))) | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) | empty_carrier(X0)) [nnf transformation 1045]
+1774. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) | bottom_of_semilattstr(X0) != X1) & (bottom_of_semilattstr(X0) = X1 | ? [X3] : (element(X3,the_carrier(X0)) & (meet(X0,X1,X3) != X1 | meet(X0,X3,X1) != X1))))) | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) | empty_carrier(X0)) [rectify 1773]
+1775. ! [X0,X1] : (? [X3] : (element(X3,the_carrier(X0)) & (meet(X0,X1,X3) != X1 | meet(X0,X3,X1) != X1)) => (element(sK108(X0,X1),the_carrier(X0)) & (meet(X0,X1,sK108(X0,X1)) != X1 | meet(X0,sK108(X0,X1),X1) != X1))) [choice axiom]
+1776. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ((! [X2] : (~element(X2,the_carrier(X0)) | (meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1)) | bottom_of_semilattstr(X0) != X1) & (bottom_of_semilattstr(X0) = X1 | (element(sK108(X0,X1),the_carrier(X0)) & (meet(X0,X1,sK108(X0,X1)) != X1 | meet(X0,sK108(X0,X1),X1) != X1))))) | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) | empty_carrier(X0)) [skolemisation 1774,1775]
+1868. ! [X0,X1] : (~relation(X0) | subset(relation_dom_restriction(X0,X1),X0)) [rectify 1145]
+1879. ! [X0,X1] : set_union2(X0,X1) = set_union2(X1,X0) [rectify 36]
+1930. ! [X0,X1] : (~element(X1,powerset(X0)) | element(subset_complement(X0,X1),powerset(X0))) [rectify 1047]
+2039. ! [X0,X1] : subset(set_difference(X0,X1),X0) [rectify 658]
+2125. ! [X0,X1] : (subset_complement(X1,subset_complement(X1,X0)) = X0 | ~element(X0,powerset(X1))) [rectify 1251]
+2177. ! [X0,X1] : (~relation(X1) | set_intersection2(relation_dom(X1),X0) = relation_dom(relation_dom_restriction(X1,X0))) [rectify 1108]
+2194. ! [X0,X1] : ((element(X1,powerset(X0)) | ~subset(X1,X0)) & (subset(X1,X0) | ~element(X1,powerset(X0)))) [nnf transformation 760]
+2228. ! [X0] : (~meet_semilatt_str(X0) | ((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : ((meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1) | ~element(X2,the_carrier(X0)))) | ~lower_bounded_semilattstr(X0)) & (lower_bounded_semilattstr(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ? [X2] : ((meet(X0,X1,X2) != X1 | meet(X0,X2,X1) != X1) & element(X2,the_carrier(X0)))))) | empty_carrier(X0)) [nnf transformation 1346]
+2229. ! [X0] : (~meet_semilatt_str(X0) | ((? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : ((meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1) | ~element(X2,the_carrier(X0)))) | ~lower_bounded_semilattstr(X0)) & (lower_bounded_semilattstr(X0) | ! [X3] : (~element(X3,the_carrier(X0)) | ? [X4] : ((meet(X0,X3,X4) != X3 | meet(X0,X4,X3) != X3) & element(X4,the_carrier(X0)))))) | empty_carrier(X0)) [rectify 2228]
+2230. ! [X0] : (? [X1] : (element(X1,the_carrier(X0)) & ! [X2] : ((meet(X0,X1,X2) = X1 & meet(X0,X2,X1) = X1) | ~element(X2,the_carrier(X0)))) => (element(sK267(X0),the_carrier(X0)) & ! [X2] : ((meet(X0,sK267(X0),X2) = sK267(X0) & sK267(X0) = meet(X0,X2,sK267(X0))) | ~element(X2,the_carrier(X0))))) [choice axiom]
+2231. ! [X0,X3] : (? [X4] : ((meet(X0,X3,X4) != X3 | meet(X0,X4,X3) != X3) & element(X4,the_carrier(X0))) => ((meet(X0,X3,sK268(X0,X3)) != X3 | meet(X0,sK268(X0,X3),X3) != X3) & element(sK268(X0,X3),the_carrier(X0)))) [choice axiom]
+2232. ! [X0] : (~meet_semilatt_str(X0) | (((element(sK267(X0),the_carrier(X0)) & ! [X2] : ((meet(X0,sK267(X0),X2) = sK267(X0) & sK267(X0) = meet(X0,X2,sK267(X0))) | ~element(X2,the_carrier(X0)))) | ~lower_bounded_semilattstr(X0)) & (lower_bounded_semilattstr(X0) | ! [X3] : (~element(X3,the_carrier(X0)) | ((meet(X0,X3,sK268(X0,X3)) != X3 | meet(X0,sK268(X0,X3),X3) != X3) & element(sK268(X0,X3),the_carrier(X0)))))) | empty_carrier(X0)) [skolemisation 2229,2231,2230]
+2350. ? [X0] : (empty_set != bottom_of_semilattstr(boole_lattice(X0)) | ~lower_bounded_semilattstr(boole_lattice(X0))) => (empty_set != bottom_of_semilattstr(boole_lattice(sK313)) | ~lower_bounded_semilattstr(boole_lattice(sK313))) [choice axiom]
+2351. empty_set != bottom_of_semilattstr(boole_lattice(sK313)) | ~lower_bounded_semilattstr(boole_lattice(sK313)) [skolemisation 1031,2350]
+2421. ! [X0,X1] : set_intersection2(X0,X1) = set_intersection2(X1,X0) [rectify 776]
+2452. ! [X0,X1] : (! [X2] : (~element(X2,the_carrier(boole_lattice(X1))) | (set_union2(X0,X2) = join(boole_lattice(X1),X0,X2) & set_intersection2(X0,X2) = meet(boole_lattice(X1),X0,X2))) | ~element(X0,the_carrier(boole_lattice(X1)))) [rectify 1029]
+2533. ! [X0,X1] : set_union2(X0,X1) = set_union2(X0,set_difference(X1,X0)) [rectify 620]
+2574. ! [X0,X1,X2] : (~element(X1,the_carrier(X0)) | empty_carrier(X0) | element(join(X0,X2,X1),the_carrier(X0)) | ~join_semilatt_str(X0) | ~element(X2,the_carrier(X0))) [rectify 1120]
+2627. ! [X0,X1] : subset(X1,set_union2(X1,X0)) [rectify 594]
+2668. ! [X0] : (? [X1] : (function(X1) & relation_dom(X1) = X0 & ! [X2] : (singleton(X2) = apply(X1,X2) | ~in(X2,X0)) & relation(X1)) => (function(sK441(X0)) & relation_dom(sK441(X0)) = X0 & ! [X2] : (singleton(X2) = apply(sK441(X0),X2) | ~in(X2,X0)) & relation(sK441(X0)))) [choice axiom]
+2669. ! [X0] : (function(sK441(X0)) & relation_dom(sK441(X0)) = X0 & ! [X2] : (singleton(X2) = apply(sK441(X0),X2) | ~in(X2,X0)) & relation(sK441(X0))) [skolemisation 922,2668]
+2751. ! [X1,X0] : (((boole_lattice(X1) = X0 | (the_carrier(X0) != powerset(X1) | ? [X2] : (element(X2,powerset(X1)) & ? [X3] : ((apply_binary(the_L_join(X0),X2,X3) != subset_union2(X1,X2,X3) | apply_binary(the_L_meet(X0),X2,X3) != subset_intersection2(X1,X2,X3)) & element(X3,powerset(X1)))))) & ((the_carrier(X0) = powerset(X1) & ! [X2] : (~element(X2,powerset(X1)) | ! [X3] : ((apply_binary(the_L_join(X0),X2,X3) = subset_union2(X1,X2,X3) & apply_binary(the_L_meet(X0),X2,X3) = subset_intersection2(X1,X2,X3)) | ~element(X3,powerset(X1))))) | boole_lattice(X1) != X0)) | ~strict_latt_str(X0) | ~latt_str(X0)) [nnf transformation 1464]
+2752. ! [X1,X0] : (((boole_lattice(X1) = X0 | the_carrier(X0) != powerset(X1) | ? [X2] : (element(X2,powerset(X1)) & ? [X3] : ((apply_binary(the_L_join(X0),X2,X3) != subset_union2(X1,X2,X3) | apply_binary(the_L_meet(X0),X2,X3) != subset_intersection2(X1,X2,X3)) & element(X3,powerset(X1))))) & ((the_carrier(X0) = powerset(X1) & ! [X2] : (~element(X2,powerset(X1)) | ! [X3] : ((apply_binary(the_L_join(X0),X2,X3) = subset_union2(X1,X2,X3) & apply_binary(the_L_meet(X0),X2,X3) = subset_intersection2(X1,X2,X3)) | ~element(X3,powerset(X1))))) | boole_lattice(X1) != X0)) | ~strict_latt_str(X0) | ~latt_str(X0)) [flattening 2751]
+2753. ! [X0,X1] : (((boole_lattice(X0) = X1 | powerset(X0) != the_carrier(X1) | ? [X2] : (element(X2,powerset(X0)) & ? [X3] : ((apply_binary(the_L_join(X1),X2,X3) != subset_union2(X0,X2,X3) | apply_binary(the_L_meet(X1),X2,X3) != subset_intersection2(X0,X2,X3)) & element(X3,powerset(X0))))) & ((powerset(X0) = the_carrier(X1) & ! [X4] : (~element(X4,powerset(X0)) | ! [X5] : ((apply_binary(the_L_join(X1),X4,X5) = subset_union2(X0,X4,X5) & apply_binary(the_L_meet(X1),X4,X5) = subset_intersection2(X0,X4,X5)) | ~element(X5,powerset(X0))))) | boole_lattice(X0) != X1)) | ~strict_latt_str(X1) | ~latt_str(X1)) [rectify 2752]
+2754. ! [X0,X1] : (? [X2] : (element(X2,powerset(X0)) & ? [X3] : ((apply_binary(the_L_join(X1),X2,X3) != subset_union2(X0,X2,X3) | apply_binary(the_L_meet(X1),X2,X3) != subset_intersection2(X0,X2,X3)) & element(X3,powerset(X0)))) => (element(sK475(X0,X1),powerset(X0)) & ? [X3] : ((subset_union2(X0,sK475(X0,X1),X3) != apply_binary(the_L_join(X1),sK475(X0,X1),X3) | apply_binary(the_L_meet(X1),sK475(X0,X1),X3) != subset_intersection2(X0,sK475(X0,X1),X3)) & element(X3,powerset(X0))))) [choice axiom]
+2755. ! [X0,X1] : (? [X3] : ((subset_union2(X0,sK475(X0,X1),X3) != apply_binary(the_L_join(X1),sK475(X0,X1),X3) | apply_binary(the_L_meet(X1),sK475(X0,X1),X3) != subset_intersection2(X0,sK475(X0,X1),X3)) & element(X3,powerset(X0))) => ((apply_binary(the_L_join(X1),sK475(X0,X1),sK476(X0,X1)) != subset_union2(X0,sK475(X0,X1),sK476(X0,X1)) | apply_binary(the_L_meet(X1),sK475(X0,X1),sK476(X0,X1)) != subset_intersection2(X0,sK475(X0,X1),sK476(X0,X1))) & element(sK476(X0,X1),powerset(X0)))) [choice axiom]
+2756. ! [X0,X1] : (((boole_lattice(X0) = X1 | powerset(X0) != the_carrier(X1) | (element(sK475(X0,X1),powerset(X0)) & ((apply_binary(the_L_join(X1),sK475(X0,X1),sK476(X0,X1)) != subset_union2(X0,sK475(X0,X1),sK476(X0,X1)) | apply_binary(the_L_meet(X1),sK475(X0,X1),sK476(X0,X1)) != subset_intersection2(X0,sK475(X0,X1),sK476(X0,X1))) & element(sK476(X0,X1),powerset(X0))))) & ((powerset(X0) = the_carrier(X1) & ! [X4] : (~element(X4,powerset(X0)) | ! [X5] : ((apply_binary(the_L_join(X1),X4,X5) = subset_union2(X0,X4,X5) & apply_binary(the_L_meet(X1),X4,X5) = subset_intersection2(X0,X4,X5)) | ~element(X5,powerset(X0))))) | boole_lattice(X0) != X1)) | ~strict_latt_str(X1) | ~latt_str(X1)) [skolemisation 2753,2755,2754]
+2825. ~subset(X1,X0) | empty_set = set_difference(X1,X0) [cnf transformation 1664]
+2893. ~latt_str(X0) | meet_semilatt_str(X0) [cnf transformation 1484]
+2894. ~latt_str(X0) | join_semilatt_str(X0) [cnf transformation 1484]
+2895. set_intersection2(X1,X0) = set_difference(X1,set_difference(X1,X0)) [cnf transformation 1714]
+2940. element(sK98(X0),powerset(X0)) [cnf transformation 1750]
+2948. empty(sK98(X0)) [cnf transformation 1750]
+2966. strict_latt_str(boole_lattice(X0)) [cnf transformation 229]
+2967. ~empty_carrier(boole_lattice(X0)) [cnf transformation 229]
+2989. ~element(X1,the_carrier(X0)) | ~element(X2,the_carrier(X0)) | meet(X0,X1,X2) = X1 | bottom_of_semilattstr(X0) != X1 | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) | empty_carrier(X0) [cnf transformation 1776]
+3123. subset(relation_dom_restriction(X0,X1),X0) | ~relation(X0) [cnf transformation 1868]
+3150. set_union2(X0,X1) = set_union2(X1,X0) [cnf transformation 1879]
+3205. element(subset_complement(X0,X1),powerset(X0)) | ~element(X1,powerset(X0)) [cnf transformation 1930]
+3339. element(cast_to_subset(X0),powerset(X0)) [cnf transformation 162]
+3366. latt_str(boole_lattice(X0)) [cnf transformation 143]
+3376. subset(set_difference(X0,X1),X0) [cnf transformation 2039]
+3482. ~element(X1,powerset(X0)) | set_difference(X0,X1) = subset_complement(X0,X1) [cnf transformation 1115]
+3489. cast_to_subset(X0) = X0 [cnf transformation 104]
+3538. ~element(X0,powerset(X1)) | subset_complement(X1,subset_complement(X1,X0)) = X0 [cnf transformation 2125]
+3615. ~relation(X1) | set_intersection2(relation_dom(X1),X0) = relation_dom(relation_dom_restriction(X1,X0)) [cnf transformation 2177]
+3629. set_difference(X0,X1) = set_difference(set_union2(X0,X1),X1) [cnf transformation 532]
+3630. ~empty(X0) | empty_set = X0 [cnf transformation 1496]
+3632. element(X1,powerset(X0)) | ~subset(X1,X0) [cnf transformation 2194]
+3654. empty_set = relation_dom(empty_set) [cnf transformation 573]
+3684. empty_set = set_difference(empty_set,X0) [cnf transformation 553]
+3685. element(sK268(X0,X3),the_carrier(X0)) | lower_bounded_semilattstr(X0) | empty_carrier(X0) | ~meet_semilatt_str(X0) | ~element(X3,the_carrier(X0)) [cnf transformation 2232]
+3686. meet(X0,sK268(X0,X3),X3) != X3 | meet(X0,X3,sK268(X0,X3)) != X3 | empty_carrier(X0) | ~element(X3,the_carrier(X0)) | lower_bounded_semilattstr(X0) | ~meet_semilatt_str(X0) [cnf transformation 2232]
+3750. set_difference(X0,empty_set) = X0 [cnf transformation 524]
+3841. empty_set != bottom_of_semilattstr(boole_lattice(sK313)) | ~lower_bounded_semilattstr(boole_lattice(sK313)) [cnf transformation 2351]
+3953. set_intersection2(X0,X1) = set_intersection2(X1,X0) [cnf transformation 2421]
+3983. ~element(X2,the_carrier(boole_lattice(X1))) | set_intersection2(X0,X2) = meet(boole_lattice(X1),X0,X2) | ~element(X0,the_carrier(boole_lattice(X1))) [cnf transformation 2452]
+3984. set_union2(X0,X2) = join(boole_lattice(X1),X0,X2) | ~element(X2,the_carrier(boole_lattice(X1))) | ~element(X0,the_carrier(boole_lattice(X1))) [cnf transformation 2452]
+4012. relation_dom(identity_relation(X0)) = X0 [cnf transformation 587]
+4013. relation(empty_set) [cnf transformation 274]
+4122. set_union2(X0,X1) = set_union2(X0,set_difference(X1,X0)) [cnf transformation 2533]
+4177. element(join(X0,X2,X1),the_carrier(X0)) | ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~element(X2,the_carrier(X0)) | ~join_semilatt_str(X0) [cnf transformation 2574]
+4239. ~subset(X0,empty_set) | empty_set = X0 [cnf transformation 932]
+4246. subset(X1,set_union2(X1,X0)) [cnf transformation 2627]
+4247. element(bottom_of_semilattstr(X0),the_carrier(X0)) | ~meet_semilatt_str(X0) | empty_carrier(X0) [cnf transformation 1042]
+4310. relation(identity_relation(X0)) [cnf transformation 242]
+4315. relation(sK441(X0)) [cnf transformation 2669]
+4317. relation_dom(sK441(X0)) = X0 [cnf transformation 2669]
+4384. empty_set = set_intersection2(X0,empty_set) [cnf transformation 498]
+4416. relation_dom(X0) != empty_set | ~relation(X0) | empty_set = X0 [cnf transformation 1477]
+4439. powerset(X0) = the_carrier(X1) | boole_lattice(X0) != X1 | ~strict_latt_str(X1) | ~latt_str(X1) [cnf transformation 2756]
+4674. ~relation(X1) | relation_dom(relation_dom_restriction(X1,X0)) = set_difference(relation_dom(X1),set_difference(relation_dom(X1),X0)) [definition unfolding 3615,2895]
+4749. set_difference(X0,set_difference(X0,X1)) = set_difference(X1,set_difference(X1,X0)) [definition unfolding 3953,2895,2895]
+4756. ~element(X2,the_carrier(boole_lattice(X1))) | meet(boole_lattice(X1),X0,X2) = set_difference(X0,set_difference(X0,X2)) | ~element(X0,the_carrier(boole_lattice(X1))) [definition unfolding 3983,2895]
+4866. empty_set = set_difference(X0,set_difference(X0,empty_set)) [definition unfolding 4384,2895]
+4919. bottom_of_semilattstr(X0) = meet(X0,bottom_of_semilattstr(X0),X2) | empty_carrier(X0) | ~lower_bounded_semilattstr(X0) | ~element(X2,the_carrier(X0)) | ~meet_semilatt_str(X0) | ~element(bottom_of_semilattstr(X0),the_carrier(X0)) [equality resolution 2989]
+5138. powerset(X0) = the_carrier(boole_lattice(X0)) | ~strict_latt_str(boole_lattice(X0)) | ~latt_str(boole_lattice(X0)) [equality resolution 4439]
+5275. element(X0,powerset(X0)) [forward demodulation 3339,3489]
+5349. 38 <=> lower_bounded_semilattstr(boole_lattice(sK313)) [avatar definition]
+5350. lower_bounded_semilattstr(boole_lattice(sK313)) <- (38) [avatar component clause 5349]
+5351. ~lower_bounded_semilattstr(boole_lattice(sK313)) <- (~38) [avatar component clause 5349]
+5353. 39 <=> empty_set = bottom_of_semilattstr(boole_lattice(sK313)) [avatar definition]
+5355. empty_set != bottom_of_semilattstr(boole_lattice(sK313)) <- (~39) [avatar component clause 5353]
+5356. ~38 | ~39 [avatar split clause 3841,5353,5349]
+5387. empty_set = set_difference(X0,X0) [forward demodulation 4866,3750]
+5398. ~element(X2,the_carrier(X0)) | empty_carrier(X0) | bottom_of_semilattstr(X0) = meet(X0,bottom_of_semilattstr(X0),X2) | ~meet_semilatt_str(X0) | ~lower_bounded_semilattstr(X0) [subsumption resolution 4919,4247]
+5422. ~latt_str(boole_lattice(X0)) | powerset(X0) = the_carrier(boole_lattice(X0)) [subsumption resolution 5138,2966]
+5581. powerset(X0) = the_carrier(boole_lattice(X0)) [subsumption resolution 5422,3366]
+5601. set_union2(X0,X2) = join(boole_lattice(X1),X0,X2) | ~element(X0,the_carrier(boole_lattice(X1))) | ~element(X2,powerset(X1)) [backward demodulation 3984,5581]
+5602. ~element(X0,the_carrier(boole_lattice(X1))) | ~element(X2,powerset(X1)) | meet(boole_lattice(X1),X0,X2) = set_difference(X0,set_difference(X0,X2)) [backward demodulation 4756,5581]
+5607. ~element(X2,powerset(X1)) | ~element(X0,powerset(X1)) | set_union2(X0,X2) = join(boole_lattice(X1),X0,X2) [forward demodulation 5601,5581]
+5608. ~element(X2,powerset(X1)) | ~element(X0,powerset(X1)) | meet(boole_lattice(X1),X0,X2) = set_difference(X0,set_difference(X0,X2)) [forward demodulation 5602,5581]
+5612. meet_semilatt_str(boole_lattice(X0)) [resolution 3366,2893]
+5613. join_semilatt_str(boole_lattice(X0)) [resolution 3366,2894]
+5614. set_difference(X0,X0) = subset_complement(X0,X0) [resolution 3482,5275]
+5615. empty_set = subset_complement(X0,X0) [forward demodulation 5614,5387]
+5620. set_difference(X1,X0) = set_difference(set_union2(X0,X1),X0) [superposition 3629,3150]
+5625. ~element(X0,powerset(X1)) | set_union2(X0,X1) = join(boole_lattice(X1),X0,X1) [resolution 5607,5275]
+5626. empty_carrier(boole_lattice(X0)) | ~element(X1,powerset(X0)) | lower_bounded_semilattstr(boole_lattice(X0)) | ~meet_semilatt_str(boole_lattice(X0)) | element(sK268(boole_lattice(X0),X1),powerset(X0)) [superposition 3685,5581]
+5627. lower_bounded_semilattstr(boole_lattice(X0)) | ~meet_semilatt_str(boole_lattice(X0)) | element(sK268(boole_lattice(X0),X1),powerset(X0)) | ~element(X1,powerset(X0)) [subsumption resolution 5626,2967]
+5628. element(sK268(boole_lattice(X0),X1),powerset(X0)) | ~element(X1,powerset(X0)) | lower_bounded_semilattstr(boole_lattice(X0)) [subsumption resolution 5627,5612]
+5636. set_difference(set_union2(X0,X1),set_difference(X1,X0)) = set_difference(X0,set_difference(X1,X0)) [superposition 3629,4122]
+5676. lower_bounded_semilattstr(boole_lattice(X1)) | join(boole_lattice(X1),sK268(boole_lattice(X1),X0),X1) = set_union2(sK268(boole_lattice(X1),X0),X1) | ~element(X0,powerset(X1)) [resolution 5628,5625]
+5679. ~element(X0,powerset(X1)) | lower_bounded_semilattstr(boole_lattice(X1)) | set_difference(X1,sK268(boole_lattice(X1),X0)) = subset_complement(X1,sK268(boole_lattice(X1),X0)) [resolution 5628,3482]
+5680. ~element(X0,powerset(X1)) | lower_bounded_semilattstr(boole_lattice(X1)) | join(boole_lattice(X1),sK268(boole_lattice(X1),X0),X1) = set_union2(X1,sK268(boole_lattice(X1),X0)) [forward demodulation 5676,3150]
+5683. element(bottom_of_semilattstr(boole_lattice(X0)),powerset(X0)) | ~meet_semilatt_str(boole_lattice(X0)) | empty_carrier(boole_lattice(X0)) [superposition 4247,5581]
+5684. element(bottom_of_semilattstr(boole_lattice(X0)),powerset(X0)) | empty_carrier(boole_lattice(X0)) [subsumption resolution 5683,5612]
+5685. element(bottom_of_semilattstr(boole_lattice(X0)),powerset(X0)) [subsumption resolution 5684,2967]
+5695. empty_set = set_difference(X0,set_union2(X0,X1)) [resolution 4246,2825]
+5714. ~relation(identity_relation(X0)) | empty_set != X0 | identity_relation(X0) = empty_set [superposition 4416,4012]
+5716. empty_set != X0 | identity_relation(X0) = empty_set [subsumption resolution 5714,4310]
+5776. set_difference(X1,set_difference(X1,set_union2(X1,X0))) = set_difference(set_union2(X1,X0),set_difference(X0,X1)) [superposition 4749,5620]
+5780. set_difference(X1,set_difference(X1,set_union2(X1,X0))) = set_difference(X1,set_difference(X0,X1)) [forward demodulation 5776,5636]
+5785. set_difference(X1,empty_set) = set_difference(X1,set_difference(X0,X1)) [forward demodulation 5780,5695]
+5787. set_difference(X1,set_difference(X0,X1)) = X1 [forward demodulation 5785,3750]
+5789. set_difference(set_union2(X0,X1),set_difference(X1,X0)) = X0 [backward demodulation 5636,5787]
+5842. relation_dom(relation_dom_restriction(sK441(X0),X1)) = set_difference(relation_dom(sK441(X0)),set_difference(relation_dom(sK441(X0)),X1)) [resolution 4315,4674]
+5847. set_difference(X0,set_difference(X0,X1)) = relation_dom(relation_dom_restriction(sK441(X0),X1)) [forward demodulation 5842,4317]
+5876. set_difference(X1,set_difference(X1,X0)) = relation_dom(relation_dom_restriction(sK441(X0),X1)) [backward demodulation 4749,5847]
+5887. ~element(X2,powerset(X1)) | ~element(X0,powerset(X1)) | relation_dom(relation_dom_restriction(sK441(X0),X2)) = meet(boole_lattice(X1),X0,X2) [backward demodulation 5608,5847]
+5898. ~relation(X1) | relation_dom(relation_dom_restriction(X1,X0)) = relation_dom(relation_dom_restriction(sK441(relation_dom(X1)),X0)) [backward demodulation 4674,5847]
+5977. empty_set = relation_dom_restriction(empty_set,X0) | ~relation(empty_set) [resolution 3123,4239]
+5978. empty_set = relation_dom_restriction(empty_set,X0) [subsumption resolution 5977,4013]
+6012. empty_set = relation_dom(relation_dom_restriction(sK441(X0),empty_set)) [superposition 5876,3684]
+6146. subset_complement(X0,subset_complement(X0,X0)) = X0 [resolution 3538,5275]
+6149. subset_complement(X0,empty_set) = X0 [forward demodulation 6146,5615]
+6521. ~element(X0,powerset(X0)) | element(empty_set,powerset(X0)) [superposition 3205,5615]
+6526. element(empty_set,powerset(X0)) [subsumption resolution 6521,5275]
+6543. meet(boole_lattice(X1),X0,empty_set) = relation_dom(relation_dom_restriction(sK441(X0),empty_set)) | ~element(X0,powerset(X1)) [resolution 6526,5887]
+6551. ~element(X0,powerset(X1)) | empty_set = meet(boole_lattice(X1),X0,empty_set) [forward demodulation 6543,6012]
+6685. 83 <=> empty_set = identity_relation(empty_set) [avatar definition]
+6687. empty_set = identity_relation(empty_set) <- (83) [avatar component clause 6685]
+6757. meet(boole_lattice(X1),X2,X0) = relation_dom(relation_dom_restriction(sK441(X2),X0)) | ~subset(X0,X1) | ~element(X2,powerset(X1)) [resolution 3632,5887]
+6838. set_difference(set_union2(X0,X1),set_difference(X0,X1)) = X1 [superposition 5789,3150]
+7418. ~element(X1,powerset(X0)) | ~meet_semilatt_str(boole_lattice(X0)) | bottom_of_semilattstr(boole_lattice(X0)) = meet(boole_lattice(X0),bottom_of_semilattstr(boole_lattice(X0)),X1) | ~lower_bounded_semilattstr(boole_lattice(X0)) | empty_carrier(boole_lattice(X0)) [superposition 5398,5581]
+7421. ~lower_bounded_semilattstr(boole_lattice(X0)) | bottom_of_semilattstr(boole_lattice(X0)) = meet(boole_lattice(X0),bottom_of_semilattstr(boole_lattice(X0)),X1) | ~element(X1,powerset(X0)) | empty_carrier(boole_lattice(X0)) [subsumption resolution 7418,5612]
+7422. ~element(X1,powerset(X0)) | ~lower_bounded_semilattstr(boole_lattice(X0)) | bottom_of_semilattstr(boole_lattice(X0)) = meet(boole_lattice(X0),bottom_of_semilattstr(boole_lattice(X0)),X1) [subsumption resolution 7421,2967]
+7427. ~lower_bounded_semilattstr(boole_lattice(X0)) | bottom_of_semilattstr(boole_lattice(X0)) = meet(boole_lattice(X0),bottom_of_semilattstr(boole_lattice(X0)),empty_set) [resolution 7422,6526]
+8175. empty_set = identity_relation(empty_set) [equality resolution 5716]
+8176. 83 [avatar split clause 8175,6685]
+10639. lower_bounded_semilattstr(boole_lattice(X0)) | set_difference(X0,sK268(boole_lattice(X0),sK98(X0))) = subset_complement(X0,sK268(boole_lattice(X0),sK98(X0))) [resolution 2940,5679]
+10640. lower_bounded_semilattstr(boole_lattice(X0)) | join(boole_lattice(X0),sK268(boole_lattice(X0),sK98(X0)),X0) = set_union2(X0,sK268(boole_lattice(X0),sK98(X0))) [resolution 2940,5680]
+11114. join(boole_lattice(sK313),sK268(boole_lattice(sK313),sK98(sK313)),sK313) = set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))) <- (~38) [resolution 10640,5351]
+20965. relation_dom(relation_dom_restriction(sK441(relation_dom(identity_relation(X0))),X1)) = relation_dom(relation_dom_restriction(identity_relation(X0),X1)) [resolution 5898,4310]
+20996. relation_dom(relation_dom_restriction(identity_relation(X0),X1)) = relation_dom(relation_dom_restriction(sK441(X0),X1)) [forward demodulation 20965,4012]
+21056. ~element(X2,powerset(X1)) | ~subset(X0,X1) | meet(boole_lattice(X1),X2,X0) = relation_dom(relation_dom_restriction(identity_relation(X2),X0)) [backward demodulation 6757,20996]
+25639. empty_carrier(boole_lattice(sK313)) | ~element(sK268(boole_lattice(sK313),sK98(sK313)),the_carrier(boole_lattice(sK313))) | ~join_semilatt_str(boole_lattice(sK313)) | ~element(sK313,the_carrier(boole_lattice(sK313))) | element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),the_carrier(boole_lattice(sK313))) <- (~38) [superposition 4177,11114]
+25653. ~element(sK268(boole_lattice(sK313),sK98(sK313)),the_carrier(boole_lattice(sK313))) | ~join_semilatt_str(boole_lattice(sK313)) | element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),the_carrier(boole_lattice(sK313))) | ~element(sK313,the_carrier(boole_lattice(sK313))) <- (~38) [subsumption resolution 25639,2967]
+25662. ~element(sK268(boole_lattice(sK313),sK98(sK313)),the_carrier(boole_lattice(sK313))) | ~element(sK313,the_carrier(boole_lattice(sK313))) | element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),the_carrier(boole_lattice(sK313))) <- (~38) [subsumption resolution 25653,5613]
+25671. ~element(sK313,the_carrier(boole_lattice(sK313))) | element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),the_carrier(boole_lattice(sK313))) | ~element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) <- (~38) [forward demodulation 25662,5581]
+25679. ~element(sK313,powerset(sK313)) | element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),the_carrier(boole_lattice(sK313))) | ~element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) <- (~38) [forward demodulation 25671,5581]
+25687. ~element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) | element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),the_carrier(boole_lattice(sK313))) <- (~38) [subsumption resolution 25679,5275]
+25695. element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),powerset(sK313)) | ~element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) <- (~38) [forward demodulation 25687,5581]
+25703. 417 <=> element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) [avatar definition]
+25704. element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) <- (417) [avatar component clause 25703]
+25705. ~element(sK268(boole_lattice(sK313),sK98(sK313)),powerset(sK313)) <- (~417) [avatar component clause 25703]
+25707. 418 <=> element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),powerset(sK313)) [avatar definition]
+25709. element(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),powerset(sK313)) <- (418) [avatar component clause 25707]
+25710. ~417 | 418 | 38 [avatar split clause 25695,5349,25707,25703]
+25772. lower_bounded_semilattstr(boole_lattice(sK313)) | ~element(sK98(sK313),powerset(sK313)) <- (~417) [resolution 25705,5628]
+26512. empty_set = meet(boole_lattice(X0),bottom_of_semilattstr(boole_lattice(X0)),empty_set) [resolution 6551,5685]
+26545. ~lower_bounded_semilattstr(boole_lattice(X0)) | empty_set = bottom_of_semilattstr(boole_lattice(X0)) [backward demodulation 7427,26512]
+26560. empty_set = bottom_of_semilattstr(boole_lattice(sK313)) <- (38) [resolution 26545,5350]
+26561. $false <- (38, ~39) [subsumption resolution 26560,5355]
+26562. ~38 | 39 [avatar contradiction clause 26561]
+26563. lower_bounded_semilattstr(boole_lattice(sK313)) <- (~417) [subsumption resolution 25772,2940]
+26564. $false <- (~38, ~417) [subsumption resolution 26563,5351]
+26565. 38 | 417 [avatar contradiction clause 26564]
+26570. set_difference(sK313,sK268(boole_lattice(sK313),sK98(sK313))) = subset_complement(sK313,sK268(boole_lattice(sK313),sK98(sK313))) <- (~38) [resolution 5351,10639]
+26597. set_difference(set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))),subset_complement(sK313,sK268(boole_lattice(sK313),sK98(sK313)))) = sK268(boole_lattice(sK313),sK98(sK313)) <- (~38) [superposition 6838,26570]
+26741. set_difference(sK313,set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313)))) = subset_complement(sK313,set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313)))) <- (418) [resolution 25709,3482]
+26743. subset_complement(sK313,subset_complement(sK313,set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))))) = set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))) <- (418) [resolution 25709,3538]
+26857. empty_set = subset_complement(sK313,set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313)))) <- (418) [forward demodulation 26741,5695]
+26875. subset_complement(sK313,empty_set) = set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))) <- (418) [backward demodulation 26743,26857]
+26879. sK313 = set_union2(sK313,sK268(boole_lattice(sK313),sK98(sK313))) <- (418) [forward demodulation 26875,6149]
+26885. set_difference(sK313,subset_complement(sK313,sK268(boole_lattice(sK313),sK98(sK313)))) = sK268(boole_lattice(sK313),sK98(sK313)) <- (~38, 418) [backward demodulation 26597,26879]
+29262. empty_set = meet(boole_lattice(sK313),sK268(boole_lattice(sK313),sK98(sK313)),empty_set) <- (417) [resolution 25704,6551]
+34830. empty_set = sK98(X0) [resolution 2948,3630]
+36158. sK268(boole_lattice(sK313),empty_set) = set_difference(sK313,subset_complement(sK313,sK268(boole_lattice(sK313),empty_set))) <- (~38, 418) [backward demodulation 26885,34830]
+36285. empty_set = meet(boole_lattice(sK313),sK268(boole_lattice(sK313),empty_set),empty_set) <- (417) [backward demodulation 29262,34830]
+65472. ~meet_semilatt_str(boole_lattice(sK313)) | ~element(empty_set,the_carrier(boole_lattice(sK313))) | empty_set != empty_set | empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) | empty_carrier(boole_lattice(sK313)) | lower_bounded_semilattstr(boole_lattice(sK313)) <- (417) [superposition 3686,36285]
+65473. ~meet_semilatt_str(boole_lattice(sK313)) | ~element(empty_set,the_carrier(boole_lattice(sK313))) | empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) | lower_bounded_semilattstr(boole_lattice(sK313)) | empty_carrier(boole_lattice(sK313)) <- (417) [trivial inequality removal 65472]
+65474. ~element(empty_set,the_carrier(boole_lattice(sK313))) | empty_carrier(boole_lattice(sK313)) | empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) | lower_bounded_semilattstr(boole_lattice(sK313)) <- (417) [subsumption resolution 65473,5612]
+65475. ~element(empty_set,the_carrier(boole_lattice(sK313))) | lower_bounded_semilattstr(boole_lattice(sK313)) | empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) <- (417) [subsumption resolution 65474,2967]
+65476. ~element(empty_set,the_carrier(boole_lattice(sK313))) | empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) <- (~38, 417) [subsumption resolution 65475,5351]
+65477. empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) | ~element(empty_set,powerset(sK313)) <- (~38, 417) [forward demodulation 65476,5581]
+65478. empty_set != meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) <- (~38, 417) [subsumption resolution 65477,6526]
+72351. ~subset(X0,X1) | relation_dom(relation_dom_restriction(identity_relation(empty_set),X0)) = meet(boole_lattice(X1),empty_set,X0) [resolution 21056,6526]
+72394. relation_dom(relation_dom_restriction(empty_set,X0)) = meet(boole_lattice(X1),empty_set,X0) | ~subset(X0,X1) <- (83) [forward demodulation 72351,6687]
+72395. relation_dom(empty_set) = meet(boole_lattice(X1),empty_set,X0) | ~subset(X0,X1) <- (83) [forward demodulation 72394,5978]
+72396. ~subset(X0,X1) | empty_set = meet(boole_lattice(X1),empty_set,X0) <- (83) [forward demodulation 72395,3654]
+96583. empty_set = meet(boole_lattice(X0),empty_set,set_difference(X0,X1)) <- (83) [resolution 72396,3376]
+96744. empty_set = meet(boole_lattice(sK313),empty_set,sK268(boole_lattice(sK313),empty_set)) <- (~38, 83, 418) [superposition 96583,36158]
+96765. $false <- (~38, 83, 417, 418) [subsumption resolution 96744,65478]
+96766. 38 | ~83 | ~417 | ~418 [avatar contradiction clause 96765]
+96767. $false [avatar sat refutation 5356,8176,25710,26562,26565,96766]
+% SZS output end Proof for SEU345+2
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 609
+% >>> Preprocessing
+% Introduced names: 55
+% Introduced skolems: 438
+% Pure predicates: 7
+% Unused predicate definitions: 2
+% Function definitions: 4
+% 
+% >>> Saturation
+% Initial clauses: 1698
+% Generated clauses: 92765
+% Activations started: 3484
+% Active clauses: 3484
+% Passive clauses: 41688
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 599
+% Trivial inequalities: 354
+% Fw subsumption resolutions: 4655
+% Fw demodulations: 15072
+% Bw demodulations: 7658
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 1498
+% Equational tautologies: 118
+% Forward subsumptions: 27531
+% Fw demodulations to eq. taut.: 105
+% Bw demodulations to eq. taut.: 301
+% 
+% >>> Generating Inferences
+% Binary resolution: 32830
+% Factoring: 2
+% Forward superposition: 9173
+% Backward superposition: 15225
+% Self superposition: 23
+% Equality factoring: 6
+% Equality resolution: 17
+% 
+% >>> AVATAR
+% Split clauses: 1054
+% Split components: 2394
+% Sat splitting refutations: 71
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1213
+% SAT solver unit clauses: 25
+% SAT solver binary clauses: 428
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 1642
+% Bulk evals: 13446
+% 
+% Time elapsed: 6.768 s
+% Peak memory usage: 308 MB
+% Instructions burned: 21872 (million)
+% ------------------------------
+% ------------------------------

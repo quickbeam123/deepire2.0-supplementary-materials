@@ -1,0 +1,242 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop9/script-model.pt -npcc on -si on -rtra on --random_seed 8 Problems/LCL/LCL352-3.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for LCL352-3
+% SZS output start Proof for LCL352-3
+1. axiom(implies(or(X0,X0),X0)) [input(axiom)]
+2. axiom(implies(X0,or(X1,X0))) [input(axiom)]
+3. axiom(implies(or(X0,X1),or(X1,X0))) [input(axiom)]
+4. axiom(implies(or(X0,or(X1,X2)),or(X1,or(X0,X2)))) [input(axiom)]
+5. axiom(implies(implies(X0,X1),implies(or(X2,X0),or(X2,X1)))) [input(axiom)]
+6. implies(X3,X4) = or(not(X3),X4) [input(axiom)]
+7. ~axiom(X3) | theorem(X3) [input(axiom)]
+8. ~theorem(X4) | theorem(X3) | ~theorem(implies(X4,X3)) [input(axiom)]
+9. and(X5,X6) = not(or(not(X5),not(X6))) [input(axiom)]
+10. equivalent(X5,X6) = and(implies(X5,X6),implies(X6,X5)) [input(axiom)]
+11. ~theorem(equivalent(implies(p,equivalent(q,r)),equivalent(implies(p,q),implies(p,r)))) [input(negated conjecture)]
+12. equivalent(X5,X6) = not(or(not(or(not(X5),X6)),not(or(not(X6),X5)))) [definition unfolding 10,9,6,6]
+13. axiom(or(not(or(X0,X0)),X0)) [definition unfolding 1,6]
+14. axiom(or(not(or(X0,X1)),or(X1,X0))) [definition unfolding 3,6]
+15. axiom(or(not(X0),or(X1,X0))) [definition unfolding 2,6]
+16. ~theorem(not(or(not(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))),not(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))))))) [definition unfolding 11,12,6,12,12,6,6]
+17. axiom(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))) [definition unfolding 5,6,6,6]
+18. axiom(or(not(or(X0,or(X1,X2))),or(X1,or(X0,X2)))) [definition unfolding 4,6]
+19. ~theorem(or(not(X4),X3)) | ~theorem(X4) | theorem(X3) [definition unfolding 8,6]
+20. theorem(or(not(or(X0,X1)),or(X1,X0))) [resolution 14,7]
+21. ~theorem(or(X0,X1)) | theorem(or(X1,X0)) [resolution 20,19]
+22. theorem(or(not(or(X0,or(X1,X2))),or(X1,or(X0,X2)))) [resolution 18,7]
+23. ~theorem(or(X0,or(X1,X2))) | theorem(or(X1,or(X0,X2))) [resolution 22,19]
+24. theorem(or(X0,or(not(or(X1,X0)),X1))) [resolution 23,20]
+25. theorem(or(X0,or(not(or(X1,or(X0,X2))),or(X1,X2)))) [resolution 23,22]
+26. theorem(or(not(or(X1,not(X0))),X1)) | ~theorem(X0) [resolution 24,19]
+28. theorem(or(not(or(not(X0),X1)),or(not(or(X2,X0)),or(X2,X1)))) [resolution 17,7]
+29. theorem(or(not(or(X2,X0)),or(X2,X1))) | ~theorem(or(not(X0),X1)) [resolution 28,19]
+30. theorem(or(not(or(X0,X1)),or(not(or(not(X1),X2)),or(X0,X2)))) [resolution 28,23]
+31. ~theorem(or(not(X0),X1)) | ~theorem(or(X2,X0)) | theorem(or(X2,X1)) [resolution 29,19]
+33. ~theorem(or(X0,or(X1,X2))) | theorem(or(X0,or(X2,X1))) [resolution 31,20]
+34. ~theorem(or(X0,or(X1,or(X2,X3)))) | theorem(or(X0,or(X2,or(X1,X3)))) [resolution 31,22]
+35. theorem(or(X0,or(not(or(X3,X1)),or(X3,X2)))) | ~theorem(or(X0,or(not(X1),X2))) [resolution 31,28]
+36. ~theorem(or(X0,or(X1,X2))) | ~theorem(or(not(X2),X3)) | theorem(or(X0,or(X1,X3))) [resolution 31,29]
+47. theorem(or(not(X0),or(X1,X0))) [resolution 15,7]
+48. theorem(or(X0,or(X2,X1))) | ~theorem(or(X0,X1)) [resolution 47,31]
+49. theorem(or(X1,X0)) | ~theorem(X0) [resolution 47,19]
+50. theorem(or(not(X0),or(X0,X1))) [resolution 47,33]
+51. theorem(or(X0,or(not(X1),X1))) [resolution 47,23]
+55. theorem(or(X0,or(not(X0),X1))) [resolution 50,23]
+56. theorem(or(not(or(X0,X0)),X0)) [resolution 13,7]
+57. ~theorem(or(X0,or(X1,X1))) | theorem(or(X0,X1)) [resolution 56,31]
+62. ~theorem(or(X1,not(X0))) | theorem(X1) | ~theorem(X0) [resolution 26,19]
+65. theorem(or(not(or(X0,X2)),or(X2,X1))) | ~theorem(or(not(X0),X1)) [resolution 36,20]
+67. theorem(or(not(or(not(X3),X1)),or(not(or(X0,X3)),X2))) | ~theorem(or(not(or(X0,X1)),X2)) [resolution 36,28]
+76. ~theorem(or(not(X0),X1)) | ~theorem(or(X0,X2)) | theorem(or(X2,X1)) [resolution 65,19]
+81. theorem(or(not(or(X0,X1)),X1)) | ~theorem(or(not(X0),X1)) [resolution 57,65]
+117. theorem(or(X0,or(X1,not(X1)))) [resolution 51,33]
+126. 1 <=> theorem(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) [avatar definition]
+127. theorem(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (1) [avatar component clause 126]
+128. ~theorem(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~1) [avatar component clause 126]
+130. 2 <=> theorem(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q))))))) [avatar definition]
+132. ~theorem(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q))))))) <- (~2) [avatar component clause 130]
+138. theorem(or(X0,or(X1,not(X0)))) [resolution 117,23]
+140. 3 <=> ! [X0] : ~theorem(X0) [avatar definition]
+141. ~theorem(X0) <- (3) [avatar component clause 140]
+151. theorem(or(X0,not(X0))) [resolution 138,57]
+152. $false <- (3) [subsumption resolution 151,141]
+153. ~3 [avatar contradiction clause 152]
+154. theorem(or(X0,or(not(or(not(X2),X3)),or(X1,X3)))) | ~theorem(or(X0,or(X1,X2))) [resolution 30,31]
+155. theorem(or(not(or(not(X1),X2)),or(X0,X2))) | ~theorem(or(X0,X1)) [resolution 30,19]
+160. ~theorem(or(X2,or(not(X1),X3))) | ~theorem(or(X0,X1)) | theorem(or(X2,or(X0,X3))) [resolution 155,31]
+163. theorem(or(not(or(not(X1),X2)),or(X2,X0))) | ~theorem(or(X0,X1)) [resolution 155,33]
+165. theorem(or(not(or(not(X1),X0)),X0)) | ~theorem(or(X0,X1)) [resolution 155,57]
+167. ~theorem(or(X2,or(not(X1),X0))) | theorem(or(X2,X0)) | ~theorem(or(X0,X1)) [resolution 165,31]
+174. theorem(not(or(not(X1),not(X0)))) | ~theorem(or(not(X0),X1)) | ~theorem(X0) [resolution 165,62]
+183. ~theorem(or(not(X0),or(not(X1),X2))) | ~theorem(X0) | theorem(or(not(or(X3,X1)),or(X3,X2))) [resolution 35,19]
+215. theorem(or(not(or(X1,X2)),or(X1,not(not(X2))))) | ~theorem(X0) [resolution 183,117]
+224. 5 <=> ! [X2,X1] : theorem(or(not(or(X1,X2)),or(X1,not(not(X2))))) [avatar definition]
+225. theorem(or(not(or(X1,X2)),or(X1,not(not(X2))))) <- (5) [avatar component clause 224]
+226. 5 | 3 [avatar split clause 215,140,224]
+228. ~theorem(or(not(X0),X1)) | ~theorem(or(X2,X0)) | theorem(or(X2,or(X3,X1))) [resolution 48,31]
+234. theorem(or(X0,or(X1,or(X3,X2)))) | ~theorem(or(X0,or(X1,X2))) [resolution 48,34]
+269. 7 <=> theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) [avatar definition]
+270. theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (7) [avatar component clause 269]
+271. ~theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~7) [avatar component clause 269]
+284. theorem(or(not(or(X0,X1)),or(not(not(X1)),X0))) <- (5) [resolution 225,33]
+288. theorem(or(X0,or(not(not(X2)),X1))) | ~theorem(or(X0,or(X1,X2))) <- (5) [resolution 284,31]
+289. theorem(or(not(not(X1)),X0)) | ~theorem(or(X0,X1)) <- (5) [resolution 284,19]
+306. ~theorem(or(not(X0),or(X1,X2))) | ~theorem(X0) | theorem(or(not(not(X2)),X1)) <- (5) [resolution 288,19]
+309. theorem(or(not(not(X2)),or(X0,X1))) | ~theorem(or(X0,or(X1,X2))) <- (5) [resolution 288,23]
+316. theorem(or(not(not(X2)),or(X1,X0))) | ~theorem(or(X0,or(X1,X2))) <- (5) [resolution 309,33]
+404. theorem(or(or(not(or(X0,X1)),or(X0,X2)),not(or(not(X1),X2)))) [resolution 21,28]
+415. theorem(or(or(not(X0),X0),X1)) [resolution 21,51]
+420. theorem(or(or(X0,not(X1)),X1)) [resolution 21,138]
+432. theorem(or(X0,or(X1,or(not(X0),X2)))) [resolution 55,34]
+498. theorem(or(or(X0,not(or(X1,X1))),X1)) [resolution 420,57]
+509. theorem(or(X0,or(X1,or(not(X1),X2)))) [resolution 432,23]
+547. theorem(or(X1,or(X2,X0))) | ~theorem(or(X0,X1)) [resolution 76,47]
+579. theorem(or(not(or(X1,X2)),or(X1,or(not(not(X2)),X3)))) | ~theorem(X0) [resolution 509,183]
+591. 11 <=> ! [X2,X1,X3] : theorem(or(not(or(X1,X2)),or(X1,or(not(not(X2)),X3)))) [avatar definition]
+592. theorem(or(not(or(X1,X2)),or(X1,or(not(not(X2)),X3)))) <- (11) [avatar component clause 591]
+593. 11 | 3 [avatar split clause 579,140,591]
+684. theorem(or(not(not(X1)),or(X0,X2))) | ~theorem(or(X0,X1)) [resolution 160,50]
+780. ~theorem(or(not(X0),or(X1,X2))) | theorem(or(not(or(not(X2),X3)),or(X1,X3))) | ~theorem(X0) [resolution 154,19]
+835. ~theorem(or(not(X0),X1)) | theorem(or(not(not(X2)),X1)) | ~theorem(or(X2,X0)) <- (5) [resolution 306,163]
+1119. theorem(or(not(not(X0)),or(X1,X2))) | ~theorem(or(X0,X2)) <- (5) [resolution 835,47]
+1188. theorem(or(not(or(not(or(X0,X1)),X2)),or(X3,X2))) | ~theorem(or(X0,or(X3,X1))) [resolution 780,22]
+1339. ~theorem(or(not(or(X0,X2)),X3)) | theorem(or(X1,X3)) | ~theorem(or(X0,or(X1,X2))) [resolution 1188,19]
+1372. ~theorem(or(X2,or(X0,X1))) | theorem(or(X0,or(X1,X2))) [resolution 1339,20]
+1464. theorem(or(X0,or(X1,or(not(X2),X2)))) [resolution 1372,415]
+1571. ~theorem(or(not(or(X0,X1)),X2)) | ~theorem(or(not(X3),X1)) | theorem(or(not(or(X0,X3)),X2)) [resolution 67,19]
+1596. theorem(or(not(or(X2,X0)),X1)) | ~theorem(or(not(X2),X1)) | ~theorem(or(not(X0),X1)) [resolution 1571,81]
+1670. 17 <=> theorem(or(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))),p)) [avatar definition]
+1672. ~theorem(or(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))),p)) <- (~17) [avatar component clause 1670]
+1676. ~theorem(or(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))),or(not(or(not(q),r)),not(or(not(r),q))))) <- (5, ~7) [resolution 271,289]
+1793. theorem(or(X0,or(not(X1),or(X2,X1)))) [resolution 1464,34]
+1962. ~theorem(X3) | theorem(or(not(or(not(or(X0,X1)),X2)),or(not(X1),X2))) [resolution 1793,780]
+1990. 22 <=> ! [X2,X0,X1] : theorem(or(not(or(not(or(X0,X1)),X2)),or(not(X1),X2))) [avatar definition]
+1991. theorem(or(not(or(not(or(X0,X1)),X2)),or(not(X1),X2))) <- (22) [avatar component clause 1990]
+1992. 3 | 22 [avatar split clause 1962,1990,140]
+2188. ~theorem(or(not(not(p)),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) | ~theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~1) [resolution 1596,128]
+2438. ~theorem(or(X0,or(X1,or(X2,X3)))) | theorem(or(X2,or(X0,or(X1,X3)))) [resolution 25,160]
+3353. ~theorem(or(not(not(or(not(or(not(p),r)),or(not(p),q)))),or(not(or(not(q),r)),not(or(not(r),q))))) | ~theorem(or(not(not(or(not(or(not(p),q)),or(not(p),r)))),or(not(or(not(q),r)),not(or(not(r),q))))) <- (5, ~7) [resolution 1676,1596]
+3355. 36 <=> theorem(or(not(not(or(not(or(not(p),r)),or(not(p),q)))),or(not(or(not(q),r)),not(or(not(r),q))))) [avatar definition]
+3357. ~theorem(or(not(not(or(not(or(not(p),r)),or(not(p),q)))),or(not(or(not(q),r)),not(or(not(r),q))))) <- (~36) [avatar component clause 3355]
+3364. 38 <=> theorem(or(not(not(or(not(or(not(p),q)),or(not(p),r)))),or(not(or(not(q),r)),not(or(not(r),q))))) [avatar definition]
+3366. ~theorem(or(not(not(or(not(or(not(p),q)),or(not(p),r)))),or(not(or(not(q),r)),not(or(not(r),q))))) <- (~38) [avatar component clause 3364]
+3367. ~38 | ~36 | ~5 | 7 [avatar split clause 3353,269,224,3355,3364]
+5883. theorem(or(X0,or(X1,not(or(X0,X0))))) [resolution 498,21]
+5936. theorem(or(X0,or(not(or(X1,X1)),X1))) [resolution 5883,1372]
+6377. theorem(or(not(or(X1,or(X2,X2))),or(X1,X2))) | ~theorem(X0) [resolution 5936,183]
+6435. 57 <=> ! [X2,X1] : theorem(or(not(or(X1,or(X2,X2))),or(X1,X2))) [avatar definition]
+6436. theorem(or(not(or(X1,or(X2,X2))),or(X1,X2))) <- (57) [avatar component clause 6435]
+6437. 3 | 57 [avatar split clause 6377,6435,140]
+6799. theorem(or(not(or(X0,or(X1,X1))),or(X1,X0))) <- (57) [resolution 6436,33]
+6822. ~theorem(or(X0,or(X1,or(X2,X2)))) | theorem(or(X0,or(X2,X1))) <- (57) [resolution 6799,31]
+7124. ~theorem(or(not(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q))))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) | ~theorem(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q))))))) [resolution 174,16]
+7126. 58 <=> theorem(or(not(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q))))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) [avatar definition]
+7128. ~theorem(or(not(or(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))),or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q))))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) <- (~58) [avatar component clause 7126]
+7129. ~58 | ~2 [avatar split clause 7124,130,7126]
+7132. ~theorem(or(not(or(not(or(not(q),r)),not(or(not(r),q)))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~2, 5) [resolution 132,316]
+7155. ~theorem(or(not(not(or(not(r),q))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) | ~theorem(or(not(not(or(not(q),r))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~2, 5) [resolution 7132,1596]
+7161. 60 <=> theorem(or(not(not(or(not(r),q))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) [avatar definition]
+7163. ~theorem(or(not(not(or(not(r),q))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~60) [avatar component clause 7161]
+7189. 66 <=> theorem(or(not(not(or(not(q),r))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) [avatar definition]
+7191. ~theorem(or(not(not(or(not(q),r))),or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~66) [avatar component clause 7189]
+7192. ~60 | ~66 | 2 | ~5 [avatar split clause 7155,224,130,7189,7161]
+7385. theorem(or(X0,or(X3,or(X2,X1)))) | ~theorem(or(X0,or(X1,X2))) [resolution 228,20]
+7513. theorem(or(X3,or(X0,or(X2,X1)))) | ~theorem(or(X0,or(X1,X2))) [resolution 7385,23]
+7628. theorem(or(X3,or(X2,or(X0,X1)))) | ~theorem(or(X0,or(X1,X2))) [resolution 7513,34]
+9325. ~theorem(or(X0,or(X0,X1))) | theorem(or(X2,or(X0,X1))) <- (57) [resolution 7628,6822]
+11325. theorem(or(not(or(X0,X1)),or(not(not(X1)),or(X0,X2)))) <- (11) [resolution 592,34]
+11357. theorem(or(X0,or(not(not(X2)),or(X1,X3)))) | ~theorem(or(X0,or(X1,X2))) <- (11) [resolution 11325,31]
+11458. theorem(or(not(not(X2)),or(X0,or(X1,X3)))) | ~theorem(or(X0,or(X1,X2))) <- (11) [resolution 11357,23]
+12617. ~theorem(or(not(or(not(q),r)),or(not(or(not(p),q)),or(not(p),r)))) <- (~38) [resolution 3366,684]
+12630. $false <- (~38) [subsumption resolution 12617,28]
+12631. 38 [avatar contradiction clause 12630]
+13456. theorem(or(not(or(not(X0),not(X1))),X2)) | ~theorem(or(X2,X1)) | ~theorem(or(X2,X0)) [resolution 167,163]
+22137. ~theorem(or(or(not(or(not(p),r)),or(not(p),q)),not(or(not(r),q)))) <- (5, ~36) [resolution 1119,3357]
+22232. $false <- (5, ~36) [subsumption resolution 22137,404]
+22233. ~5 | 36 [avatar contradiction clause 22232]
+22239. 145 <=> theorem(or(not(not(p)),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) [avatar definition]
+22241. ~theorem(or(not(not(p)),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~145) [avatar component clause 22239]
+22243. ~7 | ~145 | 1 [avatar split clause 2188,126,22239,269]
+22284. theorem(or(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))),not(not(or(not(or(not(q),r)),not(or(not(r),q))))))) <- (7) [resolution 270,21]
+22300. ~theorem(or(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))),p)) <- (5, ~145) [resolution 22241,289]
+49273. ~theorem(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) | ~theorem(or(not(not(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) <- (~58) [resolution 7128,1596]
+49276. ~theorem(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) <- (57, ~58) [subsumption resolution 49273,9325]
+49318. ~theorem(or(not(not(p)),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) | ~theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) <- (57, ~58) [resolution 49276,1596]
+49320. 295 <=> theorem(or(not(not(p)),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) [avatar definition]
+49322. ~theorem(or(not(not(p)),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) <- (~295) [avatar component clause 49320]
+49324. 296 <=> theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) [avatar definition]
+49326. ~theorem(or(not(not(or(not(or(not(q),r)),not(or(not(r),q))))),or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q)))))))) <- (~296) [avatar component clause 49324]
+49327. ~295 | ~296 | ~57 | 58 [avatar split clause 49318,7126,6435,49324,49320]
+49822. ~theorem(or(not(or(not(p),not(or(not(or(not(q),r)),not(or(not(r),q)))))),not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))))) <- (~295) [resolution 49322,49]
+49834. ~theorem(or(not(or(not(or(not(or(not(p),q)),or(not(p),r))),not(or(not(or(not(p),r)),or(not(p),q))))),not(not(or(not(or(not(q),r)),not(or(not(r),q))))))) <- (~296) [resolution 49326,547]
+49852. $false <- (7, ~296) [subsumption resolution 49834,22284]
+49853. ~7 | 296 [avatar contradiction clause 49852]
+76387. $false <- (1, ~295) [subsumption resolution 49822,127]
+76388. ~1 | 295 [avatar contradiction clause 76387]
+94239. ~theorem(or(p,or(not(or(not(p),q)),or(not(p),r)))) | ~theorem(or(p,or(not(or(not(p),r)),or(not(p),q)))) <- (~17) [resolution 1672,13456]
+94250. ~theorem(or(p,or(not(or(not(p),q)),or(not(p),r)))) <- (~17) [subsumption resolution 94239,432]
+94256. $false <- (~17) [subsumption resolution 94250,432]
+94257. 17 [avatar contradiction clause 94256]
+94279. ~17 | ~5 | 145 [avatar split clause 22300,22239,224,1670]
+128866. theorem(or(not(or(not(or(X0,X1)),or(X2,X3))),or(X2,or(not(X1),X3)))) <- (22) [resolution 1991,34]
+128868. theorem(or(X0,or(not(or(not(or(X1,X2)),or(X0,X3))),or(not(X2),X3)))) <- (22) [resolution 1991,2438]
+168283. 1494 <=> theorem(or(not(not(or(not(r),q))),or(not(p),not(or(not(or(not(p),r)),or(not(p),q)))))) [avatar definition]
+168285. ~theorem(or(not(not(or(not(r),q))),or(not(p),not(or(not(or(not(p),r)),or(not(p),q)))))) <- (~1494) [avatar component clause 168283]
+170871. ~theorem(or(not(p),or(not(or(not(or(not(p),q)),or(not(p),r))),or(not(q),r)))) <- (11, ~66) [resolution 7191,11458]
+170910. $false <- (11, 22, ~66) [subsumption resolution 170871,128868]
+170911. ~11 | ~22 | 66 [avatar contradiction clause 170910]
+170927. ~theorem(or(not(not(or(not(r),q))),or(not(p),not(or(not(or(not(p),r)),or(not(p),q)))))) <- (~60) [resolution 7163,234]
+171222. ~theorem(or(not(or(not(or(not(p),r)),or(not(p),q))),or(not(p),or(not(r),q)))) <- (5, ~1494) [resolution 168285,316]
+171246. $false <- (5, 22, ~1494) [subsumption resolution 171222,128866]
+171247. ~5 | ~22 | 1494 [avatar contradiction clause 171246]
+171248. ~1494 | 60 [avatar split clause 170927,7161,168283]
+171249. $false [avatar sat refutation 153,226,593,1992,3367,6437,7129,7192,12631,22233,22243,49327,49853,76388,94257,94279,170911,171247,171248]
+% SZS output end Proof for LCL352-3
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 11
+% >>> Preprocessing
+% Function definitions: 3
+% 
+% >>> Saturation
+% Initial clauses: 8
+% Generated clauses: 167162
+% Activations started: 1657
+% Active clauses: 1657
+% Passive clauses: 91956
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 20
+% Fw subsumption resolutions: 1158
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 147
+% Forward subsumptions: 71253
+% 
+% >>> Generating Inferences
+% Binary resolution: 162148
+% 
+% >>> AVATAR
+% Split clauses: 1707
+% Split components: 3415
+% Sat splitting refutations: 337
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 2630
+% SAT solver unit clauses: 34
+% SAT solver binary clauses: 628
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 563
+% Bulk evals: 27182
+% 
+% Time elapsed: 10.169 s
+% Peak memory usage: 435 MB
+% Instructions burned: 53497 (million)
+% ------------------------------
+% ------------------------------

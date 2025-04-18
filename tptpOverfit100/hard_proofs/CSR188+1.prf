@@ -1,0 +1,268 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop5/script-model.pt -npcc on -npcct 0.333 -si on -rtra on --random_seed 5 Problems/CSR/CSR188+1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for CSR188+1
+% SZS output start Proof for CSR188+1
+1. ! [X0] : p__d__subclass(X0,X0) [input(axiom)]
+2. ! [X2,X1,X0] : ((p__d__subclass(X1,X2) & p__d__subclass(X0,X1)) => p__d__subclass(X0,X2)) [input(axiom)]
+4. ! [X1,X2,X0] : ((p__d__subclass(X1,X2) & p__d__instance(X0,X1)) => p__d__instance(X0,X2)) [input(axiom)]
+5. ! [X3,X4] : (p__d__disjoint(X3,X4) <=> ! [X5] : (~p__d__instance(X5,X4) | ~p__d__instance(X5,X3))) [input(axiom)]
+110. ! [X6] : (p__d__subclass(X6,c__Entity) => ? [X34] : p__d__instance(X34,X6)) [input(axiom)]
+112. p__d__subclass(c__Physical,c__Entity) [input(axiom)]
+233. p__d__subclass(c__Process,c__Physical) [input(axiom)]
+1582. p__d__subclass(c__BiologicalProcess,c__InternalChange) [input(axiom)]
+1584. ! [X63,X227] : ((p__experiencer(X63,X227) & p__d__instance(X63,c__BiologicalProcess) & p__d__instance(X227,c__Agent)) => p__d__instance(X227,c__Organism)) [input(axiom)]
+1585. p__d__subclass(c__PhysiologicProcess,c__BiologicalProcess) [input(axiom)]
+1591. p__d__subclass(c__OrganismProcess,c__PhysiologicProcess) [input(axiom)]
+1594. p__d__subclass(c__Death,c__OrganismProcess) [input(axiom)]
+1618. p__d__disjoint(c__PathologicProcess,c__PhysiologicProcess) [input(axiom)]
+1620. p__d__subclass(c__Injuring,c__PathologicProcess) [input(axiom)]
+1622. ! [X245] : (p__d__instance(X245,c__Process) => ((p__d__instance(X245,c__Damaging) & ? [X232] : (p__patient(X245,X232) & p__d__instance(X232,c__Organism))) <=> p__d__instance(X245,c__Injuring))) [input(axiom)]
+1827. p__d__subclass(c__Destruction,c__Damaging) [input(axiom)]
+1829. p__d__subclass(c__Killing,c__Destruction) [input(axiom)]
+1831. ! [X26,X317] : ((p__d__instance(X26,c__Agent) & p__patient(X317,X26) & p__d__instance(X317,c__Killing)) => ? [X229] : (p__causes(X317,X229) & p__experiencer(X229,X26) & p__d__instance(X229,c__Death))) [input(axiom)]
+1859. p__d__subclass(c__InternalChange,c__Process) [input(axiom)]
+2066. ! [X232] : (p__d__instance(X232,c__Organism) => ? [X228] : (p__experiencer(X228,X232) & p__d__instance(X228,c__Birth))) [input(axiom)]
+2083. p__d__subclass(c__Animal,c__Organism) [input(axiom)]
+2092. p__d__subclass(c__Vertebrate,c__Animal) [input(axiom)]
+2105. p__d__subclass(c__WarmBloodedVertebrate,c__Vertebrate) [input(axiom)]
+2112. p__d__subclass(c__Mammal,c__WarmBloodedVertebrate) [input(axiom)]
+2123. p__d__subclass(c__Primate,c__Mammal) [input(axiom)]
+2127. p__d__subclass(c__Hominid,c__Primate) [input(axiom)]
+2128. p__d__subclass(c__Human,c__Hominid) [input(axiom)]
+4832. p__d__subclass(c__Execution,c__Killing) [input(axiom)]
+4833. ! [X545] : (p__d__instance(X545,c__Execution) => ? [X83] : (p__patient(X545,X83) & p__d__instance(X83,c__Human))) [input(axiom)]
+6885. ! [X1038,X1037] : (p__experiencer(X1037,X1038) => (p__d__instance(X1038,c__Agent) & p__d__instance(X1037,c__Process))) [input(axiom)]
+6887. ! [X1038,X1037] : (p__patient(X1037,X1038) => p__d__instance(X1037,c__Process)) [input(axiom)]
+7433. c__Death != c__Killing [input(conjecture)]
+7434. ~c__Death != c__Killing [negated conjecture 7433]
+7588. ! [X0,X1] : ((p__d__instance(X1,c__Killing) & p__patient(X1,X0) & p__d__instance(X0,c__Agent)) => ? [X2] : (p__experiencer(X2,X0) & p__causes(X1,X2) & p__d__instance(X2,c__Death))) [rectify 1831]
+7800. c__Death = c__Killing [flattening 7434]
+7832. ! [X0] : (p__d__instance(X0,c__Process) => ((p__d__instance(X0,c__Damaging) & ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Organism))) <=> p__d__instance(X0,c__Injuring))) [rectify 1622]
+8325. ! [X0] : (p__d__subclass(X0,c__Entity) => ? [X1] : p__d__instance(X1,X0)) [rectify 110]
+8416. ! [X1,X0] : (p__d__disjoint(X0,X1) <=> ! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0))) [rectify 5]
+8518. ! [X0,X1] : (p__experiencer(X1,X0) => (p__d__instance(X1,c__Process) & p__d__instance(X0,c__Agent))) [rectify 6885]
+8914. ! [X1,X2,X0] : ((p__d__subclass(X0,X1) & p__d__instance(X2,X0)) => p__d__instance(X2,X1)) [rectify 4]
+8928. ! [X0] : (p__d__instance(X0,c__Execution) => ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Human))) [rectify 4833]
+9314. ! [X1,X0] : ((p__d__instance(X1,c__Agent) & p__d__instance(X0,c__BiologicalProcess) & p__experiencer(X0,X1)) => p__d__instance(X1,c__Organism)) [rectify 1584]
+9944. ! [X0] : (p__d__instance(X0,c__Organism) => ? [X1] : (p__experiencer(X1,X0) & p__d__instance(X1,c__Birth))) [rectify 2066]
+9969. ! [X1,X0,X2] : ((p__d__subclass(X2,X1) & p__d__subclass(X1,X0)) => p__d__subclass(X2,X0)) [rectify 2]
+10118. ! [X0,X1] : (p__patient(X1,X0) => p__d__instance(X1,c__Process)) [rectify 6887]
+10329. ! [X1,X0,X2] : (p__d__subclass(X2,X0) | (~p__d__subclass(X2,X1) | ~p__d__subclass(X1,X0))) [ennf transformation 9969]
+10330. ! [X2,X0,X1] : (~p__d__subclass(X1,X0) | ~p__d__subclass(X2,X1) | p__d__subclass(X2,X0)) [flattening 10329]
+10772. ! [X0,X1] : (? [X2] : (p__experiencer(X2,X0) & p__causes(X1,X2) & p__d__instance(X2,c__Death)) | (~p__d__instance(X1,c__Killing) | ~p__patient(X1,X0) | ~p__d__instance(X0,c__Agent))) [ennf transformation 7588]
+10773. ! [X1,X0] : (~p__d__instance(X0,c__Agent) | ~p__patient(X1,X0) | ~p__d__instance(X1,c__Killing) | ? [X2] : (p__experiencer(X2,X0) & p__causes(X1,X2) & p__d__instance(X2,c__Death))) [flattening 10772]
+11304. ! [X0] : (? [X1] : p__d__instance(X1,X0) | ~p__d__subclass(X0,c__Entity)) [ennf transformation 8325]
+11687. ! [X0] : (? [X1] : (p__experiencer(X1,X0) & p__d__instance(X1,c__Birth)) | ~p__d__instance(X0,c__Organism)) [ennf transformation 9944]
+11960. ! [X0] : (~p__d__instance(X0,c__Execution) | ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Human))) [ennf transformation 8928]
+12772. ! [X0] : (((p__d__instance(X0,c__Damaging) & ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Organism))) <=> p__d__instance(X0,c__Injuring)) | ~p__d__instance(X0,c__Process)) [ennf transformation 7832]
+12829. ! [X0,X1] : (p__d__instance(X1,c__Process) | ~p__patient(X1,X0)) [ennf transformation 10118]
+13078. ! [X1,X0] : (p__d__instance(X1,c__Organism) | (~p__d__instance(X1,c__Agent) | ~p__d__instance(X0,c__BiologicalProcess) | ~p__experiencer(X0,X1))) [ennf transformation 9314]
+13079. ! [X1,X0] : (~p__d__instance(X1,c__Agent) | p__d__instance(X1,c__Organism) | ~p__experiencer(X0,X1) | ~p__d__instance(X0,c__BiologicalProcess)) [flattening 13078]
+13894. ! [X0,X1] : ((p__d__instance(X1,c__Process) & p__d__instance(X0,c__Agent)) | ~p__experiencer(X1,X0)) [ennf transformation 8518]
+14004. ! [X1,X2,X0] : (p__d__instance(X2,X1) | (~p__d__subclass(X0,X1) | ~p__d__instance(X2,X0))) [ennf transformation 8914]
+14005. ! [X1,X2,X0] : (p__d__instance(X2,X1) | ~p__d__instance(X2,X0) | ~p__d__subclass(X0,X1)) [flattening 14004]
+15241. ! [X0] : (? [X1] : (p__experiencer(X1,X0) & p__d__instance(X1,c__Birth)) => (p__experiencer(sK295(X0),X0) & p__d__instance(sK295(X0),c__Birth))) [choice axiom]
+15242. ! [X0] : ((p__experiencer(sK295(X0),X0) & p__d__instance(sK295(X0),c__Birth)) | ~p__d__instance(X0,c__Organism)) [skolemisation 11687,15241]
+15335. ! [X0,X1] : (~p__d__instance(X1,c__Agent) | ~p__patient(X0,X1) | ~p__d__instance(X0,c__Killing) | ? [X2] : (p__experiencer(X2,X1) & p__causes(X0,X2) & p__d__instance(X2,c__Death))) [rectify 10773]
+15336. ! [X0,X1] : (? [X2] : (p__experiencer(X2,X1) & p__causes(X0,X2) & p__d__instance(X2,c__Death)) => (p__experiencer(sK320(X0,X1),X1) & p__causes(X0,sK320(X0,X1)) & p__d__instance(sK320(X0,X1),c__Death))) [choice axiom]
+15337. ! [X0,X1] : (~p__d__instance(X1,c__Agent) | ~p__patient(X0,X1) | ~p__d__instance(X0,c__Killing) | (p__experiencer(sK320(X0,X1),X1) & p__causes(X0,sK320(X0,X1)) & p__d__instance(sK320(X0,X1),c__Death))) [skolemisation 15335,15336]
+15511. ! [X0,X1] : (~p__d__instance(X0,c__Agent) | p__d__instance(X0,c__Organism) | ~p__experiencer(X1,X0) | ~p__d__instance(X1,c__BiologicalProcess)) [rectify 13079]
+15571. ! [X0] : (? [X1] : p__d__instance(X1,X0) => p__d__instance(sK393(X0),X0)) [choice axiom]
+15572. ! [X0] : (p__d__instance(sK393(X0),X0) | ~p__d__subclass(X0,c__Entity)) [skolemisation 11304,15571]
+15748. ! [X0] : (? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Human)) => (p__patient(X0,sK458(X0)) & p__d__instance(sK458(X0),c__Human))) [choice axiom]
+15749. ! [X0] : (~p__d__instance(X0,c__Execution) | (p__patient(X0,sK458(X0)) & p__d__instance(sK458(X0),c__Human))) [skolemisation 11960,15748]
+15835. ! [X1,X0] : ((p__d__disjoint(X0,X1) | ? [X2] : (p__d__instance(X2,X1) & p__d__instance(X2,X0))) & (! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0)) | ~p__d__disjoint(X0,X1))) [nnf transformation 8416]
+15836. ! [X0,X1] : ((p__d__disjoint(X1,X0) | ? [X2] : (p__d__instance(X2,X0) & p__d__instance(X2,X1))) & (! [X3] : (~p__d__instance(X3,X0) | ~p__d__instance(X3,X1)) | ~p__d__disjoint(X1,X0))) [rectify 15835]
+15837. ! [X0,X1] : (? [X2] : (p__d__instance(X2,X0) & p__d__instance(X2,X1)) => (p__d__instance(sK486(X0,X1),X0) & p__d__instance(sK486(X0,X1),X1))) [choice axiom]
+15838. ! [X0,X1] : ((p__d__disjoint(X1,X0) | (p__d__instance(sK486(X0,X1),X0) & p__d__instance(sK486(X0,X1),X1))) & (! [X3] : (~p__d__instance(X3,X0) | ~p__d__instance(X3,X1)) | ~p__d__disjoint(X1,X0))) [skolemisation 15836,15837]
+15916. ! [X0,X1,X2] : (p__d__instance(X1,X0) | ~p__d__instance(X1,X2) | ~p__d__subclass(X2,X0)) [rectify 14005]
+16956. ! [X0,X1,X2] : (~p__d__subclass(X2,X1) | ~p__d__subclass(X0,X2) | p__d__subclass(X0,X1)) [rectify 10330]
+17708. ! [X0] : ((((p__d__instance(X0,c__Damaging) & ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Organism))) | ~p__d__instance(X0,c__Injuring)) & (p__d__instance(X0,c__Injuring) | (~p__d__instance(X0,c__Damaging) | ! [X1] : (~p__patient(X0,X1) | ~p__d__instance(X1,c__Organism))))) | ~p__d__instance(X0,c__Process)) [nnf transformation 12772]
+17709. ! [X0] : ((((p__d__instance(X0,c__Damaging) & ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Organism))) | ~p__d__instance(X0,c__Injuring)) & (p__d__instance(X0,c__Injuring) | ~p__d__instance(X0,c__Damaging) | ! [X1] : (~p__patient(X0,X1) | ~p__d__instance(X1,c__Organism)))) | ~p__d__instance(X0,c__Process)) [flattening 17708]
+17710. ! [X0] : ((((p__d__instance(X0,c__Damaging) & ? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Organism))) | ~p__d__instance(X0,c__Injuring)) & (p__d__instance(X0,c__Injuring) | ~p__d__instance(X0,c__Damaging) | ! [X2] : (~p__patient(X0,X2) | ~p__d__instance(X2,c__Organism)))) | ~p__d__instance(X0,c__Process)) [rectify 17709]
+17711. ! [X0] : (? [X1] : (p__patient(X0,X1) & p__d__instance(X1,c__Organism)) => (p__patient(X0,sK1078(X0)) & p__d__instance(sK1078(X0),c__Organism))) [choice axiom]
+17712. ! [X0] : ((((p__d__instance(X0,c__Damaging) & (p__patient(X0,sK1078(X0)) & p__d__instance(sK1078(X0),c__Organism))) | ~p__d__instance(X0,c__Injuring)) & (p__d__instance(X0,c__Injuring) | ~p__d__instance(X0,c__Damaging) | ! [X2] : (~p__patient(X0,X2) | ~p__d__instance(X2,c__Organism)))) | ~p__d__instance(X0,c__Process)) [skolemisation 17710,17711]
+18568. c__Death = c__Killing [cnf transformation 7800]
+19452. p__d__subclass(c__PhysiologicProcess,c__BiologicalProcess) [cnf transformation 1585]
+20092. p__d__subclass(X0,X0) [cnf transformation 1]
+20517. p__experiencer(sK295(X0),X0) | ~p__d__instance(X0,c__Organism) [cnf transformation 15242]
+20714. p__d__subclass(c__Process,c__Physical) [cnf transformation 233]
+20787. ~p__d__instance(X1,c__Agent) | ~p__patient(X0,X1) | ~p__d__instance(X0,c__Killing) | p__d__instance(sK320(X0,X1),c__Death) [cnf transformation 15337]
+20789. p__experiencer(sK320(X0,X1),X1) | ~p__patient(X0,X1) | ~p__d__instance(X1,c__Agent) | ~p__d__instance(X0,c__Killing) [cnf transformation 15337]
+21092. p__d__disjoint(c__PathologicProcess,c__PhysiologicProcess) [cnf transformation 1618]
+21258. ~p__experiencer(X1,X0) | p__d__instance(X0,c__Organism) | ~p__d__instance(X0,c__Agent) | ~p__d__instance(X1,c__BiologicalProcess) [cnf transformation 15511]
+21415. p__d__instance(sK393(X0),X0) | ~p__d__subclass(X0,c__Entity) [cnf transformation 15572]
+21508. p__d__subclass(c__OrganismProcess,c__PhysiologicProcess) [cnf transformation 1591]
+21948. p__d__instance(sK458(X0),c__Human) | ~p__d__instance(X0,c__Execution) [cnf transformation 15749]
+21949. p__patient(X0,sK458(X0)) | ~p__d__instance(X0,c__Execution) [cnf transformation 15749]
+22169. p__d__subclass(c__Primate,c__Mammal) [cnf transformation 2123]
+22179. p__d__subclass(c__Destruction,c__Damaging) [cnf transformation 1827]
+22188. ~p__d__disjoint(X1,X0) | ~p__d__instance(X3,X1) | ~p__d__instance(X3,X0) [cnf transformation 15838]
+22407. ~p__d__instance(X1,X2) | ~p__d__subclass(X2,X0) | p__d__instance(X1,X0) [cnf transformation 15916]
+23013. ~p__patient(X1,X0) | p__d__instance(X1,c__Process) [cnf transformation 12829]
+23498. p__d__subclass(c__BiologicalProcess,c__InternalChange) [cnf transformation 1582]
+23698. p__d__subclass(c__Injuring,c__PathologicProcess) [cnf transformation 1620]
+23864. p__d__subclass(c__Hominid,c__Primate) [cnf transformation 2127]
+24073. p__d__subclass(c__Execution,c__Killing) [cnf transformation 4832]
+24175. p__d__subclass(c__Death,c__OrganismProcess) [cnf transformation 1594]
+24632. p__d__subclass(c__Physical,c__Entity) [cnf transformation 112]
+25338. ~p__d__subclass(X2,X1) | p__d__subclass(X0,X1) | ~p__d__subclass(X0,X2) [cnf transformation 16956]
+26466. p__d__subclass(c__WarmBloodedVertebrate,c__Vertebrate) [cnf transformation 2105]
+26717. p__d__subclass(c__InternalChange,c__Process) [cnf transformation 1859]
+27406. ~p__d__instance(X0,c__Process) | ~p__patient(X0,X2) | p__d__instance(X0,c__Injuring) | ~p__d__instance(X0,c__Damaging) | ~p__d__instance(X2,c__Organism) [cnf transformation 17712]
+27434. p__d__subclass(c__Animal,c__Organism) [cnf transformation 2083]
+27539. p__d__subclass(c__Killing,c__Destruction) [cnf transformation 1829]
+27591. p__d__subclass(c__Mammal,c__WarmBloodedVertebrate) [cnf transformation 2112]
+27662. p__d__subclass(c__Vertebrate,c__Animal) [cnf transformation 2092]
+28452. p__d__subclass(c__Human,c__Hominid) [cnf transformation 2128]
+28469. ~p__experiencer(X1,X0) | p__d__instance(X0,c__Agent) [cnf transformation 13894]
+29109. p__d__instance(sK320(X0,X1),c__Killing) | ~p__d__instance(X1,c__Agent) | ~p__patient(X0,X1) | ~p__d__instance(X0,c__Killing) [definition unfolding 20787,18568]
+29113. p__d__subclass(c__Killing,c__OrganismProcess) [definition unfolding 24175,18568]
+29997. ~p__patient(X0,X2) | ~p__d__instance(X0,c__Damaging) | ~p__d__instance(X2,c__Organism) | p__d__instance(X0,c__Injuring) [subsumption resolution 27406,23013]
+31492. ~p__d__subclass(X0,c__Killing) | p__d__subclass(X0,c__OrganismProcess) [resolution 25338,29113]
+31505. p__d__subclass(c__Execution,c__OrganismProcess) [resolution 31492,24073]
+31521. ~p__d__subclass(X0,c__Killing) | p__d__subclass(X0,c__Destruction) [resolution 27539,25338]
+31551. ~p__d__instance(X0,c__Organism) | p__d__instance(X0,c__Agent) [resolution 28469,20517]
+31556. p__d__subclass(c__Execution,c__Destruction) [resolution 31521,24073]
+31565. ~p__d__subclass(X0,c__OrganismProcess) | p__d__subclass(X0,c__PhysiologicProcess) [resolution 21508,25338]
+31569. p__d__subclass(c__Killing,c__PhysiologicProcess) [resolution 31565,29113]
+31570. p__d__subclass(c__Execution,c__PhysiologicProcess) [resolution 31565,31505]
+32005. ~p__d__subclass(X0,c__Animal) | p__d__subclass(X0,c__Organism) [resolution 27434,25338]
+32136. p__d__instance(sK320(X1,X2),X0) | ~p__patient(X1,X2) | ~p__d__subclass(c__Killing,X0) | ~p__d__instance(X2,c__Agent) | ~p__d__instance(X1,c__Killing) [resolution 22407,29109]
+32646. ~p__d__subclass(X0,c__Destruction) | p__d__subclass(X0,c__Damaging) [resolution 22179,25338]
+32739. ~p__d__subclass(X0,c__InternalChange) | p__d__subclass(X0,c__Process) [resolution 26717,25338]
+32885. ~p__d__subclass(X0,c__PhysiologicProcess) | p__d__subclass(X0,c__BiologicalProcess) [resolution 19452,25338]
+32939. ~p__d__subclass(X0,c__Vertebrate) | p__d__subclass(X0,c__Animal) [resolution 27662,25338]
+33013. p__d__subclass(c__Execution,c__Damaging) [resolution 32646,31556]
+33071. p__d__subclass(c__OrganismProcess,c__BiologicalProcess) [resolution 32885,21508]
+33073. p__d__subclass(c__Killing,c__BiologicalProcess) [resolution 32885,31569]
+33380. ~p__d__subclass(X0,c__Physical) | p__d__subclass(X0,c__Entity) [resolution 24632,25338]
+33542. ~p__d__instance(X0,c__PathologicProcess) | ~p__d__instance(X0,c__PhysiologicProcess) [resolution 21092,22188]
+33804. p__d__instance(sK393(X0),X1) | ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(X0,X1) [resolution 21415,22407]
+33809. 364 <=> p__d__subclass(c__Execution,c__Entity) [avatar definition]
+33810. p__d__subclass(c__Execution,c__Entity) <- (364) [avatar component clause 33809]
+34013. p__d__instance(sK458(X0),X1) | ~p__d__instance(X0,c__Execution) | ~p__d__subclass(c__Human,X1) [resolution 21948,22407]
+34019. ~p__d__subclass(X0,c__Process) | p__d__subclass(X0,c__Physical) [resolution 20714,25338]
+35110. ~p__d__instance(X0,c__Execution) | ~p__d__subclass(c__Human,c__Organism) | p__d__instance(sK458(X0),c__Agent) [resolution 31551,34013]
+35141. 582 <=> ! [X0] : (~p__d__instance(X0,c__Execution) | p__d__instance(sK458(X0),c__Agent)) [avatar definition]
+35142. p__d__instance(sK458(X0),c__Agent) | ~p__d__instance(X0,c__Execution) <- (582) [avatar component clause 35141]
+35144. 583 <=> p__d__subclass(c__Human,c__Organism) [avatar definition]
+35146. ~p__d__subclass(c__Human,c__Organism) <- (~583) [avatar component clause 35144]
+35147. 582 | ~583 [avatar split clause 35110,35144,35141]
+35258. 602 <=> p__d__subclass(c__OrganismProcess,c__Entity) [avatar definition]
+35259. p__d__subclass(c__OrganismProcess,c__Entity) <- (602) [avatar component clause 35258]
+37436. ~p__d__subclass(X0,c__BiologicalProcess) | p__d__subclass(X0,c__InternalChange) [resolution 23498,25338]
+37448. p__d__subclass(c__OrganismProcess,c__InternalChange) [resolution 37436,33071]
+37459. p__d__subclass(c__OrganismProcess,c__Process) [resolution 37448,32739]
+37483. p__d__subclass(c__OrganismProcess,c__Physical) [resolution 37459,34019]
+37507. p__d__subclass(c__OrganismProcess,c__Entity) [resolution 37483,33380]
+37519. 602 [avatar split clause 37507,35258]
+37521. ~p__d__subclass(X0,c__OrganismProcess) | p__d__subclass(X0,c__Entity) <- (602) [resolution 35259,25338]
+37627. ~p__d__subclass(X0,c__Hominid) | p__d__subclass(X0,c__Primate) [resolution 23864,25338]
+37638. p__d__subclass(c__Human,c__Primate) [resolution 37627,28452]
+39622. ~p__d__instance(sK320(X1,X0),c__BiologicalProcess) | ~p__d__instance(X0,c__Agent) | ~p__d__instance(X0,c__Agent) | p__d__instance(X0,c__Organism) | ~p__d__instance(X1,c__Killing) | ~p__patient(X1,X0) [resolution 21258,20789]
+39628. ~p__d__instance(sK320(X1,X0),c__BiologicalProcess) | ~p__d__instance(X1,c__Killing) | ~p__d__instance(X0,c__Agent) | p__d__instance(X0,c__Organism) | ~p__patient(X1,X0) [duplicate literal removal 39622]
+39887. p__d__subclass(c__Execution,c__Entity) <- (602) [resolution 37521,31505]
+39903. 364 | ~602 [avatar split clause 39887,35258,33809]
+39971. ~p__d__subclass(X0,c__Execution) | p__d__subclass(X0,c__Entity) <- (364) [resolution 33810,25338]
+42102. ~p__d__subclass(X0,c__Primate) | p__d__subclass(X0,c__Mammal) [resolution 22169,25338]
+44589. ~p__d__subclass(X1,X2) | p__d__instance(sK393(X0),X2) | ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(X0,X1) [resolution 33804,22407]
+50473. p__d__subclass(c__Human,c__Mammal) [resolution 37638,42102]
+50485. p__d__subclass(c__WarmBloodedVertebrate,c__Animal) [resolution 26466,32939]
+50501. ~p__d__subclass(X0,c__WarmBloodedVertebrate) | p__d__subclass(X0,c__Animal) [resolution 50485,25338]
+78619. 6324 <=> p__d__subclass(c__Human,c__Animal) [avatar definition]
+78620. p__d__subclass(c__Human,c__Animal) <- (6324) [avatar component clause 78619]
+78621. ~p__d__subclass(c__Human,c__Animal) <- (~6324) [avatar component clause 78619]
+90309. p__d__subclass(c__Mammal,c__Animal) [resolution 50501,27591]
+90319. ~p__d__subclass(X0,c__Mammal) | p__d__subclass(X0,c__Animal) [resolution 90309,25338]
+101070. p__d__subclass(c__Human,c__Animal) [resolution 90319,50473]
+101081. $false <- (~6324) [subsumption resolution 101070,78621]
+101082. 6324 [avatar contradiction clause 101081]
+101083. p__d__subclass(c__Human,c__Organism) <- (6324) [resolution 78620,32005]
+101094. $false <- (~583, 6324) [subsumption resolution 101083,35146]
+101095. 583 | ~6324 [avatar contradiction clause 101094]
+109789. ~p__d__instance(sK458(X0),c__Organism) | p__d__instance(X0,c__Injuring) | ~p__d__instance(X0,c__Execution) | ~p__d__instance(X0,c__Damaging) [resolution 29997,21949]
+120352. p__d__instance(sK393(X0),c__PhysiologicProcess) | ~p__d__subclass(X0,c__Execution) | ~p__d__subclass(X0,c__Entity) [resolution 44589,31570]
+120354. ~p__d__subclass(X0,c__Execution) | p__d__instance(sK393(X0),c__Damaging) | ~p__d__subclass(X0,c__Entity) [resolution 44589,33013]
+120356. ~p__d__subclass(X0,c__Entity) | p__d__instance(sK393(X0),c__Killing) | ~p__d__subclass(X0,c__Execution) [resolution 44589,24073]
+121429. p__d__instance(sK393(X0),c__PhysiologicProcess) | ~p__d__subclass(X0,c__Execution) <- (364) [subsumption resolution 120352,39971]
+122183. p__d__instance(sK393(X0),c__Killing) | ~p__d__subclass(X0,c__Execution) <- (364) [subsumption resolution 120356,39971]
+122201. p__d__instance(sK393(X0),c__Damaging) | ~p__d__subclass(X0,c__Execution) <- (364) [subsumption resolution 120354,39971]
+166584. 14723 <=> ! [X0] : ~p__d__subclass(X0,c__Execution) [avatar definition]
+166585. ~p__d__subclass(X0,c__Execution) <- (14723) [avatar component clause 166584]
+335111. p__d__instance(X1,c__Organism) | ~p__patient(X0,X1) | ~p__d__instance(X1,c__Agent) | ~p__d__instance(X0,c__Killing) | ~p__d__instance(X1,c__Agent) | ~p__patient(X0,X1) | ~p__d__subclass(c__Killing,c__BiologicalProcess) | ~p__d__instance(X0,c__Killing) [resolution 39628,32136]
+335112. ~p__d__instance(X1,c__Agent) | ~p__d__subclass(c__Killing,c__BiologicalProcess) | ~p__d__instance(X0,c__Killing) | p__d__instance(X1,c__Organism) | ~p__patient(X0,X1) [duplicate literal removal 335111]
+335113. ~p__patient(X0,X1) | ~p__d__instance(X0,c__Killing) | p__d__instance(X1,c__Organism) | ~p__d__instance(X1,c__Agent) [subsumption resolution 335112,33073]
+335131. p__d__instance(sK458(X0),c__Organism) | ~p__d__instance(X0,c__Execution) | ~p__d__instance(X0,c__Killing) | ~p__d__instance(sK458(X0),c__Agent) [resolution 335113,21949]
+335176. p__d__instance(sK458(X0),c__Organism) | ~p__d__instance(X0,c__Execution) | ~p__d__instance(X0,c__Killing) <- (582) [subsumption resolution 335131,35142]
+392863. ~p__d__instance(X0,c__Execution) | ~p__d__instance(X0,c__Execution) | ~p__d__instance(X0,c__Damaging) | ~p__d__instance(X0,c__Killing) | p__d__instance(X0,c__Injuring) <- (582) [resolution 109789,335176]
+392885. ~p__d__instance(X0,c__Execution) | ~p__d__instance(X0,c__Damaging) | p__d__instance(X0,c__Injuring) | ~p__d__instance(X0,c__Killing) <- (582) [duplicate literal removal 392863]
+393041. ~p__d__subclass(X0,c__Execution) | ~p__d__instance(sK393(X0),c__Damaging) | p__d__instance(sK393(X0),c__Injuring) | ~p__d__instance(sK393(X0),c__Killing) | ~p__d__subclass(X0,c__Entity) <- (582) [resolution 392885,33804]
+393331. p__d__instance(sK393(X0),c__Injuring) | ~p__d__subclass(X0,c__Entity) | ~p__d__instance(sK393(X0),c__Killing) | ~p__d__subclass(X0,c__Execution) <- (364, 582) [subsumption resolution 393041,122201]
+393334. p__d__instance(sK393(X0),c__Injuring) | ~p__d__subclass(X0,c__Execution) | ~p__d__instance(sK393(X0),c__Killing) <- (364, 582) [subsumption resolution 393331,39971]
+393344. p__d__instance(sK393(X0),c__Injuring) | ~p__d__subclass(X0,c__Execution) <- (364, 582) [subsumption resolution 393334,122183]
+393347. p__d__instance(sK393(X0),X1) | ~p__d__subclass(X0,c__Execution) | ~p__d__subclass(c__Injuring,X1) <- (364, 582) [resolution 393344,22407]
+393759. ~p__d__subclass(X0,c__Execution) | ~p__d__instance(sK393(X0),c__PhysiologicProcess) | ~p__d__subclass(c__Injuring,c__PathologicProcess) <- (364, 582) [resolution 393347,33542]
+394391. ~p__d__instance(sK393(X0),c__PhysiologicProcess) | ~p__d__subclass(X0,c__Execution) <- (364, 582) [subsumption resolution 393759,23698]
+394823. ~p__d__subclass(X0,c__Execution) <- (364, 582) [subsumption resolution 394391,121429]
+394863. 14723 | ~364 | ~582 [avatar split clause 394823,35141,33809,166584]
+394864. $false <- (14723) [resolution 166585,20092]
+394865. ~14723 [avatar contradiction clause 394864]
+394866. $false [avatar sat refutation 35147,37519,39903,101082,101095,394863,394865]
+% SZS output end Proof for CSR188+1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 7433
+% >>> Preprocessing
+% Introduced names: 36
+% Introduced skolems: 1227
+% Pure predicates: 6
+% Unused predicate definitions: 4
+% Function definitions: 1
+% 
+% >>> Saturation
+% Initial clauses: 10806
+% Generated clauses: 236599
+% Activations started: 23073
+% Active clauses: 23073
+% Passive clauses: 84035
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 1840
+% Fw subsumption resolutions: 7400
+% Fw demodulations: 1
+% Bw demodulations: 132
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 122
+% Equational tautologies: 5
+% Forward subsumptions: 109198
+% 
+% >>> Generating Inferences
+% Binary resolution: 201246
+% Factoring: 2
+% 
+% >>> AVATAR
+% Split clauses: 33567
+% Split components: 70488
+% Sat splitting refutations: 172
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 35746
+% SAT solver unit clauses: 255
+% SAT solver binary clauses: 27110
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 4542
+% Bulk evals: 25248
+% 
+% Time elapsed: 16.188 s
+% Peak memory usage: 532 MB
+% Instructions burned: 90101 (million)
+% ------------------------------
+% ------------------------------

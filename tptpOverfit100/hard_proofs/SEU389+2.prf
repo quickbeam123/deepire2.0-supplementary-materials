@@ -1,0 +1,337 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop4/script-model.pt -npcc on -npcct 0.037 -si on -rtra on --random_seed 1019366404 Problems/SEU/SEU389+2.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for SEU389+2
+% SZS output start Proof for SEU389+2
+90. ! [X1,X0] : set_union2(X0,X1) = set_union2(X1,X0) [input(axiom)]
+124. ! [X0] : ((topological_space(X0) & top_str(X0) & ~empty_carrier(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (element(X2,powerset(the_carrier(X0))) => (in(X1,interior(X0,X2)) <=> point_neighbourhood(X2,X0,X1))))) [input(axiom)]
+166. ! [X0] : boole_POSet(X0) = poset_of_lattice(boole_lattice(X0)) [input(axiom)]
+172. ! [X0] : (one_sorted_str(X0) => the_carrier(X0) = cast_as_carrier_subset(X0)) [input(axiom)]
+174. ! [X1,X0] : (! [X2] : (in(X2,X0) => in(X2,X1)) <=> subset(X0,X1)) [input(axiom)]
+195. ! [X0] : ((top_str(X0) & topological_space(X0)) => ! [X2,X1] : (is_a_convergence_point_of_set(X0,X1,X2) <=> ! [X3] : (element(X3,powerset(the_carrier(X0))) => ((in(X2,X3) & open_subset(X3,X0)) => in(X3,X1))))) [input(axiom)]
+250. ! [X1,X0] : ((top_str(X0) & element(X1,powerset(the_carrier(X0)))) => element(interior(X0,X1),powerset(the_carrier(X0)))) [input(axiom)]
+255. ! [X1,X0] : ((~empty_carrier(X0) & topological_space(X0) & top_str(X0) & element(X1,the_carrier(X0))) => element(neighborhood_system(X0,X1),powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0)))))) [input(axiom)]
+320. ! [X0] : (top_str(X0) => one_sorted_str(X0)) [input(axiom)]
+325. ! [X0,X1] : ((topological_space(X0) & top_str(X0) & element(X1,the_carrier(X0)) & ~empty_carrier(X0)) => ! [X2] : (point_neighbourhood(X2,X0,X1) => element(X2,powerset(the_carrier(X0))))) [input(axiom)]
+447. ! [X1,X0] : ((topological_space(X0) & element(X1,powerset(the_carrier(X0))) & top_str(X0)) => open_subset(interior(X0,X1),X0)) [input(axiom)]
+492. ! [X0,X1] : (in(X0,X1) => subset(X0,union(X1))) [input(assumption)]
+571. ! [X0] : powerset(X0) = k1_pcomps_1(X0) [input(axiom)]
+665. ! [X1,X0] : (element(X1,powerset(the_carrier(boole_POSet(X0)))) => (upper_relstr_subset(X1,boole_POSet(X0)) <=> ! [X2,X3] : ((subset(X2,X3) & subset(X3,X0) & in(X2,X1)) => in(X3,X1)))) [input(assumption)]
+670. ! [X0,X1] : (subset(X0,X1) => set_union2(X0,X1) = X1) [input(assumption)]
+710. ! [X1,X0] : (in(X0,X1) => element(X0,X1)) [input(axiom)]
+790. ! [X0,X1] : (subset(X0,X1) <=> element(X0,powerset(X1))) [input(axiom)]
+794. ! [X0] : ((topological_space(X0) & top_str(X0) & ~empty_carrier(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : (in(X2,neighborhood_system(X0,X1)) <=> point_neighbourhood(X2,X0,X1)))) [input(assumption)]
+803. ! [X0] : (top_str(X0) => ! [X1] : (element(X1,powerset(the_carrier(X0))) => subset(interior(X0,X1),X1))) [input(assumption)]
+820. ! [X1,X0,X2] : ((element(X1,powerset(X2)) & in(X0,X1)) => element(X0,X2)) [input(axiom)]
+821. ! [X0] : powerset(X0) = the_carrier(boole_POSet(X0)) [input(assumption)]
+824. ! [X0] : ((~empty_carrier(X0) & topological_space(X0) & top_str(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : ((upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0)))))) => (is_a_convergence_point_of_set(X0,X2,X1) <=> subset(neighborhood_system(X0,X1),X2))))) [input(conjecture)]
+825. ~! [X0] : ((~empty_carrier(X0) & topological_space(X0) & top_str(X0)) => ! [X1] : (element(X1,the_carrier(X0)) => ! [X2] : ((upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0)))))) => (is_a_convergence_point_of_set(X0,X2,X1) <=> subset(neighborhood_system(X0,X1),X2))))) [negated conjecture 824]
+839. ! [X0] : ((top_str(X0) & ~empty_carrier(X0) & topological_space(X0)) => ! [X1] : (element(X1,powerset(the_carrier(X0))) => ! [X2] : (element(X2,the_carrier(X0)) => ((open_subset(X1,X0) & in(X2,X1)) => point_neighbourhood(X1,X0,X2))))) [input(assumption)]
+871. ! [X0,X1] : subset(X0,set_union2(X0,X1)) [input(assumption)]
+887. ! [X0] : union(powerset(X0)) = X0 [input(assumption)]
+921. ! [X1,X0] : set_union2(X0,X1) = set_union2(X1,X0) [rectify 90]
+927. ! [X0,X1] : (element(X0,powerset(the_carrier(boole_POSet(X1)))) => (upper_relstr_subset(X0,boole_POSet(X1)) <=> ! [X2,X3] : ((subset(X3,X1) & in(X2,X0) & subset(X2,X3)) => in(X3,X0)))) [rectify 665]
+964. ! [X0] : ((top_str(X0) & topological_space(X0)) => ! [X1,X2] : (is_a_convergence_point_of_set(X0,X2,X1) <=> ! [X3] : (element(X3,powerset(the_carrier(X0))) => ((open_subset(X3,X0) & in(X1,X3)) => in(X3,X2))))) [rectify 195]
+986. ! [X0,X1] : ((~empty_carrier(X1) & top_str(X1) & element(X0,the_carrier(X1)) & topological_space(X1)) => element(neighborhood_system(X1,X0),powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X1)))))) [rectify 255]
+1029. ! [X0,X1] : (in(X1,X0) => element(X1,X0)) [rectify 710]
+1046. ! [X0,X1] : ((topological_space(X1) & top_str(X1) & element(X0,powerset(the_carrier(X1)))) => open_subset(interior(X1,X0),X1)) [rectify 447]
+1118. ! [X1,X2,X0] : ((in(X1,X0) & element(X0,powerset(X2))) => element(X1,X2)) [rectify 820]
+1148. ! [X0,X1] : (! [X2] : (in(X2,X1) => in(X2,X0)) <=> subset(X1,X0)) [rectify 174]
+1412. ? [X0] : (? [X1] : (? [X2] : ((subset(neighborhood_system(X0,X1),X2) <~> is_a_convergence_point_of_set(X0,X2,X1)) & (upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0))))))) & element(X1,the_carrier(X0))) & (~empty_carrier(X0) & topological_space(X0) & top_str(X0))) [ennf transformation 825]
+1413. ? [X0] : (~empty_carrier(X0) & topological_space(X0) & top_str(X0) & ? [X1] : (element(X1,the_carrier(X0)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & (subset(neighborhood_system(X0,X1),X2) <~> is_a_convergence_point_of_set(X0,X2,X1))))) [flattening 1412]
+1437. ! [X0,X1] : ((upper_relstr_subset(X0,boole_POSet(X1)) <=> ! [X2,X3] : (in(X3,X0) | (~subset(X3,X1) | ~in(X2,X0) | ~subset(X2,X3)))) | ~element(X0,powerset(the_carrier(boole_POSet(X1))))) [ennf transformation 927]
+1438. ! [X0,X1] : (~element(X0,powerset(the_carrier(boole_POSet(X1)))) | (upper_relstr_subset(X0,boole_POSet(X1)) <=> ! [X3,X2] : (~subset(X2,X3) | in(X3,X0) | ~in(X2,X0) | ~subset(X3,X1)))) [flattening 1437]
+1451. ! [X0] : (one_sorted_str(X0) | ~top_str(X0)) [ennf transformation 320]
+1528. ! [X1,X2,X0] : (element(X1,X2) | (~in(X1,X0) | ~element(X0,powerset(X2)))) [ennf transformation 1118]
+1529. ! [X2,X0,X1] : (~element(X0,powerset(X2)) | ~in(X1,X0) | element(X1,X2)) [flattening 1528]
+1634. ! [X1,X0] : (element(interior(X0,X1),powerset(the_carrier(X0))) | (~top_str(X0) | ~element(X1,powerset(the_carrier(X0))))) [ennf transformation 250]
+1635. ! [X0,X1] : (~top_str(X0) | ~element(X1,powerset(the_carrier(X0))) | element(interior(X0,X1),powerset(the_carrier(X0)))) [flattening 1634]
+1639. ! [X0] : (! [X1] : (! [X2] : ((point_neighbourhood(X1,X0,X2) | (~open_subset(X1,X0) | ~in(X2,X1))) | ~element(X2,the_carrier(X0))) | ~element(X1,powerset(the_carrier(X0)))) | (~top_str(X0) | empty_carrier(X0) | ~topological_space(X0))) [ennf transformation 839]
+1640. ! [X0] : (empty_carrier(X0) | ~top_str(X0) | ~topological_space(X0) | ! [X1] : (! [X2] : (point_neighbourhood(X1,X0,X2) | ~in(X2,X1) | ~element(X2,the_carrier(X0)) | ~open_subset(X1,X0)) | ~element(X1,powerset(the_carrier(X0))))) [flattening 1639]
+1656. ! [X0,X1] : (element(neighborhood_system(X1,X0),powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X1))))) | (empty_carrier(X1) | ~top_str(X1) | ~element(X0,the_carrier(X1)) | ~topological_space(X1))) [ennf transformation 986]
+1657. ! [X0,X1] : (~top_str(X1) | empty_carrier(X1) | ~element(X0,the_carrier(X1)) | element(neighborhood_system(X1,X0),powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X1))))) | ~topological_space(X1)) [flattening 1656]
+1707. ! [X0,X1] : (! [X2] : (element(X2,powerset(the_carrier(X0))) | ~point_neighbourhood(X2,X0,X1)) | (~topological_space(X0) | ~top_str(X0) | ~element(X1,the_carrier(X0)) | empty_carrier(X0))) [ennf transformation 325]
+1708. ! [X1,X0] : (! [X2] : (element(X2,powerset(the_carrier(X0))) | ~point_neighbourhood(X2,X0,X1)) | ~top_str(X0) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~topological_space(X0)) [flattening 1707]
+1711. ! [X0] : (! [X1,X2] : (is_a_convergence_point_of_set(X0,X2,X1) <=> ! [X3] : ((in(X3,X2) | (~open_subset(X3,X0) | ~in(X1,X3))) | ~element(X3,powerset(the_carrier(X0))))) | (~top_str(X0) | ~topological_space(X0))) [ennf transformation 964]
+1712. ! [X0] : (~top_str(X0) | ! [X1,X2] : (is_a_convergence_point_of_set(X0,X2,X1) <=> ! [X3] : (~element(X3,powerset(the_carrier(X0))) | ~in(X1,X3) | in(X3,X2) | ~open_subset(X3,X0))) | ~topological_space(X0)) [flattening 1711]
+1736. ! [X0,X1] : (open_subset(interior(X1,X0),X1) | (~topological_space(X1) | ~top_str(X1) | ~element(X0,powerset(the_carrier(X1))))) [ennf transformation 1046]
+1737. ! [X0,X1] : (~element(X0,powerset(the_carrier(X1))) | open_subset(interior(X1,X0),X1) | ~topological_space(X1) | ~top_str(X1)) [flattening 1736]
+1766. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : ((in(X1,interior(X0,X2)) <=> point_neighbourhood(X2,X0,X1)) | ~element(X2,powerset(the_carrier(X0))))) | (~topological_space(X0) | ~top_str(X0) | empty_carrier(X0))) [ennf transformation 124]
+1767. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : ((in(X1,interior(X0,X2)) <=> point_neighbourhood(X2,X0,X1)) | ~element(X2,powerset(the_carrier(X0))))) | empty_carrier(X0) | ~top_str(X0) | ~topological_space(X0)) [flattening 1766]
+1848. ! [X0,X1] : (set_union2(X0,X1) = X1 | ~subset(X0,X1)) [ennf transformation 670]
+1887. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : (in(X2,neighborhood_system(X0,X1)) <=> point_neighbourhood(X2,X0,X1))) | (~topological_space(X0) | ~top_str(X0) | empty_carrier(X0))) [ennf transformation 794]
+1888. ! [X0] : (empty_carrier(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : (in(X2,neighborhood_system(X0,X1)) <=> point_neighbourhood(X2,X0,X1))) | ~top_str(X0) | ~topological_space(X0)) [flattening 1887]
+2150. ! [X0,X1] : (subset(X0,union(X1)) | ~in(X0,X1)) [ennf transformation 492]
+2169. ! [X0] : (the_carrier(X0) = cast_as_carrier_subset(X0) | ~one_sorted_str(X0)) [ennf transformation 172]
+2181. ! [X1,X0] : (! [X2] : (~in(X2,X1) | in(X2,X0)) <=> subset(X1,X0)) [ennf transformation 1148]
+2222. ! [X0] : (~top_str(X0) | ! [X1] : (~element(X1,powerset(the_carrier(X0))) | subset(interior(X0,X1),X1))) [ennf transformation 803]
+2244. ! [X0,X1] : (~in(X1,X0) | element(X1,X0)) [ennf transformation 1029]
+2960. ! [X0,X1,X2] : (~element(X1,powerset(X0)) | ~in(X2,X1) | element(X2,X0)) [rectify 1529]
+2983. ? [X0] : (~empty_carrier(X0) & topological_space(X0) & top_str(X0) & ? [X1] : (element(X1,the_carrier(X0)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & ((~is_a_convergence_point_of_set(X0,X2,X1) | ~subset(neighborhood_system(X0,X1),X2)) & (is_a_convergence_point_of_set(X0,X2,X1) | subset(neighborhood_system(X0,X1),X2)))))) [nnf transformation 1413]
+2984. ? [X0] : (~empty_carrier(X0) & topological_space(X0) & top_str(X0) & ? [X1] : (element(X1,the_carrier(X0)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & (~is_a_convergence_point_of_set(X0,X2,X1) | ~subset(neighborhood_system(X0,X1),X2)) & (is_a_convergence_point_of_set(X0,X2,X1) | subset(neighborhood_system(X0,X1),X2))))) [flattening 2983]
+2985. ? [X0] : (~empty_carrier(X0) & topological_space(X0) & top_str(X0) & ? [X1] : (element(X1,the_carrier(X0)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X0))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(X0))) & (~is_a_convergence_point_of_set(X0,X2,X1) | ~subset(neighborhood_system(X0,X1),X2)) & (is_a_convergence_point_of_set(X0,X2,X1) | subset(neighborhood_system(X0,X1),X2))))) => (~empty_carrier(sK277) & topological_space(sK277) & top_str(sK277) & ? [X1] : (element(X1,the_carrier(sK277)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(sK277))) & (~is_a_convergence_point_of_set(sK277,X2,X1) | ~subset(neighborhood_system(sK277,X1),X2)) & (is_a_convergence_point_of_set(sK277,X2,X1) | subset(neighborhood_system(sK277,X1),X2))))) [choice axiom]
+2986. ? [X1] : (element(X1,the_carrier(sK277)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(sK277))) & (~is_a_convergence_point_of_set(sK277,X2,X1) | ~subset(neighborhood_system(sK277,X1),X2)) & (is_a_convergence_point_of_set(sK277,X2,X1) | subset(neighborhood_system(sK277,X1),X2)))) => (element(sK278,the_carrier(sK277)) & ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(sK277))) & (~is_a_convergence_point_of_set(sK277,X2,sK278) | ~subset(neighborhood_system(sK277,sK278),X2)) & (is_a_convergence_point_of_set(sK277,X2,sK278) | subset(neighborhood_system(sK277,sK278),X2)))) [choice axiom]
+2987. ? [X2] : (element(X2,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) & upper_relstr_subset(X2,boole_POSet(cast_as_carrier_subset(sK277))) & (~is_a_convergence_point_of_set(sK277,X2,sK278) | ~subset(neighborhood_system(sK277,sK278),X2)) & (is_a_convergence_point_of_set(sK277,X2,sK278) | subset(neighborhood_system(sK277,sK278),X2))) => (element(sK279,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) & upper_relstr_subset(sK279,boole_POSet(cast_as_carrier_subset(sK277))) & (~is_a_convergence_point_of_set(sK277,sK279,sK278) | ~subset(neighborhood_system(sK277,sK278),sK279)) & (is_a_convergence_point_of_set(sK277,sK279,sK278) | subset(neighborhood_system(sK277,sK278),sK279))) [choice axiom]
+2988. ~empty_carrier(sK277) & topological_space(sK277) & top_str(sK277) & (element(sK278,the_carrier(sK277)) & (element(sK279,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) & upper_relstr_subset(sK279,boole_POSet(cast_as_carrier_subset(sK277))) & (~is_a_convergence_point_of_set(sK277,sK279,sK278) | ~subset(neighborhood_system(sK277,sK278),sK279)) & (is_a_convergence_point_of_set(sK277,sK279,sK278) | subset(neighborhood_system(sK277,sK278),sK279)))) [skolemisation 2984,2987,2986,2985]
+3290. ! [X0] : (~top_str(X0) | ! [X1,X2] : ((is_a_convergence_point_of_set(X0,X2,X1) | ? [X3] : (element(X3,powerset(the_carrier(X0))) & in(X1,X3) & ~in(X3,X2) & open_subset(X3,X0))) & (! [X3] : (~element(X3,powerset(the_carrier(X0))) | ~in(X1,X3) | in(X3,X2) | ~open_subset(X3,X0)) | ~is_a_convergence_point_of_set(X0,X2,X1))) | ~topological_space(X0)) [nnf transformation 1712]
+3291. ! [X0] : (~top_str(X0) | ! [X1,X2] : ((is_a_convergence_point_of_set(X0,X2,X1) | ? [X3] : (element(X3,powerset(the_carrier(X0))) & in(X1,X3) & ~in(X3,X2) & open_subset(X3,X0))) & (! [X4] : (~element(X4,powerset(the_carrier(X0))) | ~in(X1,X4) | in(X4,X2) | ~open_subset(X4,X0)) | ~is_a_convergence_point_of_set(X0,X2,X1))) | ~topological_space(X0)) [rectify 3290]
+3292. ! [X0,X1,X2] : (? [X3] : (element(X3,powerset(the_carrier(X0))) & in(X1,X3) & ~in(X3,X2) & open_subset(X3,X0)) => (element(sK405(X0,X1,X2),powerset(the_carrier(X0))) & in(X1,sK405(X0,X1,X2)) & ~in(sK405(X0,X1,X2),X2) & open_subset(sK405(X0,X1,X2),X0))) [choice axiom]
+3293. ! [X0] : (~top_str(X0) | ! [X1,X2] : ((is_a_convergence_point_of_set(X0,X2,X1) | (element(sK405(X0,X1,X2),powerset(the_carrier(X0))) & in(X1,sK405(X0,X1,X2)) & ~in(sK405(X0,X1,X2),X2) & open_subset(sK405(X0,X1,X2),X0))) & (! [X4] : (~element(X4,powerset(the_carrier(X0))) | ~in(X1,X4) | in(X4,X2) | ~open_subset(X4,X0)) | ~is_a_convergence_point_of_set(X0,X2,X1))) | ~topological_space(X0)) [skolemisation 3291,3292]
+3365. ! [X0,X1] : (~element(X0,powerset(the_carrier(boole_POSet(X1)))) | ((upper_relstr_subset(X0,boole_POSet(X1)) | ? [X3,X2] : (subset(X2,X3) & ~in(X3,X0) & in(X2,X0) & subset(X3,X1))) & (! [X3,X2] : (~subset(X2,X3) | in(X3,X0) | ~in(X2,X0) | ~subset(X3,X1)) | ~upper_relstr_subset(X0,boole_POSet(X1))))) [nnf transformation 1438]
+3366. ! [X0,X1] : (~element(X0,powerset(the_carrier(boole_POSet(X1)))) | ((upper_relstr_subset(X0,boole_POSet(X1)) | ? [X2,X3] : (subset(X3,X2) & ~in(X2,X0) & in(X3,X0) & subset(X2,X1))) & (! [X4,X5] : (~subset(X5,X4) | in(X4,X0) | ~in(X5,X0) | ~subset(X4,X1)) | ~upper_relstr_subset(X0,boole_POSet(X1))))) [rectify 3365]
+3367. ! [X0,X1] : (? [X2,X3] : (subset(X3,X2) & ~in(X2,X0) & in(X3,X0) & subset(X2,X1)) => (subset(sK430(X0,X1),sK429(X0,X1)) & ~in(sK429(X0,X1),X0) & in(sK430(X0,X1),X0) & subset(sK429(X0,X1),X1))) [choice axiom]
+3368. ! [X0,X1] : (~element(X0,powerset(the_carrier(boole_POSet(X1)))) | ((upper_relstr_subset(X0,boole_POSet(X1)) | (subset(sK430(X0,X1),sK429(X0,X1)) & ~in(sK429(X0,X1),X0) & in(sK430(X0,X1),X0) & subset(sK429(X0,X1),X1))) & (! [X4,X5] : (~subset(X5,X4) | in(X4,X0) | ~in(X5,X0) | ~subset(X4,X1)) | ~upper_relstr_subset(X0,boole_POSet(X1))))) [skolemisation 3366,3367]
+3371. ! [X0,X1] : set_union2(X0,X1) = set_union2(X1,X0) [rectify 921]
+3609. ! [X0,X1] : (! [X2] : (element(X2,powerset(the_carrier(X1))) | ~point_neighbourhood(X2,X1,X0)) | ~top_str(X1) | empty_carrier(X1) | ~element(X0,the_carrier(X1)) | ~topological_space(X1)) [rectify 1708]
+3614. ! [X0] : (empty_carrier(X0) | ! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : ((in(X2,neighborhood_system(X0,X1)) | ~point_neighbourhood(X2,X0,X1)) & (point_neighbourhood(X2,X0,X1) | ~in(X2,neighborhood_system(X0,X1))))) | ~top_str(X0) | ~topological_space(X0)) [nnf transformation 1888]
+3617. ! [X1,X0] : ((! [X2] : (~in(X2,X1) | in(X2,X0)) | ~subset(X1,X0)) & (subset(X1,X0) | ? [X2] : (in(X2,X1) & ~in(X2,X0)))) [nnf transformation 2181]
+3618. ! [X0,X1] : ((! [X2] : (~in(X2,X0) | in(X2,X1)) | ~subset(X0,X1)) & (subset(X0,X1) | ? [X3] : (in(X3,X0) & ~in(X3,X1)))) [rectify 3617]
+3619. ! [X0,X1] : (? [X3] : (in(X3,X0) & ~in(X3,X1)) => (in(sK529(X0,X1),X0) & ~in(sK529(X0,X1),X1))) [choice axiom]
+3620. ! [X0,X1] : ((! [X2] : (~in(X2,X0) | in(X2,X1)) | ~subset(X0,X1)) & (subset(X0,X1) | (in(sK529(X0,X1),X0) & ~in(sK529(X0,X1),X1)))) [skolemisation 3618,3619]
+3869. ! [X0,X1] : ((subset(X0,X1) | ~element(X0,powerset(X1))) & (element(X0,powerset(X1)) | ~subset(X0,X1))) [nnf transformation 790]
+3931. ! [X0] : (! [X1] : (~element(X1,the_carrier(X0)) | ! [X2] : (((in(X1,interior(X0,X2)) | ~point_neighbourhood(X2,X0,X1)) & (point_neighbourhood(X2,X0,X1) | ~in(X1,interior(X0,X2)))) | ~element(X2,powerset(the_carrier(X0))))) | empty_carrier(X0) | ~top_str(X0) | ~topological_space(X0)) [nnf transformation 1767]
+4225. ~element(X0,powerset(the_carrier(X1))) | open_subset(interior(X1,X0),X1) | ~topological_space(X1) | ~top_str(X1) [cnf transformation 1737]
+4627. ~in(X1,X0) | element(X1,X0) [cnf transformation 2244]
+4750. boole_POSet(X0) = poset_of_lattice(boole_lattice(X0)) [cnf transformation 166]
+4777. powerset(X0) = k1_pcomps_1(X0) [cnf transformation 571]
+4926. ~element(X1,powerset(X0)) | ~in(X2,X1) | element(X2,X0) [cnf transformation 2960]
+4953. subset(neighborhood_system(sK277,sK278),sK279) | is_a_convergence_point_of_set(sK277,sK279,sK278) [cnf transformation 2988]
+4954. ~is_a_convergence_point_of_set(sK277,sK279,sK278) | ~subset(neighborhood_system(sK277,sK278),sK279) [cnf transformation 2988]
+4955. upper_relstr_subset(sK279,boole_POSet(cast_as_carrier_subset(sK277))) [cnf transformation 2988]
+4956. element(sK279,powerset(the_carrier(boole_POSet(cast_as_carrier_subset(sK277))))) [cnf transformation 2988]
+4957. element(sK278,the_carrier(sK277)) [cnf transformation 2988]
+4958. top_str(sK277) [cnf transformation 2988]
+4959. topological_space(sK277) [cnf transformation 2988]
+4960. ~empty_carrier(sK277) [cnf transformation 2988]
+5031. ~top_str(X1) | empty_carrier(X1) | ~element(X0,the_carrier(X1)) | element(neighborhood_system(X1,X0),powerset(the_carrier(boole_POSet(cast_as_carrier_subset(X1))))) | ~topological_space(X1) [cnf transformation 1657]
+5073. ~top_str(X0) | ~element(X1,powerset(the_carrier(X0))) | subset(interior(X0,X1),X1) [cnf transformation 2222]
+5518. ~top_str(X0) | ~element(X4,powerset(the_carrier(X0))) | ~in(X1,X4) | in(X4,X2) | ~open_subset(X4,X0) | ~is_a_convergence_point_of_set(X0,X2,X1) | ~topological_space(X0) [cnf transformation 3293]
+5519. open_subset(sK405(X0,X1,X2),X0) | ~top_str(X0) | ~topological_space(X0) | is_a_convergence_point_of_set(X0,X2,X1) [cnf transformation 3293]
+5520. ~in(sK405(X0,X1,X2),X2) | is_a_convergence_point_of_set(X0,X2,X1) | ~topological_space(X0) | ~top_str(X0) [cnf transformation 3293]
+5521. in(X1,sK405(X0,X1,X2)) | is_a_convergence_point_of_set(X0,X2,X1) | ~topological_space(X0) | ~top_str(X0) [cnf transformation 3293]
+5522. ~top_str(X0) | is_a_convergence_point_of_set(X0,X2,X1) | element(sK405(X0,X1,X2),powerset(the_carrier(X0))) | ~topological_space(X0) [cnf transformation 3293]
+5596. ~one_sorted_str(X0) | the_carrier(X0) = cast_as_carrier_subset(X0) [cnf transformation 2169]
+5655. ~element(X0,powerset(the_carrier(boole_POSet(X1)))) | ~subset(X5,X4) | in(X4,X0) | ~in(X5,X0) | ~subset(X4,X1) | ~upper_relstr_subset(X0,boole_POSet(X1)) [cnf transformation 3368]
+5662. set_union2(X0,X1) = set_union2(X1,X0) [cnf transformation 3371]
+5930. powerset(X0) = the_carrier(boole_POSet(X0)) [cnf transformation 821]
+6091. element(X2,powerset(the_carrier(X1))) | ~point_neighbourhood(X2,X1,X0) | ~top_str(X1) | empty_carrier(X1) | ~element(X0,the_carrier(X1)) | ~topological_space(X1) [cnf transformation 3609]
+6102. ~in(X2,neighborhood_system(X0,X1)) | ~element(X1,the_carrier(X0)) | ~top_str(X0) | empty_carrier(X0) | ~topological_space(X0) | point_neighbourhood(X2,X0,X1) [cnf transformation 3614]
+6103. in(X2,neighborhood_system(X0,X1)) | ~point_neighbourhood(X2,X0,X1) | empty_carrier(X0) | ~topological_space(X0) | ~top_str(X0) | ~element(X1,the_carrier(X0)) [cnf transformation 3614]
+6104. empty_carrier(X0) | ~top_str(X0) | ~topological_space(X0) | point_neighbourhood(X1,X0,X2) | ~in(X2,X1) | ~element(X2,the_carrier(X0)) | ~open_subset(X1,X0) | ~element(X1,powerset(the_carrier(X0))) [cnf transformation 1640]
+6114. ~in(sK529(X0,X1),X1) | subset(X0,X1) [cnf transformation 3620]
+6115. in(sK529(X0,X1),X0) | subset(X0,X1) [cnf transformation 3620]
+6116. ~subset(X0,X1) | ~in(X2,X0) | in(X2,X1) [cnf transformation 3620]
+6217. subset(X0,set_union2(X0,X1)) [cnf transformation 871]
+6389. ~top_str(X0) | one_sorted_str(X0) [cnf transformation 1451]
+6660. union(powerset(X0)) = X0 [cnf transformation 887]
+6661. subset(X0,union(X1)) | ~in(X0,X1) [cnf transformation 2150]
+6715. ~subset(X0,X1) | set_union2(X0,X1) = X1 [cnf transformation 1848]
+6746. element(X0,powerset(X1)) | ~subset(X0,X1) [cnf transformation 3869]
+6747. subset(X0,X1) | ~element(X0,powerset(X1)) [cnf transformation 3869]
+6836. ~element(X1,the_carrier(X0)) | in(X1,interior(X0,X2)) | ~point_neighbourhood(X2,X0,X1) | ~element(X2,powerset(the_carrier(X0))) | empty_carrier(X0) | ~top_str(X0) | ~topological_space(X0) [cnf transformation 3931]
+6865. ~top_str(X0) | ~element(X1,powerset(the_carrier(X0))) | element(interior(X0,X1),powerset(the_carrier(X0))) [cnf transformation 1635]
+6990. ~element(X0,k1_pcomps_1(the_carrier(X1))) | open_subset(interior(X1,X0),X1) | ~topological_space(X1) | ~top_str(X1) [definition unfolding 4225,4777]
+7204. ~element(X1,k1_pcomps_1(X0)) | element(X2,X0) | ~in(X2,X1) [definition unfolding 4926,4777]
+7207. element(sK279,k1_pcomps_1(the_carrier(poset_of_lattice(boole_lattice(cast_as_carrier_subset(sK277)))))) [definition unfolding 4956,4777,4750]
+7208. upper_relstr_subset(sK279,poset_of_lattice(boole_lattice(cast_as_carrier_subset(sK277)))) [definition unfolding 4955,4750]
+7232. empty_carrier(X1) | ~topological_space(X1) | ~top_str(X1) | ~element(X0,the_carrier(X1)) | element(neighborhood_system(X1,X0),k1_pcomps_1(the_carrier(poset_of_lattice(boole_lattice(cast_as_carrier_subset(X1)))))) [definition unfolding 5031,4777,4750]
+7242. ~element(X1,k1_pcomps_1(the_carrier(X0))) | subset(interior(X0,X1),X1) | ~top_str(X0) [definition unfolding 5073,4777]
+7394. element(sK405(X0,X1,X2),k1_pcomps_1(the_carrier(X0))) | ~topological_space(X0) | is_a_convergence_point_of_set(X0,X2,X1) | ~top_str(X0) [definition unfolding 5522,4777]
+7395. ~element(X4,k1_pcomps_1(the_carrier(X0))) | ~open_subset(X4,X0) | ~in(X1,X4) | ~top_str(X0) | ~is_a_convergence_point_of_set(X0,X2,X1) | in(X4,X2) | ~topological_space(X0) [definition unfolding 5518,4777]
+7446. in(X4,X0) | ~upper_relstr_subset(X0,poset_of_lattice(boole_lattice(X1))) | ~subset(X5,X4) | ~subset(X4,X1) | ~element(X0,k1_pcomps_1(the_carrier(poset_of_lattice(boole_lattice(X1))))) | ~in(X5,X0) [definition unfolding 5655,4777,4750,4750]
+7537. k1_pcomps_1(X0) = the_carrier(poset_of_lattice(boole_lattice(X0))) [definition unfolding 5930,4777,4750]
+7573. ~point_neighbourhood(X2,X1,X0) | ~element(X0,the_carrier(X1)) | element(X2,k1_pcomps_1(the_carrier(X1))) | ~top_str(X1) | ~topological_space(X1) | empty_carrier(X1) [definition unfolding 6091,4777]
+7577. ~element(X1,k1_pcomps_1(the_carrier(X0))) | ~topological_space(X0) | empty_carrier(X0) | ~open_subset(X1,X0) | ~element(X2,the_carrier(X0)) | ~in(X2,X1) | point_neighbourhood(X1,X0,X2) | ~top_str(X0) [definition unfolding 6104,4777]
+7740. union(k1_pcomps_1(X0)) = X0 [definition unfolding 6660,4777]
+7753. ~element(X0,k1_pcomps_1(X1)) | subset(X0,X1) [definition unfolding 6747,4777]
+7754. element(X0,k1_pcomps_1(X1)) | ~subset(X0,X1) [definition unfolding 6746,4777]
+7790. ~element(X2,k1_pcomps_1(the_carrier(X0))) | ~top_str(X0) | empty_carrier(X0) | ~topological_space(X0) | ~point_neighbourhood(X2,X0,X1) | in(X1,interior(X0,X2)) | ~element(X1,the_carrier(X0)) [definition unfolding 6836,4777]
+7796. element(interior(X0,X1),k1_pcomps_1(the_carrier(X0))) | ~top_str(X0) | ~element(X1,k1_pcomps_1(the_carrier(X0))) [definition unfolding 6865,4777,4777]
+8434. ~upper_relstr_subset(X0,poset_of_lattice(boole_lattice(X1))) | in(X4,X0) | ~in(X5,X0) | ~element(X0,k1_pcomps_1(k1_pcomps_1(X1))) | ~subset(X4,X1) | ~subset(X5,X4) [backward demodulation 7446,7537]
+8438. element(neighborhood_system(X1,X0),k1_pcomps_1(k1_pcomps_1(cast_as_carrier_subset(X1)))) | empty_carrier(X1) | ~topological_space(X1) | ~element(X0,the_carrier(X1)) | ~top_str(X1) [backward demodulation 7232,7537]
+8440. 46 <=> is_a_convergence_point_of_set(sK277,sK279,sK278) [avatar definition]
+8441. ~is_a_convergence_point_of_set(sK277,sK279,sK278) <- (~46) [avatar component clause 8440]
+8442. is_a_convergence_point_of_set(sK277,sK279,sK278) <- (46) [avatar component clause 8440]
+8444. 47 <=> subset(neighborhood_system(sK277,sK278),sK279) [avatar definition]
+8445. ~subset(neighborhood_system(sK277,sK278),sK279) <- (~47) [avatar component clause 8444]
+8446. subset(neighborhood_system(sK277,sK278),sK279) <- (47) [avatar component clause 8444]
+8447. 46 | 47 [avatar split clause 4953,8444,8440]
+8471. ~47 | ~46 [avatar split clause 4954,8440,8444]
+8534. element(sK279,k1_pcomps_1(k1_pcomps_1(cast_as_carrier_subset(sK277)))) [forward demodulation 7207,7537]
+8654. subset(X1,set_union2(X0,X1)) [superposition 6217,5662]
+8675. ~in(X0,X1) | union(X1) = set_union2(X0,union(X1)) [resolution 6661,6715]
+8727. point_neighbourhood(sK529(neighborhood_system(X0,X1),X2),X0,X1) | ~topological_space(X0) | subset(neighborhood_system(X0,X1),X2) | ~top_str(X0) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) [resolution 6115,6102]
+8777. one_sorted_str(sK277) [resolution 6389,4958]
+8805. subset(neighborhood_system(X0,X1),k1_pcomps_1(cast_as_carrier_subset(X0))) | ~topological_space(X0) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~top_str(X0) [resolution 7753,8438]
+8875. ~element(sK279,k1_pcomps_1(k1_pcomps_1(cast_as_carrier_subset(sK277)))) | in(X0,sK279) | ~subset(X0,cast_as_carrier_subset(sK277)) | ~subset(X1,X0) | ~in(X1,sK279) [resolution 8434,7208]
+8878. ~subset(X0,cast_as_carrier_subset(sK277)) | ~subset(X1,X0) | ~in(X1,sK279) | in(X0,sK279) [subsumption resolution 8875,8534]
+8974. ~is_a_convergence_point_of_set(X0,X3,X1) | ~open_subset(X2,X0) | ~top_str(X0) | in(X2,X3) | ~topological_space(X0) | ~subset(X2,the_carrier(X0)) | ~in(X1,X2) [resolution 7395,7754]
+9218. the_carrier(sK277) = cast_as_carrier_subset(sK277) [resolution 5596,8777]
+9226. ~element(X0,the_carrier(sK277)) | ~top_str(sK277) | ~topological_space(sK277) | empty_carrier(sK277) | subset(neighborhood_system(sK277,X0),k1_pcomps_1(the_carrier(sK277))) [superposition 8805,9218]
+9234. ~element(X0,the_carrier(sK277)) | ~topological_space(sK277) | subset(neighborhood_system(sK277,X0),k1_pcomps_1(the_carrier(sK277))) | empty_carrier(sK277) [subsumption resolution 9226,4958]
+9239. ~element(X0,the_carrier(sK277)) | subset(neighborhood_system(sK277,X0),k1_pcomps_1(the_carrier(sK277))) | empty_carrier(sK277) [subsumption resolution 9234,4959]
+9244. subset(neighborhood_system(sK277,X0),k1_pcomps_1(the_carrier(sK277))) | ~element(X0,the_carrier(sK277)) [subsumption resolution 9239,4960]
+10375. ~in(X0,sK405(X1,X2,X3)) | ~top_str(X1) | ~topological_space(X1) | element(X0,the_carrier(X1)) | is_a_convergence_point_of_set(X1,X3,X2) [resolution 7204,7394]
+12394. 96 <=> subset(neighborhood_system(sK277,sK278),k1_pcomps_1(the_carrier(sK277))) [avatar definition]
+12395. subset(neighborhood_system(sK277,sK278),k1_pcomps_1(the_carrier(sK277))) <- (96) [avatar component clause 12394]
+12396. ~subset(neighborhood_system(sK277,sK278),k1_pcomps_1(the_carrier(sK277))) <- (~96) [avatar component clause 12394]
+12435. ~element(sK278,the_carrier(sK277)) <- (~96) [resolution 12396,9244]
+12436. $false <- (~96) [subsumption resolution 12435,4957]
+12437. 96 [avatar contradiction clause 12436]
+12445. ~in(X0,neighborhood_system(sK277,sK278)) | in(X0,k1_pcomps_1(the_carrier(sK277))) <- (96) [resolution 12395,6116]
+13569. ~top_str(X0) | element(sK529(neighborhood_system(X0,X1),X2),k1_pcomps_1(the_carrier(X0))) | empty_carrier(X0) | ~topological_space(X0) | ~top_str(X0) | subset(neighborhood_system(X0,X1),X2) | ~element(X1,the_carrier(X0)) | empty_carrier(X0) | ~element(X1,the_carrier(X0)) | ~topological_space(X0) [resolution 8727,7573]
+13573. element(sK529(neighborhood_system(X0,X1),X2),k1_pcomps_1(the_carrier(X0))) | ~topological_space(X0) | ~element(X1,the_carrier(X0)) | subset(neighborhood_system(X0,X1),X2) | ~top_str(X0) | empty_carrier(X0) [duplicate literal removal 13569]
+13610. ~open_subset(sK405(X1,X2,X3),X1) | ~element(X0,the_carrier(X1)) | ~topological_space(X1) | ~top_str(X1) | point_neighbourhood(sK405(X1,X2,X3),X1,X0) | ~in(X0,sK405(X1,X2,X3)) | ~topological_space(X1) | empty_carrier(X1) | is_a_convergence_point_of_set(X1,X3,X2) | ~top_str(X1) [resolution 7577,7394]
+13614. ~in(X0,sK405(X1,X2,X3)) | ~element(X0,the_carrier(X1)) | ~open_subset(sK405(X1,X2,X3),X1) | is_a_convergence_point_of_set(X1,X3,X2) | empty_carrier(X1) | point_neighbourhood(sK405(X1,X2,X3),X1,X0) | ~top_str(X1) | ~topological_space(X1) [duplicate literal removal 13610]
+13617. ~top_str(X1) | ~topological_space(X1) | is_a_convergence_point_of_set(X1,X3,X2) | ~in(X0,sK405(X1,X2,X3)) | empty_carrier(X1) | ~open_subset(sK405(X1,X2,X3),X1) | point_neighbourhood(sK405(X1,X2,X3),X1,X0) [subsumption resolution 13614,10375]
+13622. point_neighbourhood(sK405(X1,X2,X3),X1,X0) | ~topological_space(X1) | ~in(X0,sK405(X1,X2,X3)) | empty_carrier(X1) | is_a_convergence_point_of_set(X1,X3,X2) | ~top_str(X1) [subsumption resolution 13617,5519]
+14330. ~subset(X0,the_carrier(sK277)) | ~in(X1,sK279) | ~subset(X1,X0) | in(X0,sK279) [backward demodulation 8878,9218]
+14422. ~in(X0,neighborhood_system(sK277,sK278)) | in(X0,sK279) <- (47) [resolution 8446,6116]
+14478. ~point_neighbourhood(X0,sK277,sK278) | ~top_str(sK277) | ~topological_space(sK277) | in(X0,sK279) | ~element(sK278,the_carrier(sK277)) | empty_carrier(sK277) <- (47) [resolution 14422,6103]
+14482. in(X0,sK279) | empty_carrier(sK277) | ~element(sK278,the_carrier(sK277)) | ~topological_space(sK277) | ~point_neighbourhood(X0,sK277,sK278) <- (47) [subsumption resolution 14478,4958]
+14485. ~topological_space(sK277) | ~element(sK278,the_carrier(sK277)) | ~point_neighbourhood(X0,sK277,sK278) | in(X0,sK279) <- (47) [subsumption resolution 14482,4960]
+14488. ~element(sK278,the_carrier(sK277)) | in(X0,sK279) | ~point_neighbourhood(X0,sK277,sK278) <- (47) [subsumption resolution 14485,4959]
+14491. ~point_neighbourhood(X0,sK277,sK278) | in(X0,sK279) <- (47) [subsumption resolution 14488,4957]
+14550. in(sK405(sK277,X0,X1),sK279) | ~topological_space(sK277) | is_a_convergence_point_of_set(sK277,X1,X0) | ~top_str(sK277) | ~in(sK278,sK405(sK277,X0,X1)) | empty_carrier(sK277) <- (47) [resolution 14491,13622]
+14551. ~in(sK278,sK405(sK277,X0,X1)) | ~top_str(sK277) | is_a_convergence_point_of_set(sK277,X1,X0) | empty_carrier(sK277) | in(sK405(sK277,X0,X1),sK279) <- (47) [subsumption resolution 14550,4959]
+14552. is_a_convergence_point_of_set(sK277,X1,X0) | in(sK405(sK277,X0,X1),sK279) | empty_carrier(sK277) | ~in(sK278,sK405(sK277,X0,X1)) <- (47) [subsumption resolution 14551,4958]
+14553. ~in(sK278,sK405(sK277,X0,X1)) | is_a_convergence_point_of_set(sK277,X1,X0) | in(sK405(sK277,X0,X1),sK279) <- (47) [subsumption resolution 14552,4960]
+15259. ~topological_space(sK277) | is_a_convergence_point_of_set(sK277,X0,sK278) | ~top_str(sK277) | is_a_convergence_point_of_set(sK277,X0,sK278) | in(sK405(sK277,sK278,X0),sK279) <- (47) [resolution 14553,5521]
+15260. is_a_convergence_point_of_set(sK277,X0,sK278) | ~top_str(sK277) | in(sK405(sK277,sK278,X0),sK279) | ~topological_space(sK277) <- (47) [duplicate literal removal 15259]
+15261. is_a_convergence_point_of_set(sK277,X0,sK278) | in(sK405(sK277,sK278,X0),sK279) | ~topological_space(sK277) <- (47) [subsumption resolution 15260,4958]
+15262. in(sK405(sK277,sK278,X0),sK279) | is_a_convergence_point_of_set(sK277,X0,sK278) <- (47) [subsumption resolution 15261,4959]
+15263. is_a_convergence_point_of_set(sK277,sK279,sK278) | is_a_convergence_point_of_set(sK277,sK279,sK278) | ~topological_space(sK277) | ~top_str(sK277) <- (47) [resolution 15262,5520]
+15272. ~topological_space(sK277) | is_a_convergence_point_of_set(sK277,sK279,sK278) | ~top_str(sK277) <- (47) [duplicate literal removal 15263]
+15274. is_a_convergence_point_of_set(sK277,sK279,sK278) | ~top_str(sK277) <- (47) [subsumption resolution 15272,4959]
+15275. ~top_str(sK277) <- (~46, 47) [subsumption resolution 15274,8441]
+15276. $false <- (~46, 47) [subsumption resolution 15275,4958]
+15277. 46 | ~47 [avatar contradiction clause 15276]
+18427. ~topological_space(sK277) | empty_carrier(sK277) | ~top_str(sK277) | in(X0,k1_pcomps_1(the_carrier(sK277))) | ~element(sK278,the_carrier(sK277)) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [resolution 12445,6103]
+18432. ~element(sK278,the_carrier(sK277)) | ~top_str(sK277) | in(X0,k1_pcomps_1(the_carrier(sK277))) | empty_carrier(sK277) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [subsumption resolution 18427,4959]
+18435. in(X0,k1_pcomps_1(the_carrier(sK277))) | empty_carrier(sK277) | ~top_str(sK277) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [subsumption resolution 18432,4957]
+18438. ~top_str(sK277) | in(X0,k1_pcomps_1(the_carrier(sK277))) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [subsumption resolution 18435,4960]
+18441. in(X0,k1_pcomps_1(the_carrier(sK277))) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [subsumption resolution 18438,4958]
+18449. element(X0,k1_pcomps_1(the_carrier(sK277))) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [resolution 18441,4627]
+59548. union(k1_pcomps_1(the_carrier(sK277))) = set_union2(X0,union(k1_pcomps_1(the_carrier(sK277)))) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [resolution 8675,18441]
+59615. ~point_neighbourhood(X0,sK277,sK278) | the_carrier(sK277) = set_union2(X0,the_carrier(sK277)) <- (96) [forward demodulation 59548,7740]
+59775. subset(neighborhood_system(sK277,sK278),X0) | the_carrier(sK277) = set_union2(sK529(neighborhood_system(sK277,sK278),X0),the_carrier(sK277)) | empty_carrier(sK277) | ~topological_space(sK277) | ~top_str(sK277) | ~element(sK278,the_carrier(sK277)) <- (96) [resolution 59615,8727]
+59777. ~topological_space(sK277) | the_carrier(sK277) = set_union2(sK529(neighborhood_system(sK277,sK278),X0),the_carrier(sK277)) | ~top_str(sK277) | ~element(sK278,the_carrier(sK277)) | subset(neighborhood_system(sK277,sK278),X0) <- (96) [subsumption resolution 59775,4960]
+59781. the_carrier(sK277) = set_union2(sK529(neighborhood_system(sK277,sK278),X0),the_carrier(sK277)) | ~element(sK278,the_carrier(sK277)) | ~top_str(sK277) | subset(neighborhood_system(sK277,sK278),X0) <- (96) [subsumption resolution 59777,4959]
+59785. the_carrier(sK277) = set_union2(sK529(neighborhood_system(sK277,sK278),X0),the_carrier(sK277)) | subset(neighborhood_system(sK277,sK278),X0) | ~top_str(sK277) <- (96) [subsumption resolution 59781,4957]
+59789. subset(neighborhood_system(sK277,sK278),X0) | the_carrier(sK277) = set_union2(sK529(neighborhood_system(sK277,sK278),X0),the_carrier(sK277)) <- (96) [subsumption resolution 59785,4958]
+59793. subset(neighborhood_system(sK277,sK278),X0) | the_carrier(sK277) = set_union2(the_carrier(sK277),sK529(neighborhood_system(sK277,sK278),X0)) <- (96) [forward demodulation 59789,5662]
+62331. the_carrier(sK277) = set_union2(the_carrier(sK277),sK529(neighborhood_system(sK277,sK278),sK279)) <- (~47, 96) [resolution 59793,8445]
+63647. subset(sK529(neighborhood_system(sK277,sK278),sK279),the_carrier(sK277)) <- (~47, 96) [superposition 8654,62331]
+64115. in(sK529(neighborhood_system(sK277,sK278),sK279),sK279) | ~in(X0,sK279) | ~subset(X0,sK529(neighborhood_system(sK277,sK278),sK279)) <- (~47, 96) [resolution 63647,14330]
+64164. 837 <=> in(sK529(neighborhood_system(sK277,sK278),sK279),sK279) [avatar definition]
+64166. in(sK529(neighborhood_system(sK277,sK278),sK279),sK279) <- (837) [avatar component clause 64164]
+64168. 838 <=> ! [X0] : (~in(X0,sK279) | ~subset(X0,sK529(neighborhood_system(sK277,sK278),sK279))) [avatar definition]
+64169. ~subset(X0,sK529(neighborhood_system(sK277,sK278),sK279)) | ~in(X0,sK279) <- (838) [avatar component clause 64168]
+64170. 837 | 838 | 47 | ~96 [avatar split clause 64115,12394,8444,64168,64164]
+64258. subset(neighborhood_system(sK277,sK278),sK279) <- (837) [resolution 64166,6114]
+64279. $false <- (~47, 837) [subsumption resolution 64258,8445]
+64280. 47 | ~837 [avatar contradiction clause 64279]
+66578. ~top_str(X0) | subset(neighborhood_system(X0,X1),X2) | ~top_str(X0) | empty_carrier(X0) | subset(interior(X0,sK529(neighborhood_system(X0,X1),X2)),sK529(neighborhood_system(X0,X1),X2)) | ~element(X1,the_carrier(X0)) | ~topological_space(X0) [resolution 13573,7242]
+66639. subset(interior(X0,sK529(neighborhood_system(X0,X1),X2)),sK529(neighborhood_system(X0,X1),X2)) | subset(neighborhood_system(X0,X1),X2) | ~top_str(X0) | empty_carrier(X0) | ~topological_space(X0) | ~element(X1,the_carrier(X0)) [duplicate literal removal 66578]
+74883. 957 <=> in(sK529(neighborhood_system(sK277,sK278),sK279),neighborhood_system(sK277,sK278)) [avatar definition]
+74884. ~in(sK529(neighborhood_system(sK277,sK278),sK279),neighborhood_system(sK277,sK278)) <- (~957) [avatar component clause 74883]
+74885. in(sK529(neighborhood_system(sK277,sK278),sK279),neighborhood_system(sK277,sK278)) <- (957) [avatar component clause 74883]
+116132. ~top_str(sK277) | ~element(sK278,the_carrier(sK277)) | ~topological_space(sK277) | point_neighbourhood(sK529(neighborhood_system(sK277,sK278),sK279),sK277,sK278) | empty_carrier(sK277) <- (957) [resolution 74885,6102]
+116153. empty_carrier(sK277) | ~topological_space(sK277) | ~element(sK278,the_carrier(sK277)) | point_neighbourhood(sK529(neighborhood_system(sK277,sK278),sK279),sK277,sK278) <- (957) [subsumption resolution 116132,4958]
+116164. point_neighbourhood(sK529(neighborhood_system(sK277,sK278),sK279),sK277,sK278) | ~element(sK278,the_carrier(sK277)) | ~topological_space(sK277) <- (957) [subsumption resolution 116153,4960]
+116170. point_neighbourhood(sK529(neighborhood_system(sK277,sK278),sK279),sK277,sK278) | ~topological_space(sK277) <- (957) [subsumption resolution 116164,4957]
+116174. point_neighbourhood(sK529(neighborhood_system(sK277,sK278),sK279),sK277,sK278) <- (957) [subsumption resolution 116170,4959]
+122457. ~topological_space(sK277) | ~top_str(sK277) | ~in(sK278,X0) | ~open_subset(X0,sK277) | ~subset(X0,the_carrier(sK277)) | in(X0,sK279) <- (46) [resolution 8442,8974]
+122462. ~top_str(sK277) | in(X0,sK279) | ~in(sK278,X0) | ~subset(X0,the_carrier(sK277)) | ~open_subset(X0,sK277) <- (46) [subsumption resolution 122457,4959]
+122464. ~subset(X0,the_carrier(sK277)) | in(X0,sK279) | ~in(sK278,X0) | ~open_subset(X0,sK277) <- (46) [subsumption resolution 122462,4958]
+240438. open_subset(interior(sK277,X0),sK277) | ~topological_space(sK277) | ~point_neighbourhood(X0,sK277,sK278) | ~top_str(sK277) <- (96) [resolution 18449,6990]
+240459. in(X1,interior(sK277,X0)) | ~point_neighbourhood(X0,sK277,sK278) | ~topological_space(sK277) | ~element(X1,the_carrier(sK277)) | ~top_str(sK277) | empty_carrier(sK277) | ~point_neighbourhood(X0,sK277,X1) <- (96) [resolution 18449,7790]
+240524. ~top_str(sK277) | open_subset(interior(sK277,X0),sK277) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [subsumption resolution 240438,4959]
+240525. ~element(X1,the_carrier(sK277)) | ~point_neighbourhood(X0,sK277,sK278) | ~point_neighbourhood(X0,sK277,X1) | ~top_str(sK277) | in(X1,interior(sK277,X0)) | empty_carrier(sK277) <- (96) [subsumption resolution 240459,4959]
+240553. open_subset(interior(sK277,X0),sK277) | ~point_neighbourhood(X0,sK277,sK278) <- (96) [subsumption resolution 240524,4958]
+240554. empty_carrier(sK277) | ~point_neighbourhood(X0,sK277,X1) | ~point_neighbourhood(X0,sK277,sK278) | ~element(X1,the_carrier(sK277)) | in(X1,interior(sK277,X0)) <- (96) [subsumption resolution 240525,4958]
+240573. in(X1,interior(sK277,X0)) | ~point_neighbourhood(X0,sK277,X1) | ~point_neighbourhood(X0,sK277,sK278) | ~element(X1,the_carrier(sK277)) <- (96) [subsumption resolution 240554,4960]
+247487. subset(interior(X0,X1),the_carrier(X0)) | ~top_str(X0) | ~element(X1,k1_pcomps_1(the_carrier(X0))) [resolution 7796,7753]
+369393. ~open_subset(interior(sK277,X0),sK277) | ~top_str(sK277) | ~in(sK278,interior(sK277,X0)) | in(interior(sK277,X0),sK279) | ~element(X0,k1_pcomps_1(the_carrier(sK277))) <- (46) [resolution 247487,122464]
+369466. ~open_subset(interior(sK277,X0),sK277) | ~element(X0,k1_pcomps_1(the_carrier(sK277))) | in(interior(sK277,X0),sK279) | ~in(sK278,interior(sK277,X0)) <- (46) [subsumption resolution 369393,4958]
+369552. in(interior(sK277,X0),sK279) | ~in(sK278,interior(sK277,X0)) | ~point_neighbourhood(X0,sK277,sK278) | ~element(X0,k1_pcomps_1(the_carrier(sK277))) <- (46, 96) [resolution 369466,240553]
+369563. ~in(sK278,interior(sK277,X0)) | ~point_neighbourhood(X0,sK277,sK278) | in(interior(sK277,X0),sK279) <- (46, 96) [subsumption resolution 369552,18449]
+369649. ~element(sK278,the_carrier(sK277)) | ~point_neighbourhood(X0,sK277,sK278) | ~point_neighbourhood(X0,sK277,sK278) | in(interior(sK277,X0),sK279) | ~point_neighbourhood(X0,sK277,sK278) <- (46, 96) [resolution 369563,240573]
+369658. in(interior(sK277,X0),sK279) | ~point_neighbourhood(X0,sK277,sK278) | ~element(sK278,the_carrier(sK277)) <- (46, 96) [duplicate literal removal 369649]
+369663. in(interior(sK277,X0),sK279) | ~point_neighbourhood(X0,sK277,sK278) <- (46, 96) [subsumption resolution 369658,4957]
+567773. ~topological_space(sK277) | subset(neighborhood_system(sK277,sK278),sK279) | ~in(interior(sK277,sK529(neighborhood_system(sK277,sK278),sK279)),sK279) | empty_carrier(sK277) | ~element(sK278,the_carrier(sK277)) | ~top_str(sK277) <- (838) [resolution 66639,64169]
+567827. ~element(sK278,the_carrier(sK277)) | ~in(interior(sK277,sK529(neighborhood_system(sK277,sK278),sK279)),sK279) | empty_carrier(sK277) | ~top_str(sK277) | subset(neighborhood_system(sK277,sK278),sK279) <- (838) [subsumption resolution 567773,4959]
+567833. ~in(interior(sK277,sK529(neighborhood_system(sK277,sK278),sK279)),sK279) | subset(neighborhood_system(sK277,sK278),sK279) | empty_carrier(sK277) | ~top_str(sK277) <- (838) [subsumption resolution 567827,4957]
+567834. ~top_str(sK277) | ~in(interior(sK277,sK529(neighborhood_system(sK277,sK278),sK279)),sK279) | empty_carrier(sK277) <- (~47, 838) [subsumption resolution 567833,8445]
+567835. empty_carrier(sK277) | ~in(interior(sK277,sK529(neighborhood_system(sK277,sK278),sK279)),sK279) <- (~47, 838) [subsumption resolution 567834,4958]
+567836. ~in(interior(sK277,sK529(neighborhood_system(sK277,sK278),sK279)),sK279) <- (~47, 838) [subsumption resolution 567835,4960]
+567838. ~point_neighbourhood(sK529(neighborhood_system(sK277,sK278),sK279),sK277,sK278) <- (46, ~47, 96, 838) [resolution 567836,369663]
+567842. $false <- (46, ~47, 96, 838, 957) [subsumption resolution 567838,116174]
+567843. ~46 | 47 | ~96 | ~838 | ~957 [avatar contradiction clause 567842]
+567855. subset(neighborhood_system(sK277,sK278),sK279) <- (~957) [resolution 74884,6115]
+567868. $false <- (~47, ~957) [subsumption resolution 567855,8445]
+567869. 47 | 957 [avatar contradiction clause 567868]
+567874. $false [avatar sat refutation 8447,8471,12437,15277,64170,64280,567843,567869]
+% SZS output end Proof for SEU389+2
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 889
+% >>> Preprocessing
+% Introduced names: 80
+% Introduced skolems: 560
+% Pure predicates: 11
+% Unused predicate definitions: 1
+% Function definitions: 9
+% 
+% >>> Saturation
+% Initial clauses: 2909
+% Generated clauses: 630271
+% Activations started: 13167
+% Active clauses: 13167
+% Passive clauses: 179797
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 5433
+% Trivial inequalities: 849
+% Fw subsumption resolutions: 30632
+% Fw demodulations: 90326
+% Bw demodulations: 92834
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 9422
+% Equational tautologies: 104
+% Forward subsumptions: 304558
+% Fw demodulations to eq. taut.: 302
+% Bw demodulations to eq. taut.: 3156
+% 
+% >>> Generating Inferences
+% Binary resolution: 173796
+% Factoring: 3
+% Forward superposition: 51188
+% Backward superposition: 85235
+% Self superposition: 34
+% Equality resolution: 6
+% 
+% >>> AVATAR
+% Split clauses: 5256
+% Split components: 10897
+% Sat splitting refutations: 4084
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 10883
+% SAT solver unit clauses: 800
+% SAT solver binary clauses: 3324
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 2236
+% Bulk evals: 26235
+% 
+% Time elapsed: 31.200 s
+% Peak memory usage: 530 MB
+% Instructions burned: 70336 (million)
+% ------------------------------
+% ------------------------------

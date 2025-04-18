@@ -1,0 +1,189 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop14/script-model.pt -npcc on -si on -rtra on --random_seed 9 Problems/CSR/CSR223+1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for CSR223+1
+% SZS output start Proof for CSR223+1
+1. ! [X0] : p__d__subclass(X0,X0) [input(axiom)]
+2. ! [X2,X1,X0] : ((p__d__subclass(X0,X1) & p__d__subclass(X1,X2)) => p__d__subclass(X0,X2)) [input(axiom)]
+4. ! [X2,X1,X0] : ((p__d__instance(X0,X1) & p__d__subclass(X1,X2)) => p__d__instance(X0,X2)) [input(axiom)]
+5. ! [X4,X3] : (p__d__disjoint(X3,X4) <=> ! [X5] : (~p__d__instance(X5,X3) | ~p__d__instance(X5,X4))) [input(axiom)]
+110. ! [X6] : (p__d__subclass(X6,c__Entity) => ? [X34] : p__d__instance(X34,X6)) [input(axiom)]
+112. p__d__subclass(c__Physical,c__Entity) [input(axiom)]
+115. p__d__subclass(c__Object,c__Physical) [input(axiom)]
+168. p__d__subclass(c__Mixture,c__Substance) [input(axiom)]
+172. p__d__disjoint(c__CorpuscularObject,c__Substance) [input(axiom)]
+2059. p__d__subclass(c__OrganicObject,c__CorpuscularObject) [input(axiom)]
+2267. p__d__subclass(c__Artifact,c__Object) [input(axiom)]
+2305. p__d__subclass(c__Device,c__Artifact) [input(axiom)]
+2313. p__d__subclass(c__AttachingDevice,c__Device) [input(axiom)]
+2663. ! [X227,X33] : ((p__d__instance(X227,c__Object) & p__attribute(X227,X33) & p__d__instance(X33,c__BiologicalAttribute)) => p__d__instance(X227,c__OrganicObject)) [input(axiom)]
+2675. p__d__subclass(c__SexAttribute,c__BiologicalAttribute) [input(axiom)]
+2676. p__d__instance(c__Female,c__SexAttribute) [input(axiom)]
+3752. p__d__subclass(c__Glue,c__Mixture) [input(axiom)]
+3753. p__d__subclass(c__Glue,c__AttachingDevice) [input(axiom)]
+7433. ? [X0] : (p__d__instance(X0,c__Artifact) & ! [X1] : (p__d__instance(X1,c__Object) => (p__attribute(X1,c__Female) => X0 != X1))) [input(conjecture)]
+7434. ~? [X0] : (p__d__instance(X0,c__Artifact) & ! [X1] : (p__d__instance(X1,c__Object) => (p__attribute(X1,c__Female) => X0 != X1))) [negated conjecture 7433]
+7496. ! [X0,X1,X2] : ((p__d__subclass(X2,X1) & p__d__subclass(X1,X0)) => p__d__subclass(X2,X0)) [rectify 2]
+7562. ! [X0,X1] : (p__d__disjoint(X1,X0) <=> ! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0))) [rectify 5]
+8531. ! [X1,X2,X0] : ((p__d__instance(X2,X1) & p__d__subclass(X1,X0)) => p__d__instance(X2,X0)) [rectify 4]
+8534. ! [X1,X0] : ((p__d__instance(X1,c__BiologicalAttribute) & p__d__instance(X0,c__Object) & p__attribute(X0,X1)) => p__d__instance(X0,c__OrganicObject)) [rectify 2663]
+8681. ! [X0] : (p__d__subclass(X0,c__Entity) => ? [X1] : p__d__instance(X1,X0)) [rectify 110]
+10265. ! [X1,X0] : (p__d__instance(X0,c__OrganicObject) | (~p__d__instance(X1,c__BiologicalAttribute) | ~p__d__instance(X0,c__Object) | ~p__attribute(X0,X1))) [ennf transformation 8534]
+10266. ! [X1,X0] : (p__d__instance(X0,c__OrganicObject) | ~p__attribute(X0,X1) | ~p__d__instance(X1,c__BiologicalAttribute) | ~p__d__instance(X0,c__Object)) [flattening 10265]
+10350. ! [X1,X2,X0] : (p__d__instance(X2,X0) | (~p__d__instance(X2,X1) | ~p__d__subclass(X1,X0))) [ennf transformation 8531]
+10351. ! [X2,X1,X0] : (~p__d__instance(X2,X1) | ~p__d__subclass(X1,X0) | p__d__instance(X2,X0)) [flattening 10350]
+11089. ! [X0,X1,X2] : (p__d__subclass(X2,X0) | (~p__d__subclass(X2,X1) | ~p__d__subclass(X1,X0))) [ennf transformation 7496]
+11090. ! [X1,X0,X2] : (~p__d__subclass(X2,X1) | p__d__subclass(X2,X0) | ~p__d__subclass(X1,X0)) [flattening 11089]
+12353. ! [X0] : (~p__d__instance(X0,c__Artifact) | ? [X1] : ((X0 = X1 & p__attribute(X1,c__Female)) & p__d__instance(X1,c__Object))) [ennf transformation 7434]
+12354. ! [X0] : (? [X1] : (p__attribute(X1,c__Female) & p__d__instance(X1,c__Object) & X0 = X1) | ~p__d__instance(X0,c__Artifact)) [flattening 12353]
+13801. ! [X0] : (? [X1] : p__d__instance(X1,X0) | ~p__d__subclass(X0,c__Entity)) [ennf transformation 8681]
+14518. ! [X0,X1,X2] : (~p__d__instance(X0,X1) | ~p__d__subclass(X1,X2) | p__d__instance(X0,X2)) [rectify 10351]
+14885. ! [X0] : (? [X1] : (p__attribute(X1,c__Female) & p__d__instance(X1,c__Object) & X0 = X1) => (p__attribute(sK166(X0),c__Female) & p__d__instance(sK166(X0),c__Object) & sK166(X0) = X0)) [choice axiom]
+14886. ! [X0] : ((p__attribute(sK166(X0),c__Female) & p__d__instance(sK166(X0),c__Object) & sK166(X0) = X0) | ~p__d__instance(X0,c__Artifact)) [skolemisation 12354,14885]
+17825. ! [X0,X1] : ((p__d__disjoint(X1,X0) | ? [X2] : (p__d__instance(X2,X1) & p__d__instance(X2,X0))) & (! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0)) | ~p__d__disjoint(X1,X0))) [nnf transformation 7562]
+17826. ! [X0,X1] : ((p__d__disjoint(X1,X0) | ? [X2] : (p__d__instance(X2,X1) & p__d__instance(X2,X0))) & (! [X3] : (~p__d__instance(X3,X1) | ~p__d__instance(X3,X0)) | ~p__d__disjoint(X1,X0))) [rectify 17825]
+17827. ! [X0,X1] : (? [X2] : (p__d__instance(X2,X1) & p__d__instance(X2,X0)) => (p__d__instance(sK1108(X0,X1),X1) & p__d__instance(sK1108(X0,X1),X0))) [choice axiom]
+17828. ! [X0,X1] : ((p__d__disjoint(X1,X0) | (p__d__instance(sK1108(X0,X1),X1) & p__d__instance(sK1108(X0,X1),X0))) & (! [X3] : (~p__d__instance(X3,X1) | ~p__d__instance(X3,X0)) | ~p__d__disjoint(X1,X0))) [skolemisation 17826,17827]
+17999. ! [X0] : (? [X1] : p__d__instance(X1,X0) => p__d__instance(sK1166(X0),X0)) [choice axiom]
+18000. ! [X0] : (p__d__instance(sK1166(X0),X0) | ~p__d__subclass(X0,c__Entity)) [skolemisation 13801,17999]
+18214. ! [X0,X1] : (p__d__instance(X1,c__OrganicObject) | ~p__attribute(X1,X0) | ~p__d__instance(X0,c__BiologicalAttribute) | ~p__d__instance(X1,c__Object)) [rectify 10266]
+18240. ! [X0,X1,X2] : (~p__d__subclass(X2,X0) | p__d__subclass(X2,X1) | ~p__d__subclass(X0,X1)) [rectify 11090]
+18592. ~p__d__instance(X0,X1) | p__d__instance(X0,X2) | ~p__d__subclass(X1,X2) [cnf transformation 14518]
+19635. ~p__d__instance(X0,c__Artifact) | sK166(X0) = X0 [cnf transformation 14886]
+19636. p__d__instance(sK166(X0),c__Object) | ~p__d__instance(X0,c__Artifact) [cnf transformation 14886]
+19637. p__attribute(sK166(X0),c__Female) | ~p__d__instance(X0,c__Artifact) [cnf transformation 14886]
+21955. p__d__disjoint(c__CorpuscularObject,c__Substance) [cnf transformation 172]
+22040. p__d__subclass(c__Glue,c__Mixture) [cnf transformation 3752]
+23120. p__d__instance(c__Female,c__SexAttribute) [cnf transformation 2676]
+23999. p__d__subclass(X0,X0) [cnf transformation 1]
+24239. p__d__subclass(c__Artifact,c__Object) [cnf transformation 2267]
+25216. p__d__subclass(c__Device,c__Artifact) [cnf transformation 2305]
+25331. p__d__subclass(c__Object,c__Physical) [cnf transformation 115]
+25389. p__d__subclass(c__OrganicObject,c__CorpuscularObject) [cnf transformation 2059]
+25543. p__d__subclass(c__SexAttribute,c__BiologicalAttribute) [cnf transformation 2675]
+25618. p__d__subclass(c__AttachingDevice,c__Device) [cnf transformation 2313]
+27033. p__d__subclass(c__Glue,c__AttachingDevice) [cnf transformation 3753]
+27592. p__d__subclass(c__Mixture,c__Substance) [cnf transformation 168]
+27709. ~p__d__disjoint(X1,X0) | ~p__d__instance(X3,X1) | ~p__d__instance(X3,X0) [cnf transformation 17828]
+28222. p__d__instance(sK1166(X0),X0) | ~p__d__subclass(X0,c__Entity) [cnf transformation 18000]
+28542. p__d__subclass(c__Physical,c__Entity) [cnf transformation 112]
+28862. ~p__attribute(X1,X0) | ~p__d__instance(X0,c__BiologicalAttribute) | ~p__d__instance(X1,c__Object) | p__d__instance(X1,c__OrganicObject) [cnf transformation 18214]
+28931. ~p__d__subclass(X2,X0) | ~p__d__subclass(X0,X1) | p__d__subclass(X2,X1) [cnf transformation 18240]
+31341. p__d__instance(sK1166(X0),X1) | ~p__d__subclass(X0,X1) | ~p__d__subclass(X0,c__Entity) [resolution 28222,18592]
+31347. 12 <=> p__d__subclass(c__Artifact,c__Entity) [avatar definition]
+31348. p__d__subclass(c__Artifact,c__Entity) <- (12) [avatar component clause 31347]
+31354. ~p__d__subclass(X1,X2) | ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(X0,X1) | p__d__instance(sK1166(X0),X2) [resolution 31341,18592]
+31355. ~p__d__subclass(c__Object,X0) | p__d__subclass(c__Artifact,X0) [resolution 24239,28931]
+31786. p__d__subclass(c__Artifact,c__Physical) [resolution 25331,31355]
+31808. ~p__d__subclass(c__Physical,X0) | p__d__subclass(c__Artifact,X0) [resolution 31786,28931]
+32307. ~p__d__subclass(c__Artifact,X0) | p__d__subclass(c__Device,X0) [resolution 25216,28931]
+32313. 175 <=> p__d__subclass(c__Device,c__Entity) [avatar definition]
+32314. p__d__subclass(c__Device,c__Entity) <- (175) [avatar component clause 32313]
+32728. p__d__subclass(c__Artifact,c__Entity) [resolution 31808,28542]
+32737. 12 [avatar split clause 32728,31347]
+37646. p__d__subclass(c__Device,c__Entity) <- (12) [resolution 32307,31348]
+37650. 175 | ~12 [avatar split clause 37646,31347,32313]
+40180. ~p__d__subclass(c__SexAttribute,X0) | p__d__instance(c__Female,X0) [resolution 23120,18592]
+62718. ~p__d__subclass(c__Device,X0) | p__d__subclass(c__AttachingDevice,X0) [resolution 25618,28931]
+62720. 2546 <=> p__d__subclass(c__AttachingDevice,c__Entity) [avatar definition]
+62721. p__d__subclass(c__AttachingDevice,c__Entity) <- (2546) [avatar component clause 62720]
+62737. p__d__subclass(c__AttachingDevice,c__Artifact) [resolution 62718,25216]
+62738. p__d__subclass(c__AttachingDevice,c__Entity) <- (175) [resolution 62718,32314]
+62742. 2546 | ~175 [avatar split clause 62738,32313,62720]
+62902. p__d__instance(sK1166(X0),c__Artifact) | ~p__d__subclass(X0,c__AttachingDevice) | ~p__d__subclass(X0,c__Entity) [resolution 62737,31354]
+63054. ~p__d__subclass(X0,c__AttachingDevice) | ~p__d__subclass(X0,c__Entity) | sK166(sK1166(X0)) = sK1166(X0) [resolution 62902,19635]
+84011. ~p__d__instance(X0,c__Artifact) | ~p__d__instance(c__Female,c__BiologicalAttribute) | p__d__instance(sK166(X0),c__OrganicObject) | ~p__d__instance(sK166(X0),c__Object) [resolution 28862,19637]
+84111. ~p__d__instance(c__Female,c__BiologicalAttribute) | p__d__instance(sK166(X0),c__OrganicObject) | ~p__d__instance(X0,c__Artifact) [subsumption resolution 84011,19636]
+84193. 3033 <=> p__d__instance(c__Female,c__BiologicalAttribute) [avatar definition]
+84246. 3044 <=> ! [X0] : (p__d__instance(sK166(X0),c__OrganicObject) | ~p__d__instance(X0,c__Artifact)) [avatar definition]
+84247. p__d__instance(sK166(X0),c__OrganicObject) | ~p__d__instance(X0,c__Artifact) <- (3044) [avatar component clause 84246]
+84248. 3044 | ~3033 [avatar split clause 84111,84193,84246]
+276355. ~p__d__instance(X0,c__CorpuscularObject) | ~p__d__instance(X0,c__Substance) [resolution 21955,27709]
+280298. p__d__instance(c__Female,c__BiologicalAttribute) [resolution 25543,40180]
+280332. 3033 [avatar split clause 280298,84193]
+280526. p__d__instance(sK166(X0),X1) | ~p__d__subclass(c__OrganicObject,X1) | ~p__d__instance(X0,c__Artifact) <- (3044) [resolution 84247,18592]
+280716. ~p__d__instance(X1,c__Artifact) | p__d__instance(sK166(X1),X2) | ~p__d__subclass(c__OrganicObject,X0) | ~p__d__subclass(X0,X2) <- (3044) [resolution 280526,18592]
+283912. ~p__d__subclass(c__OrganicObject,X2) | p__d__instance(sK166(sK1166(X0)),X1) | ~p__d__subclass(X0,c__Artifact) | ~p__d__subclass(X2,X1) | ~p__d__subclass(X0,c__Entity) <- (3044) [resolution 280716,31341]
+297994. p__d__instance(sK166(sK1166(X0)),X1) | ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(X0,c__Artifact) | ~p__d__subclass(c__OrganicObject,X1) <- (3044) [resolution 283912,23999]
+298054. ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(c__OrganicObject,c__CorpuscularObject) | ~p__d__subclass(X0,c__Artifact) | ~p__d__instance(sK166(sK1166(X0)),c__Substance) <- (3044) [resolution 297994,276355]
+298325. ~p__d__instance(sK166(sK1166(X0)),c__Substance) | ~p__d__subclass(X0,c__Artifact) | ~p__d__subclass(X0,c__Entity) <- (3044) [subsumption resolution 298054,25389]
+436029. sK166(sK1166(c__Glue)) = sK1166(c__Glue) | ~p__d__subclass(c__Glue,c__Entity) [resolution 27033,63054]
+436032. ~p__d__subclass(c__AttachingDevice,X0) | p__d__subclass(c__Glue,X0) [resolution 27033,28931]
+436043. 13274 <=> sK166(sK1166(c__Glue)) = sK1166(c__Glue) [avatar definition]
+436045. sK166(sK1166(c__Glue)) = sK1166(c__Glue) <- (13274) [avatar component clause 436043]
+436047. 13275 <=> p__d__subclass(c__Glue,c__Entity) [avatar definition]
+436048. p__d__subclass(c__Glue,c__Entity) <- (13275) [avatar component clause 436047]
+436050. 13274 | ~13275 [avatar split clause 436029,436047,436043]
+436051. p__d__subclass(c__Glue,c__Entity) <- (2546) [resolution 436032,62721]
+436053. p__d__subclass(c__Glue,c__Artifact) [resolution 436032,62737]
+436058. 13275 | ~2546 [avatar split clause 436051,62720,436047]
+436060. ~p__d__subclass(c__Glue,c__Artifact) | ~p__d__instance(sK1166(c__Glue),c__Substance) | ~p__d__subclass(c__Glue,c__Entity) <- (3044, 13274) [superposition 298325,436045]
+436086. 13279 <=> p__d__instance(sK1166(c__Glue),c__Substance) [avatar definition]
+436088. ~p__d__instance(sK1166(c__Glue),c__Substance) <- (~13279) [avatar component clause 436086]
+436090. ~p__d__subclass(c__Glue,c__Entity) | ~p__d__instance(sK1166(c__Glue),c__Substance) <- (3044, 13274) [subsumption resolution 436060,436053]
+436108. ~p__d__instance(sK1166(c__Glue),c__Substance) <- (3044, 13274, 13275) [subsumption resolution 436090,436048]
+436116. ~13279 | ~3044 | ~13274 | ~13275 [avatar split clause 436108,436047,436043,84246,436086]
+437629. ~p__d__subclass(c__Glue,c__Substance) | ~p__d__subclass(c__Glue,c__Entity) <- (~13279) [resolution 436088,31341]
+437671. ~p__d__subclass(c__Glue,c__Substance) <- (13275, ~13279) [subsumption resolution 437629,436048]
+482537. ~p__d__subclass(c__Mixture,X0) | p__d__subclass(c__Glue,X0) [resolution 22040,28931]
+482547. p__d__subclass(c__Glue,c__Substance) [resolution 482537,27592]
+482550. $false <- (13275, ~13279) [subsumption resolution 482547,437671]
+482551. ~13275 | 13279 [avatar contradiction clause 482550]
+482552. $false [avatar sat refutation 32737,37650,62742,84248,280332,436050,436058,436116,482551]
+% SZS output end Proof for CSR223+1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 7433
+% >>> Preprocessing
+% Introduced names: 36
+% Introduced skolems: 1228
+% Pure predicates: 6
+% Unused predicate definitions: 4
+% 
+% >>> Saturation
+% Initial clauses: 10809
+% Generated clauses: 398847
+% Activations started: 8296
+% Active clauses: 8296
+% Passive clauses: 69527
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 2842
+% Fw subsumption resolutions: 55125
+% Fw demodulations: 26141
+% Bw demodulations: 306
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 29
+% Equational tautologies: 289
+% Forward subsumptions: 226163
+% Fw demodulations to eq. taut.: 120
+% 
+% >>> Generating Inferences
+% Binary resolution: 293437
+% Forward superposition: 1522
+% Backward superposition: 1393
+% 
+% >>> AVATAR
+% Split clauses: 16055
+% Split components: 32442
+% Sat splitting refutations: 1414
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 18667
+% SAT solver unit clauses: 42
+% SAT solver binary clauses: 5515
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 4543
+% Bulk evals: 19150
+% 
+% Time elapsed: 8.012 s
+% Peak memory usage: 489 MB
+% Instructions burned: 44162 (million)
+% ------------------------------
+% ------------------------------

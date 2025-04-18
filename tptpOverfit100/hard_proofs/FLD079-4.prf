@@ -1,0 +1,154 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop12/script-model.pt -npcc on -npcct 0.333 -si on -rtra on --random_seed 45 Problems/FLD/FLD079-4.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for FLD079-4
+% SZS output start Proof for FLD079-4
+1. ~sum(X4,X5,X2) | ~sum(X3,X5,X1) | sum(X0,X1,X2) | ~sum(X0,X3,X4) [input(axiom)]
+2. ~sum(X3,X5,X1) | ~sum(X0,X3,X4) | ~sum(X0,X1,X2) | sum(X4,X5,X2) [input(axiom)]
+3. sum(additive_identity,X0,X0) | ~defined(X0) [input(axiom)]
+4. sum(additive_inverse(X0),X0,additive_identity) | ~defined(X0) [input(axiom)]
+5. ~sum(X0,X3,X5) | sum(X3,X0,X5) [input(axiom)]
+7. ~product(X3,X5,X1) | product(X4,X5,X2) | ~product(X0,X1,X2) | ~product(X0,X3,X4) [input(axiom)]
+8. product(multiplicative_identity,X0,X0) | ~defined(X0) [input(axiom)]
+9. product(multiplicative_inverse(X0),X0,multiplicative_identity) | sum(additive_identity,X0,additive_identity) | ~defined(X0) [input(axiom)]
+10. ~product(X0,X3,X5) | product(X3,X0,X5) [input(axiom)]
+11. ~product(X9,X5,X8) | ~sum(X0,X3,X9) | ~product(X3,X5,X7) | sum(X6,X7,X8) | ~product(X0,X5,X6) [input(axiom)]
+13. defined(add(X0,X3)) | ~defined(X3) | ~defined(X0) [input(axiom)]
+15. defined(additive_inverse(X0)) | ~defined(X0) [input(axiom)]
+16. defined(multiply(X0,X3)) | ~defined(X0) | ~defined(X3) [input(axiom)]
+18. sum(additive_identity,X0,additive_identity) | defined(multiplicative_inverse(X0)) | ~defined(X0) [input(axiom)]
+19. sum(X0,X3,add(X0,X3)) | ~defined(X3) | ~defined(X0) [input(axiom)]
+20. product(X0,X3,multiply(X0,X3)) | ~defined(X3) | ~defined(X0) [input(axiom)]
+24. ~sum(X3,X5,X1) | ~sum(X0,X5,X4) | less_or_equal(X4,X1) | ~less_or_equal(X0,X3) [input(axiom)]
+25. ~product(X0,X3,X5) | less_or_equal(additive_identity,X5) | ~less_or_equal(additive_identity,X0) | ~less_or_equal(additive_identity,X3) [input(axiom)]
+27. defined(a) [input(assumption)]
+28. defined(b) [input(assumption)]
+29. defined(u) [input(assumption)]
+30. ~sum(additive_identity,b,additive_identity) [input(negated conjecture)]
+31. less_or_equal(additive_identity,b) [input(negated conjecture)]
+32. product(a,multiplicative_inverse(b),u) [input(negated conjecture)]
+33. less_or_equal(u,multiplicative_identity) [input(negated conjecture)]
+34. ~less_or_equal(a,b) [input(negated conjecture)]
+36. product(X0,multiplicative_identity,X0) | ~defined(X0) [resolution 10,8]
+78. ~product(X1,X2,X3) | ~defined(X2) | sum(X4,X3,X2) | ~sum(X0,X1,multiplicative_identity) | ~product(X0,X2,X4) [resolution 11,8]
+90. 7 <=> defined(multiplicative_inverse(b)) [avatar definition]
+91. defined(multiplicative_inverse(b)) <- (7) [avatar component clause 90]
+102. ~sum(X3,X0,additive_identity) | ~sum(X0,X1,X2) | ~defined(X1) | sum(X3,X2,X1) [resolution 1,3]
+106. product(X0,multiplicative_inverse(X0),multiplicative_identity) | sum(additive_identity,X0,additive_identity) | ~defined(X0) [resolution 9,10]
+129. sum(X0,additive_inverse(X0),additive_identity) | ~defined(X0) [resolution 4,5]
+156. sum(additive_inverse(X0),X2,X1) | ~sum(X0,X1,X2) | ~defined(X1) | ~defined(X0) [resolution 102,4]
+170. sum(X0,X1,add(X1,X0)) | ~defined(X1) | ~defined(X0) [resolution 19,5]
+202. ~product(X2,multiplicative_inverse(X0),X3) | ~sum(X1,X2,X0) | sum(X4,X3,multiplicative_identity) | ~product(X1,multiplicative_inverse(X0),X4) | ~defined(X0) | sum(additive_identity,X0,additive_identity) [resolution 106,11]
+209. sum(X2,additive_inverse(X0),X1) | ~defined(X1) | ~defined(X0) | ~sum(X0,X1,X2) [resolution 156,5]
+215. ~sum(X0,additive_identity,X1) | ~sum(X0,X2,X3) | ~defined(X2) | sum(X1,X2,X3) [resolution 2,3]
+227. ~sum(additive_inverse(X0),X1,X2) | sum(X3,X1,X2) | ~defined(X1) | ~sum(X0,X3,additive_identity) | ~defined(X0) | ~defined(X3) [resolution 215,156]
+264. ~product(X3,multiplicative_inverse(X1),X0) | ~product(X3,multiplicative_identity,X2) | ~defined(X1) | product(X0,X1,X2) | sum(additive_identity,X1,additive_identity) [resolution 7,9]
+270. ~defined(X0) | ~sum(X3,X1,multiplicative_identity) | ~product(X3,X0,X2) | sum(X2,multiply(X1,X0),X0) | ~defined(X1) | ~defined(X0) [resolution 20,78]
+272. product(X0,X1,multiply(X1,X0)) | ~defined(X0) | ~defined(X1) [resolution 20,10]
+273. less_or_equal(additive_identity,multiply(X1,X0)) | ~less_or_equal(additive_identity,X1) | ~defined(X1) | ~defined(X0) | ~less_or_equal(additive_identity,X0) [resolution 20,25]
+276. ~product(X3,X0,X2) | ~sum(X3,X1,multiplicative_identity) | sum(X2,multiply(X1,X0),X0) | ~defined(X1) | ~defined(X0) [duplicate literal removal 270]
+397. ~defined(b) | defined(multiplicative_inverse(b)) [resolution 18,30]
+411. defined(multiplicative_inverse(b)) [subsumption resolution 397,28]
+420. 7 [avatar split clause 411,90]
+560. ~product(a,multiplicative_identity,X0) | ~defined(b) | product(u,b,X0) | sum(additive_identity,b,additive_identity) [resolution 264,32]
+565. sum(additive_identity,b,additive_identity) | product(u,b,X0) | ~product(a,multiplicative_identity,X0) [subsumption resolution 560,28]
+567. ~product(a,multiplicative_identity,X0) | product(u,b,X0) [subsumption resolution 565,30]
+568. product(u,b,a) | ~defined(a) [resolution 567,36]
+573. product(u,b,a) [subsumption resolution 568,27]
+728. ~sum(X3,additive_inverse(X1),X4) | ~sum(X1,X0,X2) | ~less_or_equal(X3,X2) | less_or_equal(X4,X0) | ~defined(X1) | ~defined(X0) [resolution 209,24]
+1334. ~defined(b) | sum(a,multiply(X0,b),b) | ~defined(X0) | ~sum(u,X0,multiplicative_identity) [resolution 276,573]
+1352. sum(a,multiply(X0,b),b) | ~sum(u,X0,multiplicative_identity) | ~defined(X0) [subsumption resolution 1334,28]
+6774. sum(X1,u,multiplicative_identity) | ~sum(X0,a,b) | ~defined(b) | sum(additive_identity,b,additive_identity) | ~product(X0,multiplicative_inverse(b),X1) [resolution 202,32]
+6780. ~product(X0,multiplicative_inverse(b),X1) | ~sum(X0,a,b) | sum(X1,u,multiplicative_identity) | sum(additive_identity,b,additive_identity) [subsumption resolution 6774,28]
+6791. ~product(X0,multiplicative_inverse(b),X1) | sum(X1,u,multiplicative_identity) | ~sum(X0,a,b) [subsumption resolution 6780,30]
+6806. ~defined(multiplicative_inverse(b)) | ~defined(X0) | sum(multiply(multiplicative_inverse(b),X0),u,multiplicative_identity) | ~sum(X0,a,b) [resolution 6791,272]
+6810. sum(multiply(multiplicative_inverse(b),X0),u,multiplicative_identity) | ~sum(X0,a,b) | ~defined(X0) <- (7) [subsumption resolution 6806,91]
+16281. ~defined(X3) | sum(X0,X1,X2) | ~defined(X2) | ~sum(X3,X2,X1) | ~defined(X0) | ~sum(X3,X0,additive_identity) | ~defined(X3) | ~defined(X1) [resolution 227,156]
+16306. ~sum(X3,X2,X1) | ~defined(X3) | ~defined(X2) | sum(X0,X1,X2) | ~defined(X0) | ~defined(X1) | ~sum(X3,X0,additive_identity) [duplicate literal removal 16281]
+16387. ~defined(X0) | ~defined(X2) | ~defined(X0) | ~sum(X0,X2,additive_identity) | ~defined(add(X1,X0)) | sum(X2,add(X1,X0),X1) | ~defined(X1) | ~defined(X1) [resolution 16306,170]
+16426. ~sum(X0,X2,additive_identity) | ~defined(add(X1,X0)) | ~defined(X2) | sum(X2,add(X1,X0),X1) | ~defined(X1) | ~defined(X0) [duplicate literal removal 16387]
+16464. sum(X2,add(X1,X0),X1) | ~defined(X1) | ~defined(X2) | ~defined(X0) | ~sum(X0,X2,additive_identity) [subsumption resolution 16426,13]
+44069. less_or_equal(X4,X1) | ~defined(X0) | ~defined(X0) | ~less_or_equal(X3,X2) | ~sum(X0,X1,X2) | ~sum(X0,X4,X3) | ~defined(X1) | ~defined(X4) [resolution 728,209]
+44073. ~sum(X0,X1,X2) | ~defined(X1) | less_or_equal(additive_identity,X1) | ~defined(X0) | ~less_or_equal(X0,X2) | ~defined(X0) [resolution 728,129]
+44096. ~sum(X0,X4,X3) | less_or_equal(X4,X1) | ~defined(X1) | ~defined(X4) | ~sum(X0,X1,X2) | ~less_or_equal(X3,X2) | ~defined(X0) [duplicate literal removal 44069]
+44100. ~sum(X0,X1,X2) | ~less_or_equal(X0,X2) | less_or_equal(additive_identity,X1) | ~defined(X1) | ~defined(X0) [duplicate literal removal 44073]
+44362. ~sum(additive_inverse(X0),X1,X2) | ~defined(X0) | ~less_or_equal(additive_identity,X2) | ~defined(X0) | less_or_equal(X0,X1) | ~defined(additive_inverse(X0)) | ~defined(X1) [resolution 44096,4]
+44451. less_or_equal(X0,X1) | ~less_or_equal(additive_identity,X2) | ~sum(additive_inverse(X0),X1,X2) | ~defined(X1) | ~defined(additive_inverse(X0)) | ~defined(X0) [duplicate literal removal 44362]
+44499. ~sum(additive_inverse(X0),X1,X2) | less_or_equal(X0,X1) | ~less_or_equal(additive_identity,X2) | ~defined(X0) | ~defined(X1) [subsumption resolution 44451,15]
+44886. ~defined(X2) | ~defined(X0) | ~defined(X0) | ~less_or_equal(additive_identity,X2) | ~sum(X0,X2,X1) | ~defined(X1) | less_or_equal(X0,X1) [resolution 44499,156]
+44929. ~sum(X0,X2,X1) | ~defined(X2) | ~less_or_equal(additive_identity,X2) | ~defined(X1) | ~defined(X0) | less_or_equal(X0,X1) [duplicate literal removal 44886]
+49322. sum(add(X0,X2),X1,X0) | ~defined(X1) | ~sum(X2,X1,additive_identity) | ~defined(X0) | ~defined(X2) [resolution 16464,5]
+69793. ~defined(a) | ~sum(u,X0,multiplicative_identity) | ~defined(X0) | ~defined(b) | ~defined(multiply(X0,b)) | ~less_or_equal(additive_identity,multiply(X0,b)) | less_or_equal(a,b) [resolution 1352,44929]
+69800. less_or_equal(a,b) | ~defined(b) | ~defined(X0) | ~defined(a) | ~less_or_equal(additive_identity,multiply(X0,b)) | ~sum(u,X0,multiplicative_identity) [subsumption resolution 69793,16]
+69825. ~defined(a) | ~defined(b) | ~sum(u,X0,multiplicative_identity) | ~less_or_equal(additive_identity,multiply(X0,b)) | ~defined(X0) [subsumption resolution 69800,34]
+69845. ~defined(b) | ~sum(u,X0,multiplicative_identity) | ~defined(X0) | ~less_or_equal(additive_identity,multiply(X0,b)) [subsumption resolution 69825,27]
+69849. ~less_or_equal(additive_identity,multiply(X0,b)) | ~defined(X0) | ~sum(u,X0,multiplicative_identity) [subsumption resolution 69845,28]
+69947. ~sum(u,X0,multiplicative_identity) | ~defined(b) | ~defined(X0) | ~less_or_equal(additive_identity,X0) | ~less_or_equal(additive_identity,b) | ~defined(X0) [resolution 69849,273]
+69964. ~defined(b) | ~sum(u,X0,multiplicative_identity) | ~less_or_equal(additive_identity,b) | ~defined(X0) | ~less_or_equal(additive_identity,X0) [duplicate literal removal 69947]
+69973. ~less_or_equal(additive_identity,b) | ~less_or_equal(additive_identity,X0) | ~defined(X0) | ~sum(u,X0,multiplicative_identity) [subsumption resolution 69964,28]
+69974. ~sum(u,X0,multiplicative_identity) | ~defined(X0) | ~less_or_equal(additive_identity,X0) [subsumption resolution 69973,31]
+99418. sum(u,multiply(multiplicative_inverse(b),X0),multiplicative_identity) | ~defined(X0) | ~sum(X0,a,b) <- (7) [resolution 6810,5]
+99768. ~defined(multiply(multiplicative_inverse(b),X0)) | ~defined(X0) | ~less_or_equal(additive_identity,multiply(multiplicative_inverse(b),X0)) | ~sum(X0,a,b) <- (7) [resolution 99418,69974]
+99815. ~less_or_equal(u,multiplicative_identity) | ~defined(X0) | less_or_equal(additive_identity,multiply(multiplicative_inverse(b),X0)) | ~defined(u) | ~defined(multiply(multiplicative_inverse(b),X0)) | ~sum(X0,a,b) <- (7) [resolution 99418,44100]
+99836. ~sum(X0,a,b) | ~defined(u) | ~defined(X0) | ~defined(multiply(multiplicative_inverse(b),X0)) | ~less_or_equal(u,multiplicative_identity) <- (7) [subsumption resolution 99815,99768]
+99845. ~less_or_equal(u,multiplicative_identity) | ~defined(multiply(multiplicative_inverse(b),X0)) | ~defined(X0) | ~sum(X0,a,b) <- (7) [subsumption resolution 99836,29]
+99849. ~defined(multiply(multiplicative_inverse(b),X0)) | ~defined(X0) | ~sum(X0,a,b) <- (7) [subsumption resolution 99845,33]
+120274. ~defined(X0) | ~defined(X0) | ~sum(X0,a,b) | ~defined(multiplicative_inverse(b)) <- (7) [resolution 99849,16]
+120275. ~defined(multiplicative_inverse(b)) | ~sum(X0,a,b) | ~defined(X0) <- (7) [duplicate literal removal 120274]
+120276. ~sum(X0,a,b) | ~defined(X0) <- (7) [subsumption resolution 120275,91]
+120281. ~defined(a) | ~defined(add(b,X0)) | ~defined(b) | ~sum(X0,a,additive_identity) | ~defined(X0) <- (7) [resolution 120276,49322]
+120296. ~defined(a) | ~defined(X0) | ~defined(b) | ~sum(X0,a,additive_identity) <- (7) [subsumption resolution 120281,13]
+120301. ~defined(b) | ~sum(X0,a,additive_identity) | ~defined(X0) <- (7) [subsumption resolution 120296,27]
+120306. ~sum(X0,a,additive_identity) | ~defined(X0) <- (7) [subsumption resolution 120301,28]
+120309. ~defined(additive_inverse(a)) | ~defined(a) <- (7) [resolution 120306,4]
+120330. ~defined(a) <- (7) [subsumption resolution 120309,15]
+120336. $false <- (7) [subsumption resolution 120330,27]
+120337. ~7 [avatar contradiction clause 120336]
+120340. $false [avatar sat refutation 420,120337]
+% SZS output end Proof for FLD079-4
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 34
+% 
+% >>> Saturation
+% Initial clauses: 34
+% Generated clauses: 113448
+% Activations started: 1990
+% Active clauses: 1990
+% Passive clauses: 35977
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 12186
+% Fw subsumption resolutions: 34229
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 672
+% Forward subsumptions: 28725
+% 
+% >>> Generating Inferences
+% Binary resolution: 63936
+% Factoring: 16
+% 
+% >>> AVATAR
+% Split clauses: 2044
+% Split components: 4207
+% Sat splitting refutations: 546
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 3181
+% SAT solver unit clauses: 42
+% SAT solver binary clauses: 555
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 570
+% Bulk evals: 11284
+% 
+% Time elapsed: 7.404 s
+% Peak memory usage: 275 MB
+% Instructions burned: 30419 (million)
+% ------------------------------
+% ------------------------------

@@ -1,0 +1,180 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop14/script-model.pt -npcc on -npcct 1.0 -si on -rtra on --random_seed 12 Problems/LCL/LCL395-10.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for LCL395-10
+% SZS output start Proof for LCL395-10
+1. ifeq(X0,X0,X1,X2) = X1 [input(axiom)]
+2. true = ifeq(is_a_theorem(implies(X3,X4)),true,ifeq(is_a_theorem(X3),true,is_a_theorem(X4),true),true) [input(axiom)]
+3. true = is_a_theorem(implies(implies(X3,X4),implies(implies(X4,X5),implies(X3,X5)))) [input(axiom)]
+4. true = is_a_theorem(implies(implies(not(X3),X3),X3)) [input(axiom)]
+5. true = is_a_theorem(implies(X3,implies(not(X3),X4))) [input(axiom)]
+6. true != is_a_theorem(implies(implies(x,y),implies(implies(z,y),implies(implies(not(x),z),y)))) [input(negated conjecture)]
+7. true = ifeq(true,true,ifeq(is_a_theorem(X0),true,is_a_theorem(implies(not(X0),X1)),true),true) [superposition 2,5]
+8. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,X1)),true,is_a_theorem(implies(implies(X1,X2),implies(X0,X2))),true),true) [superposition 2,3]
+9. true = ifeq(is_a_theorem(implies(implies(X0,implies(not(X0),X1)),X2)),true,ifeq(true,true,is_a_theorem(X2),true),true) [superposition 2,5]
+10. true = ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(implies(X1,X2),implies(X0,X2))),X3)),true,ifeq(true,true,is_a_theorem(X3),true),true) [superposition 2,3]
+13. true = ifeq(is_a_theorem(X0),true,is_a_theorem(implies(not(X0),X1)),true) [forward demodulation 7,1]
+14. true = ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(implies(X1,X2),implies(X0,X2))),X3)),true,is_a_theorem(X3),true) [forward demodulation 10,1]
+15. true = ifeq(is_a_theorem(implies(implies(X0,implies(not(X0),X1)),X2)),true,is_a_theorem(X2),true) [forward demodulation 9,1]
+16. true = ifeq(is_a_theorem(implies(X0,X1)),true,is_a_theorem(implies(implies(X1,X2),implies(X0,X2))),true) [forward demodulation 8,1]
+26. true = ifeq(true,true,is_a_theorem(implies(implies(implies(not(X0),X1),X2),implies(X0,X2))),true) [superposition 16,5]
+27. true = ifeq(true,true,is_a_theorem(implies(implies(implies(implies(X1,X2),implies(X0,X2)),X3),implies(implies(X0,X1),X3))),true) [superposition 16,3]
+31. true = is_a_theorem(implies(implies(implies(implies(X1,X2),implies(X0,X2)),X3),implies(implies(X0,X1),X3))) [forward demodulation 27,1]
+32. true = is_a_theorem(implies(implies(implies(not(X0),X1),X2),implies(X0,X2))) [forward demodulation 26,1]
+35. true = ifeq(true,true,ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(X2,X1)),X3)),true,is_a_theorem(implies(implies(X2,X0),X3)),true),true) [superposition 2,31]
+39. true = ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(X2,X1)),X3)),true,is_a_theorem(implies(implies(X2,X0),X3)),true) [forward demodulation 35,1]
+44. true = ifeq(true,true,is_a_theorem(implies(implies(X0,X1),implies(implies(not(X0),X0),X1))),true) [superposition 16,4]
+48. true = ifeq(is_a_theorem(implies(implies(implies(not(X0),X0),X0),X1)),true,ifeq(true,true,is_a_theorem(X1),true),true) [superposition 2,4]
+51. true = is_a_theorem(implies(implies(X0,X1),implies(implies(not(X0),X0),X1))) [forward demodulation 44,1]
+52. true = ifeq(is_a_theorem(implies(implies(implies(not(X0),X0),X0),X1)),true,is_a_theorem(X1),true) [forward demodulation 48,1]
+55. true = ifeq(true,true,is_a_theorem(implies(implies(implies(implies(not(X0),X0),X1),X2),implies(implies(X0,X1),X2))),true) [superposition 16,51]
+62. true = is_a_theorem(implies(implies(implies(implies(not(X0),X0),X1),X2),implies(implies(X0,X1),X2))) [forward demodulation 55,1]
+101. true = ifeq(true,true,is_a_theorem(implies(implies(X3,implies(X0,X1)),implies(implies(X2,X0),implies(X3,implies(X2,X1))))),true) [superposition 39,31]
+111. true = is_a_theorem(implies(implies(X3,implies(X0,X1)),implies(implies(X2,X0),implies(X3,implies(X2,X1))))) [forward demodulation 101,1]
+184. true = ifeq(true,true,is_a_theorem(implies(implies(X2,implies(not(X0),X0)),implies(implies(X0,X1),implies(X2,X1)))),true) [superposition 39,62]
+197. true = is_a_theorem(implies(implies(X2,implies(not(X0),X0)),implies(implies(X0,X1),implies(X2,X1)))) [forward demodulation 184,1]
+244. true = ifeq(true,true,ifeq(is_a_theorem(implies(implies(not(X0),X1),X2)),true,is_a_theorem(implies(X0,X2)),true),true) [superposition 2,32]
+248. true = ifeq(true,true,is_a_theorem(implies(implies(X2,not(X0)),implies(X0,implies(X2,X1)))),true) [superposition 39,32]
+261. true = ifeq(is_a_theorem(implies(implies(not(X0),X1),X2)),true,is_a_theorem(implies(X0,X2)),true) [forward demodulation 244,1]
+268. true = is_a_theorem(implies(implies(X2,not(X0)),implies(X0,implies(X2,X1)))) [forward demodulation 248,1]
+274. true = ifeq(true,true,is_a_theorem(implies(X0,X0)),true) [superposition 261,4]
+290. true = is_a_theorem(implies(X0,X0)) [forward demodulation 274,1]
+309. true = ifeq(true,true,is_a_theorem(implies(not(implies(X0,X0)),X1)),true) [superposition 13,290]
+319. true = is_a_theorem(implies(not(implies(X0,X0)),X1)) [forward demodulation 309,1]
+371. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,not(X1))),true,is_a_theorem(implies(X1,implies(X0,X2))),true),true) [superposition 2,268]
+387. true = ifeq(is_a_theorem(implies(X0,not(X1))),true,is_a_theorem(implies(X1,implies(X0,X2))),true) [forward demodulation 371,1]
+416. true = ifeq(true,true,is_a_theorem(implies(implies(implies(implies(X1,X2),implies(X0,X2)),X3),implies(implies(X0,implies(not(X1),X1)),X3))),true) [superposition 16,197]
+417. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,implies(not(X1),X1))),true,is_a_theorem(implies(implies(X1,X2),implies(X0,X2))),true),true) [superposition 2,197]
+434. true = ifeq(is_a_theorem(implies(X0,implies(not(X1),X1))),true,is_a_theorem(implies(implies(X1,X2),implies(X0,X2))),true) [forward demodulation 417,1]
+440. true = is_a_theorem(implies(implies(implies(implies(X1,X2),implies(X0,X2)),X3),implies(implies(X0,implies(not(X1),X1)),X3))) [forward demodulation 416,1]
+573. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,implies(X1,X2))),true,is_a_theorem(implies(implies(X3,X1),implies(X0,implies(X3,X2)))),true),true) [superposition 2,111]
+606. true = ifeq(is_a_theorem(implies(X0,implies(X1,X2))),true,is_a_theorem(implies(implies(X3,X1),implies(X0,implies(X3,X2)))),true) [forward demodulation 573,1]
+662. true = ifeq(true,true,is_a_theorem(implies(X1,implies(not(implies(X0,X0)),X2))),true) [superposition 387,319]
+678. true = is_a_theorem(implies(X1,implies(not(implies(X0,X0)),X2))) [forward demodulation 662,1]
+702. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X1,X1),X2),implies(X0,X2))),true) [superposition 434,678]
+746. true = is_a_theorem(implies(implies(implies(X1,X1),X2),implies(X0,X2))) [forward demodulation 702,1]
+1249. true = ifeq(true,true,ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(X2,X1)),X3)),true,is_a_theorem(implies(implies(X2,implies(not(X0),X0)),X3)),true),true) [superposition 2,440]
+1280. true = ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(X2,X1)),X3)),true,is_a_theorem(implies(implies(X2,implies(not(X0),X0)),X3)),true) [forward demodulation 1249,1]
+1295. true = ifeq(true,true,is_a_theorem(implies(implies(X1,implies(not(X0),X0)),implies(X2,implies(X1,X0)))),true) [superposition 1280,746]
+1333. true = is_a_theorem(implies(implies(X1,implies(not(X0),X0)),implies(X2,implies(X1,X0)))) [forward demodulation 1295,1]
+1364. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X2,implies(X0,X1)),X3),implies(implies(X0,implies(not(X1),X1)),X3))),true) [superposition 16,1333]
+1406. true = is_a_theorem(implies(implies(implies(X2,implies(X0,X1)),X3),implies(implies(X0,implies(not(X1),X1)),X3))) [forward demodulation 1364,1]
+1470. true = ifeq(true,true,is_a_theorem(implies(implies(X0,implies(not(X1),X1)),implies(X0,X1))),true) [superposition 52,1406]
+1510. true = is_a_theorem(implies(implies(X0,implies(not(X1),X1)),implies(X0,X1))) [forward demodulation 1470,1]
+1526. true = ifeq(true,true,is_a_theorem(implies(implies(X0,X1),implies(implies(not(X0),implies(not(X0),X0)),X1))),true) [superposition 434,1510]
+1547. true = ifeq(true,true,is_a_theorem(implies(implies(not(X1),implies(not(X0),X0)),implies(implies(X0,X1),X1))),true) [superposition 1280,1510]
+1549. true = ifeq(true,true,is_a_theorem(implies(implies(not(X1),X0),implies(implies(X0,X1),X1))),true) [superposition 39,1510]
+1566. true = is_a_theorem(implies(implies(not(X1),X0),implies(implies(X0,X1),X1))) [forward demodulation 1549,1]
+1577. true = is_a_theorem(implies(implies(X0,X1),implies(implies(not(X0),implies(not(X0),X0)),X1))) [forward demodulation 1526,1]
+1580. true = is_a_theorem(implies(implies(not(X1),implies(not(X0),X0)),implies(implies(X0,X1),X1))) [forward demodulation 1547,1]
+1692. true = ifeq(true,true,ifeq(is_a_theorem(implies(not(X0),implies(not(X1),X1))),true,is_a_theorem(implies(implies(X1,X0),X0)),true),true) [superposition 2,1580]
+1700. true = ifeq(true,true,is_a_theorem(implies(X0,implies(implies(X1,X0),X0))),true) [superposition 261,1580]
+1718. true = is_a_theorem(implies(X0,implies(implies(X1,X0),X0))) [forward demodulation 1700,1]
+1726. true = ifeq(is_a_theorem(implies(not(X0),implies(not(X1),X1))),true,is_a_theorem(implies(implies(X1,X0),X0)),true) [forward demodulation 1692,1]
+1730. true = ifeq(true,true,is_a_theorem(implies(implies(X2,implies(X1,X0)),implies(X0,implies(X2,X0)))),true) [superposition 606,1718]
+1786. true = is_a_theorem(implies(implies(X2,implies(X1,X0)),implies(X0,implies(X2,X0)))) [forward demodulation 1730,1]
+1893. true = ifeq(true,true,is_a_theorem(implies(X1,implies(X0,X1))),true) [superposition 15,1786]
+1922. true = is_a_theorem(implies(X1,implies(X0,X1))) [forward demodulation 1893,1]
+1950. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X1,X0),X2),implies(X0,X2))),true) [superposition 16,1922]
+1997. true = is_a_theorem(implies(implies(implies(X1,X0),X2),implies(X0,X2))) [forward demodulation 1950,1]
+2186. true = ifeq(true,true,ifeq(is_a_theorem(implies(implies(X0,X1),X2)),true,is_a_theorem(implies(X1,X2)),true),true) [superposition 2,1997]
+2230. true = ifeq(is_a_theorem(implies(implies(X0,X1),X2)),true,is_a_theorem(implies(X1,X2)),true) [forward demodulation 2186,1]
+2251. true = ifeq(true,true,is_a_theorem(implies(implies(not(X1),X1),implies(implies(X1,X0),X0))),true) [superposition 2230,1580]
+2326. true = is_a_theorem(implies(implies(not(X1),X1),implies(implies(X1,X0),X0))) [forward demodulation 2251,1]
+2394. true = ifeq(true,true,is_a_theorem(implies(X0,implies(implies(X0,X1),X1))),true) [superposition 261,2326]
+2416. true = is_a_theorem(implies(X0,implies(implies(X0,X1),X1))) [forward demodulation 2394,1]
+2427. true = ifeq(true,true,is_a_theorem(implies(implies(X2,implies(X0,X1)),implies(X0,implies(X2,X1)))),true) [superposition 606,2416]
+2488. true = is_a_theorem(implies(implies(X2,implies(X0,X1)),implies(X0,implies(X2,X1)))) [forward demodulation 2427,1]
+2587. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,implies(X1,X2))),true,is_a_theorem(implies(X1,implies(X0,X2))),true),true) [superposition 2,2488]
+2596. true = ifeq(true,true,is_a_theorem(implies(not(X0),implies(X0,X1))),true) [superposition 15,2488]
+2600. true = ifeq(true,true,is_a_theorem(implies(implies(X1,X2),implies(X1,implies(X0,X2)))),true) [superposition 2230,2488]
+2607. true = ifeq(true,true,is_a_theorem(implies(implies(X1,X2),implies(implies(X0,X1),implies(X0,X2)))),true) [superposition 14,2488]
+2627. true = is_a_theorem(implies(implies(X1,X2),implies(X1,implies(X0,X2)))) [forward demodulation 2600,1]
+2634. true = is_a_theorem(implies(not(X0),implies(X0,X1))) [forward demodulation 2596,1]
+2645. true = is_a_theorem(implies(implies(X1,X2),implies(implies(X0,X1),implies(X0,X2)))) [forward demodulation 2607,1]
+2652. true = ifeq(is_a_theorem(implies(X0,implies(X1,X2))),true,is_a_theorem(implies(X1,implies(X0,X2))),true) [forward demodulation 2587,1]
+2664. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,X1)),true,is_a_theorem(implies(X0,implies(X2,X1))),true),true) [superposition 2,2627]
+2724. true = ifeq(is_a_theorem(implies(X0,X1)),true,is_a_theorem(implies(X0,implies(X2,X1))),true) [forward demodulation 2664,1]
+2740. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(X0),X2))),true) [superposition 16,2634]
+2769. true = is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(X0),X2))) [forward demodulation 2740,1]
+2806. true = ifeq(true,true,is_a_theorem(implies(not(X0),implies(X2,implies(X0,X1)))),true) [superposition 2724,2634]
+2850. true = is_a_theorem(implies(not(X0),implies(X2,implies(X0,X1)))) [forward demodulation 2806,1]
+2881. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X0,X1),X0),X0)),true) [superposition 1726,2850]
+2931. true = is_a_theorem(implies(implies(implies(X0,X1),X0),X0)) [forward demodulation 2881,1]
+5320. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,X1)),true,is_a_theorem(implies(implies(X2,X0),implies(X2,X1))),true),true) [superposition 2,2645]
+5403. true = ifeq(is_a_theorem(implies(X0,X1)),true,is_a_theorem(implies(implies(X2,X0),implies(X2,X1))),true) [forward demodulation 5320,1]
+5869. true = ifeq(true,true,is_a_theorem(implies(implies(X2,implies(implies(X0,X1),X0)),implies(X2,X0))),true) [superposition 5403,2931]
+5911. true = ifeq(true,true,is_a_theorem(implies(implies(X3,implies(implies(X0,X1),X2)),implies(X3,implies(not(X0),X2)))),true) [superposition 5403,2769]
+5960. true = is_a_theorem(implies(implies(X3,implies(implies(X0,X1),X2)),implies(X3,implies(not(X0),X2)))) [forward demodulation 5911,1]
+5993. true = is_a_theorem(implies(implies(X2,implies(implies(X0,X1),X0)),implies(X2,X0))) [forward demodulation 5869,1]
+10003. true = ifeq(true,true,is_a_theorem(implies(implies(X1,X0),implies(implies(not(X0),X1),X0))),true) [superposition 2652,1566]
+10078. true = is_a_theorem(implies(implies(X1,X0),implies(implies(not(X0),X1),X0))) [forward demodulation 10003,1]
+18288. true = ifeq(true,true,is_a_theorem(implies(implies(X2,implies(not(X1),X0)),implies(implies(X0,X1),implies(X2,X1)))),true) [superposition 606,10078]
+18397. true = is_a_theorem(implies(implies(X2,implies(not(X1),X0)),implies(implies(X0,X1),implies(X2,X1)))) [forward demodulation 18288,1]
+19713. true = ifeq(true,true,is_a_theorem(implies(implies(not(X2),X0),implies(implies(X1,X2),implies(implies(X0,X1),X2)))),true) [superposition 39,18397]
+19773. true = is_a_theorem(implies(implies(not(X2),X0),implies(implies(X1,X2),implies(implies(X0,X1),X2)))) [forward demodulation 19713,1]
+28002. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X1,X2),X0),implies(implies(X0,X1),X1))),true) [superposition 39,5993]
+28076. true = is_a_theorem(implies(implies(implies(X1,X2),X0),implies(implies(X0,X1),X1))) [forward demodulation 28002,1]
+39718. true = ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(implies(not(X0),implies(not(X0),X0)),X1)),X2)),true,ifeq(true,true,is_a_theorem(X2),true),true) [superposition 2,1577]
+39783. true = ifeq(is_a_theorem(implies(implies(implies(X0,X1),implies(implies(not(X0),implies(not(X0),X0)),X1)),X2)),true,is_a_theorem(X2),true) [forward demodulation 39718,1]
+76031. true = ifeq(true,true,ifeq(is_a_theorem(implies(X0,implies(implies(X1,X2),X3))),true,is_a_theorem(implies(X0,implies(not(X1),X3))),true),true) [superposition 2,5960]
+76234. true = ifeq(is_a_theorem(implies(X0,implies(implies(X1,X2),X3))),true,is_a_theorem(implies(X0,implies(not(X1),X3))),true) [forward demodulation 76031,1]
+76265. true = ifeq(true,true,is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(X2),X0))),true) [superposition 76234,28076]
+76668. true = is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(X2),X0))) [forward demodulation 76265,1]
+76902. true = ifeq(true,true,is_a_theorem(implies(not(X2),implies(implies(implies(X0,X1),X2),X0))),true) [superposition 2652,76668]
+77104. true = is_a_theorem(implies(not(X2),implies(implies(implies(X0,X1),X2),X0))) [forward demodulation 76902,1]
+79503. true = ifeq(true,true,is_a_theorem(implies(implies(X3,implies(implies(X1,X2),X0)),implies(not(X0),implies(X3,X1)))),true) [superposition 606,77104]
+79671. true = is_a_theorem(implies(implies(X3,implies(implies(X1,X2),X0)),implies(not(X0),implies(X3,X1)))) [forward demodulation 79503,1]
+79837. true = ifeq(true,true,is_a_theorem(implies(not(X1),implies(implies(X0,X1),not(X0)))),true) [superposition 39783,79671]
+79964. true = is_a_theorem(implies(not(X1),implies(implies(X0,X1),not(X0)))) [forward demodulation 79837,1]
+81065. true = ifeq(true,true,is_a_theorem(implies(implies(X1,X0),implies(not(X0),not(X1)))),true) [superposition 2652,79964]
+81230. true = is_a_theorem(implies(implies(X1,X0),implies(not(X0),not(X1)))) [forward demodulation 81065,1]
+81344. true = ifeq(true,true,is_a_theorem(implies(implies(implies(not(X1),not(X0)),X2),implies(implies(X0,X1),X2))),true) [superposition 16,81230]
+81513. true = is_a_theorem(implies(implies(implies(not(X1),not(X0)),X2),implies(implies(X0,X1),X2))) [forward demodulation 81344,1]
+103245. true = ifeq(true,true,ifeq(is_a_theorem(implies(implies(not(X0),not(X1)),X2)),true,is_a_theorem(implies(implies(X1,X0),X2)),true),true) [superposition 2,81513]
+103396. true = ifeq(is_a_theorem(implies(implies(not(X0),not(X1)),X2)),true,is_a_theorem(implies(implies(X1,X0),X2)),true) [forward demodulation 103245,1]
+164072. true = ifeq(true,true,is_a_theorem(implies(implies(X1,X0),implies(implies(X2,X0),implies(implies(not(X1),X2),X0)))),true) [superposition 103396,19773]
+164536. true = is_a_theorem(implies(implies(X1,X0),implies(implies(X2,X0),implies(implies(not(X1),X2),X0)))) [forward demodulation 164072,1]
+164600. true != true [backward demodulation 6,164536]
+164601. $false [trivial inequality removal 164600]
+% SZS output end Proof for LCL395-10
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 6
+% 
+% >>> Saturation
+% Initial clauses: 6
+% Generated clauses: 164601
+% Activations started: 693
+% Active clauses: 693
+% Passive clauses: 24181
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Trivial inequalities: 1
+% Fw demodulations: 49239
+% Bw demodulations: 3
+% 
+% >>> Deletion Inferences
+% Forward subsumptions: 91116
+% Bw demodulations to eq. taut.: 484
+% 
+% >>> Generating Inferences
+% Forward superposition: 49841
+% Backward superposition: 65511
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 559
+% Bulk evals: 15344
+% 
+% Time elapsed: 11.878 s
+% Peak memory usage: 385 MB
+% Instructions burned: 32626 (million)
+% ------------------------------
+% ------------------------------

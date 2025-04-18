@@ -1,0 +1,247 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop13/script-model.pt -npcc on -si on -rtra on --random_seed 5 Problems/LCL/LCL424-1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for LCL424-1
+% SZS output start Proof for LCL424-1
+1. ~is_a_theorem(implies(X0,X1)) | is_a_theorem(X1) | ~is_a_theorem(X0) [input(axiom)]
+2. is_a_theorem(implies(implies(implies(implies(implies(X0,X1),implies(not(X2),not(X3))),X2),X4),implies(implies(X4,X0),implies(X3,X0)))) [input(axiom)]
+3. ~is_a_theorem(implies(implies(not(a),a),a)) | ~is_a_theorem(implies(implies(a,b),implies(implies(b,c),implies(a,c)))) | ~is_a_theorem(implies(a,implies(not(a),b))) [input(negated conjecture)]
+5. 1 <=> is_a_theorem(implies(implies(not(a),a),a)) [avatar definition]
+7. ~is_a_theorem(implies(implies(not(a),a),a)) <- (~1) [avatar component clause 5]
+9. 2 <=> is_a_theorem(implies(a,implies(not(a),b))) [avatar definition]
+11. ~is_a_theorem(implies(a,implies(not(a),b))) <- (~2) [avatar component clause 9]
+13. 3 <=> is_a_theorem(implies(implies(a,b),implies(implies(b,c),implies(a,c)))) [avatar definition]
+15. ~is_a_theorem(implies(implies(a,b),implies(implies(b,c),implies(a,c)))) <- (~3) [avatar component clause 13]
+16. ~1 | ~2 | ~3 [avatar split clause 3,13,9,5]
+17. ~is_a_theorem(implies(implies(implies(implies(X1,X3),implies(not(X4),not(X2))),X4),X0)) | is_a_theorem(implies(implies(X0,X1),implies(X2,X1))) [resolution 1,2]
+18. is_a_theorem(implies(implies(implies(implies(X0,X1),implies(X2,X1)),implies(X1,X3)),implies(X4,implies(X1,X3)))) [resolution 17,2]
+19. is_a_theorem(implies(implies(implies(X0,implies(not(X1),X2)),X3),implies(X1,X3))) [resolution 18,17]
+20. ~is_a_theorem(implies(implies(implies(X3,X1),implies(X4,X1)),implies(X1,X2))) | is_a_theorem(implies(X0,implies(X1,X2))) [resolution 18,1]
+22. is_a_theorem(implies(implies(implies(X0,X0),X1),implies(X2,X1))) [resolution 19,17]
+24. is_a_theorem(implies(X0,implies(X1,implies(X2,X1)))) [resolution 22,20]
+25. is_a_theorem(implies(implies(implies(X0,X1),not(X1)),implies(X2,not(X1)))) [resolution 22,17]
+26. ~is_a_theorem(implies(implies(X2,X2),X1)) | is_a_theorem(implies(X0,X1)) [resolution 22,1]
+27. ~is_a_theorem(X2) | is_a_theorem(implies(X0,implies(X1,X0))) [resolution 24,1]
+31. 4 <=> ! [X2] : ~is_a_theorem(X2) [avatar definition]
+32. ~is_a_theorem(X2) <- (4) [avatar component clause 31]
+34. 5 <=> ! [X0,X1] : is_a_theorem(implies(X0,implies(X1,X0))) [avatar definition]
+35. is_a_theorem(implies(X0,implies(X1,X0))) <- (5) [avatar component clause 34]
+36. 4 | 5 [avatar split clause 27,34,31]
+43. is_a_theorem(implies(X0,implies(X1,implies(X2,X2)))) [resolution 26,22]
+51. $false <- (4) [subsumption resolution 43,32]
+52. ~4 [avatar contradiction clause 51]
+53. ~is_a_theorem(X2) | is_a_theorem(implies(X0,implies(X1,X1))) [resolution 43,1]
+56. is_a_theorem(implies(implies(implies(X0,implies(X1,X1)),X2),implies(X3,X2))) [resolution 43,17]
+58. 6 <=> ! [X0,X1] : is_a_theorem(implies(X0,implies(X1,X1))) [avatar definition]
+59. is_a_theorem(implies(X0,implies(X1,X1))) <- (6) [avatar component clause 58]
+60. 6 | 4 [avatar split clause 53,31,58]
+61. is_a_theorem(implies(X0,X1)) | ~is_a_theorem(X1) <- (5) [resolution 35,1]
+65. ~is_a_theorem(X1) | is_a_theorem(implies(X0,X0)) <- (6) [resolution 59,1]
+70. 7 <=> ! [X0] : is_a_theorem(implies(X0,X0)) [avatar definition]
+71. is_a_theorem(implies(X0,X0)) <- (7) [avatar component clause 70]
+72. 7 | 4 | ~6 [avatar split clause 65,58,31,70]
+75. is_a_theorem(implies(implies(implies(implies(implies(X0,X1),implies(not(X2),not(X3))),X2),X0),implies(X3,X0))) <- (7) [resolution 71,17]
+78. is_a_theorem(implies(implies(implies(X0,X1),X2),implies(X1,X2))) [resolution 56,17]
+82. is_a_theorem(implies(implies(implies(implies(not(X0),not(X1)),X0),X2),implies(X1,X2))) [resolution 78,17]
+83. ~is_a_theorem(implies(implies(X2,X0),X1)) | is_a_theorem(implies(X0,X1)) [resolution 78,1]
+113. is_a_theorem(implies(implies(implies(X0,X1),not(implies(not(X1),not(X2)))),implies(X2,not(implies(not(X1),not(X2)))))) [resolution 82,17]
+114. ~is_a_theorem(implies(implies(implies(not(X2),not(X0)),X2),X1)) | is_a_theorem(implies(X0,X1)) [resolution 82,1]
+120. is_a_theorem(implies(X0,implies(implies(X0,X1),implies(X2,X1)))) [resolution 83,2]
+138. is_a_theorem(implies(implies(X0,X1),implies(X2,X1))) | ~is_a_theorem(X0) [resolution 120,1]
+140. is_a_theorem(implies(X0,implies(implies(implies(X1,X0),X2),implies(X3,X2)))) [resolution 120,83]
+157. is_a_theorem(implies(X0,implies(implies(implies(X1,implies(X2,X0)),X3),implies(X4,X3)))) [resolution 140,83]
+185. ~is_a_theorem(implies(implies(X0,X1),implies(not(X2),not(X3)))) | is_a_theorem(implies(implies(implies(X4,X2),X0),implies(X3,X0))) [resolution 138,17]
+234. is_a_theorem(implies(X0,implies(X1,not(not(X0))))) [resolution 114,25]
+235. is_a_theorem(implies(X0,implies(not(X0),X1))) [resolution 114,78]
+258. is_a_theorem(implies(X0,implies(not(implies(X1,X0)),X2))) [resolution 235,83]
+266. is_a_theorem(implies(X0,implies(X1,not(not(implies(X2,X0)))))) [resolution 234,83]
+366. ~is_a_theorem(implies(implies(implies(implies(X1,X2),implies(not(X3),not(X0))),X3),X1)) | is_a_theorem(implies(X0,X1)) <- (7) [resolution 75,1]
+513. is_a_theorem(implies(implies(implies(X0,X1),implies(X2,not(X1))),implies(X3,implies(X2,not(X1))))) [resolution 185,78]
+521. is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(implies(X2,X3)),X2))) [resolution 185,234]
+536. ~is_a_theorem(implies(implies(X3,X2),implies(X1,not(X2)))) | is_a_theorem(implies(X0,implies(X1,not(X2)))) [resolution 513,1]
+552. is_a_theorem(implies(X0,implies(not(implies(X1,implies(X2,X3))),not(X3)))) [resolution 536,258]
+741. is_a_theorem(implies(implies(implies(not(implies(X0,X1)),X0),X2),implies(X3,X2))) [resolution 521,17]
+770. ~is_a_theorem(implies(implies(not(implies(X2,X3)),X2),X1)) | is_a_theorem(implies(X0,X1)) [resolution 741,1]
+2188. is_a_theorem(implies(implies(implies(X0,X1),implies(X2,X3)),implies(implies(not(X3),not(not(X1))),implies(X2,X3)))) [resolution 113,185]
+2246. is_a_theorem(implies(X0,implies(implies(not(X1),not(not(X1))),implies(X2,X1)))) [resolution 2188,26]
+2263. ~is_a_theorem(implies(implies(X3,X1),implies(X2,X0))) | is_a_theorem(implies(implies(not(X0),not(not(X1))),implies(X2,X0))) [resolution 2188,1]
+2265. is_a_theorem(implies(implies(not(X0),not(not(X0))),implies(X1,X0))) | ~is_a_theorem(X2) [resolution 2246,1]
+2289. 22 <=> ! [X0,X1] : is_a_theorem(implies(implies(not(X0),not(not(X0))),implies(X1,X0))) [avatar definition]
+2290. is_a_theorem(implies(implies(not(X0),not(not(X0))),implies(X1,X0))) <- (22) [avatar component clause 2289]
+2291. 22 | 4 [avatar split clause 2265,31,2289]
+2293. is_a_theorem(implies(implies(implies(X0,X1),not(not(X2))),implies(X2,not(not(X2))))) <- (22) [resolution 2290,185]
+2565. is_a_theorem(implies(implies(not(implies(X0,X1)),not(not(X2))),implies(implies(X2,X1),implies(X0,X1)))) [resolution 2263,2]
+2670. ~is_a_theorem(implies(not(implies(X2,X1)),not(not(X0)))) | is_a_theorem(implies(implies(X0,X1),implies(X2,X1))) [resolution 2565,1]
+3571. is_a_theorem(implies(X0,implies(implies(X1,X2),implies(not(not(X1)),X2)))) [resolution 770,2565]
+3658. ~is_a_theorem(X2) | is_a_theorem(implies(implies(X0,X1),implies(not(not(X0)),X1))) [resolution 3571,1]
+3688. 39 <=> ! [X0,X1] : is_a_theorem(implies(implies(X0,X1),implies(not(not(X0)),X1))) [avatar definition]
+3689. is_a_theorem(implies(implies(X0,X1),implies(not(not(X0)),X1))) <- (39) [avatar component clause 3688]
+3690. 4 | 39 [avatar split clause 3658,3688,31]
+4665. ~is_a_theorem(implies(implies(implies(X1,X2),X3),implies(not(X2),not(X0)))) | is_a_theorem(implies(X0,implies(X1,X2))) <- (7) [resolution 366,138]
+4730. is_a_theorem(implies(X0,implies(X1,not(not(X1))))) <- (7, 22) [resolution 2293,366]
+4742. is_a_theorem(implies(X0,not(not(X0)))) | ~is_a_theorem(X1) <- (7, 22) [resolution 4730,1]
+4749. is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(not(X1)),X2))) <- (7, 22) [resolution 4730,185]
+4780. 44 <=> ! [X0] : is_a_theorem(implies(X0,not(not(X0)))) [avatar definition]
+4781. is_a_theorem(implies(X0,not(not(X0)))) <- (44) [avatar component clause 4780]
+4782. 4 | 44 | ~7 | ~22 [avatar split clause 4742,2289,70,4780,31]
+4902. is_a_theorem(implies(implies(implies(X0,not(X1)),implies(X2,X1)),implies(X3,implies(X2,X1)))) <- (7, 22) [resolution 4749,185]
+5572. ~is_a_theorem(implies(implies(X3,not(X2)),implies(X1,X2))) | is_a_theorem(implies(X0,implies(X1,X2))) <- (7, 22) [resolution 4902,1]
+5636. is_a_theorem(implies(X0,implies(not(implies(X1,not(X2))),X2))) <- (7, 22) [resolution 5572,235]
+5654. is_a_theorem(implies(implies(implies(X0,implies(X1,not(not(X2)))),X3),implies(X2,X3))) <- (7, 22) [resolution 5636,185]
+14109. is_a_theorem(implies(implies(implies(X0,X1),X2),implies(not(X0),X2))) <- (7, 22) [resolution 5654,17]
+14164. ~is_a_theorem(implies(implies(X0,X2),X1)) | is_a_theorem(implies(not(X0),X1)) <- (7, 22) [resolution 14109,1]
+14360. is_a_theorem(implies(not(X0),implies(implies(implies(X0,X1),X2),implies(X3,X2)))) <- (7, 22) [resolution 14164,120]
+14403. is_a_theorem(implies(not(X0),implies(not(implies(X1,implies(X0,X2))),X3))) <- (7, 22) [resolution 14164,258]
+14422. is_a_theorem(implies(not(X0),not(not(implies(X0,X1))))) <- (7, 22, 44) [resolution 14164,4781]
+16570. is_a_theorem(implies(implies(implies(implies(X0,X1),X2),X1),implies(X0,X1))) <- (7, 22, 44) [resolution 14422,2670]
+16609. is_a_theorem(implies(implies(implies(X0,X1),X0),implies(X2,X0))) <- (7, 22, 44) [resolution 16570,17]
+16612. ~is_a_theorem(implies(implies(implies(X0,X1),X2),X1)) | is_a_theorem(implies(X0,X1)) <- (7, 22, 44) [resolution 16570,1]
+17117. is_a_theorem(implies(implies(implies(X0,X1),implies(not(implies(X2,X0)),not(X2))),implies(X2,X0))) <- (7, 22, 44) [resolution 16612,75]
+30104. ~is_a_theorem(X3) | is_a_theorem(implies(not(implies(X0,implies(X1,X2))),not(X2))) [resolution 552,1]
+30217. 191 <=> ! [X2,X0,X1] : is_a_theorem(implies(not(implies(X0,implies(X1,X2))),not(X2))) [avatar definition]
+30218. is_a_theorem(implies(not(implies(X0,implies(X1,X2))),not(X2))) <- (191) [avatar component clause 30217]
+30219. 4 | 191 [avatar split clause 30104,30217,31]
+30220. is_a_theorem(implies(implies(X0,implies(X1,not(X0))),implies(X2,implies(X1,not(X0))))) <- (191) [resolution 30218,2670]
+30271. ~is_a_theorem(implies(X2,implies(X1,not(X2)))) | is_a_theorem(implies(X0,implies(X1,not(X2)))) <- (191) [resolution 30220,1]
+30326. is_a_theorem(implies(X0,implies(not(implies(X1,implies(X2,X3))),not(not(X2))))) <- (7, 22, 191) [resolution 30271,14403]
+31485. is_a_theorem(implies(implies(implies(not(implies(X0,implies(X1,X2))),not(not(X1))),X3),implies(X4,X3))) <- (7, 22, 191) [resolution 30326,17]
+31556. ~is_a_theorem(implies(implies(not(implies(X2,implies(X3,X4))),not(not(X3))),X1)) | is_a_theorem(implies(X0,X1)) <- (7, 22, 191) [resolution 31485,1]
+31873. ~is_a_theorem(implies(implies(X1,X2),implies(not(implies(X0,X1)),not(X0)))) | is_a_theorem(implies(X0,X1)) <- (7, 22, 44) [resolution 17117,1]
+32012. is_a_theorem(implies(not(implies(X0,implies(X1,X2))),X1)) <- (7, 22, 44) [resolution 31873,266]
+32024. is_a_theorem(implies(implies(X0,implies(not(not(X0)),X1)),implies(X2,implies(not(not(X0)),X1)))) <- (7, 22, 44) [resolution 32012,2670]
+32090. ~is_a_theorem(implies(X1,implies(not(not(X1)),X2))) | is_a_theorem(implies(X0,implies(not(not(X1)),X2))) <- (7, 22, 44) [resolution 32024,1]
+32124. is_a_theorem(implies(X0,implies(not(not(implies(implies(X1,X1),X2))),X2))) <- (7, 22, 44) [resolution 32090,22]
+32354. is_a_theorem(implies(X0,implies(X1,not(implies(implies(X2,X2),not(X0)))))) <- (7, 22, 44) [resolution 32124,4665]
+40977. is_a_theorem(implies(X0,implies(implies(X1,implies(X1,X2)),implies(X3,implies(X1,X2))))) <- (7, 22, 191) [resolution 31556,2565]
+41194. is_a_theorem(implies(implies(X0,implies(X0,X1)),implies(X2,implies(X0,X1)))) | ~is_a_theorem(X3) <- (7, 22, 191) [resolution 40977,1]
+41323. 232 <=> ! [X2,X0,X1] : is_a_theorem(implies(implies(X0,implies(X0,X1)),implies(X2,implies(X0,X1)))) [avatar definition]
+41324. is_a_theorem(implies(implies(X0,implies(X0,X1)),implies(X2,implies(X0,X1)))) <- (232) [avatar component clause 41323]
+41325. 4 | 232 | ~7 | ~22 | ~191 [avatar split clause 41194,30217,2289,70,41323,31]
+41393. ~is_a_theorem(implies(X1,implies(X1,X2))) | is_a_theorem(implies(X0,implies(X1,X2))) <- (232) [resolution 41324,1]
+41433. is_a_theorem(implies(X0,implies(implies(implies(X1,X1),X2),X2))) <- (232) [resolution 41393,22]
+41434. is_a_theorem(implies(X0,implies(implies(implies(X1,X2),X1),X1))) <- (7, 22, 44, 232) [resolution 41393,16609]
+41532. is_a_theorem(implies(X0,implies(implies(X1,X2),X2))) | ~is_a_theorem(X1) <- (232) [resolution 41393,138]
+41536. is_a_theorem(implies(X0,implies(implies(X1,implies(X1,X2)),implies(X1,X2)))) <- (232) [resolution 41393,41324]
+41637. is_a_theorem(implies(X0,implies(X1,not(implies(implies(X2,X2),not(X1)))))) <- (7, 22, 44, 232) [resolution 41393,32354]
+41767. is_a_theorem(implies(implies(implies(X0,X0),X1),X1)) | ~is_a_theorem(X2) <- (232) [resolution 41433,1]
+41898. 233 <=> ! [X0,X1] : is_a_theorem(implies(implies(implies(X0,X0),X1),X1)) [avatar definition]
+41899. is_a_theorem(implies(implies(implies(X0,X0),X1),X1)) <- (233) [avatar component clause 41898]
+41900. 233 | 4 | ~232 [avatar split clause 41767,41323,31,41898]
+41975. ~is_a_theorem(implies(implies(X1,X1),X0)) | is_a_theorem(X0) <- (233) [resolution 41899,1]
+42537. ~is_a_theorem(X2) | is_a_theorem(implies(implies(implies(X0,X1),X0),X0)) <- (7, 22, 44, 232) [resolution 41434,1]
+42668. 239 <=> ! [X0,X1] : is_a_theorem(implies(implies(implies(X0,X1),X0),X0)) [avatar definition]
+42669. is_a_theorem(implies(implies(implies(X0,X1),X0),X0)) <- (239) [avatar component clause 42668]
+42670. 4 | 239 | ~7 | ~22 | ~44 | ~232 [avatar split clause 42537,41323,4780,2289,70,42668,31]
+42719. ~is_a_theorem(implies(implies(X0,X1),X0)) | is_a_theorem(X0) <- (239) [resolution 42669,1]
+46917. is_a_theorem(implies(implies(X0,X1),X1)) | ~is_a_theorem(X0) <- (232, 233) [resolution 41532,41975]
+47145. ~is_a_theorem(implies(implies(X0,X1),implies(not(X2),not(X3)))) | is_a_theorem(implies(implies(X2,X0),implies(X3,X0))) <- (232, 233) [resolution 46917,17]
+47213. is_a_theorem(implies(implies(not(X0),implies(X1,X0)),implies(X2,implies(X1,X0)))) <- (7, 22, 232, 233) [resolution 47145,4749]
+47222. is_a_theorem(implies(implies(X0,implies(X1,X2)),implies(implies(not(X2),not(not(X0))),implies(X1,X2)))) <- (232, 233) [resolution 47145,113]
+47322. is_a_theorem(implies(implies(not(X0),X0),implies(X1,X0))) <- (39, 232, 233) [resolution 47145,3689]
+47388. is_a_theorem(implies(implies(X0,X1),implies(X2,X1))) | ~is_a_theorem(implies(not(X0),not(X2))) <- (5, 232, 233) [resolution 47145,61]
+47521. is_a_theorem(implies(X0,implies(implies(not(X1),X1),X1))) <- (39, 232, 233) [resolution 47322,41393]
+47545. is_a_theorem(implies(implies(not(X0),X0),X0)) <- (39, 232, 233, 239) [resolution 47521,42719]
+48079. is_a_theorem(implies(X0,implies(implies(not(X1),implies(X2,X1)),implies(X2,X1)))) <- (7, 22, 232, 233) [resolution 47213,41393]
+50051. is_a_theorem(implies(implies(not(X0),not(not(X1))),implies(X2,X0))) | ~is_a_theorem(implies(X1,implies(X2,X0))) <- (232, 233) [resolution 47222,1]
+51473. is_a_theorem(implies(implies(not(X0),implies(X1,X0)),implies(X1,X0))) <- (7, 22, 232, 233) [resolution 48079,41975]
+51662. ~is_a_theorem(implies(not(X1),implies(X0,X1))) | is_a_theorem(implies(X0,X1)) <- (7, 22, 232, 233) [resolution 51473,1]
+55461. is_a_theorem(implies(implies(X0,implies(X0,X1)),implies(X0,X1))) <- (232, 239) [resolution 41536,42719]
+55669. ~is_a_theorem(implies(X0,implies(X0,X1))) | is_a_theorem(implies(X0,X1)) <- (232, 239) [resolution 55461,1]
+55792. is_a_theorem(implies(implies(implies(not(implies(X0,X1)),X0),X2),X2)) <- (232, 239) [resolution 55669,741]
+57703. ~is_a_theorem(implies(implies(not(implies(X1,X2)),X1),X0)) | is_a_theorem(X0) <- (232, 239) [resolution 55792,1]
+71385. ~is_a_theorem(implies(X1,implies(X0,implies(not(not(X1)),X2)))) | is_a_theorem(implies(X0,implies(not(not(X1)),X2))) <- (232, 233, 239) [resolution 57703,50051]
+80359. is_a_theorem(implies(implies(implies(X0,X1),X2),implies(implies(implies(X3,X3),not(not(X1))),X2))) <- (7, 22, 44, 232) [resolution 41637,185]
+81249. ~is_a_theorem(implies(implies(X3,X1),X2)) | is_a_theorem(implies(implies(implies(X0,X0),not(not(X1))),X2)) <- (7, 22, 44, 232) [resolution 80359,1]
+81387. is_a_theorem(implies(implies(implies(X0,X0),not(not(X1))),implies(implies(X1,X2),implies(X3,X2)))) <- (7, 22, 44, 232) [resolution 81249,2]
+81840. is_a_theorem(implies(implies(implies(implies(X0,X1),implies(X2,X1)),not(not(not(X0)))),implies(X3,not(not(not(X0)))))) <- (7, 22, 44, 232) [resolution 81387,17]
+85711. ~is_a_theorem(implies(not(X0),not(X1))) | ~is_a_theorem(implies(X0,X2)) | is_a_theorem(implies(X1,X2)) <- (5, 232, 233) [resolution 47388,1]
+85713. is_a_theorem(implies(not(implies(X0,X2)),X1)) | ~is_a_theorem(implies(X0,X1)) <- (5, 7, 22, 44, 232, 233) [resolution 85711,14422]
+85762. ~is_a_theorem(implies(X0,implies(X1,implies(X0,X2)))) | is_a_theorem(implies(X1,implies(X0,X2))) <- (5, 7, 22, 44, 232, 233) [resolution 85713,51662]
+150497. is_a_theorem(implies(implies(implies(X0,implies(X1,X2)),X3),implies(not(not(X2)),X3))) <- (232, 233, 239) [resolution 71385,157]
+150692. is_a_theorem(implies(implies(not(X0),implies(X1,implies(X2,X0))),implies(X3,implies(X1,implies(X2,X0))))) <- (232, 233, 239) [resolution 150497,47145]
+152305. is_a_theorem(implies(implies(not(X0),implies(X1,implies(X2,X0))),implies(X1,implies(X2,X0)))) <- (232, 233, 239) [resolution 150692,55669]
+152729. ~is_a_theorem(implies(not(X2),implies(X0,implies(X1,X2)))) | is_a_theorem(implies(X0,implies(X1,X2))) <- (232, 233, 239) [resolution 152305,1]
+153035. ~is_a_theorem(implies(X2,implies(X0,implies(X1,implies(X2,X3))))) | is_a_theorem(implies(X0,implies(X1,implies(X2,X3)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 152729,85713]
+182482. is_a_theorem(implies(implies(implies(X0,X1),implies(not(X0),X2)),implies(X3,implies(not(X0),X2)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 153035,14360]
+183924. is_a_theorem(implies(implies(implies(X0,X1),implies(not(X0),X2)),implies(not(X0),X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 182482,55669]
+184634. ~is_a_theorem(implies(implies(X0,X2),implies(not(X0),X1))) | is_a_theorem(implies(not(X0),X1)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 183924,1]
+184737. is_a_theorem(implies(not(implies(implies(X0,X1),implies(X2,X1))),not(not(not(X0))))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 184634,81840]
+185308. is_a_theorem(implies(implies(not(X0),implies(X1,X2)),implies(implies(X0,X2),implies(X1,X2)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 184737,2670]
+185457. is_a_theorem(implies(implies(X0,X1),implies(X2,X1))) | ~is_a_theorem(implies(not(X0),implies(X2,X1))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 185308,1]
+185761. ~is_a_theorem(implies(not(X0),implies(X1,X2))) | ~is_a_theorem(implies(X0,X2)) | is_a_theorem(implies(X1,X2)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 185457,1]
+186033. is_a_theorem(implies(implies(implies(X3,implies(X4,not(X0))),X2),implies(X1,X2))) | ~is_a_theorem(implies(X0,implies(X1,X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 185761,157]
+218340. is_a_theorem(implies(implies(implies(X1,X2),X3),implies(X0,X3))) | ~is_a_theorem(implies(X0,implies(X1,X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 186033,17]
+218605. ~is_a_theorem(implies(implies(X1,X2),X3)) | is_a_theorem(implies(X0,X3)) | ~is_a_theorem(implies(X0,implies(X1,X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 218340,1]
+225463. ~is_a_theorem(implies(X0,implies(implies(implies(implies(X2,X4),implies(not(X5),not(X3))),X5),X1))) | is_a_theorem(implies(X0,implies(implies(X1,X2),implies(X3,X2)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 218605,2]
+225501. ~is_a_theorem(implies(X0,implies(implies(X1,X3),X2))) | is_a_theorem(implies(X0,implies(not(X1),X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 218605,14109]
+225690. ~is_a_theorem(implies(X0,implies(X3,X2))) | ~is_a_theorem(X3) | is_a_theorem(implies(X0,implies(X1,X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 218605,138]
+225707. ~is_a_theorem(implies(X0,implies(X2,implies(X2,X3)))) | is_a_theorem(implies(X0,implies(X1,implies(X2,X3)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 218605,41324]
+225711. ~is_a_theorem(implies(X0,implies(X1,implies(X1,X2)))) | is_a_theorem(implies(X0,implies(X1,X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 218605,55461]
+229691. is_a_theorem(implies(X0,implies(implies(X0,X1),X1))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 225711,120]
+229704. is_a_theorem(implies(X0,implies(implies(implies(X1,X0),X2),X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 225711,140]
+263148. is_a_theorem(implies(X0,implies(X2,X1))) | ~is_a_theorem(implies(X0,X1)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 225690,229691]
+385418. is_a_theorem(implies(implies(implies(X0,X0),X1),implies(implies(X1,X2),implies(X3,X2)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 225463,22]
+385765. is_a_theorem(implies(implies(not(X0),not(X1)),implies(implies(X0,X2),implies(X1,X2)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 225463,229704]
+385835. is_a_theorem(implies(X0,implies(implies(X1,X2),implies(X3,X2)))) | ~is_a_theorem(implies(X0,X1)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 225463,263148]
+386494. is_a_theorem(implies(implies(X0,X1),implies(implies(implies(X2,X2),X0),X1))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 385418,85762]
+393825. is_a_theorem(implies(implies(X0,X1),implies(implies(X1,not(X0)),implies(X2,not(X0))))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 386494,225463]
+398043. is_a_theorem(implies(implies(X0,X1),implies(not(X1),implies(X2,not(X0))))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 393825,225501]
+398434. is_a_theorem(implies(implies(X1,X2),implies(X0,X2))) | ~is_a_theorem(implies(X0,X1)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 385835,85762]
+399015. ~is_a_theorem(implies(X2,implies(X1,X3))) | is_a_theorem(implies(X2,implies(X0,X3))) | ~is_a_theorem(implies(X0,X1)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 398434,218605]
+403932. is_a_theorem(implies(implies(X0,X1),implies(X2,implies(not(X1),not(X0))))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 398043,225707]
+502761. ~is_a_theorem(implies(X2,implies(implies(X3,X3),X0))) | is_a_theorem(implies(implies(X0,X1),implies(X2,X1))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 399015,386494]
+504510. is_a_theorem(implies(implies(implies(not(X0),not(X1)),X2),implies(implies(X1,X0),X2))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 502761,403932]
+621288. ~is_a_theorem(implies(implies(not(X1),not(X0)),X2)) | is_a_theorem(implies(implies(X0,X1),X2)) <- (5, 7, 22, 44, 232, 233, 239) [resolution 504510,1]
+621339. is_a_theorem(implies(implies(X0,X1),implies(implies(X1,X2),implies(X0,X2)))) <- (5, 7, 22, 44, 232, 233, 239) [resolution 621288,385765]
+621859. $false <- (~3, 5, 7, 22, 44, 232, 233, 239) [resolution 621339,15]
+622311. 3 | ~5 | ~7 | ~22 | ~44 | ~232 | ~233 | ~239 [avatar contradiction clause 621859]
+622312. $false <- (~2) [subsumption resolution 11,235]
+622313. 2 [avatar contradiction clause 622312]
+622314. $false <- (~1, 39, 232, 233, 239) [subsumption resolution 7,47545]
+622315. 1 | ~39 | ~232 | ~233 | ~239 [avatar contradiction clause 622314]
+622316. $false [avatar sat refutation 16,36,52,60,72,2291,3690,4782,30219,41325,41900,42670,622311,622313,622315]
+% SZS output end Proof for LCL424-1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 3
+% 
+% >>> Saturation
+% Initial clauses: 3
+% Generated clauses: 620619
+% Activations started: 2484
+% Active clauses: 2484
+% Passive clauses: 127078
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Fw subsumption resolutions: 15
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 469
+% Forward subsumptions: 492345
+% 
+% >>> Generating Inferences
+% Binary resolution: 620057
+% 
+% >>> AVATAR
+% Split clauses: 631
+% Split components: 1263
+% Sat splitting refutations: 10
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 714
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 76
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 559
+% Bulk evals: 56616
+% 
+% Time elapsed: 13.510 s
+% Peak memory usage: 773 MB
+% Instructions burned: 78999 (million)
+% ------------------------------
+% ------------------------------

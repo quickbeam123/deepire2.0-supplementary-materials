@@ -1,0 +1,220 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop7/script-model.pt -npcc on -si on -rtra on --random_seed 9 Problems/LAT/LAT229-10.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for LAT229-10
+% SZS output start Proof for LAT229-10
+1. ifeq(X0,X0,X1,X2) = X1 [input(axiom)]
+2. meet(X3,X3) = X3 [input(axiom)]
+3. join(X3,X3) = X3 [input(axiom)]
+4. meet(X3,join(X3,X4)) = X3 [input(axiom)]
+5. join(X3,meet(X3,X4)) = X3 [input(axiom)]
+6. meet(X3,X4) = meet(X4,X3) [input(axiom)]
+7. join(X3,X4) = join(X4,X3) [input(axiom)]
+8. meet(meet(X3,X4),X5) = meet(X3,meet(X4,X5)) [input(axiom)]
+9. join(join(X3,X4),X5) = join(X3,join(X4,X5)) [input(axiom)]
+10. join(X3,complement(X3)) = one [input(axiom)]
+11. meet(X3,complement(X3)) = zero [input(axiom)]
+12. ifeq(join(X3,X4),one,ifeq(meet(X3,X4),zero,complement(X3),X4),X4) = X4 [input(axiom)]
+13. meet(X3,join(meet(X3,X4),meet(X3,X5))) = meet(X3,join(meet(X4,join(X3,meet(X4,X5))),meet(X5,join(X3,X4)))) [input(axiom)]
+14. a = meet(b,a) [input(assumption)]
+15. complement(a) != join(complement(b),complement(a)) [input(negated conjecture)]
+16. meet(X3,join(meet(X3,X4),meet(X3,X5))) = meet(X3,join(meet(X5,join(X3,X4)),meet(X4,join(X3,meet(X4,X5))))) [backward demodulation 13,7]
+17. b = join(b,a) [superposition 5,14]
+19. join(X0,join(meet(X0,X1),X2)) = join(X0,X2) [superposition 9,5]
+21. join(join(X0,X1),X2) = join(X1,join(X0,X2)) [superposition 9,7]
+25. join(X1,join(X2,X0)) = join(X0,join(X1,X2)) [superposition 9,7]
+33. join(X1,meet(X0,X1)) = X1 [superposition 5,6]
+41. meet(X0,one) = X0 [superposition 4,10]
+45. meet(X1,join(X0,X1)) = X1 [superposition 4,7]
+47. join(X0,X1) = join(join(X0,X1),X0) [superposition 33,4]
+49. join(X0,X1) = join(X0,join(X0,X1)) [forward demodulation 47,7]
+68. join(b,join(a,X0)) = join(b,X0) [superposition 9,17]
+72. meet(X0,meet(join(X0,X1),X2)) = meet(X0,X2) [superposition 8,4]
+75. meet(X0,meet(X1,X2)) = meet(X1,meet(X2,X0)) [superposition 8,6]
+80. join(meet(X0,X1),meet(X0,meet(X1,X2))) = meet(X0,X1) [superposition 5,8]
+90. one = join(X0,one) [superposition 49,10]
+91. join(join(X0,X1),join(X0,join(X1,X2))) = join(X0,join(X1,X2)) [superposition 49,9]
+102. join(X0,join(join(X1,X2),join(X0,X1))) = join(X0,join(X1,X2)) [forward demodulation 91,25]
+106. join(X0,join(X1,X2)) = join(X0,join(X1,join(join(X1,X2),X0))) [forward demodulation 102,25]
+107. join(X0,join(X1,join(X1,join(X2,X0)))) = join(X0,join(X1,X2)) [forward demodulation 106,9]
+108. join(X0,join(X1,join(X2,X0))) = join(X0,join(X1,X2)) [forward demodulation 107,49]
+112. join(X0,zero) = X0 [superposition 5,11]
+113. zero = meet(X0,meet(X1,complement(meet(X0,X1)))) [superposition 8,11]
+115. join(zero,X0) = X0 [superposition 112,7]
+138. zero = meet(X0,zero) [superposition 33,115]
+164. meet(one,X0) = X0 [superposition 41,6]
+167. one = join(one,X0) [superposition 33,41]
+259. meet(X0,join(meet(X0,meet(X0,X1)),meet(X0,X2))) = meet(X0,join(meet(X2,X0),meet(meet(X0,X1),join(X0,meet(meet(X0,X1),X2))))) [superposition 16,5]
+277. meet(X1,join(meet(join(X0,X2),join(X1,X0)),meet(X0,join(X1,X0)))) = meet(X1,join(meet(X1,X0),meet(X1,join(X0,X2)))) [superposition 16,4]
+283. meet(X0,join(meet(X0,b),meet(X0,a))) = meet(X0,join(meet(a,join(X0,b)),meet(b,join(X0,a)))) [superposition 16,14]
+287. meet(X2,join(meet(X1,join(X2,X0)),meet(X0,join(meet(X0,X1),X2)))) = meet(X2,join(meet(X2,X0),meet(X2,X1))) [superposition 16,7]
+292. meet(meet(X1,join(X0,X0)),join(meet(join(X0,meet(X0,X1)),join(meet(X1,join(X0,X0)),X0)),meet(X0,join(meet(X0,X0),meet(X0,X1))))) = meet(meet(X1,join(X0,X0)),join(meet(meet(X1,join(X0,X0)),X0),meet(meet(X1,join(X0,X0)),join(X0,meet(X0,X1))))) [superposition 16,16]
+311. meet(X0,join(meet(X0,meet(X0,X1)),meet(X0,X2))) = meet(X0,join(meet(X2,X0),meet(X0,meet(X1,join(X0,meet(meet(X0,X1),X2)))))) [forward demodulation 259,8]
+314. meet(meet(X1,join(X0,X0)),join(meet(join(X0,meet(X0,X1)),join(meet(X1,join(X0,X0)),X0)),meet(X0,join(meet(X0,X0),meet(X0,X1))))) = meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(meet(X1,join(X0,X0)),join(X0,meet(X0,X1)))))) [forward demodulation 292,8]
+332. meet(X0,join(meet(X0,b),meet(X0,a))) = meet(X0,join(meet(b,join(X0,a)),meet(a,join(X0,b)))) [forward demodulation 283,7]
+333. meet(X1,join(meet(X0,join(X1,X0)),meet(join(X0,X2),join(X1,X0)))) = meet(X1,join(meet(X1,X0),meet(X1,join(X0,X2)))) [forward demodulation 277,7]
+344. meet(X0,join(meet(X0,meet(X0,X1)),meet(X0,X2))) = meet(X0,join(meet(X2,X0),meet(X0,meet(X1,join(X0,meet(X0,meet(X1,X2))))))) [forward demodulation 311,8]
+346. meet(meet(X1,join(X0,X0)),join(meet(join(X0,meet(X0,X1)),join(meet(X1,join(X0,X0)),X0)),meet(X0,join(meet(X0,X0),meet(X0,X1))))) = meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),join(X0,meet(X0,X1))))))) [forward demodulation 314,8]
+359. meet(X1,join(meet(X1,X0),meet(X1,join(X0,X2)))) = meet(X1,join(X0,meet(join(X0,X2),join(X1,X0)))) [forward demodulation 333,45]
+368. meet(X0,join(meet(X0,meet(X0,X1)),meet(X0,X2))) = meet(X0,join(meet(X2,X0),meet(X0,meet(X1,X0)))) [forward demodulation 344,5]
+370. meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),X0))))) = meet(meet(X1,join(X0,X0)),join(meet(X0,join(meet(X1,join(X0,X0)),X0)),meet(X0,join(meet(X0,X0),meet(X0,X1))))) [forward demodulation 346,5]
+383. meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),X0))))) = meet(X1,meet(join(X0,X0),join(meet(X0,join(meet(X1,join(X0,X0)),X0)),meet(X0,join(meet(X0,X0),meet(X0,X1)))))) [forward demodulation 370,8]
+392. meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),X0))))) = meet(X1,meet(join(X0,X0),join(meet(X0,join(meet(X0,X0),meet(X0,X1))),meet(X0,join(meet(X1,join(X0,X0)),X0))))) [forward demodulation 383,7]
+400. meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),X0))))) = meet(X1,meet(join(X0,X0),join(meet(X0,join(meet(X0,X0),meet(X0,X1))),X0))) [forward demodulation 392,45]
+407. meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),X0))))) = meet(X1,meet(join(X0,X0),join(X0,meet(X0,join(meet(X0,X0),meet(X0,X1)))))) [forward demodulation 400,7]
+412. meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(join(X0,X0),X0))))) = meet(X1,meet(join(X0,X0),X0)) [forward demodulation 407,5]
+415. meet(X1,meet(X0,join(X0,X0))) = meet(X1,meet(join(X0,X0),join(meet(meet(X1,join(X0,X0)),X0),meet(X1,meet(X0,join(X0,X0)))))) [forward demodulation 412,6]
+418. meet(X1,meet(X0,join(X0,X0))) = meet(X1,meet(join(X0,X0),join(meet(X1,meet(X0,join(X0,X0))),meet(meet(X1,join(X0,X0)),X0)))) [forward demodulation 415,7]
+421. meet(X1,meet(join(X0,X0),join(meet(X1,meet(X0,join(X0,X0))),meet(X1,meet(join(X0,X0),X0))))) = meet(X1,meet(X0,join(X0,X0))) [forward demodulation 418,8]
+423. meet(X1,X0) = meet(X1,meet(join(X0,X0),join(meet(X1,X0),meet(X1,meet(join(X0,X0),X0))))) [forward demodulation 421,4]
+425. meet(X1,meet(join(X0,X0),join(meet(X1,X0),meet(X1,meet(X0,join(X0,X0)))))) = meet(X1,X0) [forward demodulation 423,6]
+427. meet(X1,X0) = meet(X1,meet(join(X0,X0),meet(X1,X0))) [forward demodulation 425,80]
+429. meet(X1,meet(X0,meet(join(X0,X0),X1))) = meet(X1,X0) [forward demodulation 427,75]
+430. meet(X1,meet(X0,X1)) = meet(X1,X0) [forward demodulation 429,72]
+431. meet(X0,join(meet(X2,X0),meet(X0,X1))) = meet(X0,join(meet(X0,meet(X0,X1)),meet(X0,X2))) [backward demodulation 368,430]
+434. meet(X0,X1) = meet(X0,meet(X0,X1)) [superposition 430,6]
+451. meet(X1,X0) = join(meet(X1,X0),meet(X0,X1)) [superposition 33,430]
+461. meet(X0,join(meet(X2,X0),meet(X0,X1))) = meet(X0,join(meet(X0,X1),meet(X0,X2))) [backward demodulation 431,434]
+533. join(b,complement(a)) = join(b,one) [superposition 68,10]
+549. join(one,b) = join(b,complement(a)) [forward demodulation 533,7]
+557. one = join(b,complement(a)) [forward demodulation 549,167]
+603. join(X1,X0) = join(X0,join(X0,X1)) [superposition 25,3]
+620. join(X0,X1) = join(X0,join(X1,X0)) [superposition 25,49]
+1230. meet(X0,zero) = meet(X0,complement(join(X0,X1))) [superposition 72,11]
+1240. join(meet(join(X0,X2),X1),meet(X0,X1)) = meet(join(X0,X2),X1) [superposition 33,72]
+1264. zero = meet(X0,complement(join(X0,X1))) [forward demodulation 1230,138]
+1266. join(meet(X0,X1),meet(join(X0,X2),X1)) = meet(join(X0,X2),X1) [forward demodulation 1240,7]
+1308. complement(join(X0,X1)) = ifeq(join(X0,complement(join(X0,X1))),one,ifeq(zero,zero,complement(X0),complement(join(X0,X1))),complement(join(X0,X1))) [superposition 12,1264]
+1318. complement(join(X0,X1)) = ifeq(join(X0,complement(join(X0,X1))),one,complement(X0),complement(join(X0,X1))) [forward demodulation 1308,1]
+1539. join(X1,X0) = join(X1,join(X0,meet(X1,X2))) [superposition 19,7]
+1549. join(X0,one) = join(X0,complement(meet(X0,X1))) [superposition 19,10]
+1582. one = join(X0,complement(meet(X0,X1))) [forward demodulation 1549,90]
+1634. one = join(X1,complement(meet(X0,X1))) [superposition 1582,6]
+1718. ifeq(join(X0,meet(X1,complement(meet(X0,X1)))),one,ifeq(zero,zero,complement(X0),meet(X1,complement(meet(X0,X1)))),meet(X1,complement(meet(X0,X1)))) = meet(X1,complement(meet(X0,X1))) [superposition 12,113]
+1750. ifeq(join(X0,meet(X1,complement(meet(X0,X1)))),one,complement(X0),meet(X1,complement(meet(X0,X1)))) = meet(X1,complement(meet(X0,X1))) [forward demodulation 1718,1]
+1920. meet(join(X1,X0),join(X0,X1)) = join(X1,X0) [superposition 45,620]
+1946. meet(X1,join(meet(join(X2,X0),join(X1,X0)),meet(X0,join(X1,X0)))) = meet(X1,join(meet(X1,X0),meet(X1,join(X2,X0)))) [superposition 16,45]
+1957. meet(X1,join(meet(X1,X0),meet(X1,join(X2,X0)))) = meet(X1,join(meet(X0,join(X1,X0)),meet(join(X2,X0),join(X1,X0)))) [forward demodulation 1946,7]
+1970. meet(X1,join(meet(X1,X0),meet(X1,join(X2,X0)))) = meet(X1,join(X0,meet(join(X2,X0),join(X1,X0)))) [forward demodulation 1957,45]
+2259. meet(X1,join(meet(X0,X1),meet(X1,X2))) = meet(X1,join(meet(X1,X2),meet(X0,X1))) [superposition 461,6]
+2641. join(X0,join(join(X1,join(X2,X0)),X3)) = join(X3,join(X0,join(X1,X2))) [superposition 25,108]
+2685. join(X0,join(X1,join(join(X2,X0),X3))) = join(X3,join(X0,join(X1,X2))) [forward demodulation 2641,9]
+2722. join(X0,join(X1,join(X2,join(X0,X3)))) = join(X3,join(X0,join(X1,X2))) [forward demodulation 2685,9]
+3456. meet(X0,join(meet(b,join(X0,a)),meet(a,join(b,X0)))) = meet(X0,join(meet(X0,b),meet(X0,a))) [superposition 332,7]
+3781. one = join(meet(X1,X0),complement(meet(X0,X1))) [superposition 1634,430]
+4404. meet(join(X1,meet(X0,X2)),join(X0,X1)) = join(X1,meet(X0,X2)) [superposition 45,1539]
+4423. meet(join(X0,X1),join(X1,meet(X0,X2))) = join(X1,meet(X0,X2)) [forward demodulation 4404,6]
+4848. meet(X2,join(X0,meet(join(X0,X1),join(X2,X0)))) = meet(X2,join(meet(X2,X0),meet(join(X0,X1),X2))) [superposition 359,6]
+5308. meet(X0,meet(X0,X1)) = meet(X1,X0) [superposition 75,2]
+5320. meet(X0,meet(join(X0,X2),X1)) = meet(X1,X0) [superposition 75,4]
+5327. meet(X1,X0) = meet(X0,meet(join(X2,X0),X1)) [superposition 75,45]
+6061. join(X0,join(X1,X2)) = join(X2,join(X1,join(join(X1,X2),X0))) [superposition 21,603]
+6171. join(X2,join(X1,join(X1,join(X2,X0)))) = join(X0,join(X1,X2)) [forward demodulation 6061,9]
+6235. join(X0,join(X1,X2)) = join(X0,join(X2,join(X1,X1))) [forward demodulation 6171,2722]
+6268. join(X0,join(X2,X1)) = join(X0,join(X1,X2)) [forward demodulation 6235,3]
+9209. meet(join(X1,X2),X0) = join(meet(join(X1,X2),X0),meet(X0,X1)) [superposition 33,5320]
+9244. meet(join(X1,X2),X0) = join(meet(X0,X1),meet(join(X1,X2),X0)) [forward demodulation 9209,7]
+9311. meet(X2,join(X0,meet(join(X0,X1),join(X2,X0)))) = meet(X2,meet(join(X0,X1),X2)) [backward demodulation 4848,9244]
+9350. meet(X2,join(X0,meet(join(X0,X1),join(X2,X0)))) = meet(X2,join(X0,X1)) [forward demodulation 9311,430]
+9372. meet(X1,join(X0,X2)) = meet(X1,join(meet(X1,X0),meet(X1,join(X0,X2)))) [backward demodulation 359,9350]
+9516. meet(X2,join(X0,X1)) = meet(X2,join(meet(X2,X1),meet(X2,join(X0,X1)))) [superposition 9372,603]
+9621. meet(X1,join(X2,X0)) = meet(X1,join(X0,meet(join(X2,X0),join(X1,X0)))) [backward demodulation 1970,9516]
+9822. meet(X0,b) = meet(X0,join(a,meet(b,join(X0,a)))) [superposition 9621,17]
+13162. join(a,meet(join(b,X0),a)) = meet(join(b,X0),a) [superposition 1266,14]
+13375. join(a,meet(a,join(b,X0))) = meet(a,join(b,X0)) [forward demodulation 13162,6]
+13445. a = meet(a,join(b,X0)) [forward demodulation 13375,5]
+13479. meet(X0,join(meet(b,join(X0,a)),a)) = meet(X0,join(meet(X0,b),meet(X0,a))) [backward demodulation 3456,13445]
+13500. meet(X0,join(meet(X0,b),meet(X0,a))) = meet(X0,join(a,meet(b,join(X0,a)))) [forward demodulation 13479,7]
+13514. meet(X0,join(meet(X0,b),meet(X0,a))) = meet(X0,b) [forward demodulation 13500,9822]
+13761. meet(X0,join(meet(X0,b),meet(a,X0))) = meet(X0,b) [superposition 13514,6]
+15151. meet(X0,X1) = join(meet(X0,X1),meet(X1,meet(X0,X2))) [superposition 80,6]
+16198. join(X2,meet(X0,X1)) = join(X2,join(meet(X1,X0),meet(X0,X1))) [superposition 6268,451]
+16202. meet(X2,join(meet(X1,X0),meet(meet(X0,X1),join(X2,meet(X1,X0))))) = meet(X2,meet(X0,X1)) [superposition 9621,451]
+16221. meet(X2,meet(X0,X1)) = meet(X2,join(meet(X1,X0),meet(X0,meet(X1,join(X2,meet(X1,X0)))))) [forward demodulation 16202,8]
+16254. join(X2,meet(X1,X0)) = join(X2,meet(X0,X1)) [forward demodulation 16198,451]
+16313. meet(X2,meet(X0,X1)) = meet(X2,meet(X1,X0)) [forward demodulation 16221,15151]
+16473. join(X2,meet(X1,X0)) = join(meet(X0,X1),X2) [superposition 16254,7]
+27434. meet(X2,meet(join(X1,X0),join(X0,X1))) = meet(X2,join(X0,X1)) [superposition 16313,1920]
+27514. meet(X2,join(X0,X1)) = meet(X2,join(X1,X0)) [forward demodulation 27434,1920]
+27711. meet(X3,join(X0,meet(X1,X2))) = meet(X3,join(meet(X2,X1),X0)) [superposition 27514,16254]
+27780. meet(join(X0,X1),X2) = meet(X2,join(X1,X0)) [superposition 27514,6]
+28300. join(X3,meet(X0,join(X2,X1))) = join(X3,meet(X0,join(X1,X2))) [superposition 16254,27780]
+33476. join(meet(X0,X1),meet(X0,X2)) = meet(X0,join(meet(X0,X1),meet(X0,X2))) [superposition 4423,5]
+33477. meet(X0,join(meet(X1,X0),meet(X0,X2))) = join(meet(X1,X0),meet(X0,X2)) [superposition 4423,33]
+33749. meet(X0,join(meet(X0,X1),meet(X0,X2))) = join(meet(X2,X0),meet(X0,X1)) [backward demodulation 461,33477]
+33751. meet(X1,join(meet(X1,X2),meet(X0,X1))) = join(meet(X0,X1),meet(X1,X2)) [backward demodulation 2259,33477]
+33959. meet(X2,join(meet(X1,join(X2,X0)),meet(X0,join(meet(X0,X1),X2)))) = join(meet(X2,X0),meet(X2,X1)) [backward demodulation 287,33476]
+34375. meet(X0,b) = join(meet(a,X0),meet(X0,b)) [backward demodulation 13761,33751]
+34749. join(meet(b,X0),meet(a,X0)) = meet(X0,b) [forward demodulation 34375,16473]
+38249. join(meet(meet(X1,X0),X1),meet(X1,X2)) = meet(X1,join(meet(X1,X2),meet(X0,X1))) [superposition 33749,5308]
+38577. join(meet(meet(X1,X0),X1),meet(X1,X2)) = join(meet(X0,X1),meet(X1,X2)) [forward demodulation 38249,33751]
+38707. join(meet(X1,meet(X0,X1)),meet(X1,X2)) = join(meet(X0,X1),meet(X1,X2)) [forward demodulation 38577,8]
+38808. join(meet(X0,X1),meet(X1,X2)) = join(meet(X1,X0),meet(X1,X2)) [forward demodulation 38707,430]
+45107. join(meet(X1,X2),meet(X0,X1)) = join(meet(X2,X1),meet(X0,X1)) [superposition 38808,5327]
+58054. meet(X3,join(X0,meet(X1,X2))) = meet(X3,join(X0,meet(X2,X1))) [superposition 27514,16473]
+67222. complement(meet(X0,b)) = ifeq(join(meet(b,X0),complement(meet(X0,b))),one,complement(meet(b,X0)),complement(meet(X0,b))) [superposition 1318,34749]
+67260. complement(meet(X0,b)) = ifeq(one,one,complement(meet(b,X0)),complement(meet(X0,b))) [forward demodulation 67222,3781]
+67294. complement(meet(X0,b)) = complement(meet(b,X0)) [forward demodulation 67260,1]
+69010. meet(complement(meet(X0,X1)),join(meet(X1,join(complement(meet(X0,X1)),X0)),meet(X0,one))) = join(meet(complement(meet(X0,X1)),X0),meet(complement(meet(X0,X1)),X1)) [superposition 33959,10]
+69531. meet(complement(meet(X0,X1)),join(meet(X1,join(complement(meet(X0,X1)),X0)),meet(X0,one))) = join(meet(complement(meet(X0,X1)),X0),meet(X1,complement(meet(X0,X1)))) [forward demodulation 69010,16254]
+69841. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(complement(meet(X0,X1)),join(meet(X1,join(complement(meet(X0,X1)),X0)),meet(X0,one))) [forward demodulation 69531,45107]
+70090. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(complement(meet(X0,X1)),join(meet(X0,one),meet(join(complement(meet(X0,X1)),X0),X1))) [forward demodulation 69841,27711]
+70288. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(complement(meet(X0,X1)),join(meet(X0,one),meet(X1,join(complement(meet(X0,X1)),X0)))) [forward demodulation 70090,58054]
+70463. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(complement(meet(X0,X1)),join(meet(X0,one),meet(X1,join(X0,complement(meet(X0,X1)))))) [forward demodulation 70288,28300]
+70596. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(complement(meet(X0,X1)),join(meet(X0,one),meet(X1,one))) [forward demodulation 70463,1582]
+70710. meet(complement(meet(X0,X1)),join(meet(X0,one),X1)) = join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) [forward demodulation 70596,41]
+70796. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(complement(meet(X0,X1)),join(X0,X1)) [forward demodulation 70710,41]
+70859. join(meet(X0,complement(meet(X0,X1))),meet(X1,complement(meet(X0,X1)))) = meet(join(X1,X0),complement(meet(X0,X1))) [forward demodulation 70796,27780]
+71168. join(X0,meet(join(X0,X1),complement(meet(X1,X0)))) = join(X0,meet(X1,complement(meet(X1,X0)))) [superposition 1539,70859]
+75461. join(b,meet(complement(a),complement(meet(complement(a),b)))) = join(b,meet(one,complement(meet(complement(a),b)))) [superposition 71168,557]
+75791. join(b,meet(complement(a),complement(meet(complement(a),b)))) = join(b,complement(meet(complement(a),b))) [forward demodulation 75461,164]
+75996. one = join(b,meet(complement(a),complement(meet(complement(a),b)))) [forward demodulation 75791,1634]
+76155. one = join(b,meet(complement(a),complement(meet(b,complement(a))))) [forward demodulation 75996,67294]
+76507. meet(complement(a),complement(meet(b,complement(a)))) = ifeq(one,one,complement(b),meet(complement(a),complement(meet(b,complement(a))))) [superposition 1750,76155]
+76673. complement(b) = meet(complement(a),complement(meet(b,complement(a)))) [forward demodulation 76507,1]
+76938. complement(a) = join(complement(a),complement(b)) [superposition 5,76673]
+77104. complement(a) = join(complement(b),complement(a)) [forward demodulation 76938,7]
+77152. $false [subsumption resolution 77104,15]
+% SZS output end Proof for LAT229-10
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 15
+% 
+% >>> Saturation
+% Initial clauses: 15
+% Generated clauses: 77152
+% Activations started: 212
+% Active clauses: 212
+% Passive clauses: 6515
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Fw subsumption resolutions: 1
+% Fw demodulations: 46785
+% Bw demodulations: 1590
+% 
+% >>> Deletion Inferences
+% Forward subsumptions: 22687
+% Fw demodulations to eq. taut.: 1116
+% Bw demodulations to eq. taut.: 186
+% 
+% >>> Generating Inferences
+% Forward superposition: 16460
+% Backward superposition: 12124
+% Self superposition: 177
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 472
+% Gnn eval: 562
+% Bulk evals: 4015
+% 
+% Time elapsed: 1.914 s
+% Peak memory usage: 198 MB
+% Instructions burned: 11485 (million)
+% ------------------------------
+% ------------------------------

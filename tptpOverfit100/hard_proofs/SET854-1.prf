@@ -1,0 +1,150 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop6/script-model.pt -npcc on -si on -rtra on --random_seed 1 Problems/SET/SET854-1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Unsatisfiable for SET854-1
+% SZS output start Proof for SET854-1
+306. ~c_lessequals(X13,X15,tc_set(X2)) | ~c_in(X34,X13,X2) | c_in(X34,X15,X2) [input(axiom)]
+307. c_in(c_Main_OsubsetI__1(X13,X15,X2),X13,X2) | c_lessequals(X13,X15,tc_set(X2)) [input(axiom)]
+308. ~c_in(c_Main_OsubsetI__1(X13,X15,X2),X15,X2) | c_lessequals(X13,X15,tc_set(X2)) [input(axiom)]
+309. ~c_lessequals(X15,X13,tc_set(X2)) | X13 = X15 | ~c_lessequals(X13,X15,tc_set(X2)) [input(axiom)]
+1358. c_lessequals(X0,c_Zorn_Osucc(X40,X0,X2),tc_set(tc_set(X2))) [input(axiom)]
+1359. c_in(c_Zorn_OTFin__linear__lemma1__1(X40,X12,X2),c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) | c_lessequals(c_Zorn_Osucc(X40,X12,X2),X18,tc_set(tc_set(X2))) | c_lessequals(X18,X12,tc_set(tc_set(X2))) | ~c_in(X12,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) | ~c_in(X18,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) [input(axiom)]
+1360. c_lessequals(c_Zorn_OTFin__linear__lemma1__1(X40,X12,X2),X12,tc_set(tc_set(X2))) | c_lessequals(c_Zorn_Osucc(X40,X12,X2),X18,tc_set(tc_set(X2))) | ~c_in(X18,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) | c_lessequals(X18,X12,tc_set(tc_set(X2))) | ~c_in(X12,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) [input(axiom)]
+1361. c_Zorn_OTFin__linear__lemma1__1(X40,X12,X2) != X12 | ~c_in(X18,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) | c_lessequals(X18,X12,tc_set(tc_set(X2))) | c_lessequals(c_Zorn_Osucc(X40,X12,X2),X18,tc_set(tc_set(X2))) | ~c_in(X12,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) [input(axiom)]
+1362. ~c_lessequals(c_Zorn_Osucc(X40,c_Zorn_OTFin__linear__lemma1__1(X40,X12,X2),X2),X12,tc_set(tc_set(X2))) | ~c_in(X12,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) | ~c_in(X18,c_Zorn_OTFin(X40,X2),tc_set(tc_set(X2))) | c_lessequals(c_Zorn_Osucc(X40,X12,X2),X18,tc_set(tc_set(X2))) | c_lessequals(X18,X12,tc_set(tc_set(X2))) [input(axiom)]
+1363. c_in(c_Zorn_OUnion__lemma0__1(X13,X15,X36,X2),X36,tc_set(X2)) | c_lessequals(X15,c_Union(X36,X2),tc_set(X2)) | c_lessequals(c_Union(X36,X2),X13,tc_set(X2)) [input(axiom)]
+1364. ~c_lessequals(c_Zorn_OUnion__lemma0__1(X13,X15,X36,X2),X13,tc_set(X2)) | c_lessequals(X15,c_Union(X36,X2),tc_set(X2)) | c_lessequals(c_Union(X36,X2),X13,tc_set(X2)) [input(axiom)]
+1365. ~c_lessequals(X15,c_Zorn_OUnion__lemma0__1(X13,X15,X36,X2),tc_set(X2)) | c_lessequals(c_Union(X36,X2),X13,tc_set(X2)) | c_lessequals(X15,c_Union(X36,X2),tc_set(X2)) [input(axiom)]
+1367. c_lessequals(v_Y,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(tc_set(t_a)))) [input(negated conjecture)]
+1368. c_in(v_x,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) [input(negated conjecture)]
+1369. c_lessequals(v_x,c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) [input(negated conjecture)]
+1370. v_x != c_Union(v_Y,tc_set(t_a)) [input(negated conjecture)]
+1371. ~c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) [input(negated conjecture)]
+1372. c_lessequals(c_Zorn_Osucc(v_S,X54,t_a),X41,tc_set(tc_set(t_a))) | ~c_in(X41,v_Y,tc_set(tc_set(t_a))) | ~c_in(X54,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_lessequals(X54,X41,tc_set(tc_set(t_a))) | X41 = X54 [input(negated conjecture)]
+1376. v_x = c_Union(v_Y,tc_set(t_a)) | ~c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) [resolution 309,1369]
+1377. ~c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) [subsumption resolution 1376,1370]
+1379. c_in(X0,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) [resolution 1367,306]
+1391. ~c_in(X2,c_Zorn_Osucc(v_S,X0,t_a),tc_set(t_a)) | c_in(X2,X1,tc_set(t_a)) | ~c_in(X1,v_Y,tc_set(tc_set(t_a))) | ~c_lessequals(X0,X1,tc_set(tc_set(t_a))) | X0 = X1 | ~c_in(X0,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) [resolution 1372,306]
+1399. c_in(X0,c_Zorn_Osucc(X3,X1,X2),tc_set(X2)) | ~c_in(X0,X1,tc_set(X2)) [resolution 1358,306]
+1421. ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(tc_set(t_a))) | ~c_in(X0,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(X1,X0,tc_set(tc_set(t_a))) | ~c_lessequals(c_Zorn_OTFin__linear__lemma1__1(v_S,X0,t_a),X0,tc_set(tc_set(t_a))) | c_Zorn_OTFin__linear__lemma1__1(v_S,X0,t_a) = X0 | ~c_in(c_Zorn_OTFin__linear__lemma1__1(v_S,X0,t_a),c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) [resolution 1362,1372]
+1426. c_lessequals(X1,X0,tc_set(tc_set(t_a))) | ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(tc_set(t_a))) | ~c_in(X0,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(c_Zorn_OTFin__linear__lemma1__1(v_S,X0,t_a),c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_lessequals(c_Zorn_OTFin__linear__lemma1__1(v_S,X0,t_a),X0,tc_set(tc_set(t_a))) [subsumption resolution 1421,1361]
+1427. ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_lessequals(c_Zorn_OTFin__linear__lemma1__1(v_S,X0,t_a),X0,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(tc_set(t_a))) | ~c_in(X0,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | c_lessequals(X1,X0,tc_set(tc_set(t_a))) [subsumption resolution 1426,1359]
+1428. c_lessequals(X1,X0,tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(tc_set(t_a))) | ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X0,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) [subsumption resolution 1427,1360]
+1429. c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(tc_set(t_a))) | ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(X1,X0,tc_set(tc_set(t_a))) [subsumption resolution 1428,1379]
+1434. ~c_in(X2,c_Zorn_Osucc(v_S,X0,t_a),tc_set(t_a)) | c_in(X2,X1,tc_set(t_a)) | ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | c_lessequals(X1,X0,tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) [resolution 1429,306]
+1514. ~c_in(c_Zorn_OUnion__lemma0__1(X1,c_Zorn_Osucc(v_S,X2,t_a),X0,tc_set(t_a)),c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | c_lessequals(c_Union(X0,tc_set(t_a)),X1,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_OUnion__lemma0__1(X1,c_Zorn_Osucc(v_S,X2,t_a),X0,tc_set(t_a)),X2,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X2,t_a),c_Union(X0,tc_set(t_a)),tc_set(tc_set(t_a))) | ~c_in(X2,v_Y,tc_set(tc_set(t_a))) [resolution 1365,1429]
+1524. ~c_in(c_Zorn_OUnion__lemma0__1(X2,c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(t_a)),v_Y,tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_OUnion__lemma0__1(X2,c_Zorn_Osucc(v_S,X0,t_a),X1,tc_set(t_a)),X0,tc_set(tc_set(t_a))) | c_lessequals(c_Union(X1,tc_set(t_a)),X2,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(X1,tc_set(t_a)),tc_set(tc_set(t_a))) [resolution 1514,1379]
+1546. ~c_in(X1,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X2,v_Y,tc_set(tc_set(t_a))) | ~c_in(X0,X2,tc_set(t_a)) | c_lessequals(X1,X2,tc_set(tc_set(t_a))) | c_in(X0,X1,tc_set(t_a)) [resolution 1434,1399]
+2277. c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_OUnion__lemma0__1(X1,c_Zorn_Osucc(v_S,X0,t_a),v_Y,tc_set(t_a)),X0,tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),X1,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),X1,tc_set(tc_set(t_a))) [resolution 1524,1363]
+2278. c_lessequals(c_Zorn_OUnion__lemma0__1(X1,c_Zorn_Osucc(v_S,X0,t_a),v_Y,tc_set(t_a)),X0,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),X1,tc_set(tc_set(t_a))) [duplicate literal removal 2277]
+2588. c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),X0,tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),X0,tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) [resolution 2278,1364]
+2606. c_lessequals(c_Zorn_Osucc(v_S,X0,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),X0,tc_set(tc_set(t_a))) [duplicate literal removal 2588]
+2608. c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) | ~c_in(v_x,v_Y,tc_set(tc_set(t_a))) [resolution 2606,1371]
+2647. ~c_in(v_x,v_Y,tc_set(tc_set(t_a))) [subsumption resolution 2608,1377]
+3983. ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | c_lessequals(v_x,X0,tc_set(tc_set(t_a))) | c_in(X1,v_x,tc_set(t_a)) | ~c_in(X1,X0,tc_set(t_a)) [resolution 1546,1368]
+27762. 569 <=> c_in(c_Main_OsubsetI__1(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)),c_Zorn_Osucc(v_S,v_x,t_a),tc_set(t_a)) [avatar definition]
+27763. ~c_in(c_Main_OsubsetI__1(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)),c_Zorn_Osucc(v_S,v_x,t_a),tc_set(t_a)) <- (~569) [avatar component clause 27762]
+27764. c_in(c_Main_OsubsetI__1(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)),c_Zorn_Osucc(v_S,v_x,t_a),tc_set(t_a)) <- (569) [avatar component clause 27762]
+27781. c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (~569) [resolution 27763,307]
+27800. c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (~569) [resolution 27781,1365]
+27826. 570 <=> c_lessequals(v_x,c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) [avatar definition]
+27838. 573 <=> c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) [avatar definition]
+27839. c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) <- (573) [avatar component clause 27838]
+27840. ~c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) <- (~573) [avatar component clause 27838]
+27851. c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (~569) [subsumption resolution 27800,1377]
+27862. 578 <=> c_in(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_Y,tc_set(tc_set(t_a))) [avatar definition]
+27863. c_in(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_Y,tc_set(tc_set(t_a))) <- (578) [avatar component clause 27862]
+27864. ~c_in(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_Y,tc_set(tc_set(t_a))) <- (~578) [avatar component clause 27862]
+27866. $false <- (~569) [subsumption resolution 27851,1371]
+27867. 569 [avatar contradiction clause 27866]
+27872. c_in(c_Main_OsubsetI__1(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)),X0,tc_set(t_a)) | ~c_lessequals(v_x,X0,tc_set(tc_set(t_a))) | ~c_in(v_x,c_Zorn_OTFin(v_S,t_a),tc_set(tc_set(t_a))) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | v_x = X0 <- (569) [resolution 27764,1391]
+27902. c_in(c_Main_OsubsetI__1(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)),X0,tc_set(t_a)) | ~c_in(X0,v_Y,tc_set(tc_set(t_a))) | v_x = X0 | ~c_lessequals(v_x,X0,tc_set(tc_set(t_a))) <- (569) [subsumption resolution 27872,1368]
+28461. ~c_lessequals(v_x,c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | ~c_in(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_Y,tc_set(tc_set(t_a))) | v_x = c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)) <- (569) [resolution 27902,308]
+28483. 580 <=> c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) [avatar definition]
+28485. c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (580) [avatar component clause 28483]
+28487. 581 <=> v_x = c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)) [avatar definition]
+28489. v_x = c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)) <- (581) [avatar component clause 28487]
+28490. 580 | 581 | ~578 | ~570 | ~569 [avatar split clause 28461,27762,27826,27862,28487,28483]
+28503. c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (~578) [resolution 27864,1363]
+28504. c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (~578) [subsumption resolution 28503,1377]
+28505. $false <- (~578) [subsumption resolution 28504,1371]
+28506. 578 [avatar contradiction clause 28505]
+28518. c_lessequals(v_x,c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | ~c_in(X0,c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)) | c_in(X0,v_x,tc_set(t_a)) <- (578) [resolution 27863,3983]
+28823. c_in(v_x,v_Y,tc_set(tc_set(t_a))) <- (578, 581) [backward demodulation 27863,28489]
+29007. $false <- (578, 581) [subsumption resolution 28823,2647]
+29008. ~578 | ~581 [avatar contradiction clause 29007]
+29043. 609 <=> ! [X0] : (~c_in(X0,c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)) | c_in(X0,v_x,tc_set(t_a))) [avatar definition]
+29044. ~c_in(X0,c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),tc_set(t_a)) | c_in(X0,v_x,tc_set(t_a)) <- (609) [avatar component clause 29043]
+29045. 609 | 570 | ~578 [avatar split clause 28518,27862,27826,29043]
+29089. c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (580) [resolution 28485,1365]
+29118. c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) <- (580) [subsumption resolution 29089,1377]
+29123. $false <- (580) [subsumption resolution 29118,1371]
+29124. ~580 [avatar contradiction clause 29123]
+30303. c_lessequals(c_Zorn_Osucc(v_S,v_x,t_a),c_Union(v_Y,tc_set(t_a)),tc_set(tc_set(t_a))) | c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) <- (573) [resolution 27839,1364]
+30326. c_lessequals(c_Union(v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) <- (573) [subsumption resolution 30303,1371]
+30328. $false <- (573) [subsumption resolution 30326,1377]
+30329. ~573 [avatar contradiction clause 30328]
+30797. c_in(c_Main_OsubsetI__1(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),X0,tc_set(t_a)),v_x,tc_set(t_a)) | c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),X0,tc_set(tc_set(t_a))) <- (609) [resolution 29044,307]
+138645. c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) | c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) <- (609) [resolution 30797,308]
+138657. c_lessequals(c_Zorn_OUnion__lemma0__1(v_x,c_Zorn_Osucc(v_S,v_x,t_a),v_Y,tc_set(t_a)),v_x,tc_set(tc_set(t_a))) <- (609) [duplicate literal removal 138645]
+138663. $false <- (~573, 609) [subsumption resolution 138657,27840]
+138664. 573 | ~609 [avatar contradiction clause 138663]
+138665. $false [avatar sat refutation 27867,28490,28506,29008,29045,29124,30329,138664]
+% SZS output end Proof for SET854-1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input clauses: 1372
+% >>> Preprocessing
+% Pure predicates: 45
+% 
+% >>> Saturation
+% Initial clauses: 606
+% Generated clauses: 152016
+% Activations started: 2899
+% Active clauses: 2899
+% Passive clauses: 63075
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 7593
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 6234
+% Fw demodulations: 11966
+% Bw demodulations: 18056
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 937
+% Equational tautologies: 1240
+% Forward subsumptions: 60053
+% Fw demodulations to eq. taut.: 1
+% Bw demodulations to eq. taut.: 4
+% 
+% >>> Generating Inferences
+% Binary resolution: 87759
+% Factoring: 95
+% Forward superposition: 81
+% Backward superposition: 666
+% Equality resolution: 1
+% 
+% >>> AVATAR
+% Split clauses: 1141
+% Split components: 2435
+% Sat splitting refutations: 96
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 1374
+% SAT solver unit clauses: 15
+% SAT solver binary clauses: 222
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 845
+% Bulk evals: 14050
+% 
+% Time elapsed: 14.098 s
+% Peak memory usage: 391 MB
+% Instructions burned: 75852 (million)
+% ------------------------------
+% ------------------------------

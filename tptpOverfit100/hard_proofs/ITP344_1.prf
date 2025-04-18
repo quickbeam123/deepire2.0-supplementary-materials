@@ -1,0 +1,218 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop3/script-model.pt -npcc on -npcct 0.037 -si on -rtra on --random_seed 5 Problems/ITP/ITP344_1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for ITP344_1
+% SZS output start Proof for ITP344_1
+1. ! [X0 : 'Rows$'] : ('fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' <=> 'fun_app$'('uu$',X0)) [input(axiom)]
+10. ! [X2 : 'Rows$',X1 : 'A_rows_vec$',X0 : 'A_cols_vec_rows_vec$'] : ('fun_app$'('uua$'(X0,X1),X2) <=> 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2)) [input(axiom)]
+12. ((~? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => $lesseq(0,'of_nat$'('rank$'('a$')))) & (? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => $lesseq($sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1),'of_nat$'('rank$'('a$'))))) <=> 'fun_app$d'('consistent$'('a$'),'b$') [input(conjecture)]
+13. ~(((~? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => $lesseq(0,'of_nat$'('rank$'('a$')))) & (? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => $lesseq($sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1),'of_nat$'('rank$'('a$'))))) <=> 'fun_app$d'('consistent$'('a$'),'b$')) [negated conjecture 12]
+14. ! [X0 : 'A_cols_vec_rows_vec$',X1 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X0),X1) => ((? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => $lesseq($sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1),'of_nat$'('rank$'(X0)))) & (~? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => $lesseq(0,'of_nat$'('rank$'(X0)))))) [input(axiom)]
+15. ! [X1 : 'A_rows_vec$',X0 : 'A_cols_vec_rows_vec$'] : (((? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => $lesseq($sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1),'of_nat$'('rank$'(X0)))) & (~? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => $lesseq(0,'of_nat$'('rank$'(X0))))) => 'fun_app$d'('consistent$'(X0),X1)) [input(axiom)]
+209. ! [X1 : $int,X0 : $int,X2 : $int] : ($lesseq(X0,X1) => $lesseq($sum(X2,X0),$sum(X2,X1))) [input(axiom)]
+282. ! [X0 : 'Rows$',X1 : 'Rows$'] : ('fun_app$'('fun_app$f'('less_eq$a',X0),X1) => $lesseq('of_nat$'('to_nat$'(X0)),'of_nat$'('to_nat$'(X1)))) [input(axiom)]
+312. ! [X1 : 'Rows$',X0 : 'Rows_bool_fun$'] : ('fun_app$'(X0,X1) => 'fun_app$'('fun_app$f'('less_eq$a',X1),'greatest$'(X0))) [input(axiom)]
+418. ! [X0 : 'Nat$'] : ($less('of_nat$'(X0),0) => $false) [input(axiom)]
+473. ! [X0 : 'Rows_bool_fun$'] : (? [X1 : 'Rows$'] : 'fun_app$'(X0,X1) => 'fun_app$'(X0,'greatest$'(X0))) [input(axiom)]
+478. ! [X0 : $int,X1 : $int] : ($lesseq($sum(X0,1),X1) <=> $less(X0,X1)) [input(axiom)]
+557. ! [X1 : $int,X2 : $int,X0 : $int] : (($less(X2,X0) & $lesseq(X0,X1)) => $less(X2,X1)) [input(axiom)]
+641. ! [X1 : 'A_rows_vec$',X0 : 'A_cols_vec_rows_vec$'] : (((? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => ~$less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1))) & (~? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => ~$less('of_nat$'('rank$'(X0)),0))) => 'fun_app$d'('consistent$'(X0),X1)) [theory normalization 15]
+647. ! [X0 : 'Rows$',X1 : 'Rows$'] : ('fun_app$'('fun_app$f'('less_eq$a',X0),X1) => ~$less('of_nat$'('to_nat$'(X1)),'of_nat$'('to_nat$'(X0)))) [theory normalization 282]
+658. ! [X1 : $int,X2 : $int,X0 : $int] : (($less(X2,X0) & ~$less(X1,X0)) => $less(X2,X1)) [theory normalization 557]
+669. ! [X1 : $int,X0 : $int,X2 : $int] : (~$less(X1,X0) => ~$less($sum(X2,X1),$sum(X2,X0))) [theory normalization 209]
+693. ~(((~? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => ~$less('of_nat$'('rank$'('a$')),0)) & (? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) <=> 'fun_app$d'('consistent$'('a$'),'b$')) [theory normalization 13]
+706. ! [X1 : $int,X0 : $int] : (~$less(X1,$sum(X0,1)) <=> $less(X0,X1)) [theory normalization 478]
+756. ! [X0 : 'A_cols_vec_rows_vec$',X1 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X0),X1) => ((? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => ~$less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1))) & (~? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => ~$less('of_nat$'('rank$'(X0)),0)))) [theory normalization 14]
+778. $sum(X0,X1) = $sum(X1,X0) [theory axiom 143]
+789. ~$less(X1,$sum(X0,1)) | ~$less(X0,X1) [theory axiom 169]
+820. ! [X1 : 'A_cols_vec_rows_vec$',X0 : 'A_rows_vec$'] : (((~? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X3) => ~$less('of_nat$'('rank$'(X1)),0)) & (? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) => ~$less('of_nat$'('rank$'(X1)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))),1)))) => 'fun_app$d'('consistent$'(X1),X0)) [rectify 641]
+856. ! [X2 : $int,X1 : $int,X0 : $int] : (($less(X1,X2) & ~$less(X0,X2)) => $less(X1,X0)) [rectify 658]
+891. ! [X2 : $int,X1 : $int,X0 : $int] : (~$less(X0,X1) => ~$less($sum(X2,X0),$sum(X2,X1))) [rectify 669]
+942. ~('fun_app$d'('consistent$'('a$'),'b$') <=> ((~? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' => ~$less('of_nat$'('rank$'('a$')),0)) & (? [X1 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) => ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1))))) [rectify 693]
+970. ! [X1 : 'A_rows_vec$',X2 : 'A_cols_vec_rows_vec$',X0 : 'Rows$'] : ('zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X2),X1)),X0) <=> 'fun_app$'('uua$'(X2,X1),X0)) [rectify 10]
+1116. ! [X0 : 'A_cols_vec_rows_vec$',X1 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X0),X1) => ((? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) => ~$less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1))) & (~? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X3) => ~$less('of_nat$'('rank$'(X0)),0)))) [rectify 756]
+1137. ! [X0 : 'Nat$'] : ~$less('of_nat$'(X0),0) [true and false elimination 418]
+1138. ! [X0 : 'Nat$'] : ~$less('of_nat$'(X0),0) [flattening 1137]
+1228. ! [X2 : $int,X1 : $int,X0 : $int] : ($less(X1,X0) | (~$less(X1,X2) | $less(X0,X2))) [ennf transformation 856]
+1229. ! [X1 : $int,X2 : $int,X0 : $int] : ($less(X1,X0) | $less(X0,X2) | ~$less(X1,X2)) [flattening 1228]
+1232. ! [X0 : 'Rows$',X1 : 'Rows$'] : (~'fun_app$'('fun_app$f'('less_eq$a',X0),X1) | ~$less('of_nat$'('to_nat$'(X1)),'of_nat$'('to_nat$'(X0)))) [ennf transformation 647]
+1348. 'fun_app$d'('consistent$'('a$'),'b$') <~> ((? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' | ~$less('of_nat$'('rank$'('a$')),0)) & (! [X1 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) | ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) [ennf transformation 942]
+1368. ! [X1 : 'A_rows_vec$',X0 : 'A_cols_vec_rows_vec$'] : (((! [X2 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) | ~$less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1))) & (? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X3) | ~$less('of_nat$'('rank$'(X0)),0))) | ~'fun_app$d'('consistent$'(X0),X1)) [ennf transformation 1116]
+1457. ! [X0 : 'Rows_bool_fun$',X1 : 'Rows$'] : (~'fun_app$'(X0,X1) | 'fun_app$'('fun_app$f'('less_eq$a',X1),'greatest$'(X0))) [ennf transformation 312]
+1460. ! [X1 : $int,X2 : $int,X0 : $int] : (~$less($sum(X2,X0),$sum(X2,X1)) | $less(X0,X1)) [ennf transformation 891]
+1483. ! [X0 : 'Rows_bool_fun$'] : ('fun_app$'(X0,'greatest$'(X0)) | ! [X1 : 'Rows$'] : ~'fun_app$'(X0,X1)) [ennf transformation 473]
+1548. ! [X1 : 'A_cols_vec_rows_vec$',X0 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X1),X0) | ((! [X3 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X3) & $less('of_nat$'('rank$'(X1)),0)) | ($less('of_nat$'('rank$'(X1)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))),1)) & ? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2)))) [ennf transformation 820]
+1549. ! [X1 : 'A_cols_vec_rows_vec$',X0 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X1),X0) | (! [X3 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X3) & $less('of_nat$'('rank$'(X1)),0)) | ($less('of_nat$'('rank$'(X1)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))),1)) & ? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2))) [flattening 1548]
+1670. (((! [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' & $less('of_nat$'('rank$'('a$')),0)) | (? [X1 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) & $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) | ~'fun_app$d'('consistent$'('a$'),'b$')) & (((? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' | ~$less('of_nat$'('rank$'('a$')),0)) & (! [X1 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) | ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) | 'fun_app$d'('consistent$'('a$'),'b$')) [nnf transformation 1348]
+1671. ((! [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' & $less('of_nat$'('rank$'('a$')),0)) | (? [X1 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) & $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1))) | ~'fun_app$d'('consistent$'('a$'),'b$')) & (((? [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' | ~$less('of_nat$'('rank$'('a$')),0)) & (! [X1 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) | ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) | 'fun_app$d'('consistent$'('a$'),'b$')) [flattening 1670]
+1672. ((! [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' & $less('of_nat$'('rank$'('a$')),0)) | (? [X1 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) & $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1))) | ~'fun_app$d'('consistent$'('a$'),'b$')) & (((? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X2) | ~$less('of_nat$'('rank$'('a$')),0)) & (! [X3 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X3) | ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) | 'fun_app$d'('consistent$'('a$'),'b$')) [rectify 1671]
+1673. ? [X1 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X1) => 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK13) [choice axiom]
+1674. ? [X2 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X2) => 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK14) [choice axiom]
+1675. ((! [X0 : 'Rows$'] : 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' & $less('of_nat$'('rank$'('a$')),0)) | ('zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK13) & $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1))) | ~'fun_app$d'('consistent$'('a$'),'b$')) & ((('zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK14) | ~$less('of_nat$'('rank$'('a$')),0)) & (! [X3 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X3) | ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)))) | 'fun_app$d'('consistent$'('a$'),'b$')) [skolemisation 1672,1674,1673]
+1735. ! [X0 : $int,X1 : $int,X2 : $int] : (~$less($sum(X1,X2),$sum(X1,X0)) | $less(X2,X0)) [rectify 1460]
+1803. ! [X1 : 'A_rows_vec$',X2 : 'A_cols_vec_rows_vec$',X0 : 'Rows$'] : (('zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X2),X1)),X0) | ~'fun_app$'('uua$'(X2,X1),X0)) & ('fun_app$'('uua$'(X2,X1),X0) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X2),X1)),X0))) [nnf transformation 970]
+1804. ! [X0 : 'A_rows_vec$',X1 : 'A_cols_vec_rows_vec$',X2 : 'Rows$'] : (('zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) | ~'fun_app$'('uua$'(X1,X0),X2)) & ('fun_app$'('uua$'(X1,X0),X2) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2))) [rectify 1803]
+1865. ! [X0 : 'A_rows_vec$',X1 : 'A_cols_vec_rows_vec$'] : (((! [X2 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) | ~$less('of_nat$'('rank$'(X1)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))),1))) & (? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X3) | ~$less('of_nat$'('rank$'(X1)),0))) | ~'fun_app$d'('consistent$'(X1),X0)) [rectify 1368]
+1866. ! [X0 : 'A_rows_vec$',X1 : 'A_cols_vec_rows_vec$'] : (? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X3) => 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),sK48(X0,X1))) [choice axiom]
+1867. ! [X0 : 'A_rows_vec$',X1 : 'A_cols_vec_rows_vec$'] : (((! [X2 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) | ~$less('of_nat$'('rank$'(X1)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))),1))) & ('zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),sK48(X0,X1)) | ~$less('of_nat$'('rank$'(X1)),0))) | ~'fun_app$d'('consistent$'(X1),X0)) [skolemisation 1865,1866]
+1882. ! [X1 : $int,X0 : $int] : ((~$less(X1,$sum(X0,1)) | ~$less(X0,X1)) & ($less(X0,X1) | $less(X1,$sum(X0,1)))) [nnf transformation 706]
+1883. ! [X0 : $int,X1 : $int] : ((~$less(X0,$sum(X1,1)) | ~$less(X1,X0)) & ($less(X1,X0) | $less(X0,$sum(X1,1)))) [rectify 1882]
+1886. ! [X0 : 'Rows$'] : (('fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' | ~'fun_app$'('uu$',X0)) & ('fun_app$'('uu$',X0) | 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$')) [nnf transformation 1]
+1935. ! [X0 : $int,X1 : $int,X2 : $int] : ($less(X0,X2) | $less(X2,X1) | ~$less(X0,X1)) [rectify 1229]
+1998. ! [X0 : 'A_cols_vec_rows_vec$',X1 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X0),X1) | (! [X2 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) & $less('of_nat$'('rank$'(X0)),0)) | ($less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1)) & ? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X3))) [rectify 1549]
+1999. ! [X0 : 'A_cols_vec_rows_vec$',X1 : 'A_rows_vec$'] : (? [X3 : 'Rows$'] : 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X3) => 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),sK71(X0,X1))) [choice axiom]
+2000. ! [X0 : 'A_cols_vec_rows_vec$',X1 : 'A_rows_vec$'] : ('fun_app$d'('consistent$'(X0),X1) | (! [X2 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) & $less('of_nat$'('rank$'(X0)),0)) | ($less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1)) & 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),sK71(X0,X1)))) [skolemisation 1998,1999]
+2394. 'fun_app$d'('consistent$'('a$'),'b$') | ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X3) [cnf transformation 1675]
+2396. $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)) | $less('of_nat$'('rank$'('a$')),0) | ~'fun_app$d'('consistent$'('a$'),'b$') [cnf transformation 1675]
+2397. 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK13) | $less('of_nat$'('rank$'('a$')),0) | ~'fun_app$d'('consistent$'('a$'),'b$') [cnf transformation 1675]
+2488. ~$less($sum(X1,X2),$sum(X1,X0)) | $less(X2,X0) [cnf transformation 1735]
+2493. ~$less('of_nat$'(X0),0) [cnf transformation 1138]
+2531. ~$less('of_nat$'('to_nat$'(X1)),'of_nat$'('to_nat$'(X0))) | ~'fun_app$'('fun_app$f'('less_eq$a',X0),X1) [cnf transformation 1232]
+2569. 'fun_app$'('uua$'(X1,X0),X2) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) [cnf transformation 1804]
+2570. 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) | ~'fun_app$'('uua$'(X1,X0),X2) [cnf transformation 1804]
+2657. ~'fun_app$d'('consistent$'(X1),X0) | ~$less('of_nat$'('rank$'(X1)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))),1)) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) [cnf transformation 1867]
+2674. $less(X0,$sum(X1,1)) | $less(X1,X0) [cnf transformation 1883]
+2678. 'fun_app$'('uu$',X0) | 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' [cnf transformation 1886]
+2679. 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) != 'zero$' | ~'fun_app$'('uu$',X0) [cnf transformation 1886]
+2737. ~$less(X0,X1) | $less(X2,X1) | $less(X0,X2) [cnf transformation 1935]
+2832. $less('of_nat$'('rank$'(X0)),0) | 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),sK71(X0,X1)) | 'fun_app$d'('consistent$'(X0),X1) [cnf transformation 2000]
+2833. $less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1)) | $less('of_nat$'('rank$'(X0)),0) | 'fun_app$d'('consistent$'(X0),X1) [cnf transformation 2000]
+2975. 'fun_app$'('fun_app$f'('less_eq$a',X1),'greatest$'(X0)) | ~'fun_app$'(X0,X1) [cnf transformation 1457]
+3150. ~'fun_app$'(X0,X1) | 'fun_app$'(X0,'greatest$'(X0)) [cnf transformation 1483]
+3503. 2 <=> 'fun_app$d'('consistent$'('a$'),'b$') [avatar definition]
+3504. ~'fun_app$d'('consistent$'('a$'),'b$') <- (~2) [avatar component clause 3503]
+3505. 'fun_app$d'('consistent$'('a$'),'b$') <- (2) [avatar component clause 3503]
+3514. ~'fun_app$d'('consistent$'('a$'),'b$') | $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)) [subsumption resolution 2396,2493]
+3515. 'fun_app$d'('consistent$'(X0),X1) | $less('of_nat$'('rank$'(X0)),$sum('of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))),1)) [subsumption resolution 2833,2493]
+3519. 4 <=> ! [X3 : 'Rows$'] : 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X3) [avatar definition]
+3520. 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X3) <- (4) [avatar component clause 3519]
+3522. 5 <=> $less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)) [avatar definition]
+3524. ~$less('of_nat$'('rank$'('a$')),$sum('of_nat$'('to_nat$'('greatest$'('uu$'))),1)) <- (~5) [avatar component clause 3522]
+3525. 4 | 2 | ~5 [avatar split clause 2394,3522,3503,3519]
+3533. ~$less('of_nat$'('rank$'(X1)),$sum(1,'of_nat$'('to_nat$'('greatest$'('uua$'(X1,X0)))))) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X1),X0)),X2) | ~'fun_app$d'('consistent$'(X1),X0) [backward demodulation 2657,778]
+3540. 6 <=> 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK13) [avatar definition]
+3542. 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK13) <- (~6) [avatar component clause 3540]
+3544. 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),sK71(X0,X1)) | 'fun_app$d'('consistent$'(X0),X1) [subsumption resolution 2832,2493]
+3550. ~'fun_app$d'('consistent$'('a$'),'b$') | 'zero$' != 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),sK13) [subsumption resolution 2397,2493]
+3556. $less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uu$'))))) | ~'fun_app$d'('consistent$'('a$'),'b$') [forward demodulation 3514,778]
+3557. 'fun_app$d'('consistent$'(X0),X1) | $less('of_nat$'('rank$'(X0)),$sum(1,'of_nat$'('to_nat$'('greatest$'('uua$'(X0,X1)))))) [forward demodulation 3515,778]
+3562. ~2 | ~6 [avatar split clause 3550,3540,3503]
+3565. 7 <=> $less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uu$'))))) [avatar definition]
+3566. ~$less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uu$'))))) <- (~7) [avatar component clause 3565]
+3567. $less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uu$'))))) <- (7) [avatar component clause 3565]
+3568. ~2 | 7 [avatar split clause 3556,3565,3503]
+3569. ~$less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uu$'))))) <- (~5) [forward demodulation 3524,778]
+3570. ~7 | 5 [avatar split clause 3569,3522,3565]
+3573. $less(X1,$sum(1,X0)) | $less(X0,X1) [superposition 2674,778]
+3974. $less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))))) <- (~2) [resolution 3504,3557]
+3976. 12 <=> $less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))))) [avatar definition]
+3977. ~$less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))))) <- (~12) [avatar component clause 3976]
+3978. $less('of_nat$'('rank$'('a$')),$sum(1,'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))))) <- (12) [avatar component clause 3976]
+3980. 12 | 2 [avatar split clause 3974,3503,3976]
+3997. 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' | ~'fun_app$d'('consistent$'('a$'),'b$') <- (12) [resolution 3978,3533]
+4268. 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' | 'fun_app$'('uu$','greatest$'('uu$')) [resolution 3150,2678]
+4269. 'fun_app$'('uua$'(X0,X1),'greatest$'('uua$'(X0,X1))) | 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'(X0),X1)),X2) [resolution 3150,2569]
+4271. 13 <=> 'fun_app$'('uu$','greatest$'('uu$')) [avatar definition]
+4273. 'fun_app$'('uu$','greatest$'('uu$')) <- (13) [avatar component clause 4271]
+4274. 13 | 4 [avatar split clause 4268,3519,4271]
+4431. 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' <- (2, 12) [subsumption resolution 3997,3505]
+4432. 4 | ~2 | ~12 [avatar split clause 4431,3976,3503,3519]
+4435. $less(X0,$sum(1,'of_nat$'('to_nat$'('greatest$'('uu$'))))) | $less('of_nat$'('rank$'('a$')),X0) <- (7) [resolution 3567,2737]
+4450. 'zero$' != 'zero$' <- (4, ~6) [backward demodulation 3542,3520]
+4451. $false <- (4, ~6) [trivial inequality removal 4450]
+4452. ~4 | 6 [avatar contradiction clause 4451]
+4459. 'zero$' != 'zero$' | 'fun_app$d'('consistent$'('a$'),'b$') <- (4) [superposition 3544,3520]
+4465. 'fun_app$d'('consistent$'('a$'),'b$') <- (4) [trivial inequality removal 4459]
+4469. $false <- (~2, 4) [subsumption resolution 4465,3504]
+4470. 2 | ~4 [avatar contradiction clause 4469]
+5945. ~$less(X1,$sum(1,X0)) | ~$less(X0,X1) [superposition 789,778]
+47774. $less('of_nat$'('rank$'('a$')),$sum(1,X0)) | $less(X0,'of_nat$'('to_nat$'('greatest$'('uu$')))) <- (7) [resolution 4435,2488]
+47827. $less('of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))),'of_nat$'('to_nat$'('greatest$'('uu$')))) <- (7, ~12) [resolution 47774,3977]
+48424. ~'fun_app$'('fun_app$f'('less_eq$a','greatest$'('uu$')),'greatest$'('uua$'('a$','b$'))) <- (7, ~12) [resolution 47827,2531]
+48431. ~'fun_app$'('uua$'('a$','b$'),'greatest$'('uu$')) <- (7, ~12) [resolution 48424,2975]
+49693. 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),'greatest$'('uu$')) <- (7, ~12) [resolution 48431,2569]
+49694. 'zero$' != 'zero$' | ~'fun_app$'('uu$','greatest$'('uu$')) <- (7, ~12) [superposition 2679,49693]
+49702. ~'fun_app$'('uu$','greatest$'('uu$')) <- (7, ~12) [trivial inequality removal 49694]
+49705. $false <- (7, ~12, 13) [subsumption resolution 49702,4273]
+49706. ~7 | 12 | ~13 [avatar contradiction clause 49705]
+49724. $less('of_nat$'('to_nat$'('greatest$'('uu$'))),'of_nat$'('rank$'('a$'))) <- (~7) [resolution 3566,3573]
+49751. $less('of_nat$'('to_nat$'('greatest$'('uu$'))),X0) | $less(X0,'of_nat$'('rank$'('a$'))) <- (~7) [resolution 49724,2737]
+49766. ~$less('of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))),'of_nat$'('rank$'('a$'))) <- (12) [resolution 3978,5945]
+59035. 462 <=> $less('of_nat$'('to_nat$'('greatest$'('uu$'))),'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$'))))) [avatar definition]
+59036. ~$less('of_nat$'('to_nat$'('greatest$'('uu$'))),'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$'))))) <- (~462) [avatar component clause 59035]
+59037. $less('of_nat$'('to_nat$'('greatest$'('uu$'))),'of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$'))))) <- (462) [avatar component clause 59035]
+104215. ~'fun_app$'('fun_app$f'('less_eq$a','greatest$'('uua$'('a$','b$'))),'greatest$'('uu$')) <- (462) [resolution 59037,2531]
+280850. ~'fun_app$'('uu$','greatest$'('uua$'('a$','b$'))) <- (462) [resolution 104215,2975]
+287931. 'zero$' = 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),'greatest$'('uua$'('a$','b$'))) <- (462) [resolution 280850,2678]
+287933. ~'fun_app$'('uua$'('a$','b$'),'greatest$'('uua$'('a$','b$'))) | 'zero$' != 'zero$' <- (462) [superposition 2570,287931]
+287940. ~'fun_app$'('uua$'('a$','b$'),'greatest$'('uua$'('a$','b$'))) <- (462) [trivial inequality removal 287933]
+298718. 'fun_app$a'('vec_nth$'('matrix_vector_mult$'('p_Gauss_Jordan$'('a$'),'b$')),X0) = 'zero$' <- (462) [resolution 287940,4269]
+298720. 4 | ~462 [avatar split clause 298718,59035,3519]
+299785. $less('of_nat$'('to_nat$'('greatest$'('uua$'('a$','b$')))),'of_nat$'('rank$'('a$'))) <- (~7, ~462) [resolution 59036,49751]
+299801. $false <- (~7, 12, ~462) [subsumption resolution 299785,49766]
+299802. 7 | ~12 | 462 [avatar contradiction clause 299801]
+299805. $false [avatar sat refutation 3525,3562,3568,3570,3980,4274,4432,4452,4470,49706,298720,299802]
+% SZS output end Proof for ITP344_1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 624
+% >>> Preprocessing
+% Introduced names: 3
+% Introduced skolems: 131
+% Pure predicates: 2
+% Function definitions: 1
+% 
+% >>> Saturation
+% Initial clauses: 993
+% Generated clauses: 333388
+% Activations started: 3769
+% Active clauses: 3769
+% Passive clauses: 82527
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 509
+% Trivial inequalities: 445
+% Fw subsumption resolutions: 9112
+% Fw demodulations: 61591
+% Bw demodulations: 44174
+% Evaluation count: 39735
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 1779
+% Equational tautologies: 114
+% Forward subsumptions: 131939
+% Fw demodulations to eq. taut.: 1012
+% Bw demodulations to eq. taut.: 1384
+% 
+% >>> Generating Inferences
+% Binary resolution: 34240
+% Factoring: 19
+% Forward superposition: 52752
+% Backward superposition: 57445
+% Self superposition: 174
+% Equality factoring: 21
+% Equality resolution: 142
+% 
+% >>> AVATAR
+% Split clauses: 1141
+% Split components: 2297
+% Sat splitting refutations: 2087
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 4649
+% SAT solver unit clauses: 363
+% SAT solver binary clauses: 1199
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 1073
+% Bulk evals: 8416
+% 
+% Time elapsed: 16.902 s
+% Peak memory usage: 284 MB
+% Instructions burned: 39356 (million)
+% ------------------------------
+% ------------------------------

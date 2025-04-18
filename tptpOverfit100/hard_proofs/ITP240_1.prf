@@ -1,0 +1,232 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop3/script-model.pt -npcc on -si on -rtra on --random_seed 10 Problems/ITP/ITP240_1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for ITP240_1
+% SZS output start Proof for ITP240_1
+1. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))))),minilow)) [input(axiom)]
+6. aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))) = na [input(axiom)]
+15. vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))) = some_nat(minilow) [input(axiom)]
+48. pp(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),na)) [input(axiom)]
+53. ! [X0 : option_nat] : (none_nat = X0 <=> ! [X12 : nat] : some_nat(X12) != X0) [input(axiom)]
+86. ! [X21 : nat,X5 : nat,X0 : nat,X6 : vEBT_VEBT] : (pp(aa_nat_bool(vEBT_invar_vebt(X6),X5)) => (vEBT_vebt_mint(X6) = some_nat(X21) => (pp(aa_nat_bool(vEBT_vebt_member(X6),X0)) => pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X21),X0))))) [input(axiom)]
+212. ! [X5 : num] : aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,X5)) = aa_num_nat(numeral_numeral_nat,aa_num_num(aa_num_fun_num_num(plus_plus_num,X5),one)) [input(axiom)]
+754. ! [X5 : num] : (aa_num_nat(numeral_numeral_nat,X5) = one_one_nat <=> one = X5) [input(axiom)]
+989. ! [X5 : nat] : aa_nat_nat(suc,X5) = aa_nat_nat(aa_nat_fun_nat_nat(plus_plus_nat,X5),one_one_nat) [input(axiom)]
+2089. ! [X97 : bool,X7 : bool] : ((pp(X7) => some_nat(zero_zero_nat) = vEBT_vebt_pred(vEBT_Leaf(X7,X97),aa_nat_nat(suc,zero_zero_nat))) & (~pp(X7) => none_nat = vEBT_vebt_pred(vEBT_Leaf(X7,X97),aa_nat_nat(suc,zero_zero_nat)))) [input(axiom)]
+2400. aa_nat_nat(suc,zero_zero_nat) = size_size_option_nat(none_nat) [input(axiom)]
+2408. one_one_nat = aa_nat_nat(suc,zero_zero_nat) [input(axiom)]
+2843. aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)) = aa_nat_nat(suc,aa_nat_nat(suc,zero_zero_nat)) [input(axiom)]
+4148. ! [X0 : nat,X9 : nat] : (pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X9),X0)) <=> ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X9))) [input(axiom)]
+4183. ! [X0 : nat,X10 : nat,X9 : nat] : (pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X9)) => (pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X9),X10)) => pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X10)))) [input(axiom)]
+4448. zero_zero_nat = bot_bot_nat [input(axiom)]
+9040. aa_nat_nat(suc,zero_zero_nat) = aa_int_nat(nat2,one_one_int) [input(axiom)]
+9188. aa_num_num(bit0,one) = aa_num_num(inc,one) [input(axiom)]
+9191. ! [X0 : num] : aa_num_num(inc,X0) = aa_num_num(aa_num_fun_num_num(plus_plus_num,X0),one) [input(axiom)]
+9651. ! [X5 : nat] : aa_nat_fun_nat_nat(plus_plus_nat,X5) = compow_fun_nat_nat(X5,suc) [input(axiom)]
+9807. aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)) = finite_card_bool(top_top_set_bool) [input(axiom)]
+10219. ! [X95 : nat] : aa_nat_nat(aTP_Lamm_nv,X95) = aa_nat_nat(aa_nat_fun_nat_nat(plus_plus_nat,X95),one_one_nat) [input(axiom)]
+10419. ! [X271 : nat,X95 : fun_nat_nat] : aa_nat_nat(aTP_Lamm_hg(X95),X271) = aa_nat_nat(X95,aa_nat_nat(suc,X271)) [input(axiom)]
+10907. pp(fTrue) [input(axiom)]
+10914. ~pp(fFalse) [input(axiom)]
+10961. ! [X13 : bool] : (fTrue = X13 | fFalse = X13) [input(axiom)]
+10967. ! [X235 : nat] : (~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X235),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))) | ~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),X235))) [input(conjecture)]
+10968. ~! [X235 : nat] : (~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X235),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))) | ~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),X235))) [negated conjecture 10967]
+11087. ! [X0 : nat,X1 : fun_nat_nat] : aa_nat_nat(aTP_Lamm_hg(X1),X0) = aa_nat_nat(X1,aa_nat_nat(suc,X0)) [rectify 10419]
+11304. ! [X0 : nat] : aa_nat_nat(suc,X0) = aa_nat_nat(aa_nat_fun_nat_nat(plus_plus_nat,X0),one_one_nat) [rectify 989]
+11352. ! [X0 : nat,X2 : nat,X1 : nat,X3 : vEBT_VEBT] : (pp(aa_nat_bool(vEBT_invar_vebt(X3),X1)) => (some_nat(X0) = vEBT_vebt_mint(X3) => (pp(aa_nat_bool(vEBT_vebt_member(X3),X2)) => pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X2))))) [rectify 86]
+11993. ! [X0 : nat] : aa_nat_fun_nat_nat(plus_plus_nat,X0) = compow_fun_nat_nat(X0,suc) [rectify 9651]
+12373. ! [X0 : num] : (one = X0 <=> one_one_nat = aa_num_nat(numeral_numeral_nat,X0)) [rectify 754]
+12542. ! [X0 : bool] : (fTrue = X0 | fFalse = X0) [rectify 10961]
+14651. ! [X0 : nat,X1 : nat,X2 : nat] : (pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X2)) => (pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X2),X1)) => pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X1)))) [rectify 4183]
+15377. ! [X0 : bool,X1 : bool] : ((pp(X1) => some_nat(zero_zero_nat) = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,zero_zero_nat))) & (~pp(X1) => none_nat = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,zero_zero_nat)))) [rectify 2089]
+16365. ~! [X0 : nat] : (~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),X0)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))))))) [rectify 10968]
+17225. ! [X0 : nat,X1 : nat] : (pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X1),X0)) <=> ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1))) [rectify 4148]
+17623. ! [X0 : nat] : aa_nat_nat(aa_nat_fun_nat_nat(plus_plus_nat,X0),one_one_nat) = aa_nat_nat(aTP_Lamm_nv,X0) [rectify 10219]
+17945. ! [X0 : option_nat] : (! [X1 : nat] : some_nat(X1) != X0 <=> none_nat = X0) [rectify 53]
+18043. ! [X0 : num] : aa_num_nat(numeral_numeral_nat,aa_num_num(aa_num_fun_num_num(plus_plus_num,X0),one)) = aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,X0)) [rectify 212]
+22748. ! [X0 : nat,X2 : nat,X1 : nat,X3 : vEBT_VEBT] : (((pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X2)) | ~pp(aa_nat_bool(vEBT_vebt_member(X3),X2))) | some_nat(X0) != vEBT_vebt_mint(X3)) | ~pp(aa_nat_bool(vEBT_invar_vebt(X3),X1))) [ennf transformation 11352]
+22749. ! [X0 : nat,X3 : vEBT_VEBT,X2 : nat,X1 : nat] : (~pp(aa_nat_bool(vEBT_vebt_member(X3),X2)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X2)) | some_nat(X0) != vEBT_vebt_mint(X3) | ~pp(aa_nat_bool(vEBT_invar_vebt(X3),X1))) [flattening 22748]
+24055. ! [X0 : bool,X1 : bool] : ((none_nat = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,zero_zero_nat)) | pp(X1)) & (some_nat(zero_zero_nat) = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,zero_zero_nat)) | ~pp(X1))) [ennf transformation 15377]
+25920. ! [X0 : nat,X1 : nat,X2 : nat] : ((pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X1)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X2),X1))) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X2))) [ennf transformation 14651]
+25921. ! [X1 : nat,X2 : nat,X0 : nat] : (~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X2),X1)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X2)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),X1))) [flattening 25920]
+26699. ? [X0 : nat] : (pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),X0)) & pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))))))) [ennf transformation 16365]
+32555. ? [X0 : nat] : (pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),X0)) & pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))))))) => (pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),sK1186)) & pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,sK1186),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))))))) [choice axiom]
+32556. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),sK1186)) & pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,sK1186),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))) [skolemisation 26699,32555]
+33102. ! [X0 : nat,X1 : vEBT_VEBT,X2 : nat,X3 : nat] : (~pp(aa_nat_bool(vEBT_vebt_member(X1),X2)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X2)) | some_nat(X0) != vEBT_vebt_mint(X1) | ~pp(aa_nat_bool(vEBT_invar_vebt(X1),X3))) [rectify 22749]
+35222. ! [X0 : num] : ((one = X0 | one_one_nat != aa_num_nat(numeral_numeral_nat,X0)) & (one_one_nat = aa_num_nat(numeral_numeral_nat,X0) | one != X0)) [nnf transformation 12373]
+35756. ! [X0 : nat,X1 : nat] : ((pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X1),X0)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1))) & (~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X1),X0)))) [nnf transformation 17225]
+38050. ! [X0 : nat,X1 : nat,X2 : nat] : (~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X1),X0)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X2),X1)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X2),X0))) [rectify 25921]
+41083. ! [X0 : option_nat] : ((! [X1 : nat] : some_nat(X1) != X0 | none_nat != X0) & (none_nat = X0 | ? [X1 : nat] : some_nat(X1) = X0)) [nnf transformation 17945]
+41084. ! [X0 : option_nat] : ((! [X1 : nat] : some_nat(X1) != X0 | none_nat != X0) & (none_nat = X0 | ? [X2 : nat] : some_nat(X2) = X0)) [rectify 41083]
+41085. ! [X0 : option_nat] : (? [X2 : nat] : some_nat(X2) = X0 => some_nat(sK3151(X0)) = X0) [choice axiom]
+41086. ! [X0 : option_nat] : ((! [X1 : nat] : some_nat(X1) != X0 | none_nat != X0) & (none_nat = X0 | some_nat(sK3151(X0)) = X0)) [skolemisation 41084,41085]
+42870. aa_nat_nat(aa_nat_fun_nat_nat(plus_plus_nat,X0),one_one_nat) = aa_nat_nat(aTP_Lamm_nv,X0) [cnf transformation 17623]
+43522. aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)) = finite_card_bool(top_top_set_bool) [cnf transformation 9807]
+46890. aa_num_num(bit0,one) = aa_num_num(inc,one) [cnf transformation 9188]
+47992. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,sK1186),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))) [cnf transformation 32556]
+47993. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),sK1186)) [cnf transformation 32556]
+48676. some_nat(zero_zero_nat) = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,zero_zero_nat)) | ~pp(X1) [cnf transformation 24055]
+48677. none_nat = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,zero_zero_nat)) | pp(X1) [cnf transformation 24055]
+48748. some_nat(X0) != vEBT_vebt_mint(X1) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X2)) | ~pp(aa_nat_bool(vEBT_invar_vebt(X1),X3)) | ~pp(aa_nat_bool(vEBT_vebt_member(X1),X2)) [cnf transformation 33102]
+49697. vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))) = some_nat(minilow) [cnf transformation 15]
+50113. one_one_nat = aa_nat_nat(suc,zero_zero_nat) [cnf transformation 2408]
+50528. pp(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)))))),na)) [cnf transformation 48]
+50946. aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))) = na [cnf transformation 6]
+51641. one_one_nat = aa_num_nat(numeral_numeral_nat,X0) | one != X0 [cnf transformation 35222]
+51716. aa_num_nat(numeral_numeral_nat,aa_num_num(aa_num_fun_num_num(plus_plus_num,X0),one)) = aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,X0)) [cnf transformation 18043]
+52305. ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X1),X0)) [cnf transformation 35756]
+54265. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one))))),minilow)) [cnf transformation 1]
+55349. ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X1),X0)) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X2),X1)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X2),X0)) [cnf transformation 38050]
+55537. aa_nat_nat(suc,zero_zero_nat) = size_size_option_nat(none_nat) [cnf transformation 2400]
+55667. aa_nat_nat(suc,zero_zero_nat) = aa_int_nat(nat2,one_one_int) [cnf transformation 9040]
+56069. aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)) = aa_nat_nat(suc,aa_nat_nat(suc,zero_zero_nat)) [cnf transformation 2843]
+56195. pp(fTrue) [cnf transformation 10907]
+57148. aa_nat_fun_nat_nat(plus_plus_nat,X0) = compow_fun_nat_nat(X0,suc) [cnf transformation 11993]
+57176. fTrue = X0 | fFalse = X0 [cnf transformation 12542]
+58463. aa_nat_nat(suc,X0) = aa_nat_nat(aa_nat_fun_nat_nat(plus_plus_nat,X0),one_one_nat) [cnf transformation 11304]
+58648. aa_num_num(inc,X0) = aa_num_num(aa_num_fun_num_num(plus_plus_num,X0),one) [cnf transformation 9191]
+59511. some_nat(X1) != X0 | none_nat != X0 [cnf transformation 41086]
+59690. ~pp(fFalse) [cnf transformation 10914]
+61158. aa_nat_nat(aTP_Lamm_hg(X1),X0) = aa_nat_nat(X1,aa_nat_nat(suc,X0)) [cnf transformation 11087]
+61553. zero_zero_nat = bot_bot_nat [cnf transformation 4448]
+63127. none_nat = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,bot_bot_nat)) | pp(X1) [definition unfolding 48677,61553]
+63128. ~pp(X1) | some_nat(bot_bot_nat) = vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_nat_nat(suc,bot_bot_nat)) [definition unfolding 48676,61553,61553]
+63453. one_one_nat = aa_nat_nat(suc,bot_bot_nat) [definition unfolding 50113,61553]
+64643. size_size_option_nat(none_nat) = aa_nat_nat(suc,bot_bot_nat) [definition unfolding 55537,61553]
+64683. aa_int_nat(nat2,one_one_int) = aa_nat_nat(suc,bot_bot_nat) [definition unfolding 55667,61553]
+64811. aa_num_nat(numeral_numeral_nat,aa_num_num(bit0,one)) = aa_nat_nat(suc,aa_nat_nat(suc,bot_bot_nat)) [definition unfolding 56069,61553]
+67165. aa_num_nat(numeral_numeral_nat,one) = one_one_nat [equality resolution 51641]
+68153. none_nat != some_nat(X1) [equality resolution 59511]
+69091. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_nat_nat(suc,aa_nat_nat(suc,bot_bot_nat)))))),sK1186)) [backward demodulation 47993,64811]
+69139. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_nat_nat(suc,aa_nat_nat(suc,bot_bot_nat))))),minilow)) [backward demodulation 54265,64811]
+70728. pp(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),na)) [forward demodulation 50528,50946]
+70805. ~pp(X1) | vEBT_vebt_pred(vEBT_Leaf(X1,X0),aa_int_nat(nat2,one_one_int)) = some_nat(bot_bot_nat) [forward demodulation 63128,64683]
+70843. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,sK1186),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),na))) [forward demodulation 47992,50946]
+70971. na = aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(inc,one))) [backward demodulation 50946,46890]
+71524. aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,X0)) = aa_num_nat(numeral_numeral_nat,aa_num_num(inc,X0)) [backward demodulation 51716,58648]
+71588. size_size_option_nat(none_nat) = aa_int_nat(nat2,one_one_int) [backward demodulation 64683,64643]
+72115. finite_card_bool(top_top_set_bool) = aa_num_nat(numeral_numeral_nat,aa_num_num(inc,one)) [forward demodulation 43522,46890]
+72443. pp(X1) | none_nat = vEBT_vebt_pred(vEBT_Leaf(X1,X0),size_size_option_nat(none_nat)) [forward demodulation 63127,64643]
+73443. aa_nat_nat(compow_fun_nat_nat(X0,suc),one_one_nat) = aa_nat_nat(aTP_Lamm_nv,X0) [forward demodulation 42870,57148]
+74625. aa_nat_nat(suc,X0) = aa_nat_nat(compow_fun_nat_nat(X0,suc),one_one_nat) [forward demodulation 58463,57148]
+74670. one_one_nat = size_size_option_nat(none_nat) [backward demodulation 64643,63453]
+75092. some_nat(minilow) = vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_num_nat(numeral_numeral_nat,aa_num_num(inc,one)))))) [forward demodulation 49697,46890]
+76145. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),aa_nat_nat(suc,bot_bot_nat))))),sK1186)) [forward demodulation 69091,61158]
+76165. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),aa_nat_nat(suc,bot_bot_nat)))),minilow)) [forward demodulation 69139,61158]
+77596. na = aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,one))) [backward demodulation 70971,71524]
+77731. ~pp(X1) | some_nat(bot_bot_nat) = vEBT_vebt_pred(vEBT_Leaf(X1,X0),size_size_option_nat(none_nat)) [backward demodulation 70805,71588]
+78084. finite_card_bool(top_top_set_bool) = aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,one)) [forward demodulation 72115,71524]
+79553. aa_nat_nat(suc,X0) = aa_nat_nat(aTP_Lamm_nv,X0) [forward demodulation 74625,73443]
+79595. pp(X1) | none_nat = vEBT_vebt_pred(vEBT_Leaf(X1,X0),one_one_nat) [backward demodulation 72443,74670]
+79800. some_nat(minilow) = vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_nat_nat(suc,aa_num_nat(numeral_numeral_nat,one)))))) [forward demodulation 75092,71524]
+80498. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aTP_Lamm_hg(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg))),bot_bot_nat)))),sK1186)) [forward demodulation 76145,61158]
+80514. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aTP_Lamm_hg(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg))),bot_bot_nat))),minilow)) [forward demodulation 76165,61158]
+81484. na = aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),aa_num_nat(numeral_numeral_nat,one)) [forward demodulation 77596,61158]
+81605. ~pp(X1) | some_nat(bot_bot_nat) = vEBT_vebt_pred(vEBT_Leaf(X1,X0),one_one_nat) [forward demodulation 77731,74670]
+81925. aa_nat_nat(suc,one_one_nat) = finite_card_bool(top_top_set_bool) [forward demodulation 78084,67165]
+82976. aa_nat_nat(X1,aa_nat_nat(aTP_Lamm_nv,X0)) = aa_nat_nat(aTP_Lamm_hg(X1),X0) [backward demodulation 61158,79553]
+83106. one_one_nat = aa_nat_nat(aTP_Lamm_nv,bot_bot_nat) [backward demodulation 63453,79553]
+83355. some_nat(minilow) = vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),aa_nat_nat(aTP_Lamm_nv,aa_num_nat(numeral_numeral_nat,one)))))) [forward demodulation 79800,79553]
+84577. na = aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),one_one_nat) [forward demodulation 81484,67165]
+84898. finite_card_bool(top_top_set_bool) = aa_nat_nat(aTP_Lamm_nv,one_one_nat) [forward demodulation 81925,79553]
+85940. some_nat(minilow) = vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),aa_num_nat(numeral_numeral_nat,one))))) [forward demodulation 83355,82976]
+87783. some_nat(minilow) = vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),one_one_nat)))) [forward demodulation 85940,67165]
+89157. some_nat(minilow) = vEBT_vebt_mint(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))) [forward demodulation 87783,84577]
+115304. none_nat = vEBT_vebt_pred(vEBT_Leaf(fFalse,X0),one_one_nat) [resolution 79595,59690]
+117710. pp(X0) | fFalse = X0 [superposition 56195,57176]
+117791. ~pp(fTrue) | fFalse = aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1) | ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X1),X0)) [superposition 52305,57176]
+118008. ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X1),X0)) | fFalse = aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1) [subsumption resolution 117791,56195]
+124531. 121 <=> ! [X1 : nat] : ~pp(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X1)) [avatar definition]
+124532. ~pp(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X1)) <- (121) [avatar component clause 124531]
+124641. some_nat(bot_bot_nat) = vEBT_vebt_pred(vEBT_Leaf(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),na),X0),one_one_nat) [resolution 70728,81605]
+127092. fFalse = aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X0) <- (121) [resolution 124532,117710]
+127107. some_nat(bot_bot_nat) = vEBT_vebt_pred(vEBT_Leaf(fFalse,X0),one_one_nat) <- (121) [backward demodulation 124641,127092]
+127128. none_nat = some_nat(bot_bot_nat) <- (121) [forward demodulation 127107,115304]
+127137. $false <- (121) [subsumption resolution 127128,68153]
+127138. ~121 [avatar contradiction clause 127137]
+133478. aa_nat_nat(X0,finite_card_bool(top_top_set_bool)) = aa_nat_nat(aTP_Lamm_hg(X0),one_one_nat) [superposition 82976,84898]
+133479. aa_nat_nat(X0,one_one_nat) = aa_nat_nat(aTP_Lamm_hg(X0),bot_bot_nat) [superposition 82976,83106]
+133603. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),one_one_nat)))),sK1186)) [backward demodulation 80498,133479]
+134053. na = aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),finite_card_bool(top_top_set_bool)) [backward demodulation 84577,133478]
+134230. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),finite_card_bool(top_top_set_bool))))),sK1186)) [forward demodulation 133603,133478]
+134488. pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),sK1186)) [forward demodulation 134230,134053]
+135638. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aTP_Lamm_hg(aa_nat_fun_nat_nat(divide_divide_nat,deg)),one_one_nat))),minilow)) [forward demodulation 80514,133479]
+135645. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),aa_nat_nat(aa_nat_fun_nat_nat(divide_divide_nat,deg),finite_card_bool(top_top_set_bool)))),minilow)) [forward demodulation 135638,133478]
+135652. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),na)),minilow)) [forward demodulation 135645,134053]
+135720. ~pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_low,xa),na))) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,X0),minilow)) [resolution 135652,55349]
+135847. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_nat,sK1186),minilow)) [resolution 135720,70843]
+136853. fFalse = aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,minilow),sK1186) [resolution 135847,118008]
+203098. ~pp(aa_nat_bool(vEBT_invar_vebt(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X2)) | some_nat(minilow) != some_nat(X0) | ~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X1)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1)) [superposition 48748,89157]
+203111. 420 <=> ! [X0 : nat,X1 : nat] : (some_nat(minilow) != some_nat(X0) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1)) | ~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X1))) [avatar definition]
+203112. some_nat(minilow) != some_nat(X0) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,X0),X1)) | ~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X1)) <- (420) [avatar component clause 203111]
+203113. 420 | 121 [avatar split clause 203098,124531,203111]
+203118. ~pp(aa_nat_bool(vEBT_vebt_member(nth_VEBT_VEBT(treeList,aa_nat_nat(aa_nat_fun_nat_nat(vEBT_VEBT_high,xa),na))),X0)) | pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,minilow),X0)) <- (420) [equality resolution 203112]
+203119. pp(aa_nat_bool(aa_nat_fun_nat_bool(ord_less_eq_nat,minilow),sK1186)) <- (420) [resolution 203118,134488]
+203169. pp(fFalse) <- (420) [forward demodulation 203119,136853]
+203174. $false <- (420) [subsumption resolution 203169,59690]
+203175. ~420 [avatar contradiction clause 203174]
+203176. $false [avatar sat refutation 127138,203113,203175]
+% SZS output end Proof for ITP240_1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 10967
+% >>> Preprocessing
+% Introduced names: 335
+% Introduced skolems: 3189
+% Pure predicates: 61
+% Unused predicate definitions: 7
+% Function definitions: 62
+% 
+% >>> Saturation
+% Initial clauses: 18926
+% Generated clauses: 188431
+% Activations started: 2459
+% Active clauses: 2459
+% Passive clauses: 77939
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 658
+% Trivial inequalities: 409
+% Fw subsumption resolutions: 9258
+% Fw demodulations: 39181
+% Bw demodulations: 46503
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 672
+% Equational tautologies: 408
+% Forward subsumptions: 57109
+% Fw demodulations to eq. taut.: 126
+% Bw demodulations to eq. taut.: 1116
+% 
+% >>> Generating Inferences
+% Binary resolution: 22942
+% Factoring: 7
+% Forward superposition: 6801
+% Backward superposition: 4991
+% Self superposition: 16
+% Equality factoring: 20
+% Equality resolution: 27
+% 
+% >>> AVATAR
+% Split clauses: 408
+% Split components: 839
+% Sat splitting refutations: 1873
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 2689
+% SAT solver unit clauses: 1663
+% SAT solver binary clauses: 645
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 18259
+% Bulk evals: 13911
+% 
+% Time elapsed: 28.705 s
+% Peak memory usage: 633 MB
+% Instructions burned: 55533 (million)
+% ------------------------------
+% ------------------------------

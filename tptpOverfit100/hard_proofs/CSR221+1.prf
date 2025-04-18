@@ -1,0 +1,188 @@
+./vampire_rel_mtpa-gnn_8867 -t 300 -i 100000 --input_syntax tptp -sa otter -ncem /home/sudamar2/mtpa-gnn/tptpOverfit100k3/loop8/script-model.pt -npcc on -npcct 0.333 -si on -rtra on --random_seed 10 Problems/CSR/CSR221+1.p -p on
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for CSR221+1
+% SZS output start Proof for CSR221+1
+2. ! [X1,X2,X0] : ((p__d__subclass(X0,X1) & p__d__subclass(X1,X2)) => p__d__subclass(X0,X2)) [input(axiom)]
+4. ! [X2,X0,X1] : ((p__d__instance(X0,X1) & p__d__subclass(X1,X2)) => p__d__instance(X0,X2)) [input(axiom)]
+5. ! [X3,X4] : (p__d__disjoint(X3,X4) <=> ! [X5] : (~p__d__instance(X5,X3) | ~p__d__instance(X5,X4))) [input(axiom)]
+6. ! [X8,X7,X6] : ((p__d__disjointDecomposition3(X6,X7,X8) & p__d__exhaustiveDecomposition3(X6,X7,X8)) <=> p__d__partition3(X6,X7,X8)) & ! [X6,X8,X11,X10,X7,X9] : ((p__d__disjointDecomposition6(X6,X7,X8,X9,X10,X11) & p__d__exhaustiveDecomposition6(X6,X7,X8,X9,X10,X11)) <=> p__d__partition6(X6,X7,X8,X9,X10,X11)) & ! [X8,X11,X12,X9,X7,X10,X6] : ((p__d__exhaustiveDecomposition7(X6,X7,X8,X9,X10,X11,X12) & p__d__disjointDecomposition7(X6,X7,X8,X9,X10,X11,X12)) <=> p__d__partition7(X6,X7,X8,X9,X10,X11,X12)) & ! [X9,X6,X7,X8,X10] : ((p__d__exhaustiveDecomposition5(X6,X7,X8,X9,X10) & p__d__disjointDecomposition5(X6,X7,X8,X9,X10)) <=> p__d__partition5(X6,X7,X8,X9,X10)) & ! [X7,X9,X8,X6] : (p__d__partition4(X6,X7,X8,X9) <=> (p__d__disjointDecomposition4(X6,X7,X8,X9) & p__d__exhaustiveDecomposition4(X6,X7,X8,X9))) [input(axiom)]
+8. ! [X8,X6,X7] : (p__d__disjointDecomposition3(X6,X7,X8) <=> p__d__disjoint(X7,X8)) & ! [X11,X10,X8,X7,X9,X6] : (p__d__disjointDecomposition6(X6,X7,X8,X9,X10,X11) <=> (p__d__disjoint(X7,X10) & p__d__disjoint(X7,X11) & p__d__disjoint(X9,X10) & p__d__disjoint(X9,X11) & p__d__disjoint(X8,X10) & p__d__disjoint(X8,X9) & p__d__disjoint(X8,X11) & p__d__disjoint(X7,X9) & p__d__disjoint(X7,X8) & p__d__disjoint(X10,X11))) & ! [X9,X7,X8,X6] : ((p__d__disjoint(X7,X8) & p__d__disjoint(X7,X9) & p__d__disjoint(X8,X9)) <=> p__d__disjointDecomposition4(X6,X7,X8,X9)) & ! [X6,X8,X7,X12,X10,X11,X9] : ((p__d__disjoint(X10,X11) & p__d__disjoint(X8,X12) & p__d__disjoint(X7,X11) & p__d__disjoint(X9,X11) & p__d__disjoint(X7,X10) & p__d__disjoint(X8,X11) & p__d__disjoint(X7,X9) & p__d__disjoint(X9,X10) & p__d__disjoint(X9,X12) & p__d__disjoint(X8,X9) & p__d__disjoint(X7,X12) & p__d__disjoint(X7,X8) & p__d__disjoint(X8,X10) & p__d__disjoint(X10,X12) & p__d__disjoint(X11,X12)) <=> p__d__disjointDecomposition7(X6,X7,X8,X9,X10,X11,X12)) & ! [X10,X6,X7,X9,X8] : ((p__d__disjoint(X7,X9) & p__d__disjoint(X7,X8) & p__d__disjoint(X7,X10) & p__d__disjoint(X8,X10) & p__d__disjoint(X9,X10) & p__d__disjoint(X8,X9)) <=> p__d__disjointDecomposition5(X6,X7,X8,X9,X10)) [input(axiom)]
+110. ! [X6] : (p__d__subclass(X6,c__Entity) => ? [X34] : p__d__instance(X34,X6)) [input(axiom)]
+112. p__d__subclass(c__Physical,c__Entity) [input(axiom)]
+233. p__d__subclass(c__Process,c__Physical) [input(axiom)]
+1628. p__d__subclass(c__IntentionalProcess,c__Process) [input(axiom)]
+1653. p__d__subclass(c__LegalDecision,c__Declaring) [input(axiom)]
+1897. p__d__subclass(c__SocialInteraction,c__IntentionalProcess) [input(axiom)]
+1900. p__d__subclass(c__Communication,c__SocialInteraction) [input(axiom)]
+1902. p__d__partition7(c__Communication,c__Stating,c__Supposing,c__Directing,c__Committing,c__Expressing,c__Declaring) [input(axiom)]
+1914. p__d__subclass(c__LinguisticCommunication,c__Communication) [input(axiom)]
+1920. p__d__subclass(c__Directing,c__LinguisticCommunication) [input(axiom)]
+4589. p__d__subclass(c__LegalConviction,c__LegalDecision) [input(axiom)]
+7433. ? [X0] : (! [X1] : (p__d__instance(X1,c__LegalConviction) => X0 != X1) & p__d__instance(X0,c__SocialInteraction)) [input(conjecture)]
+7434. ~? [X0] : (! [X1] : (p__d__instance(X1,c__LegalConviction) => X0 != X1) & p__d__instance(X0,c__SocialInteraction)) [negated conjecture 7433]
+7917. ! [X0,X1] : (! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0)) <=> p__d__disjoint(X0,X1)) [rectify 5]
+8166. ! [X8,X6,X5,X3,X7,X4] : ((p__d__disjointDecomposition6(X3,X7,X4,X8,X6,X5) & p__d__exhaustiveDecomposition6(X3,X7,X4,X8,X6,X5)) <=> p__d__partition6(X3,X7,X4,X8,X6,X5)) & ! [X10,X11,X14,X13,X12,X9,X15] : ((p__d__exhaustiveDecomposition7(X15,X13,X9,X12,X14,X10,X11) & p__d__disjointDecomposition7(X15,X13,X9,X12,X14,X10,X11)) <=> p__d__partition7(X15,X13,X9,X12,X14,X10,X11)) & ! [X21,X22,X24,X23] : ((p__d__exhaustiveDecomposition4(X24,X21,X23,X22) & p__d__disjointDecomposition4(X24,X21,X23,X22)) <=> p__d__partition4(X24,X21,X23,X22)) & ! [X2,X1,X0] : (p__d__partition3(X2,X1,X0) <=> (p__d__disjointDecomposition3(X2,X1,X0) & p__d__exhaustiveDecomposition3(X2,X1,X0))) & ! [X20,X19,X18,X16,X17] : (p__d__partition5(X17,X18,X19,X16,X20) <=> (p__d__exhaustiveDecomposition5(X17,X18,X19,X16,X20) & p__d__disjointDecomposition5(X17,X18,X19,X16,X20))) [rectify 6]
+8583. ! [X1,X2,X0] : (p__d__disjoint(X2,X0) <=> p__d__disjointDecomposition3(X1,X2,X0)) & ! [X14,X19,X17,X18,X16,X13,X15] : ((p__d__disjoint(X14,X16) & p__d__disjoint(X15,X17) & p__d__disjoint(X19,X16) & p__d__disjoint(X17,X18) & p__d__disjoint(X14,X19) & p__d__disjoint(X14,X17) & p__d__disjoint(X15,X16) & p__d__disjoint(X18,X16) & p__d__disjoint(X17,X16) & p__d__disjoint(X19,X17) & p__d__disjoint(X19,X18) & p__d__disjoint(X15,X19) & p__d__disjoint(X15,X14) & p__d__disjoint(X14,X18) & p__d__disjoint(X15,X18)) <=> p__d__disjointDecomposition7(X13,X15,X14,X19,X17,X18,X16)) & ! [X22,X23,X21,X20,X24] : (p__d__disjointDecomposition5(X21,X22,X24,X23,X20) <=> (p__d__disjoint(X23,X20) & p__d__disjoint(X24,X20) & p__d__disjoint(X22,X20) & p__d__disjoint(X24,X23) & p__d__disjoint(X22,X24) & p__d__disjoint(X22,X23))) & ! [X10,X12,X11,X9] : (p__d__disjointDecomposition4(X12,X10,X11,X9) <=> (p__d__disjoint(X11,X9) & p__d__disjoint(X10,X11) & p__d__disjoint(X10,X9))) & ! [X3,X8,X7,X5,X4,X6] : (p__d__disjointDecomposition6(X8,X6,X5,X7,X4,X3) <=> (p__d__disjoint(X6,X3) & p__d__disjoint(X5,X4) & p__d__disjoint(X6,X4) & p__d__disjoint(X6,X5) & p__d__disjoint(X7,X3) & p__d__disjoint(X5,X3) & p__d__disjoint(X6,X7) & p__d__disjoint(X5,X7) & p__d__disjoint(X4,X3) & p__d__disjoint(X7,X4))) [rectify 8]
+9303. ! [X2,X0,X1] : ((p__d__subclass(X2,X0) & p__d__instance(X1,X2)) => p__d__instance(X1,X0)) [rectify 4]
+9863. ! [X0] : (p__d__subclass(X0,c__Entity) => ? [X1] : p__d__instance(X1,X0)) [rectify 110]
+10508. ! [X0] : (~p__d__instance(X0,c__SocialInteraction) | ? [X1] : (p__d__instance(X1,c__LegalConviction) & X0 = X1)) [ennf transformation 7434]
+12280. ! [X1,X2,X0] : (p__d__subclass(X0,X2) | (~p__d__subclass(X0,X1) | ~p__d__subclass(X1,X2))) [ennf transformation 2]
+12281. ! [X1,X2,X0] : (~p__d__subclass(X0,X1) | p__d__subclass(X0,X2) | ~p__d__subclass(X1,X2)) [flattening 12280]
+12852. ! [X2,X0,X1] : (p__d__instance(X1,X0) | (~p__d__subclass(X2,X0) | ~p__d__instance(X1,X2))) [ennf transformation 9303]
+12853. ! [X0,X1,X2] : (~p__d__subclass(X2,X0) | p__d__instance(X1,X0) | ~p__d__instance(X1,X2)) [flattening 12852]
+14252. ! [X0] : (~p__d__subclass(X0,c__Entity) | ? [X1] : p__d__instance(X1,X0)) [ennf transformation 9863]
+14491. ! [X0] : (? [X1] : p__d__instance(X1,X0) => p__d__instance(sK51(X0),X0)) [choice axiom]
+14492. ! [X0] : (~p__d__subclass(X0,c__Entity) | p__d__instance(sK51(X0),X0)) [skolemisation 14252,14491]
+16310. ! [X0,X1] : ((! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0)) | ~p__d__disjoint(X0,X1)) & (p__d__disjoint(X0,X1) | ? [X2] : (p__d__instance(X2,X1) & p__d__instance(X2,X0)))) [nnf transformation 7917]
+16311. ! [X0,X1] : ((! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0)) | ~p__d__disjoint(X0,X1)) & (p__d__disjoint(X0,X1) | ? [X3] : (p__d__instance(X3,X1) & p__d__instance(X3,X0)))) [rectify 16310]
+16312. ! [X0,X1] : (? [X3] : (p__d__instance(X3,X1) & p__d__instance(X3,X0)) => (p__d__instance(sK646(X0,X1),X1) & p__d__instance(sK646(X0,X1),X0))) [choice axiom]
+16313. ! [X0,X1] : ((! [X2] : (~p__d__instance(X2,X1) | ~p__d__instance(X2,X0)) | ~p__d__disjoint(X0,X1)) & (p__d__disjoint(X0,X1) | (p__d__instance(sK646(X0,X1),X1) & p__d__instance(sK646(X0,X1),X0)))) [skolemisation 16311,16312]
+17490. ! [X1,X2,X0] : ((p__d__disjoint(X2,X0) | ~p__d__disjointDecomposition3(X1,X2,X0)) & (p__d__disjointDecomposition3(X1,X2,X0) | ~p__d__disjoint(X2,X0))) & ! [X14,X19,X17,X18,X16,X13,X15] : (((p__d__disjoint(X14,X16) & p__d__disjoint(X15,X17) & p__d__disjoint(X19,X16) & p__d__disjoint(X17,X18) & p__d__disjoint(X14,X19) & p__d__disjoint(X14,X17) & p__d__disjoint(X15,X16) & p__d__disjoint(X18,X16) & p__d__disjoint(X17,X16) & p__d__disjoint(X19,X17) & p__d__disjoint(X19,X18) & p__d__disjoint(X15,X19) & p__d__disjoint(X15,X14) & p__d__disjoint(X14,X18) & p__d__disjoint(X15,X18)) | ~p__d__disjointDecomposition7(X13,X15,X14,X19,X17,X18,X16)) & (p__d__disjointDecomposition7(X13,X15,X14,X19,X17,X18,X16) | (~p__d__disjoint(X14,X16) | ~p__d__disjoint(X15,X17) | ~p__d__disjoint(X19,X16) | ~p__d__disjoint(X17,X18) | ~p__d__disjoint(X14,X19) | ~p__d__disjoint(X14,X17) | ~p__d__disjoint(X15,X16) | ~p__d__disjoint(X18,X16) | ~p__d__disjoint(X17,X16) | ~p__d__disjoint(X19,X17) | ~p__d__disjoint(X19,X18) | ~p__d__disjoint(X15,X19) | ~p__d__disjoint(X15,X14) | ~p__d__disjoint(X14,X18) | ~p__d__disjoint(X15,X18)))) & ! [X22,X23,X21,X20,X24] : ((p__d__disjointDecomposition5(X21,X22,X24,X23,X20) | (~p__d__disjoint(X23,X20) | ~p__d__disjoint(X24,X20) | ~p__d__disjoint(X22,X20) | ~p__d__disjoint(X24,X23) | ~p__d__disjoint(X22,X24) | ~p__d__disjoint(X22,X23))) & ((p__d__disjoint(X23,X20) & p__d__disjoint(X24,X20) & p__d__disjoint(X22,X20) & p__d__disjoint(X24,X23) & p__d__disjoint(X22,X24) & p__d__disjoint(X22,X23)) | ~p__d__disjointDecomposition5(X21,X22,X24,X23,X20))) & ! [X10,X12,X11,X9] : ((p__d__disjointDecomposition4(X12,X10,X11,X9) | (~p__d__disjoint(X11,X9) | ~p__d__disjoint(X10,X11) | ~p__d__disjoint(X10,X9))) & ((p__d__disjoint(X11,X9) & p__d__disjoint(X10,X11) & p__d__disjoint(X10,X9)) | ~p__d__disjointDecomposition4(X12,X10,X11,X9))) & ! [X3,X8,X7,X5,X4,X6] : ((p__d__disjointDecomposition6(X8,X6,X5,X7,X4,X3) | (~p__d__disjoint(X6,X3) | ~p__d__disjoint(X5,X4) | ~p__d__disjoint(X6,X4) | ~p__d__disjoint(X6,X5) | ~p__d__disjoint(X7,X3) | ~p__d__disjoint(X5,X3) | ~p__d__disjoint(X6,X7) | ~p__d__disjoint(X5,X7) | ~p__d__disjoint(X4,X3) | ~p__d__disjoint(X7,X4))) & ((p__d__disjoint(X6,X3) & p__d__disjoint(X5,X4) & p__d__disjoint(X6,X4) & p__d__disjoint(X6,X5) & p__d__disjoint(X7,X3) & p__d__disjoint(X5,X3) & p__d__disjoint(X6,X7) & p__d__disjoint(X5,X7) & p__d__disjoint(X4,X3) & p__d__disjoint(X7,X4)) | ~p__d__disjointDecomposition6(X8,X6,X5,X7,X4,X3))) [nnf transformation 8583]
+17491. ! [X1,X2,X0] : ((p__d__disjoint(X2,X0) | ~p__d__disjointDecomposition3(X1,X2,X0)) & (p__d__disjointDecomposition3(X1,X2,X0) | ~p__d__disjoint(X2,X0))) & ! [X14,X19,X17,X18,X16,X13,X15] : (((p__d__disjoint(X14,X16) & p__d__disjoint(X15,X17) & p__d__disjoint(X19,X16) & p__d__disjoint(X17,X18) & p__d__disjoint(X14,X19) & p__d__disjoint(X14,X17) & p__d__disjoint(X15,X16) & p__d__disjoint(X18,X16) & p__d__disjoint(X17,X16) & p__d__disjoint(X19,X17) & p__d__disjoint(X19,X18) & p__d__disjoint(X15,X19) & p__d__disjoint(X15,X14) & p__d__disjoint(X14,X18) & p__d__disjoint(X15,X18)) | ~p__d__disjointDecomposition7(X13,X15,X14,X19,X17,X18,X16)) & (p__d__disjointDecomposition7(X13,X15,X14,X19,X17,X18,X16) | ~p__d__disjoint(X14,X16) | ~p__d__disjoint(X15,X17) | ~p__d__disjoint(X19,X16) | ~p__d__disjoint(X17,X18) | ~p__d__disjoint(X14,X19) | ~p__d__disjoint(X14,X17) | ~p__d__disjoint(X15,X16) | ~p__d__disjoint(X18,X16) | ~p__d__disjoint(X17,X16) | ~p__d__disjoint(X19,X17) | ~p__d__disjoint(X19,X18) | ~p__d__disjoint(X15,X19) | ~p__d__disjoint(X15,X14) | ~p__d__disjoint(X14,X18) | ~p__d__disjoint(X15,X18))) & ! [X22,X23,X21,X20,X24] : ((p__d__disjointDecomposition5(X21,X22,X24,X23,X20) | ~p__d__disjoint(X23,X20) | ~p__d__disjoint(X24,X20) | ~p__d__disjoint(X22,X20) | ~p__d__disjoint(X24,X23) | ~p__d__disjoint(X22,X24) | ~p__d__disjoint(X22,X23)) & ((p__d__disjoint(X23,X20) & p__d__disjoint(X24,X20) & p__d__disjoint(X22,X20) & p__d__disjoint(X24,X23) & p__d__disjoint(X22,X24) & p__d__disjoint(X22,X23)) | ~p__d__disjointDecomposition5(X21,X22,X24,X23,X20))) & ! [X10,X12,X11,X9] : ((p__d__disjointDecomposition4(X12,X10,X11,X9) | ~p__d__disjoint(X11,X9) | ~p__d__disjoint(X10,X11) | ~p__d__disjoint(X10,X9)) & ((p__d__disjoint(X11,X9) & p__d__disjoint(X10,X11) & p__d__disjoint(X10,X9)) | ~p__d__disjointDecomposition4(X12,X10,X11,X9))) & ! [X3,X8,X7,X5,X4,X6] : ((p__d__disjointDecomposition6(X8,X6,X5,X7,X4,X3) | ~p__d__disjoint(X6,X3) | ~p__d__disjoint(X5,X4) | ~p__d__disjoint(X6,X4) | ~p__d__disjoint(X6,X5) | ~p__d__disjoint(X7,X3) | ~p__d__disjoint(X5,X3) | ~p__d__disjoint(X6,X7) | ~p__d__disjoint(X5,X7) | ~p__d__disjoint(X4,X3) | ~p__d__disjoint(X7,X4)) & ((p__d__disjoint(X6,X3) & p__d__disjoint(X5,X4) & p__d__disjoint(X6,X4) & p__d__disjoint(X6,X5) & p__d__disjoint(X7,X3) & p__d__disjoint(X5,X3) & p__d__disjoint(X6,X7) & p__d__disjoint(X5,X7) & p__d__disjoint(X4,X3) & p__d__disjoint(X7,X4)) | ~p__d__disjointDecomposition6(X8,X6,X5,X7,X4,X3))) [flattening 17490]
+17492. ! [X0,X1,X2] : ((p__d__disjoint(X1,X2) | ~p__d__disjointDecomposition3(X0,X1,X2)) & (p__d__disjointDecomposition3(X0,X1,X2) | ~p__d__disjoint(X1,X2))) & ! [X3,X4,X5,X6,X7,X8,X9] : (((p__d__disjoint(X3,X7) & p__d__disjoint(X9,X5) & p__d__disjoint(X4,X7) & p__d__disjoint(X5,X6) & p__d__disjoint(X3,X4) & p__d__disjoint(X3,X5) & p__d__disjoint(X9,X7) & p__d__disjoint(X6,X7) & p__d__disjoint(X5,X7) & p__d__disjoint(X4,X5) & p__d__disjoint(X4,X6) & p__d__disjoint(X9,X4) & p__d__disjoint(X9,X3) & p__d__disjoint(X3,X6) & p__d__disjoint(X9,X6)) | ~p__d__disjointDecomposition7(X8,X9,X3,X4,X5,X6,X7)) & (p__d__disjointDecomposition7(X8,X9,X3,X4,X5,X6,X7) | ~p__d__disjoint(X3,X7) | ~p__d__disjoint(X9,X5) | ~p__d__disjoint(X4,X7) | ~p__d__disjoint(X5,X6) | ~p__d__disjoint(X3,X4) | ~p__d__disjoint(X3,X5) | ~p__d__disjoint(X9,X7) | ~p__d__disjoint(X6,X7) | ~p__d__disjoint(X5,X7) | ~p__d__disjoint(X4,X5) | ~p__d__disjoint(X4,X6) | ~p__d__disjoint(X9,X4) | ~p__d__disjoint(X9,X3) | ~p__d__disjoint(X3,X6) | ~p__d__disjoint(X9,X6))) & ! [X10,X11,X12,X13,X14] : ((p__d__disjointDecomposition5(X12,X10,X14,X11,X13) | ~p__d__disjoint(X11,X13) | ~p__d__disjoint(X14,X13) | ~p__d__disjoint(X10,X13) | ~p__d__disjoint(X14,X11) | ~p__d__disjoint(X10,X14) | ~p__d__disjoint(X10,X11)) & ((p__d__disjoint(X11,X13) & p__d__disjoint(X14,X13) & p__d__disjoint(X10,X13) & p__d__disjoint(X14,X11) & p__d__disjoint(X10,X14) & p__d__disjoint(X10,X11)) | ~p__d__disjointDecomposition5(X12,X10,X14,X11,X13))) & ! [X15,X16,X17,X18] : ((p__d__disjointDecomposition4(X16,X15,X17,X18) | ~p__d__disjoint(X17,X18) | ~p__d__disjoint(X15,X17) | ~p__d__disjoint(X15,X18)) & ((p__d__disjoint(X17,X18) & p__d__disjoint(X15,X17) & p__d__disjoint(X15,X18)) | ~p__d__disjointDecomposition4(X16,X15,X17,X18))) & ! [X19,X20,X21,X22,X23,X24] : ((p__d__disjointDecomposition6(X20,X24,X22,X21,X23,X19) | ~p__d__disjoint(X24,X19) | ~p__d__disjoint(X22,X23) | ~p__d__disjoint(X24,X23) | ~p__d__disjoint(X24,X22) | ~p__d__disjoint(X21,X19) | ~p__d__disjoint(X22,X19) | ~p__d__disjoint(X24,X21) | ~p__d__disjoint(X22,X21) | ~p__d__disjoint(X23,X19) | ~p__d__disjoint(X21,X23)) & ((p__d__disjoint(X24,X19) & p__d__disjoint(X22,X23) & p__d__disjoint(X24,X23) & p__d__disjoint(X24,X22) & p__d__disjoint(X21,X19) & p__d__disjoint(X22,X19) & p__d__disjoint(X24,X21) & p__d__disjoint(X22,X21) & p__d__disjoint(X23,X19) & p__d__disjoint(X21,X23)) | ~p__d__disjointDecomposition6(X20,X24,X22,X21,X23,X19))) [rectify 17491]
+17538. ! [X0] : (? [X1] : (p__d__instance(X1,c__LegalConviction) & X0 = X1) => (p__d__instance(sK1018(X0),c__LegalConviction) & sK1018(X0) = X0)) [choice axiom]
+17539. ! [X0] : (~p__d__instance(X0,c__SocialInteraction) | (p__d__instance(sK1018(X0),c__LegalConviction) & sK1018(X0) = X0)) [skolemisation 10508,17538]
+17583. ! [X0,X1,X2] : (~p__d__subclass(X2,X0) | p__d__subclass(X2,X1) | ~p__d__subclass(X0,X1)) [rectify 12281]
+17624. ! [X8,X6,X5,X3,X7,X4] : (((p__d__disjointDecomposition6(X3,X7,X4,X8,X6,X5) & p__d__exhaustiveDecomposition6(X3,X7,X4,X8,X6,X5)) | ~p__d__partition6(X3,X7,X4,X8,X6,X5)) & (p__d__partition6(X3,X7,X4,X8,X6,X5) | (~p__d__disjointDecomposition6(X3,X7,X4,X8,X6,X5) | ~p__d__exhaustiveDecomposition6(X3,X7,X4,X8,X6,X5)))) & ! [X10,X11,X14,X13,X12,X9,X15] : (((p__d__exhaustiveDecomposition7(X15,X13,X9,X12,X14,X10,X11) & p__d__disjointDecomposition7(X15,X13,X9,X12,X14,X10,X11)) | ~p__d__partition7(X15,X13,X9,X12,X14,X10,X11)) & (p__d__partition7(X15,X13,X9,X12,X14,X10,X11) | (~p__d__exhaustiveDecomposition7(X15,X13,X9,X12,X14,X10,X11) | ~p__d__disjointDecomposition7(X15,X13,X9,X12,X14,X10,X11)))) & ! [X21,X22,X24,X23] : (((p__d__exhaustiveDecomposition4(X24,X21,X23,X22) & p__d__disjointDecomposition4(X24,X21,X23,X22)) | ~p__d__partition4(X24,X21,X23,X22)) & (p__d__partition4(X24,X21,X23,X22) | (~p__d__exhaustiveDecomposition4(X24,X21,X23,X22) | ~p__d__disjointDecomposition4(X24,X21,X23,X22)))) & ! [X2,X1,X0] : ((p__d__partition3(X2,X1,X0) | (~p__d__disjointDecomposition3(X2,X1,X0) | ~p__d__exhaustiveDecomposition3(X2,X1,X0))) & ((p__d__disjointDecomposition3(X2,X1,X0) & p__d__exhaustiveDecomposition3(X2,X1,X0)) | ~p__d__partition3(X2,X1,X0))) & ! [X20,X19,X18,X16,X17] : ((p__d__partition5(X17,X18,X19,X16,X20) | (~p__d__exhaustiveDecomposition5(X17,X18,X19,X16,X20) | ~p__d__disjointDecomposition5(X17,X18,X19,X16,X20))) & ((p__d__exhaustiveDecomposition5(X17,X18,X19,X16,X20) & p__d__disjointDecomposition5(X17,X18,X19,X16,X20)) | ~p__d__partition5(X17,X18,X19,X16,X20))) [nnf transformation 8166]
+17625. ! [X8,X6,X5,X3,X7,X4] : (((p__d__disjointDecomposition6(X3,X7,X4,X8,X6,X5) & p__d__exhaustiveDecomposition6(X3,X7,X4,X8,X6,X5)) | ~p__d__partition6(X3,X7,X4,X8,X6,X5)) & (p__d__partition6(X3,X7,X4,X8,X6,X5) | ~p__d__disjointDecomposition6(X3,X7,X4,X8,X6,X5) | ~p__d__exhaustiveDecomposition6(X3,X7,X4,X8,X6,X5))) & ! [X10,X11,X14,X13,X12,X9,X15] : (((p__d__exhaustiveDecomposition7(X15,X13,X9,X12,X14,X10,X11) & p__d__disjointDecomposition7(X15,X13,X9,X12,X14,X10,X11)) | ~p__d__partition7(X15,X13,X9,X12,X14,X10,X11)) & (p__d__partition7(X15,X13,X9,X12,X14,X10,X11) | ~p__d__exhaustiveDecomposition7(X15,X13,X9,X12,X14,X10,X11) | ~p__d__disjointDecomposition7(X15,X13,X9,X12,X14,X10,X11))) & ! [X21,X22,X24,X23] : (((p__d__exhaustiveDecomposition4(X24,X21,X23,X22) & p__d__disjointDecomposition4(X24,X21,X23,X22)) | ~p__d__partition4(X24,X21,X23,X22)) & (p__d__partition4(X24,X21,X23,X22) | ~p__d__exhaustiveDecomposition4(X24,X21,X23,X22) | ~p__d__disjointDecomposition4(X24,X21,X23,X22))) & ! [X2,X1,X0] : ((p__d__partition3(X2,X1,X0) | ~p__d__disjointDecomposition3(X2,X1,X0) | ~p__d__exhaustiveDecomposition3(X2,X1,X0)) & ((p__d__disjointDecomposition3(X2,X1,X0) & p__d__exhaustiveDecomposition3(X2,X1,X0)) | ~p__d__partition3(X2,X1,X0))) & ! [X20,X19,X18,X16,X17] : ((p__d__partition5(X17,X18,X19,X16,X20) | ~p__d__exhaustiveDecomposition5(X17,X18,X19,X16,X20) | ~p__d__disjointDecomposition5(X17,X18,X19,X16,X20)) & ((p__d__exhaustiveDecomposition5(X17,X18,X19,X16,X20) & p__d__disjointDecomposition5(X17,X18,X19,X16,X20)) | ~p__d__partition5(X17,X18,X19,X16,X20))) [flattening 17624]
+17626. ! [X0,X1,X2,X3,X4,X5] : (((p__d__disjointDecomposition6(X3,X4,X5,X0,X1,X2) & p__d__exhaustiveDecomposition6(X3,X4,X5,X0,X1,X2)) | ~p__d__partition6(X3,X4,X5,X0,X1,X2)) & (p__d__partition6(X3,X4,X5,X0,X1,X2) | ~p__d__disjointDecomposition6(X3,X4,X5,X0,X1,X2) | ~p__d__exhaustiveDecomposition6(X3,X4,X5,X0,X1,X2))) & ! [X6,X7,X8,X9,X10,X11,X12] : (((p__d__exhaustiveDecomposition7(X12,X9,X11,X10,X8,X6,X7) & p__d__disjointDecomposition7(X12,X9,X11,X10,X8,X6,X7)) | ~p__d__partition7(X12,X9,X11,X10,X8,X6,X7)) & (p__d__partition7(X12,X9,X11,X10,X8,X6,X7) | ~p__d__exhaustiveDecomposition7(X12,X9,X11,X10,X8,X6,X7) | ~p__d__disjointDecomposition7(X12,X9,X11,X10,X8,X6,X7))) & ! [X13,X14,X15,X16] : (((p__d__exhaustiveDecomposition4(X15,X13,X16,X14) & p__d__disjointDecomposition4(X15,X13,X16,X14)) | ~p__d__partition4(X15,X13,X16,X14)) & (p__d__partition4(X15,X13,X16,X14) | ~p__d__exhaustiveDecomposition4(X15,X13,X16,X14) | ~p__d__disjointDecomposition4(X15,X13,X16,X14))) & ! [X17,X18,X19] : ((p__d__partition3(X17,X18,X19) | ~p__d__disjointDecomposition3(X17,X18,X19) | ~p__d__exhaustiveDecomposition3(X17,X18,X19)) & ((p__d__disjointDecomposition3(X17,X18,X19) & p__d__exhaustiveDecomposition3(X17,X18,X19)) | ~p__d__partition3(X17,X18,X19))) & ! [X20,X21,X22,X23,X24] : ((p__d__partition5(X24,X22,X21,X23,X20) | ~p__d__exhaustiveDecomposition5(X24,X22,X21,X23,X20) | ~p__d__disjointDecomposition5(X24,X22,X21,X23,X20)) & ((p__d__exhaustiveDecomposition5(X24,X22,X21,X23,X20) & p__d__disjointDecomposition5(X24,X22,X21,X23,X20)) | ~p__d__partition5(X24,X22,X21,X23,X20))) [rectify 17625]
+18299. ~p__d__instance(X1,X2) | ~p__d__subclass(X2,X0) | p__d__instance(X1,X0) [cnf transformation 12853]
+18476. p__d__instance(sK51(X0),X0) | ~p__d__subclass(X0,c__Entity) [cnf transformation 14492]
+18725. p__d__subclass(c__LegalDecision,c__Declaring) [cnf transformation 1653]
+18793. p__d__partition7(c__Communication,c__Stating,c__Supposing,c__Directing,c__Committing,c__Expressing,c__Declaring) [cnf transformation 1902]
+21570. p__d__subclass(c__IntentionalProcess,c__Process) [cnf transformation 1628]
+22459. p__d__subclass(c__LegalConviction,c__LegalDecision) [cnf transformation 4589]
+23301. p__d__subclass(c__Physical,c__Entity) [cnf transformation 112]
+23443. ~p__d__disjoint(X0,X1) | ~p__d__instance(X2,X1) | ~p__d__instance(X2,X0) [cnf transformation 16313]
+24832. p__d__subclass(c__Process,c__Physical) [cnf transformation 233]
+25718. p__d__subclass(c__Directing,c__LinguisticCommunication) [cnf transformation 1920]
+26882. ~p__d__disjointDecomposition7(X8,X9,X3,X4,X5,X6,X7) | p__d__disjoint(X4,X7) [cnf transformation 17492]
+27009. ~p__d__instance(X0,c__SocialInteraction) | sK1018(X0) = X0 [cnf transformation 17539]
+27010. p__d__instance(sK1018(X0),c__LegalConviction) | ~p__d__instance(X0,c__SocialInteraction) [cnf transformation 17539]
+27142. ~p__d__subclass(X2,X0) | ~p__d__subclass(X0,X1) | p__d__subclass(X2,X1) [cnf transformation 17583]
+27270. ~p__d__partition7(X12,X9,X11,X10,X8,X6,X7) | p__d__disjointDecomposition7(X12,X9,X11,X10,X8,X6,X7) [cnf transformation 17626]
+27641. p__d__subclass(c__LinguisticCommunication,c__Communication) [cnf transformation 1914]
+27678. p__d__subclass(c__SocialInteraction,c__IntentionalProcess) [cnf transformation 1897]
+28191. p__d__subclass(c__Communication,c__SocialInteraction) [cnf transformation 1900]
+31343. p__d__instance(sK1018(X1),X0) | ~p__d__subclass(c__LegalConviction,X0) | ~p__d__instance(X1,c__SocialInteraction) [resolution 18299,27010]
+31351. ~p__d__subclass(c__LegalDecision,X0) | p__d__subclass(c__LegalConviction,X0) [resolution 22459,27142]
+31365. p__d__instance(sK51(X0),X1) | ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(X0,X1) [resolution 18476,18299]
+31367. 11 <=> p__d__subclass(c__SocialInteraction,c__Entity) [avatar definition]
+31368. p__d__subclass(c__SocialInteraction,c__Entity) <- (11) [avatar component clause 31367]
+31381. ~p__d__subclass(X0,c__SocialInteraction) | sK1018(sK51(X0)) = sK51(X0) | ~p__d__subclass(X0,c__Entity) [resolution 31365,27009]
+31382. ~p__d__subclass(X1,X2) | p__d__instance(sK51(X0),X2) | ~p__d__subclass(X0,X1) | ~p__d__subclass(X0,c__Entity) [resolution 31365,18299]
+31383. ~p__d__subclass(c__SocialInteraction,X0) | p__d__subclass(c__Communication,X0) [resolution 28191,27142]
+31559. 46 <=> p__d__subclass(c__Communication,c__Entity) [avatar definition]
+31560. p__d__subclass(c__Communication,c__Entity) <- (46) [avatar component clause 31559]
+31561. ~p__d__subclass(c__Communication,c__Entity) <- (~46) [avatar component clause 31559]
+31569. ~p__d__subclass(c__IntentionalProcess,X0) | p__d__subclass(c__SocialInteraction,X0) [resolution 27678,27142]
+31822. p__d__instance(sK51(X0),c__SocialInteraction) | ~p__d__subclass(X0,c__Entity) | ~p__d__subclass(X0,c__Communication) [resolution 31382,28191]
+31855. p__d__subclass(c__LegalConviction,c__Declaring) [resolution 18725,31351]
+31911. p__d__subclass(c__SocialInteraction,c__Process) [resolution 21570,31569]
+31935. ~p__d__subclass(c__Process,X0) | p__d__subclass(c__SocialInteraction,X0) [resolution 31911,27142]
+32055. p__d__subclass(c__SocialInteraction,c__Physical) [resolution 24832,31935]
+32079. ~p__d__subclass(c__Physical,X0) | p__d__subclass(c__SocialInteraction,X0) [resolution 32055,27142]
+32089. p__d__subclass(c__SocialInteraction,c__Entity) [resolution 32079,23301]
+32093. 11 [avatar split clause 32089,31367]
+32104. p__d__subclass(c__Communication,c__Entity) <- (11) [resolution 31368,31383]
+32126. $false <- (11, ~46) [subsumption resolution 32104,31561]
+32127. ~11 | 46 [avatar contradiction clause 32126]
+33722. ~p__d__subclass(c__Communication,X0) | p__d__subclass(c__LinguisticCommunication,X0) [resolution 27641,27142]
+33758. 236 <=> p__d__subclass(c__LinguisticCommunication,c__Entity) [avatar definition]
+33759. p__d__subclass(c__LinguisticCommunication,c__Entity) <- (236) [avatar component clause 33758]
+70945. 1856 <=> p__d__subclass(c__LinguisticCommunication,c__SocialInteraction) [avatar definition]
+70946. p__d__subclass(c__LinguisticCommunication,c__SocialInteraction) <- (1856) [avatar component clause 70945]
+201818. p__d__subclass(c__LinguisticCommunication,c__Entity) <- (46) [resolution 33722,31560]
+201821. p__d__subclass(c__LinguisticCommunication,c__SocialInteraction) [resolution 33722,28191]
+201823. 1856 [avatar split clause 201821,70945]
+201826. 236 | ~46 [avatar split clause 201818,31559,33758]
+251465. p__d__disjointDecomposition7(c__Communication,c__Stating,c__Supposing,c__Directing,c__Committing,c__Expressing,c__Declaring) [resolution 27270,18793]
+257500. p__d__disjoint(c__Directing,c__Declaring) [resolution 26882,251465]
+257501. ~p__d__instance(X0,c__Directing) | ~p__d__instance(X0,c__Declaring) [resolution 257500,23443]
+257502. ~p__d__instance(sK51(c__Directing),c__Declaring) | ~p__d__subclass(c__Directing,c__Entity) [resolution 257501,18476]
+258388. 6394 <=> p__d__subclass(c__Directing,c__Entity) [avatar definition]
+258389. p__d__subclass(c__Directing,c__Entity) <- (6394) [avatar component clause 258388]
+258390. ~p__d__subclass(c__Directing,c__Entity) <- (~6394) [avatar component clause 258388]
+258392. 6395 <=> p__d__instance(sK51(c__Directing),c__Declaring) [avatar definition]
+258394. ~p__d__instance(sK51(c__Directing),c__Declaring) <- (~6395) [avatar component clause 258392]
+258395. ~6394 | ~6395 [avatar split clause 257502,258392,258388]
+329689. ~p__d__subclass(c__LinguisticCommunication,X0) | p__d__subclass(c__Directing,X0) [resolution 25718,27142]
+329695. p__d__subclass(c__Directing,c__Communication) [resolution 329689,27641]
+329696. p__d__subclass(c__Directing,c__Entity) <- (236) [resolution 329689,33759]
+329697. p__d__subclass(c__Directing,c__SocialInteraction) <- (1856) [resolution 329689,70946]
+329699. $false <- (236, ~6394) [subsumption resolution 329696,258390]
+329700. ~236 | 6394 [avatar contradiction clause 329699]
+329724. sK51(c__Directing) = sK1018(sK51(c__Directing)) | ~p__d__subclass(c__Directing,c__Entity) <- (1856) [resolution 329697,31381]
+329760. sK51(c__Directing) = sK1018(sK51(c__Directing)) <- (1856, 6394) [subsumption resolution 329724,258389]
+329810. ~p__d__subclass(c__LegalConviction,X0) | p__d__instance(sK51(c__Directing),X0) | ~p__d__instance(sK51(c__Directing),c__SocialInteraction) <- (1856, 6394) [superposition 31343,329760]
+329847. 7401 <=> p__d__instance(sK51(c__Directing),c__SocialInteraction) [avatar definition]
+329849. ~p__d__instance(sK51(c__Directing),c__SocialInteraction) <- (~7401) [avatar component clause 329847]
+329851. 7402 <=> ! [X0] : (~p__d__subclass(c__LegalConviction,X0) | p__d__instance(sK51(c__Directing),X0)) [avatar definition]
+329852. p__d__instance(sK51(c__Directing),X0) | ~p__d__subclass(c__LegalConviction,X0) <- (7402) [avatar component clause 329851]
+329853. ~7401 | 7402 | ~1856 | ~6394 [avatar split clause 329810,258388,70945,329851,329847]
+329940. ~p__d__subclass(c__Directing,c__Communication) | ~p__d__subclass(c__Directing,c__Entity) <- (~7401) [resolution 329849,31822]
+329980. ~p__d__subclass(c__Directing,c__Entity) <- (~7401) [subsumption resolution 329940,329695]
+330014. $false <- (6394, ~7401) [subsumption resolution 329980,258389]
+330015. ~6394 | 7401 [avatar contradiction clause 330014]
+330343. ~p__d__subclass(c__LegalConviction,c__Declaring) <- (~6395, 7402) [resolution 329852,258394]
+330483. $false <- (~6395, 7402) [subsumption resolution 330343,31855]
+330484. 6395 | ~7402 [avatar contradiction clause 330483]
+330517. $false [avatar sat refutation 32093,32127,201823,201826,258395,329700,329853,330015,330484]
+% SZS output end Proof for CSR221+1
+% ------------------------------
+% Version: Vampire 4.9 (commit c3ff1b49a on 2025-01-24 06:41:25 +0100)
+% Termination reason: Refutation
+
+% >>> Input
+% Input formulas: 7433
+% >>> Preprocessing
+% Introduced names: 36
+% Introduced skolems: 1228
+% Pure predicates: 6
+% Unused predicate definitions: 4
+% 
+% >>> Saturation
+% Initial clauses: 10808
+% Generated clauses: 269866
+% Activations started: 6325
+% Active clauses: 6325
+% Passive clauses: 44006
+% Blocked clauses: 4
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 5698
+% Fw subsumption resolutions: 37759
+% Fw demodulations: 10838
+% Bw demodulations: 46
+% 
+% >>> Deletion Inferences
+% Simple tautologies: 36
+% Equational tautologies: 2
+% Forward subsumptions: 148029
+% 
+% >>> Generating Inferences
+% Binary resolution: 175889
+% Factoring: 1
+% Forward superposition: 15026
+% Backward superposition: 4853
+% 
+% >>> AVATAR
+% Split clauses: 9509
+% Split components: 19031
+% Sat splitting refutations: 1390
+% 
+% >>> SAT Solver Statistics
+% SAT solver clauses: 23832
+% SAT solver unit clauses: 46
+% SAT solver binary clauses: 2414
+% 
+% >>> Neural Instruction Counts
+% Neural model warmup: 473
+% Gnn eval: 4542
+% Bulk evals: 11424
+% 
+% Time elapsed: 5.143 s
+% Peak memory usage: 375 MB
+% Instructions burned: 26906 (million)
+% ------------------------------
+% ------------------------------
